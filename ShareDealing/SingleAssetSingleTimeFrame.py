@@ -64,14 +64,18 @@ class ShareSAST:
         data : numpy.ndarray, pandas.DataFrame, or polars.DataFrame
             Market data to run the backtest against
         """
+        # Validate strategy and data
         self._validate_strategy()
         self._validate_data(data)
         
-        # Prepare signals by calling the callables with data
-        signals = self._prepare_signals(data)
+        # Prepare signals by calling the callables with data - NEED TO CONTINUE FROM HERE*******
+        buy_signals, sell_signals, short_signals, cover_signals = self._prepare_signals(data)
+
+        #Make data numpy array if not already
+        data = self._prepare_data(data)
         
         # Execute backtest
-        equity_curve, trades = self._execute_backtest_loop(data, signals, commission, commission_pct)
+        equity_curve, trades = self._execute_backtest_loop_ShareDealing(data, signals, commission, commission_pct)
         
         # Store results as attributes rather than returning them
         self.equity_curve = equity_curve
@@ -219,20 +223,91 @@ class ShareSAST:
         else:
             raise TypeError("Data must be a numpy array, pandas DataFrame, or polars DataFrame")
     
-    def _prepare_signals(self, data = self.df):
-        """Apply callables to data to generate signal arrays"""
-        signals = {}
+    def _prepare_signals(self, data, unit_type = None, stop_loss = None, take_profit = None, stop_type = None, trailing_step = None):
+        """
+        Apply callables to data to generate signal arrays.
+
+        Parameters:
+        -----------
+        data : numpy.ndarray, pandas.DataFrame, or polars.DataFrame
+            Market data to run the backtest against
+        unit_type : str or None. Either "currency" or "percent"
+            Type of unit for stop loss and take profit calculations
+        stop_loss : float or None
+            Stop loss value for the strategy
+        take_profit : float or None
+            Take profit value for the strategy
+        stop_type : str or None. Either "fixed" or "trailing". Only used if stop_loss is not None
+            Type of stop loss or take profit calculation
+        trailing_step : float or None. Only used if trailing_type is "trailing"
+            Trailing step value for the strategy
+
+
+        Returns:
+        --------
+        tuple
+            Tuple of (buy, sell, short, cover) numpy arrays
+        """
+        # Determine the length of the data
+        if isinstance(data, np.ndarray):
+            data_length = data.shape[0]
+        elif isinstance(data, pd.DataFrame):
+            data_length = len(data)
+        elif isinstance(data, pl.DataFrame):
+            data_length = len(data)
+        else:
+            raise TypeError("Data must be a numpy array, pandas DataFrame, or polars DataFrame")
         
+        # Create initial arrays of zeros
+        buy_signals = np.zeros(data_length, dtype=bool)
+        sell_signals = np.zeros(data_length, dtype=bool)
+        short_signals = np.zeros(data_length, dtype=bool)
+        cover_signals = np.zeros(data_length, dtype=bool)
+        
+        # Fill arrays with signals from callables when they exist
         if self.buy_logic is not None:
-            signals['buy'] = self.buy_logic(data)
-            
+            buy_signals = self.buy_logic(data)
+        
         if self.sell_logic is not None:
-            signals['sell'] = self.sell_logic(data)
-            
+            sell_signals = self.sell_logic(data)
+        
         if self.short_logic is not None:
-            signals['short'] = self.short_logic(data)
-            
+            short_signals = self.short_logic(data)
+        
         if self.cover_logic is not None:
-            signals['cover'] = self.cover_logic(data)
-            
-        return signals
+            cover_signals = self.cover_logic(data)
+        
+        return buy_signals, sell_signals, short_signals, cover_signals
+
+        # Update the signals based on stop loss and take profit logic
+        if stop_loss is not None:
+            if unit_type == "currency":
+                # Apply stop loss logic based on currency.  - NEED TO CONTINUE FROM HERE. Make this a cython function*******
+                pass
+
+    def _execute_backtest_loop_ShareDealing(self, data, signals, commission=0.0, commission_pct=0.0):
+        """
+        Execute the backtest loop using the provided signals.
+        
+        Parameters:
+        -----------
+        data : numpy.ndarray
+            Market data to run the backtest against
+        signals : tuple
+            Tuple of (buy, sell, short, cover) numpy arrays
+        commission : float
+            Fixed commission per trade
+        commission_pct : float
+            Percentage commission per trade
+        
+        Returns:
+        --------
+        tuple
+            Tuple of (equity_curve, trades)
+        """
+        # Placeholder for actual backtest logic
+        equity_curve = np.zeros(data.shape[0])
+        trades = []
+
+        
+        return equity_curve, trades

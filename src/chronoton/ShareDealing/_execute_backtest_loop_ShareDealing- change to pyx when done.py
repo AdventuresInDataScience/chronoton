@@ -1,3 +1,19 @@
+# flexiblefast.pyx
+
+# distutils: language = c
+# distutils: extra_compile_args = -O3 -march=native -fopenmp
+# distutils: extra_link_args = -fopenmp
+
+from cython.parallel import prange
+import numpy as np
+cimport numpy as np
+cimport cython
+
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.nonecheck(False)
+@cython.cdivision(True)
+
 import numpy as np
 cimport numpy as np
 from libc.math cimport isnan

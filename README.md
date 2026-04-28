@@ -139,11 +139,11 @@ examples.md                  # worked examples
 After a development install:
 
 ```bash
-python tests.py           # 90/90 pure-Python
-python tests_cython.py    # 95/95 via Cython dispatcher
+python tests/tests.py           # 90/90 pure-Python
+python tests/tests_cython.py    # 95/95 via Cython dispatcher
 
-# or under pytest
-pytest tests.py tests_cython.py -v
+# or under pytest (testpaths configured in pyproject.toml)
+pytest -v
 ```
 
 ---

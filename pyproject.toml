@@ -28,3 +28,8 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 chronoton = ["*.pyx", "*.pxd"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+python_files = ["tests*.py", "test_*.py"]

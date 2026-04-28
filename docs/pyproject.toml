@@ -1,0 +1,51 @@
+# pyproject.toml — build-system and project metadata.
+#
+# Coexists with setup.py: setup.py defines the extension module, while
+# pyproject.toml tells pip what's needed to run setup.py. When a user
+# does `pip install -e .`, pip reads this first to create an isolated
+# build environment with Cython and numpy, then invokes setup.py.
+#
+# For simple `python setup.py build_ext --inplace` flows, pyproject.toml
+# is not consulted — you must have cython and numpy installed yourself.
+
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel",
+    "cython>=3.0",
+    "numpy>=1.23",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backtester"
+version = "0.1.0"
+description = "Single-file event-driven backtester with Cython fast-path."
+readme = "backtester_docs.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+# Only needed if the user wants to build the Cython extension themselves.
+# Not needed at runtime — the dispatcher falls back to pure Python if
+# _cy_inner isn't compiled.
+build = [
+    "cython>=3.0",
+]
+# For running the test suite
+test = [
+    "pytest>=7.0",
+]
+
+# Tell setuptools this is an ordinary package plus a compiled extension.
+# setup.py handles the Extension definition; this just enumerates the
+# top-level Python modules.
+[tool.setuptools]
+py-modules = [
+    "backtester",
+    "cython_backtester",
+]

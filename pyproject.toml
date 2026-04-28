@@ -1,0 +1,35 @@
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel",
+    "cython>=3.0",
+    "numpy>=1.23",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chronoton"
+version = "0.1.0"
+description = "Event-driven backtester for vectorised strategies on OHLCV data, with optional Cython fast path."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+build = ["cython>=3.0"]
+test  = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+chronoton = ["*.pyx", "*.pxd"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+python_files = ["tests*.py", "test_*.py"]

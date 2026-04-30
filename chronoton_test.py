@@ -21,9 +21,9 @@ df = df[df['Close'] < 2]
 df = df[df['Close'] >0.8]# filter out bad data
 
 #%% Quick Example Logic
-long_entry = (ta.EMA(df['Close'], timeperiod=180) > ta.EMA(df['Close'], timeperiod=1440)) & (ta.EMA(df['Close'].shift(1), timeperiod=180) < ta.EMA(df['Close'].shift(1), timeperiod=1440))
+long_entry = (ta.EMA(df['Close'], timeperiod=180) > ta.EMA(df['Close'], timeperiod=1440)) & (ta.EMA(df['Close'].shift(1), timeperiod=180) < ta.EMA(df['Close'].shift(1), timeperiod=1440)) & df.index.month.isin([3])
 #short_entry = ta.EMA(df['Close'], timeperiod=50) < ta.EMA(df['Close'], timeperiod=200)
-long_exit = long_entry.shift(720).fillna(False)  # exit long after 30 minutes
+long_exit = (ta.EMA(df['Close'], timeperiod=180) < ta.EMA(df['Close'], timeperiod=1440)) & (ta.EMA(df['Close'].shift(1), timeperiod=180) > ta.EMA(df['Close'].shift(1), timeperiod=1440))
 #short_exit = short_entry.shift(30).fillna(False)  # exit short after 30 minutes
 
 
@@ -37,7 +37,7 @@ result = run_single_backtest(
     long_exits=long_exit,
     short_exits=None, # short_exit,
     position_sizing="value",
-    position_value=1_000.0,      # £10k notional per trade
+    position_value=10_000.0,      # £10k notional per trade
     leverage=30.0,                # 30:1 leverage typical for FX retail
 
     # Costs in pips; pip_equals converts to price units
@@ -54,26 +54,12 @@ result = run_single_backtest(
 end_time = time.time()
 print(f"Backtest completed in {end_time - start_time:.2f} seconds")
 print(result.tearsheet())
-t = result.trades_to_dataframe()
-
-ov = t['overnight']
-print(f"\nTotal overnight             : £{ov.sum():.2f}")
-print(f"Trades with overnight charge: {(ov > 0).sum()} / {len(ov)}")
-if (ov > 0).any():
-    print(f"Avg overnight (non-zero)    : £{ov[ov > 0].mean():.4f}")
-print(f"Total spread cost           : £{t['spread_cost'].sum():.2f}")
-print(f"Total slippage cost         : £{t['slippage_cost'].sum():.2f}")
-
-wins   = t[t['pnl'] > 0]
-losses = t[t['pnl'] < 0]
-print(f"\nAvg PnL    (all trades)     : £{t['pnl'].mean():.2f}")
-print(f"Avg profit (winning trades) : £{wins['pnl'].mean():.2f}" if len(wins) else "No winning trades")
-print(f"Avg loss   (losing trades)  : £{losses['pnl'].mean():.2f}" if len(losses) else "No losing trades")
-(t['pnl'].cumsum() + 1_000_000).plot()
 result.plot_tearsheet()
 plt.show()
-
-# Issues
+# Example of singel chart
+result.plot_return_by_month()
+plt.show()
+#%% Issues
 #1. Overnight often not appearing even when thre are thousands of trades
 #2. 30-60s backtest on 8.3 million bars seems long for a simple strategy - need to profile and optimize
 #3. Logic incorrect. The same exits/entries reversed with no fees, yield different curves, not mirrored as expected. Need to investigate and fix.

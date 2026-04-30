@@ -22,6 +22,7 @@ dependencies = [
 [project.optional-dependencies]
 build = ["cython>=3.0"]
 test  = ["pytest>=7.0"]
+style = ["mplcyberpunk>=0.5"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

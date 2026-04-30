@@ -1328,6 +1328,67 @@ def _inner_loop(
     return cash, equity, closed_trades[:n_closed]
 
 
+# ---------------------------------------------------------------------------
+# Cyberpunk styling helper
+# ---------------------------------------------------------------------------
+def _get_cp():
+    """
+    Return (mplcyberpunk_module_or_None, color_dict).
+
+    When mplcyberpunk is installed, colors are neon-on-dark; otherwise they
+    fall back to standard matplotlib tab: colors so the plots remain usable
+    on a white background.
+    """
+    try:
+        import mplcyberpunk
+        return mplcyberpunk, {
+            "win":     "#00FF41",   # neon green
+            "loss":    "#FE53BB",   # neon pink
+            "primary": "#08F7FE",   # neon cyan
+            "neutral": "#F5D300",   # neon yellow
+            "zero":    "white",
+        }
+    except ImportError:
+        return None, {
+            "win":     "tab:green",
+            "loss":    "tab:red",
+            "primary": "tab:blue",
+            "neutral": "tab:orange",
+            "zero":    "black",
+        }
+
+
+def _cp_diverge_cmap():
+    """Neon diverging colormap: neon-pink → dark-navy → neon-green."""
+    from matplotlib.colors import LinearSegmentedColormap
+    return LinearSegmentedColormap.from_list(
+        "cp_diverge", ["#FE53BB", "#212946", "#00FF41"], N=256
+    )
+
+
+def _glow_bars(ax, bars):
+    """
+    Simulate a glow effect on bar charts by layering translucent,
+    slightly wider ghost bars behind each real bar.
+    """
+    import matplotlib.patches as mpatches
+    for bar in bars:
+        c = bar.get_facecolor()
+        x, y = bar.get_x(), bar.get_y()
+        w, h = bar.get_width(), bar.get_height()
+        if abs(h) < 1e-10:
+            continue
+        for pad_frac, alpha in ((0.10, 0.09), (0.05, 0.17)):
+            pw = w * pad_frac
+            ph = abs(h) * pad_frac
+            ax.add_patch(mpatches.Rectangle(
+                (x - pw, y - ph),
+                w + 2 * pw, h + 2 * ph,
+                linewidth=0, facecolor=c, alpha=alpha,
+                zorder=bar.get_zorder() - 1, clip_on=True,
+            ))
+
+
 class Result:
     """
     Backtest output: timeseries plus trade log plus computed performance metrics.
@@ -1803,31 +1864,47 @@ class Result:
         """
         Plot the equity curve. Returns the matplotlib Axes.
         Pass an existing ``ax`` to compose into a larger figure.
+        If mplcyberpunk is installed and ax is None, applies the cyberpunk
+        style globally for the current session.
         """
         import matplotlib.pyplot as plt
-        if ax is None:
+        cp, _ = _get_cp()
+        standalone = ax is None
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(10, 4))
         x = self._bar_x()
-        ax.plot(x, self.equity, linewidth=1.2)
+        ax.plot(x, self.equity, linewidth=1.5)
         if log:
             ax.set_yscale("log")
         ax.set_title("Equity curve")
         ax.set_xlabel("Date" if self.date is not None else "Bar")
         ax.set_ylabel("Equity")
         ax.grid(True, alpha=0.3)
+        if cp:
+            cp.make_lines_glow(ax=ax)
+            if standalone:
+                cp.add_underglow(ax=ax)
         return ax
 
     def plot_drawdown(self, ax=None):
         """Underwater drawdown curve. Returns the matplotlib Axes."""
         import matplotlib.pyplot as plt
-        if ax is None:
+        cp, clr = _get_cp()
+        standalone = ax is None
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(10, 3))
         if self.equity.size:
             peak = np.maximum.accumulate(self.equity)
             dd = (self.equity - peak) / peak * 100.0
             x = self._bar_x()
-            ax.fill_between(x, dd, 0, color="tab:red", alpha=0.4)
-            ax.plot(x, dd, color="tab:red", linewidth=0.8)
+            ax.fill_between(x, dd, 0, color=clr["loss"], alpha=0.25)
+            ax.plot(x, dd, color=clr["loss"], linewidth=1.0)
+            if cp:
+                cp.make_lines_glow(ax=ax)
         ax.set_title("Drawdown")
         ax.set_xlabel("Date" if self.date is not None else "Bar")
         ax.set_ylabel("Drawdown (%)")
@@ -1838,8 +1915,13 @@ class Result:
         """
         Dashboard grid: equity curve, drawdown, trade P&L distribution,
         cumulative trade P&L. Returns the matplotlib Figure.
+        If mplcyberpunk is installed, applies the cyberpunk style globally
+        for the current session.
         """
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        if cp:
+            plt.style.use("cyberpunk")
         fig, axes = plt.subplots(2, 2, figsize=figsize)
 
         self.plot_returns(ax=axes[0, 0])
@@ -1848,8 +1930,8 @@ class Result:
         pnl = self._pnl()
         ax_hist = axes[1, 0]
         if pnl.size:
-            ax_hist.hist(pnl, bins=30, color="tab:blue", alpha=0.7)
-            ax_hist.axvline(0, color="k", linewidth=0.6)
+            ax_hist.hist(pnl, bins=30, alpha=0.75)
+            ax_hist.axvline(0, color=clr["zero"], linewidth=0.8)
         ax_hist.set_title("Trade P&L distribution")
         ax_hist.set_xlabel("P&L")
         ax_hist.set_ylabel("Count")
@@ -1857,7 +1939,9 @@ class Result:
 
         ax_cum = axes[1, 1]
         if pnl.size:
-            ax_cum.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.2)
+            ax_cum.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.5)
+            if cp:
+                cp.make_lines_glow(ax=ax_cum)
         ax_cum.set_title("Cumulative trade P&L")
         ax_cum.set_xlabel("Date" if self.date is not None else "Trade #")
         ax_cum.set_ylabel("Cumulative P&L")
@@ -1895,6 +1979,7 @@ class Result:
     def plot_monthly_returns(self, ax=None, colorbar: bool = True):
         """Heatmap of monthly returns (%), rows=years, columns=months."""
         import matplotlib.pyplot as plt
+        cp, _ = _get_cp()
 
         monthly = self._period_returns("M") * 100
         if monthly.empty:
@@ -1909,21 +1994,24 @@ class Result:
         pivot = pivot.reindex(columns=range(1, 13))
 
         if ax is None:
+            if cp:
+                plt.style.use("cyberpunk")
             h = max(3, len(pivot) * 0.55 + 1.5)
             _, ax = plt.subplots(figsize=(13, h))
 
         valid = pivot.values[~np.isnan(pivot.values)]
         vmax = max(float(np.abs(valid).max()), 0.01) if valid.size else 1.0
 
-        im = ax.imshow(pivot.values, cmap="RdYlGn", aspect="auto",
+        cmap = _cp_diverge_cmap() if cp else "RdYlGn"
+        im = ax.imshow(pivot.values, cmap=cmap, aspect="auto",
                        vmin=-vmax, vmax=vmax, interpolation="nearest")
         for i in range(pivot.shape[0]):
             for j in range(pivot.shape[1]):
                 v = pivot.iloc[i, j]
                 if not np.isnan(v):
-                    tc = "white" if abs(v) > vmax * 0.65 else "black"
+                    tc = "white" if cp or abs(v) > vmax * 0.65 else "black"
                     ax.text(j, i, f"{v:.1f}%", ha="center", va="center",
-                            fontsize=8, color=tc)
+                            fontsize=8, color=tc, fontweight="bold" if cp else "normal")
 
         ax.set_xticks(range(12))
         ax.set_xticklabels(["Jan","Feb","Mar","Apr","May","Jun",
@@ -1938,19 +2026,24 @@ class Result:
     def plot_annual_returns(self, ax=None):
         """Bar chart of annual returns (%)."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         annual = self._period_returns("Y") * 100
         if annual.empty:
             return ax
 
-        if ax is None:
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(max(6, len(annual) * 0.9), 4))
-
-        colors = ["tab:green" if v >= 0 else "tab:red" for v in annual.values]
-        bars = ax.bar(range(len(annual)), annual.values, color=colors, alpha=0.8, width=0.6)
+        colors = [clr["win"] if v >= 0 else clr["loss"] for v in annual.values]
+        bars = ax.bar(range(len(annual)), annual.values, color=colors, alpha=0.85, width=0.6)
+        if cp:
+            _glow_bars(ax, bars)
         ax.set_xticks(range(len(annual)))
         ax.set_xticklabels([str(y) for y in annual.index.year], rotation=45, ha="right")
-        ax.axhline(0, color="k", linewidth=0.8)
+        ax.axhline(0, color=clr["zero"], linewidth=0.8)
         ax.set_title("Annual returns (%)")
         ax.set_ylabel("Return (%)")
         ax.grid(True, alpha=0.3, axis="y")
@@ -1964,22 +2057,27 @@ class Result:
     def plot_return_by_month(self, ax=None):
         """Bar chart of average daily return by calendar month."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         dr = self._daily_returns() * 100
         if dr.empty:
             return ax
 
-        if ax is None:
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(8, 4))
-
         by_month = dr.groupby(dr.index.month).mean().reindex(range(1, 13), fill_value=np.nan)
-        colors = ["tab:green" if (not np.isnan(v) and v >= 0) else "tab:red" for v in by_month]
-        ax.bar(range(12), by_month.values, color=colors, alpha=0.8)
+        colors = [clr["win"] if (not np.isnan(v) and v >= 0) else clr["loss"] for v in by_month]
+        bars = ax.bar(range(12), by_month.values, color=colors, alpha=0.85)
+        if cp:
+            _glow_bars(ax, bars)
         ax.set_xticks(range(12))
         ax.set_xticklabels(["Jan","Feb","Mar","Apr","May","Jun",
                              "Jul","Aug","Sep","Oct","Nov","Dec"],
                             rotation=45, ha="right")
-        ax.axhline(0, color="k", linewidth=0.8)
+        ax.axhline(0, color=clr["zero"], linewidth=0.8)
         ax.set_title("Avg daily return by month")
         ax.set_ylabel("Avg daily return (%)")
         ax.grid(True, alpha=0.3, axis="y")
@@ -1988,21 +2086,26 @@ class Result:
     def plot_return_by_dow(self, ax=None):
         """Bar chart of average daily return by day of week."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         dr = self._daily_returns() * 100
         if dr.empty:
             return ax
 
-        if ax is None:
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(6, 4))
-
         by_dow = dr.groupby(dr.index.dayofweek).mean()
         dow_names = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
-        colors = ["tab:green" if v >= 0 else "tab:red" for v in by_dow]
-        ax.bar(range(len(by_dow)), by_dow.values, color=colors, alpha=0.8)
+        colors = [clr["win"] if v >= 0 else clr["loss"] for v in by_dow]
+        bars = ax.bar(range(len(by_dow)), by_dow.values, color=colors, alpha=0.85)
+        if cp:
+            _glow_bars(ax, bars)
         ax.set_xticks(range(len(by_dow)))
         ax.set_xticklabels([dow_names[i] for i in by_dow.index])
-        ax.axhline(0, color="k", linewidth=0.8)
+        ax.axhline(0, color=clr["zero"], linewidth=0.8)
         ax.set_title("Avg daily return by day of week")
         ax.set_ylabel("Avg daily return (%)")
         ax.grid(True, alpha=0.3, axis="y")
@@ -2011,6 +2114,8 @@ class Result:
     def plot_rolling_sharpe(self, ax=None, window_months: int = 12):
         """Rolling annualised Sharpe ratio computed on monthly returns."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         monthly = self._period_returns("M")
         if len(monthly) < window_months + 1:
@@ -2020,54 +2125,61 @@ class Result:
         rs = (roll.mean() / roll.std()) * np.sqrt(12)
         rs = rs.dropna()
 
-        if ax is None:
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(12, 3))
-
         x = rs.index.to_timestamp()
-        ax.plot(x, rs.values, linewidth=1.2, color="tab:blue")
-        ax.axhline(0, color="k", linewidth=0.8, linestyle="--")
+        ax.plot(x, rs.values, linewidth=1.5, color=clr["primary"])
+        ax.axhline(0, color=clr["zero"], linewidth=0.8, linestyle="--", alpha=0.6)
         ax.fill_between(x, rs.values, 0, where=(rs.values >= 0),
-                        alpha=0.15, color="tab:green")
+                        alpha=0.18, color=clr["win"])
         ax.fill_between(x, rs.values, 0, where=(rs.values < 0),
-                        alpha=0.15, color="tab:red")
+                        alpha=0.18, color=clr["loss"])
         ax.set_title(f"Rolling {window_months}-month Sharpe")
         ax.set_xlabel("Date")
         ax.set_ylabel("Sharpe")
         ax.grid(True, alpha=0.3)
+        if cp:
+            cp.make_lines_glow(ax=ax)
         return ax
 
     def plot_mae_mfe(self, ax=None):
         """Scatter of MAE vs MFE per trade, coloured by outcome (green=win, red=loss)."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         if self.trades.shape[0] == 0:
             return ax
 
-        if ax is None:
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
             _, ax = plt.subplots(figsize=(6, 5))
-
         mae = self.trades[:, F_MAE]
         mfe = self.trades[:, F_MFE]
         pnl = self._pnl()
-        colors = np.where(pnl > 0, "tab:green", "tab:red")
-        ax.scatter(mae, mfe, c=colors, alpha=0.35, s=12, linewidths=0)
-        ax.axhline(0, color="k", linewidth=0.5)
-        ax.axvline(0, color="k", linewidth=0.5)
+        colors = np.where(pnl > 0, clr["win"], clr["loss"])
+        ax.scatter(mae, mfe, c=colors, alpha=0.45, s=14, linewidths=0)
+        ax.axhline(0, color=clr["zero"], linewidth=0.5, alpha=0.6)
+        ax.axvline(0, color=clr["zero"], linewidth=0.5, alpha=0.6)
         ax.set_xlabel("MAE (£)")
         ax.set_ylabel("MFE (£)")
         ax.set_title("MAE vs MFE  (green=win, red=loss)")
         ax.grid(True, alpha=0.3)
+        if cp:
+            cp.make_scatter_glow(ax=ax)
         return ax
 
     def plot_duration_hist(self, ax=None):
         """Histogram of trade durations, split by winning and losing trades."""
         import matplotlib.pyplot as plt
+        cp, clr = _get_cp()
+        standalone = ax is None
 
         if self.trades.shape[0] == 0:
             return ax
-
-        if ax is None:
-            _, ax = plt.subplots(figsize=(7, 4))
 
         _TF_MINS = {
             "1s": 1/60, "1m": 1, "5m": 5, "15m": 15, "30m": 30,
@@ -2088,10 +2200,15 @@ class Result:
         wins   = bh[pnl > 0]
         losses = bh[pnl < 0]
         bins = np.linspace(0, np.percentile(bh, 99) if bh.size else 1, 40)
+
+        if cp and standalone:
+            plt.style.use("cyberpunk")
+        if standalone:
+            _, ax = plt.subplots(figsize=(7, 4))
         if wins.size:
-            ax.hist(wins,   bins=bins, alpha=0.6, color="tab:green", label="Winners")
+            ax.hist(wins,   bins=bins, alpha=0.65, color=clr["win"],  label="Winners")
         if losses.size:
-            ax.hist(losses, bins=bins, alpha=0.6, color="tab:red",   label="Losers")
+            ax.hist(losses, bins=bins, alpha=0.65, color=clr["loss"], label="Losers")
         ax.set_title("Trade duration distribution")
         ax.set_xlabel(xlabel)
         ax.set_ylabel("Count")
@@ -2109,10 +2226,15 @@ class Result:
           Row 2: annual returns | avg return by month | avg return by day of week
           Row 3: rolling Sharpe (full width)
           Row 4: P&L distribution | cumulative trade P&L | MAE vs MFE
+
+        Uses cyberpunk styling when mplcyberpunk is installed.
         """
         import matplotlib.pyplot as plt
         import matplotlib.gridspec as gridspec
 
+        cp, clr = _get_cp()
+        if cp:
+            plt.style.use("cyberpunk")
         has_dates = self.date is not None
         pnl = self._pnl()
 
@@ -2136,7 +2258,7 @@ class Result:
         x_bar = self._bar_x()
 
         # equity curve
-        ax_eq.plot(x_bar, self.equity, linewidth=1.0, color="tab:blue")
+        ax_eq.plot(x_bar, self.equity, linewidth=1.5)
         ax_eq.set_title("Equity curve")
         ax_eq.set_xlabel("Date" if has_dates else "Bar")
         ax_eq.set_ylabel("Equity")
@@ -2146,8 +2268,8 @@ class Result:
         if self.equity.size:
             peak = np.maximum.accumulate(self.equity)
             dd = (self.equity - peak) / peak * 100
-            ax_dd.fill_between(x_bar, dd, 0, color="tab:red", alpha=0.4)
-            ax_dd.plot(x_bar, dd, color="tab:red", linewidth=0.8)
+            ax_dd.fill_between(x_bar, dd, 0, color=clr["loss"], alpha=0.25)
+            ax_dd.plot(x_bar, dd, color=clr["loss"], linewidth=1.0)
         ax_dd.set_title("Drawdown")
         ax_dd.set_xlabel("Date" if has_dates else "Bar")
         ax_dd.set_ylabel("Drawdown (%)")
@@ -2161,9 +2283,9 @@ class Result:
 
         # P&L distribution
         if pnl.size:
-            ax_ph.hist(pnl, bins=40, color="tab:blue", alpha=0.7)
-            ax_ph.axvline(0, color="k", linewidth=0.8)
-            ax_ph.axvline(pnl.mean(), color="tab:orange", linewidth=1.5,
+            ax_ph.hist(pnl, bins=40, alpha=0.75)
+            ax_ph.axvline(0, color=clr["zero"], linewidth=0.8, alpha=0.7)
+            ax_ph.axvline(pnl.mean(), color=clr["neutral"], linewidth=1.5,
                           linestyle="--", label=f"Mean £{pnl.mean():.2f}")
             ax_ph.legend(fontsize=8)
         ax_ph.set_title("Trade P&L distribution")
@@ -2173,13 +2295,19 @@ class Result:
 
         # cumulative P&L
         if pnl.size:
-            ax_pc.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.0, color="tab:blue")
+            ax_pc.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.5)
         ax_pc.set_title("Cumulative trade P&L")
         ax_pc.set_xlabel("Date" if has_dates else "Trade #")
         ax_pc.set_ylabel("Cumulative P&L (£)")
         ax_pc.grid(True, alpha=0.3)
 
         self.plot_mae_mfe(ax=ax_mm)
+
+        # apply glow to line-based axes after all drawing is done
+        if cp:
+            for _ax in (ax_eq, ax_dd, ax_pc):
+                cp.make_lines_glow(ax=_ax)
+            cp.add_underglow(ax=ax_eq)
 
         fig.suptitle(
             f"Backtest Tearsheet  ·  {self.timeframe}  ·  "
@@ -2264,10 +2392,13 @@ class Result:
         bh_w  = bh[wins_mask]
         bh_l  = bh[losses_mask]
 
-        tc = t[:, F_SPREAD_COST].sum()   if t.shape[0] else 0.0
-        ts = t[:, F_SLIPPAGE_COST].sum() if t.shape[0] else 0.0
-        to = t[:, F_OVERNIGHT].sum()     if t.shape[0] else 0.0
-        tk = t[:, F_COMMISSION].sum()    if t.shape[0] else 0.0
+        tc = float(np.nansum(t[:, F_SPREAD_COST]))   if t.shape[0] else 0.0
+        ts = float(np.nansum(t[:, F_SLIPPAGE_COST])) if t.shape[0] else 0.0
+        to = float(np.nansum(t[:, F_OVERNIGHT]))     if t.shape[0] else 0.0
+        tk = float(np.nansum(t[:, F_COMMISSION]))    if t.shape[0] else 0.0
+        ov_mask   = (t[:, F_OVERNIGHT] > 0) if t.shape[0] else np.zeros(0, dtype=bool)
+        n_ov      = int(ov_mask.sum())
+        avg_ov_nz = float(t[ov_mask, F_OVERNIGHT].mean()) if n_ov > 0 else float("nan")
 
         lines = [
             SEP,
@@ -2304,10 +2435,13 @@ class Result:
             row("Avg (losing trades)", dur_str(bh_l.mean()) if bh_l.size else "—"),
             "",
             "  COSTS",
+            row("Commission",          gbp(tk)),
             row("Spread",              gbp(tc)),
             row("Slippage",            gbp(ts)),
-            row("Overnight",           gbp(to)),
-            row("Commission",          gbp(tk)),
+            row("Overnight (total)",   gbp(to)),
+            row("Overnight trades",    f"{n_ov:,} / {m['n_trades']:,}"),
+            row("Overnight (avg/trade)", gbp(avg_ov_nz) if n_ov > 0 else "—"),
+            row("Total costs",         gbp(tc + ts + to + tk)),
         ]
 
         # Per-direction breakdown — only when both sides have trades

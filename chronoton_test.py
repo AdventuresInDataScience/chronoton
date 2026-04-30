@@ -21,11 +21,9 @@ df = df[df['Close'] < 2]
 df = df[df['Close'] >0.8]# filter out bad data
 
 #%% Quick Example Logic
-long_entry = (ta.EMA(df['Close'], timeperiod=180) > ta.EMA(df['Close'], timeperiod=1440)) & (ta.EMA(df['Close'].shift(1), timeperiod=180) < ta.EMA(df['Close'].shift(1), timeperiod=1440)) & df.index.month.isin([3])
-#short_entry = ta.EMA(df['Close'], timeperiod=50) < ta.EMA(df['Close'], timeperiod=200)
-long_exit = (ta.EMA(df['Close'], timeperiod=180) < ta.EMA(df['Close'], timeperiod=1440)) & (ta.EMA(df['Close'].shift(1), timeperiod=180) > ta.EMA(df['Close'].shift(1), timeperiod=1440))
-#short_exit = short_entry.shift(30).fillna(False)  # exit short after 30 minutes
-
+long_entry = (df['Close'] > ta.EMA(df['Close'], timeperiod=72000)) & (df['Close'].shift(1) < ta.EMA(df['Close'].shift(1), timeperiod=72000))
+SLs = (((df['Close'] - df['Open'].rolling(window=1440).min()) * 10000).fillna(50)) * 5
+TPs = SLs * 1
 
 #%%
 start_time = time.time()
@@ -34,30 +32,33 @@ result = run_single_backtest(
     starting_balance=1_000_000,
     long_entries=long_entry,
     short_entries=None, # short_entry,
-    long_exits=long_exit,
+    long_exits=None,
     short_exits=None, # short_exit,
-    position_sizing="value",
-    position_value=10_000.0,      # £10k notional per trade
+    position_sizing="percent_at_risk",
+    position_percent_at_risk=0.01,
     leverage=30.0,                # 30:1 leverage typical for FX retail
+    SL=SLs,
+    TP=TPs,
 
     # Costs in pips; pip_equals converts to price units
     pip_equals=0.0001,
-    spread=1.2,                   # 1.5 pip half-spread
-    slippage=0.1,                 # 0.1 pip slippage
-    commission=0.0,               # spread-bet: no separate commission
+    spread=0.6,                   
+    slippage=0.0,                 
+    commission=0.0,               
 
     # Overnight: 3% annual base funding, 1% borrow spread
     # → long pays 4% / 360 per day, short pays 2% / 360 per day
     overnight_charge=(0.03, 0.01),
     timeframe="1m",
+    bars_per_year="forex",
 )
 end_time = time.time()
 print(f"Backtest completed in {end_time - start_time:.2f} seconds")
 print(result.tearsheet())
-result.plot_tearsheet()
-plt.show()
-# Example of singel chart
-result.plot_return_by_month()
+#result.plot_tearsheet()
+#plt.show()
+# Example of single chart
+result.plot_returns(log=False) 
 plt.show()
 #%% Issues
 #1. Overnight often not appearing even when thre are thousands of trades

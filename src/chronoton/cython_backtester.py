@@ -86,8 +86,8 @@ def _inner_loop_cy(
     sizing_static: float,
     sizing_array: np.ndarray,
     sl_arr: np.ndarray,
-    tp: float,
-    ts: float,
+    tp_arr: np.ndarray,
+    ts_arr: np.ndarray,
     leverage: float,
     commission: float,
     spread_arr: np.ndarray,
@@ -157,8 +157,8 @@ def _inner_loop_cy(
         float(sizing_static),
         sizing_array,
         np.ascontiguousarray(sl_arr, dtype=np.float64),
-        float(tp),
-        float(ts),
+        np.ascontiguousarray(tp_arr, dtype=np.float64),
+        np.ascontiguousarray(ts_arr, dtype=np.float64),
         float(leverage),
         float(commission),
         np.ascontiguousarray(spread_arr, dtype=np.float64),
@@ -230,6 +230,7 @@ def run_single_backtest(
     max_positions: int = 1,
     hedging: bool = False,
     timeframe: str = "1d",
+    bars_per_year: Optional[Union[float, str]] = None,
     *args,
 ) -> Result:
     """
@@ -272,8 +273,19 @@ def run_single_backtest(
     else:
         sl_arr = _process_spread_slippage(SL, n, "SL") * pip_equals
 
-    tp_val = float("nan") if TP is None else float(TP) * pip_equals
-    ts_val = float("nan") if TS is None else float(TS) * pip_equals
+    if TP is None:
+        tp_arr = np.full(n, np.nan, dtype=np.float64)
+    elif isinstance(TP, (int, float, np.integer, np.floating)):
+        tp_arr = np.full(n, float(TP) * pip_equals, dtype=np.float64)
+    else:
+        tp_arr = _process_spread_slippage(TP, n, "TP") * pip_equals
+
+    if TS is None:
+        ts_arr = np.full(n, np.nan, dtype=np.float64)
+    elif isinstance(TS, (int, float, np.integer, np.floating)):
+        ts_arr = np.full(n, float(TS) * pip_equals, dtype=np.float64)
+    else:
+        ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
 
     # --- position sizing ---------------------------------------------
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
@@ -330,7 +342,7 @@ def run_single_backtest(
             long_entries_v, long_exits_v, short_entries_v, short_exits_v,
             float(starting_balance),
             method_code, static_size, sizes_array,
-            sl_arr, tp_val, ts_val,
+            sl_arr, tp_arr, ts_arr,
             float(leverage), float(commission),
             spread_arr, slippage_arr,
             long_fee_vec, short_fee_vec,
@@ -343,14 +355,14 @@ def run_single_backtest(
             long_entries_v, long_exits_v, short_entries_v, short_exits_v,
             float(starting_balance),
             method_code, static_size, sizes_array, sizing_fn,
-            sl_arr, tp_val, ts_val,
+            sl_arr, tp_arr, ts_arr,
             float(leverage), float(commission),
             spread_arr, slippage_arr,
             long_fee_vec, short_fee_vec,
             int(max_positions), bool(hedging),
         )
 
-    return Result(cash, equity, closed, timeframe, date)
+    return Result(cash, equity, closed, timeframe, date, bars_per_year)
 
 
 # ---------------------------------------------------------------------------

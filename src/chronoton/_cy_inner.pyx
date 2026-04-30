@@ -219,8 +219,8 @@ def inner_loop_fast(
     double sizing_static,
     const double[:] sizing_array,          # empty (size 0) when unused
     const double[:] sl_arr,
-    double tp,
-    double ts,
+    const double[:] tp_arr,
+    const double[:] ts_arr,
     double leverage,
     double commission,
     const double[:] spread_arr,
@@ -365,7 +365,7 @@ def inner_loop_fast(
                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
                     exit_commission = commission * fabs(exit_px_net * size)
                     proceeds = direction * (exit_px_net - entry_px) * size
-                    current_cash += (size * entry_px) + proceeds
+                    current_cash += (size * entry_px / leverage) + proceeds
                     current_cash -= exit_commission
                     n_closed = _exit_position(
                         k, i, t_ns, exit_px_net, <double>exit_reason,
@@ -394,7 +394,7 @@ def inner_loop_fast(
                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
                         exit_commission = commission * fabs(exit_px_net * size)
                         proceeds = direction * (exit_px_net - entry_px) * size
-                        current_cash += (size * entry_px) + proceeds
+                        current_cash += (size * entry_px / leverage) + proceeds
                         current_cash -= exit_commission
                         n_closed = _exit_position(
                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
@@ -426,7 +426,7 @@ def inner_loop_fast(
                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
                         exit_commission = commission * fabs(exit_px_net * size)
                         proceeds = direction * (exit_px_net - entry_px) * size
-                        current_cash += (size * entry_px) + proceeds
+                        current_cash += (size * entry_px / leverage) + proceeds
                         current_cash -= exit_commission
                         n_closed = _exit_position(
                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
@@ -458,15 +458,14 @@ def inner_loop_fast(
                         for kk in range(n_slots):
                             if slot_active[kk] != 0:
                                 d = open_positions[kk, F_DIRECTION]
+                                equity_now += (open_positions[kk, F_SIZE]
+                                               * open_positions[kk, F_ENTRY_PRICE] / leverage)
                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
                                                  * open_positions[kk, F_SIZE])
                         size = (sizing_static * equity_now * leverage) / entry_px_net
                     elif sizing_method_code == SIZING_VALUE:
                         size = (sizing_static * leverage) / entry_px_net
                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
-                        # size = (risk_pct * equity) / sl_dist; leverage NOT applied.
-                        # Python dispatcher has already verified SL is not None;
-                        # a per-bar NaN still guards the entry here.
                         sl_dist = sl_arr[i]
                         if isnan(sl_dist) or sl_dist <= 0.0:
                             size = 0.0
@@ -475,6 +474,8 @@ def inner_loop_fast(
                             for kk in range(n_slots):
                                 if slot_active[kk] != 0:
                                     d = open_positions[kk, F_DIRECTION]
+                                    equity_now += (open_positions[kk, F_SIZE]
+                                                   * open_positions[kk, F_ENTRY_PRICE] / leverage)
                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
                                                      * open_positions[kk, F_SIZE])
                             size = (sizing_static * equity_now) / sl_dist
@@ -485,7 +486,7 @@ def inner_loop_fast(
                         entry_spread = spread_arr[i] * size
                         entry_slippage = slippage_arr[i] * size
                         entry_commission = commission * fabs(entry_px_net * size)
-                        margin = size * entry_px_net
+                        margin = size * entry_px_net / leverage
 
                         if current_cash >= margin + entry_commission:
                             current_cash -= margin + entry_commission
@@ -495,14 +496,14 @@ def inner_loop_fast(
                                 sl_price = NAN
                             else:
                                 sl_price = entry_px_net - desired_dir * sl_dist
-                            if isnan(tp):
+                            if isnan(tp_arr[i]):
                                 tp_price = NAN
                             else:
-                                tp_price = entry_px_net + desired_dir * tp
-                            if isnan(ts):
+                                tp_price = entry_px_net + desired_dir * tp_arr[i]
+                            if isnan(ts_arr[i]):
                                 ts_dist_val = NAN
                             else:
-                                ts_dist_val = ts
+                                ts_dist_val = ts_arr[i]
 
                             _enter_position(
                                 slot_idx, <double>desired_dir, i, t_ns,
@@ -523,6 +524,8 @@ def inner_loop_fast(
                         for kk in range(n_slots):
                             if slot_active[kk] != 0:
                                 d = open_positions[kk, F_DIRECTION]
+                                equity_now += (open_positions[kk, F_SIZE]
+                                               * open_positions[kk, F_ENTRY_PRICE] / leverage)
                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
                                                  * open_positions[kk, F_SIZE])
                         size = (sizing_static * equity_now * leverage) / entry_px_net
@@ -537,6 +540,8 @@ def inner_loop_fast(
                             for kk in range(n_slots):
                                 if slot_active[kk] != 0:
                                     d = open_positions[kk, F_DIRECTION]
+                                    equity_now += (open_positions[kk, F_SIZE]
+                                                   * open_positions[kk, F_ENTRY_PRICE] / leverage)
                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
                                                      * open_positions[kk, F_SIZE])
                             size = (sizing_static * equity_now) / sl_dist
@@ -547,7 +552,7 @@ def inner_loop_fast(
                         entry_spread = spread_arr[i] * size
                         entry_slippage = slippage_arr[i] * size
                         entry_commission = commission * fabs(entry_px_net * size)
-                        margin = size * entry_px_net
+                        margin = size * entry_px_net / leverage
 
                         if current_cash >= margin + entry_commission:
                             current_cash -= margin + entry_commission
@@ -557,14 +562,14 @@ def inner_loop_fast(
                                 sl_price = NAN
                             else:
                                 sl_price = entry_px_net - desired_dir * sl_dist
-                            if isnan(tp):
+                            if isnan(tp_arr[i]):
                                 tp_price = NAN
                             else:
-                                tp_price = entry_px_net + desired_dir * tp
-                            if isnan(ts):
+                                tp_price = entry_px_net + desired_dir * tp_arr[i]
+                            if isnan(ts_arr[i]):
                                 ts_dist_val = NAN
                             else:
-                                ts_dist_val = ts
+                                ts_dist_val = ts_arr[i]
 
                             _enter_position(
                                 slot_idx, <double>desired_dir, i, t_ns,
@@ -583,7 +588,7 @@ def inner_loop_fast(
                 d = open_positions[k, F_DIRECTION]
                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])
                                  * open_positions[k, F_SIZE])
-                margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE]
+                margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
                 open_positions[k, F_BARS_HELD] = <double>(
                     i - <Py_ssize_t>open_positions[k, F_ENTRY_BAR]
                 )
@@ -621,7 +626,7 @@ def inner_loop_fast(
                         realised_pnl = -share * total_loss_budget
                         exit_px_net = entry_px + realised_pnl / (direction * size)
 
-                    current_cash += (size * entry_px) + realised_pnl
+                    current_cash += (size * entry_px / leverage) + realised_pnl
                     n_closed = _exit_position(
                         k, i, t_ns, exit_px_net, <double>EXIT_LIQUIDATION,
                         0.0, 0.0, 0.0,
@@ -663,7 +668,7 @@ def inner_loop_fast(
                     size = open_positions[k, F_SIZE]
                     entry_px = open_positions[k, F_ENTRY_PRICE]
                     realised_pnl = direction * (c[n - 1] - entry_px) * size
-                    current_cash += (size * entry_px) + realised_pnl
+                    current_cash += (size * entry_px / leverage) + realised_pnl
                     n_closed = _exit_position(
                         k, n - 1, date_ns[n - 1], c[n - 1],
                         <double>EXIT_END_OF_DATA,

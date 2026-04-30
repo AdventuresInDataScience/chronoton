@@ -190,6 +190,7 @@ def run_single_backtest(
     max_positions: int = 1,
     hedging: bool = False,
     timeframe: str = "1d",
+    bars_per_year: Optional[Union[float, str]] = None,
     *args,
 ) -> "Result":
     """
@@ -240,8 +241,19 @@ def run_single_backtest(
     else:
         sl_arr = _process_spread_slippage(SL, n, "SL") * pip_equals
 
-    tp_val = float("nan") if TP is None else float(TP) * pip_equals
-    ts_val = float("nan") if TS is None else float(TS) * pip_equals
+    if TP is None:
+        tp_arr = np.full(n, np.nan, dtype=np.float64)
+    elif isinstance(TP, (int, float, np.integer, np.floating)):
+        tp_arr = np.full(n, float(TP) * pip_equals, dtype=np.float64)
+    else:
+        tp_arr = _process_spread_slippage(TP, n, "TP") * pip_equals
+
+    if TS is None:
+        ts_arr = np.full(n, np.nan, dtype=np.float64)
+    elif isinstance(TS, (int, float, np.integer, np.floating)):
+        ts_arr = np.full(n, float(TS) * pip_equals, dtype=np.float64)
+    else:
+        ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
 
     # --- position sizing ------------------------------------------------
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
@@ -311,14 +323,14 @@ def run_single_backtest(
         long_entries_v, long_exits_v, short_entries_v, short_exits_v,
         float(starting_balance),
         method_code, static_size, sizes_array, sizing_fn,
-        sl_arr, tp_val, ts_val,
+        sl_arr, tp_arr, ts_arr,
         float(leverage), float(commission),
         spread_arr, slippage_arr,
         long_fee_vec, short_fee_vec,
         int(max_positions), bool(hedging),
     )
 
-    return Result(cash, equity, closed, timeframe, date)
+    return Result(cash, equity, closed, timeframe, date, bars_per_year)
 
 
 def _process_series(
@@ -869,9 +881,6 @@ def _process_overnight_charge(
 #
 #   Commodities / metals futures (CME Globex ~23h, Sun-Fri):
 #       "1d" ≈ 252, "1h" ≈ 252*23 = 5796. Per-contract schedules vary.
-#
-# TODO: expose a bars_per_year override via kwargs on run_single_backtest
-# so users don't have to monkey-patch this dict.
 # ---------------------------------------------------------------------------
 _BARS_PER_YEAR = {
     "1s":  252 * 6.5 * 3600,
@@ -884,6 +893,23 @@ _BARS_PER_YEAR = {
     "1d":  252,
     "1w":  52,
     "1M":  12,
+}
+
+# Minutes per bar — used to compute bars_per_year from a calendar preset.
+_TF_MINS_PER_BAR = {
+    "1s": 1/60, "1m": 1, "5m": 5, "15m": 15, "30m": 30,
+    "1h": 60, "4h": 240, "1d": 1440, "1w": 10080, "1M": 43200,
+}
+
+# Named calendar presets for the bars_per_year kwarg.
+# days  = trading days per year
+# hours = trading hours per day (ignored for daily+ timeframes)
+_CALENDAR_PRESETS: dict = {
+    "us_equity": {"days": 252, "hours": 6.5},
+    "uk_equity": {"days": 252, "hours": 8.5},
+    "forex":     {"days": 260, "hours": 24.0},   # Mon–Fri, near-24 h
+    "crypto":    {"days": 365, "hours": 24.0},   # 24/7
+    "futures":   {"days": 252, "hours": 23.0},   # CME Globex ~23 h
 }
 
 
@@ -944,8 +970,8 @@ def _inner_loop(
     sizing_array: np.ndarray,
     sizing_fn: Optional[Callable],
     sl_arr: np.ndarray,       # per-bar SL distance (price units); nan = no SL
-    tp: float,                # scalar TP distance (price units); nan = no TP
-    ts: float,                # scalar TS distance (price units); nan = no TS
+    tp_arr: np.ndarray,       # per-bar TP distance (price units); nan = no TP
+    ts_arr: np.ndarray,       # per-bar TS distance (price units); nan = no TS
     leverage: float,
     commission: float,        # fraction of notional
     spread_arr: np.ndarray,   # per-bar half-spread (price units)
@@ -1074,7 +1100,7 @@ def _inner_loop(
                 exit_commission = commission * abs(exit_px_net * size)
                 # Proceeds back to cash
                 proceeds = direction * (exit_px_net - entry_px) * size
-                current_cash += (size * entry_px) + proceeds  # return margin + pnl
+                current_cash += (size * entry_px / leverage) + proceeds  # return margin + pnl
                 current_cash -= exit_commission
                 n_closed = _exit_position(
                     k, i, t_ns, exit_px_net, exit_reason,
@@ -1097,7 +1123,7 @@ def _inner_loop(
                     exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
                     exit_commission = commission * abs(exit_px_net * size)
                     proceeds = direction * (exit_px_net - entry_px) * size
-                    current_cash += (size * entry_px) + proceeds
+                    current_cash += (size * entry_px / leverage) + proceeds
                     current_cash -= exit_commission
                     n_closed = _exit_position(
                         k, i, t_ns, exit_px_net, EXIT_SIGNAL,
@@ -1126,7 +1152,7 @@ def _inner_loop(
                     exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
                     exit_commission = commission * abs(exit_px_net * size)
                     proceeds = direction * (exit_px_net - entry_px) * size
-                    current_cash += (size * entry_px) + proceeds
+                    current_cash += (size * entry_px / leverage) + proceeds
                     current_cash -= exit_commission
                     n_closed = _exit_position(
                         k, i, t_ns, exit_px_net, EXIT_SIGNAL,
@@ -1150,12 +1176,13 @@ def _inner_loop(
 
             # Compute size
             if sizing_method_code == 0:  # percent_equity
-                # Current equity = cash + unrealized P&L of anything still open
+                # Current equity = cash + locked margin + unrealized P&L
                 equity_now = current_cash
                 for kk in range(n_slots):
                     if slot_active[kk]:
                         r2 = open_positions[kk]
                         d2 = r2[F_DIRECTION]
+                        equity_now += r2[F_SIZE] * r2[F_ENTRY_PRICE] / leverage
                         equity_now += d2 * (price_c - r2[F_ENTRY_PRICE]) * r2[F_SIZE]
                 size = (sizing_static * equity_now * leverage) / entry_px_net
             elif sizing_method_code == 1:  # value
@@ -1178,6 +1205,7 @@ def _inner_loop(
                     if slot_active[kk]:
                         r2 = open_positions[kk]
                         d2 = r2[F_DIRECTION]
+                        equity_now += r2[F_SIZE] * r2[F_ENTRY_PRICE] / leverage
                         equity_now += d2 * (price_c - r2[F_ENTRY_PRICE]) * r2[F_SIZE]
                 size = (sizing_static * equity_now) / sl_dist_now
             else:  # custom callable
@@ -1194,7 +1222,7 @@ def _inner_loop(
             entry_spread = spread_arr[i] * size
             entry_slippage = slippage_arr[i] * size
             entry_commission = commission * abs(entry_px_net * size)
-            margin = size * entry_px_net  # reserved; freed on exit
+            margin = size * entry_px_net / leverage  # reserved; freed on exit
 
             if current_cash < margin + entry_commission:
                 continue  # insufficient cash
@@ -1207,11 +1235,13 @@ def _inner_loop(
                 sl_price = np.nan
             else:
                 sl_price = entry_px_net - desired_dir * sl_dist
-            if np.isnan(tp):
+            tp_dist = tp_arr[i]
+            if np.isnan(tp_dist):
                 tp_price = np.nan
             else:
-                tp_price = entry_px_net + desired_dir * tp
-            ts_dist_val = np.nan if np.isnan(ts) else ts
+                tp_price = entry_px_net + desired_dir * tp_dist
+            ts_dist = ts_arr[i]
+            ts_dist_val = np.nan if np.isnan(ts_dist) else ts_dist
 
             _enter_position(
                 slot_idx, desired_dir, i, t_ns, entry_px_net, size,
@@ -1229,7 +1259,7 @@ def _inner_loop(
             row = open_positions[k]
             d = row[F_DIRECTION]
             unrealized += d * (price_c - row[F_ENTRY_PRICE]) * row[F_SIZE]
-            margin_held += row[F_SIZE] * row[F_ENTRY_PRICE]
+            margin_held += row[F_SIZE] * row[F_ENTRY_PRICE] / leverage
             row[F_BARS_HELD] = i - int(row[F_ENTRY_BAR])
         equity[i] = current_cash + margin_held + unrealized
         cash[i] = current_cash
@@ -1280,7 +1310,7 @@ def _inner_loop(
                     # realised = direction * (exit - entry) * size
                     exit_px_net = entry_px + realised_pnl / (direction * size)
 
-                current_cash += (size * entry_px) + realised_pnl
+                current_cash += (size * entry_px / leverage) + realised_pnl
                 n_closed = _exit_position(
                     k, i, t_ns, exit_px_net, EXIT_LIQUIDATION,
                     0.0, 0.0, 0.0,
@@ -1315,7 +1345,7 @@ def _inner_loop(
             size = row[F_SIZE]
             entry_px = row[F_ENTRY_PRICE]
             realised_pnl = direction * (final_price - entry_px) * size
-            current_cash += (size * entry_px) + realised_pnl
+            current_cash += (size * entry_px / leverage) + realised_pnl
             n_closed = _exit_position(
                 k, final_bar, final_t_ns, final_price, EXIT_END_OF_DATA,
                 0.0, 0.0, 0.0,
@@ -1403,18 +1433,34 @@ class Result:
 
     def __init__(self, cash: np.ndarray, equity: np.ndarray,
                  trades: np.ndarray, timeframe: str = "1d",
-                 date: Optional[np.ndarray] = None):
+                 date: Optional[np.ndarray] = None,
+                 bars_per_year: Optional[Union[float, str]] = None):
         self.cash = cash
         self.equity = equity
         self.trades = trades
         self.timeframe = timeframe
         self.date = date  # datetime64[ns] bar timestamps; None if not provided
+        self._bars_per_year_override = bars_per_year
 
     # ------------------------------------------------------------------ #
     # Private helpers                                                     #
     # ------------------------------------------------------------------ #
     def _bars_per_year(self) -> float:
-        return _BARS_PER_YEAR.get(self.timeframe, 252)
+        override = self._bars_per_year_override
+        if override is None:
+            return _BARS_PER_YEAR.get(self.timeframe, 252)
+        if isinstance(override, str):
+            preset = _CALENDAR_PRESETS.get(override)
+            if preset is None:
+                raise ValueError(
+                    f"Unknown calendar preset {override!r}; "
+                    f"valid options: {list(_CALENDAR_PRESETS)} or pass a number directly."
+                )
+            mins = _TF_MINS_PER_BAR.get(self.timeframe, 1440)
+            if mins >= 1440:
+                return float(preset["days"])
+            return float(preset["days"] * preset["hours"] * 60.0 / mins)
+        return float(override)
 
     def _returns(self) -> np.ndarray:
         """Per-bar simple (arithmetic) returns from the equity curve."""
@@ -1500,7 +1546,7 @@ class Result:
         downside = r[r < rf_per_bar] - rf_per_bar
         if downside.size == 0:
             return np.inf
-        downside_std = np.sqrt(np.mean(downside ** 2))
+        downside_std = np.sqrt(np.sum(downside ** 2) / r.size)
         if downside_std == 0:
             return 0.0
         return np.sqrt(bpy) * (r.mean() - rf_per_bar) / downside_std
@@ -1515,7 +1561,7 @@ class Result:
         downside = r[r < rf_per_bar] - rf_per_bar
         if downside.size == 0:
             return np.inf
-        downside_std = np.sqrt(np.mean(downside ** 2))
+        downside_std = np.sqrt(np.sum(downside ** 2) / r.size)
         if downside_std == 0:
             return 0.0
         return np.sqrt(bpy) * (r.mean() - rf_per_bar) / downside_std

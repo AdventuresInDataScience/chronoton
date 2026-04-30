@@ -350,7 +350,7 @@ def run_single_backtest(
             int(max_positions), bool(hedging),
         )
 
-    return Result(cash, equity, closed, timeframe)
+    return Result(cash, equity, closed, timeframe, date)
 
 
 # ---------------------------------------------------------------------------

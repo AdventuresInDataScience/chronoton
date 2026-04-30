@@ -207,7 +207,8 @@ result = run_single_backtest(
     commission=0.0,               # spread-bet: no separate commission
 
     # Overnight: 3% annual base funding, 1% borrow spread
-    # → long pays 2% / 360 per day, short pays 4% / 360 per day
+    # → long pays (base + borrow) = 4% / 360 per day
+    # → short pays (base - borrow) = 2% / 360 per day
     overnight_charge=(0.03, 0.01),
     timeframe="1d",
 )
@@ -219,7 +220,7 @@ print(f"Spread cost    : £{t['spread_cost'].iloc[0]:.4f}")
 print(f"Slippage cost  : £{t['slippage_cost'].iloc[0]:.4f}")
 ```
 
-**Interpreting the overnight cost:** the position is held for ~13 bars (bars 2–15). The daily long rate is `(0.03 - 0.01) / 360 = 0.0000556` per unit of notional. With a Wednesday in the hold window charged at 3×, the total is slightly more than `13 × rate × notional`.
+**Interpreting the overnight cost:** the position is held for ~13 bars (bars 2–15). The daily long rate is `(0.03 + 0.01) / 360 = 0.0001111` per unit of notional. With a Wednesday in the hold window charged at 3×, the total is slightly more than `13 × rate × notional`.
 
 ---
 
@@ -513,15 +514,39 @@ print(f"Biggest loss  : £{m['biggest_loss']:.2f}")
 - `profit_factor` — `inf` if there are no losing trades
 - `calmar` — `inf` if max drawdown is zero
 
-### Plotting
+### Text tearsheet
 
 ```python
-# Individual plots
-ax = result.plot_returns(log=False)   # equity curve
-ax = result.plot_drawdown()           # underwater drawdown curve
+print(result.tearsheet())
+# Prints a formatted block with sections: EQUITY, RISK, TRADES, DURATION,
+# COSTS — and a long/short breakdown when both directions are present.
+# "Expectancy" is shown as "Avg PnL per trade" to avoid ambiguity.
+```
 
-# 2×2 dashboard: equity, drawdown, P&L histogram, cumulative P&L
+### Visual tearsheet
+
+```python
+# Full 9-panel dashboard
+fig = result.plot_tearsheet(figsize=(18, 26))
+plt.show()
+
+# Compact 4-panel dashboard (equity, drawdown, P&L hist, cumulative P&L)
 fig = result.plot_metrics(figsize=(14, 9))
+plt.show()
+```
+
+### Individual panels
+
+```python
+ax = result.plot_returns(log=False)       # equity curve (date x-axis)
+ax = result.plot_drawdown()               # underwater drawdown curve
+ax = result.plot_monthly_returns()        # CAGR heatmap by month/year
+ax = result.plot_annual_returns()         # bar chart by calendar year
+ax = result.plot_return_by_month()        # seasonality — by calendar month
+ax = result.plot_return_by_dow()          # seasonality — by day of week
+ax = result.plot_rolling_sharpe(window=252)  # rolling Sharpe
+ax = result.plot_mae_mfe()               # MAE vs MFE scatter by trade
+ax = result.plot_duration_hist()         # trade duration histogram
 plt.show()
 ```
 
@@ -529,7 +554,17 @@ plt.show()
 
 ## 11. Cython fast path and parity check
 
-Swap the import to `cython_backtester` for the compiled fast path. The API is identical. The dispatcher automatically falls back to the pure-Python loop for `position_sizing="custom"` or when the extension is not built.
+`from chronoton import run_single_backtest` **already dispatches to the Cython fast path** when the compiled extension is available — no import change is needed. You can confirm this at runtime:
+
+```python
+from chronoton import cython_available, cython_import_error
+print(cython_available())      # True → compiled fast path active
+print(cython_import_error())   # None if compiled, else the ImportError
+```
+
+The dispatcher automatically falls back to the pure-Python loop for `position_sizing="custom"` (a Python callable can't cross the `nogil` boundary) or when the extension is not built.
+
+For parity testing — or to force the pure-Python path explicitly — you can import both modules directly:
 
 ```python
 import chronoton.backtester as bt_py
@@ -646,7 +681,7 @@ result = run_single_backtest(
 )
 
 # ── 4. Summary ───────────────────────────────────────────────────────────────
-print(result)
+print(result.tearsheet())       # full text stats block
 
 m = result.calculate_metrics()
 print(f"\nCAGR         : {m['cagr']*100:.1f}%")
@@ -659,7 +694,7 @@ print(f"\nTrades by exit reason:\n{df['exit_reason'].value_counts()}")
 print(f"\nFirst 5 trades:\n{df.head().to_string()}")
 
 # ── 5. Plot ──────────────────────────────────────────────────────────────────
-fig = result.plot_metrics(figsize=(14, 9))
+fig = result.plot_tearsheet(figsize=(18, 26))   # 9-panel visual tearsheet
 plt.suptitle("SMA 20/50 Crossover — Synthetic Equity", y=1.01)
 plt.tight_layout()
 plt.show()

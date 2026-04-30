@@ -318,7 +318,7 @@ def run_single_backtest(
         int(max_positions), bool(hedging),
     )
 
-    return Result(cash, equity, closed, timeframe)
+    return Result(cash, equity, closed, timeframe, date)
 
 
 def _process_series(
@@ -705,11 +705,12 @@ def _process_overnight_charge(
 
         - ``annual_base``  — fixed financing component applied regardless
           of direction (e.g. funding / risk-free rate).
-        - ``annual_borrow`` — direction-dependent component. Conventionally
-          debited from shorts and credited to / reducing cost on longs.
+        - ``annual_borrow`` — direction-dependent component. Longs borrow
+          capital and pay the full cost (base + borrow); shorts lend the
+          security/currency and receive the borrow credit, paying only the base.
           Sign convention applied here:
-              long_daily  = (annual_base - annual_borrow) / denominator
-              short_daily = (annual_base + annual_borrow) / denominator
+              long_daily  = (annual_base + annual_borrow) / denominator
+              short_daily = (annual_base - annual_borrow) / denominator
           Flip the sign of ``annual_borrow`` at the call site if your
           venue's convention is inverted.
 
@@ -807,8 +808,8 @@ def _process_overnight_charge(
     # ---- daily rates -----------------------------------------------------
     daily_base = float(annual_base) / denominator
     daily_borrow = float(annual_borrow) / denominator
-    long_daily = daily_base - daily_borrow
-    short_daily = daily_base + daily_borrow
+    long_daily = daily_base + daily_borrow
+    short_daily = daily_base - daily_borrow
 
     # ---- enumerate rollover moments in (date[0], date[-1]] --------------
     t_start = pd.Timestamp(date_arr[0])
@@ -1340,11 +1341,13 @@ class Result:
     """
 
     def __init__(self, cash: np.ndarray, equity: np.ndarray,
-                 trades: np.ndarray, timeframe: str = "1d"):
+                 trades: np.ndarray, timeframe: str = "1d",
+                 date: Optional[np.ndarray] = None):
         self.cash = cash
         self.equity = equity
         self.trades = trades
         self.timeframe = timeframe
+        self.date = date  # datetime64[ns] bar timestamps; None if not provided
 
     # ------------------------------------------------------------------ #
     # Private helpers                                                     #
@@ -1777,6 +1780,23 @@ class Result:
         return df
 
     # ------------------------------------------------------------------ #
+    # Plotting helpers                                                   #
+    # ------------------------------------------------------------------ #
+    def _bar_x(self):
+        """X-axis values for bar-level series: dates if available, else integer indices."""
+        if self.date is not None:
+            return pd.to_datetime(self.date)
+        return np.arange(self.equity.size)
+
+    def _trade_x(self):
+        """X-axis values for trade-level series: exit dates if available, else trade indices."""
+        if self.trades.shape[0] == 0:
+            return np.array([])
+        if self.date is not None:
+            return pd.to_datetime(self.trades[:, F_EXIT_TIME].astype(np.int64))
+        return np.arange(self.trades.shape[0])
+
+    # ------------------------------------------------------------------ #
     # Plotting                                                            #
     # ------------------------------------------------------------------ #
     def plot_returns(self, ax=None, log: bool = False):
@@ -1787,11 +1807,12 @@ class Result:
         import matplotlib.pyplot as plt
         if ax is None:
             _, ax = plt.subplots(figsize=(10, 4))
-        ax.plot(self.equity, linewidth=1.2)
+        x = self._bar_x()
+        ax.plot(x, self.equity, linewidth=1.2)
         if log:
             ax.set_yscale("log")
         ax.set_title("Equity curve")
-        ax.set_xlabel("Bar")
+        ax.set_xlabel("Date" if self.date is not None else "Bar")
         ax.set_ylabel("Equity")
         ax.grid(True, alpha=0.3)
         return ax
@@ -1804,10 +1825,11 @@ class Result:
         if self.equity.size:
             peak = np.maximum.accumulate(self.equity)
             dd = (self.equity - peak) / peak * 100.0
-            ax.fill_between(np.arange(dd.size), dd, 0, color="tab:red", alpha=0.4)
-            ax.plot(dd, color="tab:red", linewidth=0.8)
+            x = self._bar_x()
+            ax.fill_between(x, dd, 0, color="tab:red", alpha=0.4)
+            ax.plot(x, dd, color="tab:red", linewidth=0.8)
         ax.set_title("Drawdown")
-        ax.set_xlabel("Bar")
+        ax.set_xlabel("Date" if self.date is not None else "Bar")
         ax.set_ylabel("Drawdown (%)")
         ax.grid(True, alpha=0.3)
         return ax
@@ -1835,13 +1857,335 @@ class Result:
 
         ax_cum = axes[1, 1]
         if pnl.size:
-            ax_cum.plot(np.cumsum(pnl), linewidth=1.2)
+            ax_cum.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.2)
         ax_cum.set_title("Cumulative trade P&L")
-        ax_cum.set_xlabel("Trade #")
+        ax_cum.set_xlabel("Date" if self.date is not None else "Trade #")
         ax_cum.set_ylabel("Cumulative P&L")
         ax_cum.grid(True, alpha=0.3)
 
         fig.tight_layout()
+        return fig
+
+    # ------------------------------------------------------------------ #
+    # Period-return helpers (used by extended plot methods below)        #
+    # ------------------------------------------------------------------ #
+    def _period_equity(self, freq: str) -> pd.Series:
+        """Last equity value per calendar period (e.g. freq='M' or 'Y')."""
+        if self.date is None:
+            return pd.Series(dtype=float)
+        eq = pd.Series(self.equity, index=pd.to_datetime(self.date))
+        return eq.groupby(eq.index.to_period(freq)).last()
+
+    def _period_returns(self, freq: str) -> pd.Series:
+        """Period-over-period simple returns (decimals) at the given frequency."""
+        pe = self._period_equity(freq)
+        return pe.pct_change().dropna() if not pe.empty else pd.Series(dtype=float)
+
+    def _daily_returns(self) -> pd.Series:
+        """Daily returns aggregated from bar-level equity. Empty if no dates."""
+        if self.date is None:
+            return pd.Series(dtype=float)
+        eq = pd.Series(self.equity, index=pd.to_datetime(self.date))
+        daily = eq.resample("D").last().dropna()
+        return daily.pct_change().dropna() if len(daily) >= 2 else pd.Series(dtype=float)
+
+    # ------------------------------------------------------------------ #
+    # Extended individual plot methods                                   #
+    # ------------------------------------------------------------------ #
+    def plot_monthly_returns(self, ax=None, colorbar: bool = True):
+        """Heatmap of monthly returns (%), rows=years, columns=months."""
+        import matplotlib.pyplot as plt
+
+        monthly = self._period_returns("M") * 100
+        if monthly.empty:
+            return ax
+
+        df = pd.DataFrame({
+            "ret":   monthly.values,
+            "year":  monthly.index.year,
+            "month": monthly.index.month,
+        })
+        pivot = df.pivot(index="year", columns="month", values="ret")
+        pivot = pivot.reindex(columns=range(1, 13))
+
+        if ax is None:
+            h = max(3, len(pivot) * 0.55 + 1.5)
+            _, ax = plt.subplots(figsize=(13, h))
+
+        valid = pivot.values[~np.isnan(pivot.values)]
+        vmax = max(float(np.abs(valid).max()), 0.01) if valid.size else 1.0
+
+        im = ax.imshow(pivot.values, cmap="RdYlGn", aspect="auto",
+                       vmin=-vmax, vmax=vmax, interpolation="nearest")
+        for i in range(pivot.shape[0]):
+            for j in range(pivot.shape[1]):
+                v = pivot.iloc[i, j]
+                if not np.isnan(v):
+                    tc = "white" if abs(v) > vmax * 0.65 else "black"
+                    ax.text(j, i, f"{v:.1f}%", ha="center", va="center",
+                            fontsize=8, color=tc)
+
+        ax.set_xticks(range(12))
+        ax.set_xticklabels(["Jan","Feb","Mar","Apr","May","Jun",
+                             "Jul","Aug","Sep","Oct","Nov","Dec"])
+        ax.set_yticks(range(len(pivot)))
+        ax.set_yticklabels(pivot.index.tolist())
+        ax.set_title("Monthly returns (%)")
+        if colorbar:
+            plt.colorbar(im, ax=ax, shrink=0.8, label="Return (%)")
+        return ax
+
+    def plot_annual_returns(self, ax=None):
+        """Bar chart of annual returns (%)."""
+        import matplotlib.pyplot as plt
+
+        annual = self._period_returns("Y") * 100
+        if annual.empty:
+            return ax
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(max(6, len(annual) * 0.9), 4))
+
+        colors = ["tab:green" if v >= 0 else "tab:red" for v in annual.values]
+        bars = ax.bar(range(len(annual)), annual.values, color=colors, alpha=0.8, width=0.6)
+        ax.set_xticks(range(len(annual)))
+        ax.set_xticklabels([str(y) for y in annual.index.year], rotation=45, ha="right")
+        ax.axhline(0, color="k", linewidth=0.8)
+        ax.set_title("Annual returns (%)")
+        ax.set_ylabel("Return (%)")
+        ax.grid(True, alpha=0.3, axis="y")
+        for bar, val in zip(bars, annual.values):
+            offset = 0.15 if val >= 0 else -0.5
+            ax.text(bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + offset,
+                    f"{val:.1f}%", ha="center", va="bottom", fontsize=8)
+        return ax
+
+    def plot_return_by_month(self, ax=None):
+        """Bar chart of average daily return by calendar month."""
+        import matplotlib.pyplot as plt
+
+        dr = self._daily_returns() * 100
+        if dr.empty:
+            return ax
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(8, 4))
+
+        by_month = dr.groupby(dr.index.month).mean().reindex(range(1, 13), fill_value=np.nan)
+        colors = ["tab:green" if (not np.isnan(v) and v >= 0) else "tab:red" for v in by_month]
+        ax.bar(range(12), by_month.values, color=colors, alpha=0.8)
+        ax.set_xticks(range(12))
+        ax.set_xticklabels(["Jan","Feb","Mar","Apr","May","Jun",
+                             "Jul","Aug","Sep","Oct","Nov","Dec"],
+                            rotation=45, ha="right")
+        ax.axhline(0, color="k", linewidth=0.8)
+        ax.set_title("Avg daily return by month")
+        ax.set_ylabel("Avg daily return (%)")
+        ax.grid(True, alpha=0.3, axis="y")
+        return ax
+
+    def plot_return_by_dow(self, ax=None):
+        """Bar chart of average daily return by day of week."""
+        import matplotlib.pyplot as plt
+
+        dr = self._daily_returns() * 100
+        if dr.empty:
+            return ax
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(6, 4))
+
+        by_dow = dr.groupby(dr.index.dayofweek).mean()
+        dow_names = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+        colors = ["tab:green" if v >= 0 else "tab:red" for v in by_dow]
+        ax.bar(range(len(by_dow)), by_dow.values, color=colors, alpha=0.8)
+        ax.set_xticks(range(len(by_dow)))
+        ax.set_xticklabels([dow_names[i] for i in by_dow.index])
+        ax.axhline(0, color="k", linewidth=0.8)
+        ax.set_title("Avg daily return by day of week")
+        ax.set_ylabel("Avg daily return (%)")
+        ax.grid(True, alpha=0.3, axis="y")
+        return ax
+
+    def plot_rolling_sharpe(self, ax=None, window_months: int = 12):
+        """Rolling annualised Sharpe ratio computed on monthly returns."""
+        import matplotlib.pyplot as plt
+
+        monthly = self._period_returns("M")
+        if len(monthly) < window_months + 1:
+            return ax
+
+        roll = monthly.rolling(window_months)
+        rs = (roll.mean() / roll.std()) * np.sqrt(12)
+        rs = rs.dropna()
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(12, 3))
+
+        x = rs.index.to_timestamp()
+        ax.plot(x, rs.values, linewidth=1.2, color="tab:blue")
+        ax.axhline(0, color="k", linewidth=0.8, linestyle="--")
+        ax.fill_between(x, rs.values, 0, where=(rs.values >= 0),
+                        alpha=0.15, color="tab:green")
+        ax.fill_between(x, rs.values, 0, where=(rs.values < 0),
+                        alpha=0.15, color="tab:red")
+        ax.set_title(f"Rolling {window_months}-month Sharpe")
+        ax.set_xlabel("Date")
+        ax.set_ylabel("Sharpe")
+        ax.grid(True, alpha=0.3)
+        return ax
+
+    def plot_mae_mfe(self, ax=None):
+        """Scatter of MAE vs MFE per trade, coloured by outcome (green=win, red=loss)."""
+        import matplotlib.pyplot as plt
+
+        if self.trades.shape[0] == 0:
+            return ax
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(6, 5))
+
+        mae = self.trades[:, F_MAE]
+        mfe = self.trades[:, F_MFE]
+        pnl = self._pnl()
+        colors = np.where(pnl > 0, "tab:green", "tab:red")
+        ax.scatter(mae, mfe, c=colors, alpha=0.35, s=12, linewidths=0)
+        ax.axhline(0, color="k", linewidth=0.5)
+        ax.axvline(0, color="k", linewidth=0.5)
+        ax.set_xlabel("MAE (£)")
+        ax.set_ylabel("MFE (£)")
+        ax.set_title("MAE vs MFE  (green=win, red=loss)")
+        ax.grid(True, alpha=0.3)
+        return ax
+
+    def plot_duration_hist(self, ax=None):
+        """Histogram of trade durations, split by winning and losing trades."""
+        import matplotlib.pyplot as plt
+
+        if self.trades.shape[0] == 0:
+            return ax
+
+        if ax is None:
+            _, ax = plt.subplots(figsize=(7, 4))
+
+        _TF_MINS = {
+            "1s": 1/60, "1m": 1, "5m": 5, "15m": 15, "30m": 30,
+            "1h": 60, "4h": 240, "1d": 1440, "1w": 10080, "1M": 43200,
+        }
+        mins_per_bar = _TF_MINS.get(self.timeframe, 1)
+        bh = self._bars_held().astype(float) * mins_per_bar
+        pnl = self._pnl()
+
+        xlabel = "Duration (minutes)"
+        if mins_per_bar >= 1440:
+            bh /= 1440
+            xlabel = "Duration (days)"
+        elif mins_per_bar >= 60:
+            bh /= 60
+            xlabel = "Duration (hours)"
+
+        wins   = bh[pnl > 0]
+        losses = bh[pnl < 0]
+        bins = np.linspace(0, np.percentile(bh, 99) if bh.size else 1, 40)
+        if wins.size:
+            ax.hist(wins,   bins=bins, alpha=0.6, color="tab:green", label="Winners")
+        if losses.size:
+            ax.hist(losses, bins=bins, alpha=0.6, color="tab:red",   label="Losers")
+        ax.set_title("Trade duration distribution")
+        ax.set_xlabel(xlabel)
+        ax.set_ylabel("Count")
+        ax.legend(fontsize=8)
+        ax.grid(True, alpha=0.3)
+        return ax
+
+    def plot_tearsheet(self, figsize: tuple = (18, 26)):
+        """
+        Full visual tearsheet assembled from all individual plot methods.
+
+        Layout (5 rows × 3 columns):
+          Row 0: equity curve (wide) | drawdown
+          Row 1: monthly returns heatmap (full width)
+          Row 2: annual returns | avg return by month | avg return by day of week
+          Row 3: rolling Sharpe (full width)
+          Row 4: P&L distribution | cumulative trade P&L | MAE vs MFE
+        """
+        import matplotlib.pyplot as plt
+        import matplotlib.gridspec as gridspec
+
+        has_dates = self.date is not None
+        pnl = self._pnl()
+
+        fig = plt.figure(figsize=figsize)
+        gs = gridspec.GridSpec(
+            5, 3, figure=fig,
+            height_ratios=[3, 4, 3, 3, 3],
+            hspace=0.52, wspace=0.35,
+        )
+        ax_eq  = fig.add_subplot(gs[0, :2])
+        ax_dd  = fig.add_subplot(gs[0, 2])
+        ax_hm  = fig.add_subplot(gs[1, :])
+        ax_ann = fig.add_subplot(gs[2, 0])
+        ax_mon = fig.add_subplot(gs[2, 1])
+        ax_dow = fig.add_subplot(gs[2, 2])
+        ax_rs  = fig.add_subplot(gs[3, :])
+        ax_ph  = fig.add_subplot(gs[4, 0])
+        ax_pc  = fig.add_subplot(gs[4, 1])
+        ax_mm  = fig.add_subplot(gs[4, 2])
+
+        x_bar = self._bar_x()
+
+        # equity curve
+        ax_eq.plot(x_bar, self.equity, linewidth=1.0, color="tab:blue")
+        ax_eq.set_title("Equity curve")
+        ax_eq.set_xlabel("Date" if has_dates else "Bar")
+        ax_eq.set_ylabel("Equity")
+        ax_eq.grid(True, alpha=0.3)
+
+        # drawdown
+        if self.equity.size:
+            peak = np.maximum.accumulate(self.equity)
+            dd = (self.equity - peak) / peak * 100
+            ax_dd.fill_between(x_bar, dd, 0, color="tab:red", alpha=0.4)
+            ax_dd.plot(x_bar, dd, color="tab:red", linewidth=0.8)
+        ax_dd.set_title("Drawdown")
+        ax_dd.set_xlabel("Date" if has_dates else "Bar")
+        ax_dd.set_ylabel("Drawdown (%)")
+        ax_dd.grid(True, alpha=0.3)
+
+        self.plot_monthly_returns(ax=ax_hm, colorbar=True)
+        self.plot_annual_returns(ax=ax_ann)
+        self.plot_return_by_month(ax=ax_mon)
+        self.plot_return_by_dow(ax=ax_dow)
+        self.plot_rolling_sharpe(ax=ax_rs)
+
+        # P&L distribution
+        if pnl.size:
+            ax_ph.hist(pnl, bins=40, color="tab:blue", alpha=0.7)
+            ax_ph.axvline(0, color="k", linewidth=0.8)
+            ax_ph.axvline(pnl.mean(), color="tab:orange", linewidth=1.5,
+                          linestyle="--", label=f"Mean £{pnl.mean():.2f}")
+            ax_ph.legend(fontsize=8)
+        ax_ph.set_title("Trade P&L distribution")
+        ax_ph.set_xlabel("P&L (£)")
+        ax_ph.set_ylabel("Count")
+        ax_ph.grid(True, alpha=0.3)
+
+        # cumulative P&L
+        if pnl.size:
+            ax_pc.plot(self._trade_x(), np.cumsum(pnl), linewidth=1.0, color="tab:blue")
+        ax_pc.set_title("Cumulative trade P&L")
+        ax_pc.set_xlabel("Date" if has_dates else "Trade #")
+        ax_pc.set_ylabel("Cumulative P&L (£)")
+        ax_pc.grid(True, alpha=0.3)
+
+        self.plot_mae_mfe(ax=ax_mm)
+
+        fig.suptitle(
+            f"Backtest Tearsheet  ·  {self.timeframe}  ·  "
+            f"{self.equity.size:,} bars  ·  {self.trades.shape[0]:,} trades",
+            fontsize=13, y=1.005,
+        )
         return fig
 
     def summary(self) -> str:
@@ -1849,21 +2193,155 @@ class Result:
         m = self.calculate_metrics()
         lines = [
             f"Backtest Result ({self.timeframe})",
-            f"  Bars:            {self.equity.size}",
-            f"  Trades:          {m['n_trades']}",
-            f"  Starting equity: {m['starting_equity']:.2f}",
-            f"  Final equity:    {m['final_equity']:.2f}",
-            f"  Total return:    {m['total_return']*100:.2f}%",
-            f"  CAGR:            {m['cagr']*100:.2f}%",
-            f"  Max drawdown:    {m['max_drawdown']*100:.2f}%",
-            f"  Sharpe:          {m['sharpe']:.2f}",
-            f"  Sortino:         {m['sortino']:.2f}",
-            f"  Calmar:          {m['calmar']:.2f}",
-            f"  Profit factor:   {m['profit_factor']:.2f}",
-            f"  Win rate:        {m['winrate']*100:.2f}%",
-            f"  Expectancy:      {m['expectancy']:.2f}",
-            f"  Exposure:        {m['exposure']*100:.2f}%",
+            f"  Bars:                {self.equity.size}",
+            f"  Trades:              {m['n_trades']}",
+            f"  Starting equity:     {m['starting_equity']:.2f}",
+            f"  Final equity:        {m['final_equity']:.2f}",
+            f"  Total return:        {m['total_return']*100:.2f}%",
+            f"  CAGR:                {m['cagr']*100:.2f}%",
+            f"  Max drawdown:        {m['max_drawdown']*100:.2f}%",
+            f"  Sharpe:              {m['sharpe']:.2f}",
+            f"  Sortino:             {m['sortino']:.2f}",
+            f"  Calmar:              {m['calmar']:.2f}",
+            f"  Profit factor:       {m['profit_factor']:.2f}",
+            f"  Win rate:            {m['winrate']*100:.2f}%",
+            f"  Avg PnL per trade:   {m['expectancy']:.2f}",
+            f"  Exposure:            {m['exposure']*100:.2f}%",
         ]
+        return "\n".join(lines)
+
+    def tearsheet(self) -> str:
+        """
+        Comprehensive text tearsheet of backtest performance.
+
+        Sections: equity, risk, trade stats, duration, costs, and a per-direction
+        breakdown (long vs short) shown only when both directions have trades.
+        Duration is converted to human-readable time units based on timeframe.
+        """
+        m   = self.calculate_metrics()
+        t   = self.trades
+        pnl = self._pnl()
+        bh  = self._bars_held().astype(float)
+
+        LW, VW = 30, 18
+        SEP  = "═" * (LW + VW + 2)
+        THIN = "─" * (LW + VW + 2)
+
+        def row(label, value):
+            return f"  {label:<{LW}}{value:>{VW}}"
+
+        def pct(x):
+            return f"{x * 100:.2f}%"
+
+        def gbp(x):
+            return f"£{x:,.2f}"
+
+        def f2(x):
+            return f"{x:.2f}"
+
+        _TF_MINS = {
+            "1s": 1/60, "1m": 1, "5m": 5, "15m": 15, "30m": 30,
+            "1h": 60, "4h": 240, "1d": 1440, "1w": 10080, "1M": 43200,
+        }
+
+        def dur_str(bars):
+            if np.isnan(bars):
+                return "—"
+            total_mins = int(round(float(bars) * _TF_MINS.get(self.timeframe, 1)))
+            if total_mins < 60:
+                return f"{total_mins}m"
+            if total_mins < 1440:
+                h, mn = divmod(total_mins, 60)
+                return f"{h}h {mn}m" if mn else f"{h}h"
+            d, rem = divmod(total_mins, 1440)
+            h = rem // 60
+            return f"{d}d {h}h" if h else f"{d}d"
+
+        wins_mask   = pnl > 0
+        losses_mask = pnl < 0
+        pnl_w = pnl[wins_mask]
+        pnl_l = pnl[losses_mask]
+        bh_w  = bh[wins_mask]
+        bh_l  = bh[losses_mask]
+
+        tc = t[:, F_SPREAD_COST].sum()   if t.shape[0] else 0.0
+        ts = t[:, F_SLIPPAGE_COST].sum() if t.shape[0] else 0.0
+        to = t[:, F_OVERNIGHT].sum()     if t.shape[0] else 0.0
+        tk = t[:, F_COMMISSION].sum()    if t.shape[0] else 0.0
+
+        lines = [
+            SEP,
+            f"  TEARSHEET  ·  {self.timeframe}  ·  {self.equity.size:,} bars".center(LW + VW + 2),
+            SEP,
+            "",
+            "  EQUITY",
+            row("Starting equity",     gbp(m['starting_equity'])),
+            row("Final equity",        gbp(m['final_equity'])),
+            row("Total return",        pct(m['total_return'])),
+            row("CAGR",                pct(m['cagr'])),
+            "",
+            "  RISK",
+            row("Max drawdown",        pct(m['max_drawdown'])),
+            row("Sharpe",              f2(m['sharpe'])),
+            row("Sortino",             f2(m['sortino'])),
+            row("Calmar",              f2(m['calmar'])),
+            row("Ulcer index",         f2(m['ulcer_index'])),
+            "",
+            "  TRADES",
+            row("Total trades",        f"{m['n_trades']:,}"),
+            row("Win rate",            pct(m['winrate'])),
+            row("Profit factor",       f2(m['profit_factor'])),
+            row("Exposure",            pct(m['exposure'])),
+            row("Avg PnL per trade",   gbp(m['expectancy'])),
+            row("Avg winning trade",   gbp(pnl_w.mean()) if pnl_w.size else "—"),
+            row("Avg losing trade",    gbp(pnl_l.mean()) if pnl_l.size else "—"),
+            row("Best trade",          gbp(pnl_w.max())  if pnl_w.size else "—"),
+            row("Worst trade",         gbp(pnl_l.min())  if pnl_l.size else "—"),
+            "",
+            "  DURATION",
+            row("Avg (all trades)",    dur_str(bh.mean())  if bh.size  else "—"),
+            row("Avg (winning trades)", dur_str(bh_w.mean()) if bh_w.size else "—"),
+            row("Avg (losing trades)", dur_str(bh_l.mean()) if bh_l.size else "—"),
+            "",
+            "  COSTS",
+            row("Spread",              gbp(tc)),
+            row("Slippage",            gbp(ts)),
+            row("Overnight",           gbp(to)),
+            row("Commission",          gbp(tk)),
+        ]
+
+        # Per-direction breakdown — only when both sides have trades
+        has_longs  = t.shape[0] > 0 and np.any(t[:, F_DIRECTION] > 0)
+        has_shorts = t.shape[0] > 0 and np.any(t[:, F_DIRECTION] < 0)
+
+        if has_longs and has_shorts:
+            for direction, label in ((1, "LONG"), (-1, "SHORT")):
+                mask  = t[:, F_DIRECTION] == direction
+                t_d   = t[mask]
+                gross = t_d[:, F_DIRECTION] * (t_d[:, F_EXIT_PRICE] - t_d[:, F_ENTRY_PRICE]) * t_d[:, F_SIZE]
+                costs = t_d[:, F_COMMISSION] + t_d[:, F_OVERNIGHT]
+                p_d   = gross - costs
+                b_d   = t_d[:, F_BARS_HELD].astype(float)
+                p_w   = p_d[p_d > 0]
+                p_l   = p_d[p_d < 0]
+                share = len(t_d) / t.shape[0]
+                lines += [
+                    "",
+                    THIN,
+                    f"  {label} TRADES  (n={len(t_d):,},  {share*100:.1f}% of total)".center(LW + VW + 2),
+                    THIN,
+                    row("Win rate",             pct((p_d > 0).mean())),
+                    row("Avg PnL per trade",    gbp(p_d.mean())),
+                    row("Avg winning trade",    gbp(p_w.mean()) if p_w.size else "—"),
+                    row("Avg losing trade",     gbp(p_l.mean()) if p_l.size else "—"),
+                    row("Best trade",           gbp(p_w.max())  if p_w.size else "—"),
+                    row("Worst trade",          gbp(p_l.min())  if p_l.size else "—"),
+                    row("Avg duration (all)",   dur_str(b_d.mean())),
+                    row("Avg duration (wins)",  dur_str(b_d[p_d > 0].mean()) if p_w.size else "—"),
+                    row("Avg duration (losses)", dur_str(b_d[p_d < 0].mean()) if p_l.size else "—"),
+                ]
+
+        lines.append(SEP)
         return "\n".join(lines)
 
     def __repr__(self) -> str:

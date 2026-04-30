@@ -151,12 +151,14 @@ Two annual rates are provided as a tuple `(annual_base, annual_borrow)`.
   convention applied in `_process_overnight_charge` is:
 
 ```
-long_daily  = (annual_base - annual_borrow) / denominator
-short_daily = (annual_base + annual_borrow) / denominator
+long_daily  = (annual_base + annual_borrow) / denominator
+short_daily = (annual_base - annual_borrow) / denominator
 ```
 
-Users whose venue uses the opposite sign convention can simply flip the
-sign of `annual_borrow` at the call site.
+So longs pay the higher combined rate and shorts pay the lower rate, which
+matches the standard broker convention (longs are charged the borrow spread;
+shorts receive a rebate on it). Users whose venue uses the opposite sign
+convention can simply flip the sign of `annual_borrow` at the call site.
 
 The preprocessor returns two per-bar vectors (`long_fee_vec`,
 `short_fee_vec`) that are zero on every bar *except* bars containing a
@@ -481,7 +483,19 @@ class Result
     _calculate_winrate, _calculate_profitfactor
     calculate_metrics
     trades_to_dataframe
-    plot_returns, plot_drawdown, plot_metrics
+    tearsheet
+    _bar_x, _trade_x                              # date-index helpers
+    _period_equity, _period_returns, _daily_returns
+    plot_returns, plot_drawdown
+    plot_monthly_returns                          # CAGR heatmap by month/year
+    plot_annual_returns                           # bar chart by year
+    plot_return_by_month                          # avg return by calendar month
+    plot_return_by_dow                            # avg return by day of week
+    plot_rolling_sharpe                           # rolling 252-bar Sharpe
+    plot_mae_mfe                                  # MAE vs MFE scatter
+    plot_duration_hist                            # trade duration histogram
+    plot_metrics                                  # compact 4-panel dashboard
+    plot_tearsheet                                # 9-panel full dashboard
     summary, __repr__
 ```
 
@@ -639,13 +653,17 @@ exhausted.
 ### Construction
 
 ```python
-Result(cash, equity, trades, timeframe="1d")
+Result(cash, equity, trades, timeframe="1d", date=None)
 ```
 
 - `cash`: 1-D float64 ndarray, per-bar free cash.
 - `equity`: 1-D float64 ndarray, per-bar total equity.
 - `trades`: 2-D float64 ndarray of shape `(n_trades, 20)`.
 - `timeframe`: string key into `_BARS_PER_YEAR`.
+- `date`: `datetime64[ns]` ndarray extracted from the OHLCV index. When
+  provided, all plot methods use real dates on their x-axes. Populated
+  automatically by `run_single_backtest`; only relevant if constructing
+  `Result` manually.
 
 Users normally do not construct this directly; `run_single_backtest`
 returns it.
@@ -685,14 +703,82 @@ larger figure.
 
 Underwater curve (percent drawdown from running peak).
 
+### `tearsheet() -> str`
+
+Comprehensive text statistics block formatted for terminal output.
+Sections: **EQUITY** (CAGR, total return, final equity, Sharpe, Sortino,
+Calmar, Omega, K-ratio 2013), **RISK** (max drawdown, Ulcer index,
+Jensen's alpha, longest drawdown, max consecutive losers), **TRADES**
+(n_trades, win rate, profit factor, Avg PnL per trade, avg win, avg loss,
+best trade, worst trade), **DURATION** (avg, avg winning, avg losing —
+shown as human-readable time strings for sub-daily timeframes),
+**COSTS** (total commission, spread, slippage, overnight). When both long
+and short trades are present, each section is also broken down by
+direction.
+
+### `plot_returns(ax=None, log=False) -> matplotlib.axes.Axes`
+
+Equity curve with real dates on the x-axis. `log=True` for log y-axis.
+Pass an `ax` to compose into a larger figure.
+
+### `plot_drawdown(ax=None) -> matplotlib.axes.Axes`
+
+Underwater curve (percent drawdown from running peak) with real dates.
+
+### `plot_monthly_returns(ax=None) -> matplotlib.axes.Axes`
+
+Heatmap of CAGR-equivalent returns, rows = calendar year, columns =
+month (Jan–Dec). Positive returns are shaded green, negative red.
+
+### `plot_annual_returns(ax=None) -> matplotlib.axes.Axes`
+
+Bar chart of annual CAGR-equivalent returns, one bar per calendar year.
+
+### `plot_return_by_month(ax=None) -> matplotlib.axes.Axes`
+
+Average per-bar equity return grouped by calendar month (Jan–Dec).
+Useful for identifying seasonal patterns.
+
+### `plot_return_by_dow(ax=None) -> matplotlib.axes.Axes`
+
+Average per-bar equity return grouped by day of week (Mon–Fri).
+
+### `plot_rolling_sharpe(window=252, ax=None) -> matplotlib.axes.Axes`
+
+Rolling annualised Sharpe ratio over a sliding window of bars.
+
+### `plot_mae_mfe(ax=None) -> matplotlib.axes.Axes`
+
+Scatter plot of Max Adverse Excursion (MAE) vs Max Favourable Excursion
+(MFE) per trade, coloured by direction. Good for visualising whether
+winners have room to run before the exit fires.
+
+### `plot_duration_hist(ax=None) -> matplotlib.axes.Axes`
+
+Histogram of trade durations in bars, broken out by exit reason (signal,
+SL, TP, TS, end-of-data).
+
 ### `plot_metrics(figsize=(12, 8)) -> matplotlib.figure.Figure`
 
-2×2 dashboard: equity (top-left), drawdown (top-right), trade-P&L
-histogram (bottom-left), cumulative trade P&L (bottom-right).
+Compact 2×2 dashboard: equity curve (top-left), drawdown (top-right),
+trade P&L histogram (bottom-left), cumulative trade P&L (bottom-right).
+All panels use real dates where a `date` array is available.
+
+### `plot_tearsheet(figsize=(18, 26)) -> matplotlib.figure.Figure`
+
+Full 9-panel dashboard using a 5-row × 3-column GridSpec:
+
+| Row | Panels |
+|-----|--------|
+| 0 | Equity curve (full width) |
+| 1 | Monthly returns heatmap (2/3) · Annual returns bar chart (1/3) |
+| 2 | Avg return by month · Avg return by day of week · Rolling Sharpe |
+| 3 | Drawdown curve (full width) |
+| 4 | MAE vs MFE scatter · Trade duration histogram · P&L distribution |
 
 ### `summary() -> str` / `__repr__`
 
-Human-readable one-screen summary. `print(result)` just works.
+One-screen headline summary. `print(result)` just works.
 
 ### Private helpers (not intended for direct use)
 
@@ -824,7 +910,9 @@ spread?" after the fact).
 - `winrate`, `exposure`: decimal fractions (0.60 = 60%).
 - `jensens_alpha`: annualised, decimal fraction.
 - `profit_factor`: gross-win / |gross-loss|; `inf` if no losing trades.
-- `expectancy`: mean P&L per trade, in account currency.
+- `expectancy`: mean P&L per trade, in account currency. Displayed as
+  "Avg PnL per trade" in `tearsheet()` to avoid confusion with the
+  alternative Kelly-fraction definition of expectancy.
 - `sharpe`, `sortino`: annualised, dimensionless.
 - `calmar`: CAGR / |max_dd|, dimensionless.
 - `k_ratio_*`: see docstrings; three variants differ in scaling.

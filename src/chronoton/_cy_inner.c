@@ -14,7 +14,7 @@
             "/O2"
         ],
         "include_dirs": [
-            "C:\\Users\\malha\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpRlEdGc\\Lib\\site-packages\\numpy\\_core\\include"
+            "C:\\Users\\malha\\Documents\\Projects\\GeneralProjects\\.venv\\Lib\\site-packages\\numpy\\_core\\include"
         ],
         "name": "chronoton._cy_inner",
         "sources": [

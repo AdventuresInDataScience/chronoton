@@ -12,7 +12,8 @@ An event-driven backtester for vectorised strategies expressed as boolean signal
 - **Stop-loss, take-profit, and trailing stop** — scalar or per-bar array SL; SL beats TP when both fire on the same bar
 - **28 performance metrics** — Sharpe, Sortino, Calmar, CAGR, max drawdown, Ulcer index, three K-ratio variants, Omega ratio, Jensen's alpha, win rate, profit factor, expectancy, and more
 - **Rich trade log** — every closed trade records entry/exit, MAE, MFE, costs, and exit reason, exportable to pandas DataFrame
-- **Equity-curve plots** — equity, drawdown, P&L histogram, cumulative P&L
+- **Visual tearsheet** — 9-panel dashboard: equity curve, drawdown, monthly returns heatmap, annual returns, seasonality (by month / day of week), rolling Sharpe, P&L distribution, cumulative P&L, MAE vs MFE scatter. Each panel is also available as a standalone method.
+- **Text tearsheet** — formatted stats block with equity, risk, trade stats, duration, costs, and optional long/short breakdown
 - **Optional Cython fast path** — compiled automatically on install; pure-Python fallback always available
 
 ---
@@ -90,26 +91,27 @@ result = run_single_backtest(
 )
 
 print(result)                         # one-screen summary
+print(result.tearsheet())             # comprehensive text tearsheet
 metrics = result.calculate_metrics() # dict of 28 metrics
 trades  = result.trades_to_dataframe()
-fig     = result.plot_metrics()
+fig     = result.plot_tearsheet()     # 9-panel visual tearsheet
+fig     = result.plot_metrics()       # compact 4-panel dashboard
 ```
 
-### Using the Cython fast path
+### Cython fast path
+
+`from chronoton import run_single_backtest` **already uses the Cython fast path** when the compiled extension is available — no import change needed. Check whether it loaded:
+
+```python
+from chronoton import cython_available, cython_import_error
+print(cython_available())      # True → compiled fast path active
+print(cython_import_error())   # None, or the ImportError if build failed
+```
+
+To call the Cython dispatcher explicitly (e.g. for parity testing):
 
 ```python
 from chronoton.cython_backtester import run_single_backtest
-
-# Drop-in replacement — identical API and results, faster on large datasets
-result = run_single_backtest(o, h, l, c, v, ...)
-```
-
-Check whether the compiled extension loaded:
-
-```python
-import chronoton.cython_backtester as cy
-print(cy.cython_available())      # True → compiled fast path active
-print(cy.cython_import_error())   # None, or the ImportError if build failed
 ```
 
 ---

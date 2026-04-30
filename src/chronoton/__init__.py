@@ -1,5 +1,9 @@
-from chronoton.backtester import (
+from chronoton.cython_backtester import (
     run_single_backtest,
+    cython_available,
+    cython_import_error,
+)
+from chronoton.backtester import (
     Result,
     # Field-index constants
     F_DIRECTION, F_ENTRY_BAR, F_ENTRY_TIME, F_ENTRY_PRICE,
@@ -13,6 +17,8 @@ from chronoton.backtester import (
 
 __all__ = [
     "run_single_backtest",
+    "cython_available",
+    "cython_import_error",
     "Result",
     "F_DIRECTION", "F_ENTRY_BAR", "F_ENTRY_TIME", "F_ENTRY_PRICE",
     "F_EXIT_BAR", "F_EXIT_TIME", "F_EXIT_PRICE", "F_SIZE",

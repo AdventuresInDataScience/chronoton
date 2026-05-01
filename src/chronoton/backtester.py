@@ -836,6 +836,11 @@ def _process_overnight_charge(
         return np.zeros(n, dtype=np.float64), np.zeros(n, dtype=np.float64)
 
     rollovers = pd.date_range(start=first_rollover, end=t_end, freq="D")
+    # Drop weekends: triple_charge_weekday already covers Sat+Sun.
+    # Without this, weekend rollovers bucket onto Monday (no weekend bars in FX
+    # data), giving Monday weight 3 AND Wednesday weight 3 → 9 day-equivalents
+    # per week instead of the correct 7 (Mon 1 + Tue 1 + Wed 3 + Thu 1 + Fri 1).
+    rollovers = rollovers[rollovers.weekday < 5]
     if len(rollovers) == 0:
         return np.zeros(n, dtype=np.float64), np.zeros(n, dtype=np.float64)
 

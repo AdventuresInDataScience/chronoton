@@ -22,8 +22,8 @@ df = df[df['Close'] >0.8]# filter out bad data
 
 #%% Quick Example Logic
 long_entry = (df['Close'] > ta.EMA(df['Close'], timeperiod=72000)) & (df['Close'].shift(1) < ta.EMA(df['Close'].shift(1), timeperiod=72000))
-SLs = (((df['Close'] - df['Open'].rolling(window=1440).min()) * 10000).fillna(50)) * 5
-TPs = SLs * 1
+SLs = 50
+TPs = 50
 
 #%%
 start_time = time.time()
@@ -42,7 +42,7 @@ result = run_single_backtest(
 
     # Costs in pips; pip_equals converts to price units
     pip_equals=0.0001,
-    spread=0.6,                   
+    spread=0,                   
     slippage=0.0,                 
     commission=0.0,               
 
@@ -60,6 +60,7 @@ print(result.tearsheet())
 # Example of single chart
 result.plot_returns(log=False) 
 plt.show()
+result.trades_to_dataframe()
 #%% Issues
 #1. Overnight often not appearing even when thre are thousands of trades
 #2. 30-60s backtest on 8.3 million bars seems long for a simple strategy - need to profile and optimize

@@ -369,14 +369,14 @@ def test_overnight_daily_eod_wed_triple():
     # Jan 1 2024 = Mon; EOD timestamps → Wed rollover inside Wed bar
     date = pd.date_range("2024-01-01 23:59", periods=5, freq="D")
     long_vec, short_vec = bt._process_overnight_charge((0.05, 0.02), "1d", date)
-    expected = np.array([0, 1, 3, 1, 1]) * (0.03 / 360)
+    expected = np.array([0, 1, 3, 1, 1]) * ((0.05 + 0.02) / 360)
     assert np.allclose(long_vec, expected)
 
 
 def test_overnight_daily_midnight_triple_rolls_to_thu():
     date = pd.date_range("2024-01-01 00:00", periods=5, freq="D")
     long_vec, _ = bt._process_overnight_charge((0.05, 0.02), "1d", date)
-    expected = np.array([0, 1, 1, 3, 1]) * (0.03 / 360)
+    expected = np.array([0, 1, 1, 3, 1]) * ((0.05 + 0.02) / 360)
     assert np.allclose(long_vec, expected)
 
 
@@ -389,20 +389,20 @@ def test_overnight_hourly_only_one_bar_per_day():
 
 
 def test_overnight_weekly_accumulates():
-    # 4 weekly bars (Sundays); each covers ~7 days of rollovers + Wed triple
+    # 4 weekly bars (Sundays); each covers 5 weekday rollovers with Wed triple
     date = pd.date_range("2024-01-07", periods=4, freq="W")
     long_vec, _ = bt._process_overnight_charge((0.05, 0.02), "1w", date)
-    # bar 0 = 0, bars 1..3 = 6*1 + 1*3 = 9 day-equivs
-    expected = np.array([0, 9, 9, 9]) * (0.03 / 360)
+    # bar 0 = 0, bars 1..3 = 4*1 + 1*3 = 7 day-equivs (weekends filtered out)
+    expected = np.array([0, 7, 7, 7]) * ((0.05 + 0.02) / 360)
     assert np.allclose(long_vec, expected)
 
 
 def test_overnight_short_sign_flipped():
     date = pd.date_range("2024-01-01 23:59", periods=3, freq="D")
     long_vec, short_vec = bt._process_overnight_charge((0.05, 0.02), "1d", date)
-    # long = base - borrow, short = base + borrow
-    assert np.isclose(short_vec[1], (0.05 + 0.02) / 360)
-    assert np.isclose(long_vec[1],  (0.05 - 0.02) / 360)
+    # long pays base + borrow (borrowing cost); short pays base - borrow (receives credit)
+    assert np.isclose(long_vec[1],  (0.05 + 0.02) / 360)
+    assert np.isclose(short_vec[1], (0.05 - 0.02) / 360)
 
 
 def test_overnight_denominator_365():
@@ -416,7 +416,7 @@ def test_overnight_custom_weekday():
     date = pd.date_range("2024-01-01 23:59", periods=5, freq="D")
     long_vec, _ = bt._process_overnight_charge(
         (0.05, 0.02), "1d", date, triple_charge_weekday="Thursday")
-    expected = np.array([0, 1, 1, 3, 1]) * (0.03 / 360)
+    expected = np.array([0, 1, 1, 3, 1]) * ((0.05 + 0.02) / 360)
     assert np.allclose(long_vec, expected)
 
 
@@ -827,12 +827,13 @@ def test_overnight_accrued_over_hold():
     # Overnight is applied in STEP 1 of each bar, BEFORE entries (step 4)
     # and BEFORE exits (step 3). So:
     #   - Bar 2 overnight runs first, but position isn't yet open → no charge.
-    #   - Bars 3 (Thu), 4 (Fri), 5 (Sat), 6 (Sun), 7 (Mon): position is open
-    #     at start of bar → 5 single-day charges.
-    #   - Wed triple on bar 2 is skipped (position wasn't open then).
-    # Total = 5 day-equivs of overnight.
-    # charge = 5 * 0.05/360 * notional where notional = size * entry_price
-    #        = 5 * 0.05/360 * 100 * 100 = 6.944
+    #   - Bars 3 (Thu), 4 (Fri): position is open → 1 charge each.
+    #   - Bars 5 (Sat), 6 (Sun): weekend rollovers are filtered out → no charge.
+    #     (The Wed triple already covers the upcoming weekend.)
+    #   - Bar 7 (Mon): position is open at start of bar → 1 charge.
+    # Total = 3 day-equivs of overnight.
+    # charge = 3 * 0.05/360 * notional where notional = size * entry_price
+    #        = 3 * 0.05/360 * 100 * 100 = 4.167
     prices = np.full(10, 100.0)
     idx = pd.date_range("2024-01-01 23:59", periods=10, freq="D")
     o = pd.Series(prices, index=idx); h = o + 0.2; l = o - 0.2
@@ -846,7 +847,7 @@ def test_overnight_accrued_over_hold():
         overnight_charge=(0.05, 0.0),
     )
     t = r.trades[0]
-    expected = 5 * (0.05 / 360) * 10_000  # ≈ 6.944
+    expected = 3 * (0.05 / 360) * 10_000  # ≈ 4.167
     assert approx(t[bt.F_OVERNIGHT], expected, tol=0.01), \
         f"expected ≈{expected:.3f}, got {t[bt.F_OVERNIGHT]:.3f}"
 

@@ -3106,7 +3106,7 @@ typedef struct {
   PyObject *__pyx_slice[1];
   PyObject *__pyx_tuple[1];
   PyObject *__pyx_codeobj_tab[1];
-  PyObject *__pyx_string_tab[209];
+  PyObject *__pyx_string_tab[224];
   PyObject *__pyx_number_tab[4];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
@@ -3317,46 +3317,61 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_sizing_method_code __pyx_string_tab[166]
 #define __pyx_n_u_sizing_static __pyx_string_tab[167]
 #define __pyx_n_u_sl_arr __pyx_string_tab[168]
-#define __pyx_n_u_sl_dist __pyx_string_tab[169]
-#define __pyx_n_u_sl_price __pyx_string_tab[170]
-#define __pyx_n_u_sl_px __pyx_string_tab[171]
-#define __pyx_n_u_slippage_arr __pyx_string_tab[172]
-#define __pyx_n_u_slot_active __pyx_string_tab[173]
-#define __pyx_n_u_slot_idx __pyx_string_tab[174]
-#define __pyx_n_u_spread_arr __pyx_string_tab[175]
-#define __pyx_n_u_start __pyx_string_tab[176]
-#define __pyx_n_u_starting_balance __pyx_string_tab[177]
-#define __pyx_n_u_step __pyx_string_tab[178]
-#define __pyx_n_u_stop __pyx_string_tab[179]
-#define __pyx_n_u_struct __pyx_string_tab[180]
-#define __pyx_n_u_t_ns __pyx_string_tab[181]
-#define __pyx_n_u_test __pyx_string_tab[182]
-#define __pyx_n_u_total_bad __pyx_string_tab[183]
-#define __pyx_n_u_total_loss_budget __pyx_string_tab[184]
-#define __pyx_n_u_tp_arr __pyx_string_tab[185]
-#define __pyx_n_u_tp_price __pyx_string_tab[186]
-#define __pyx_n_u_tp_px __pyx_string_tab[187]
-#define __pyx_n_u_ts_arr __pyx_string_tab[188]
-#define __pyx_n_u_ts_dist __pyx_string_tab[189]
-#define __pyx_n_u_ts_dist_val __pyx_string_tab[190]
-#define __pyx_n_u_ts_trigger_px __pyx_string_tab[191]
-#define __pyx_n_u_u __pyx_string_tab[192]
-#define __pyx_n_u_unpack __pyx_string_tab[193]
-#define __pyx_n_u_unrealized __pyx_string_tab[194]
-#define __pyx_n_u_unrealized_by_slot __pyx_string_tab[195]
-#define __pyx_n_u_update __pyx_string_tab[196]
-#define __pyx_n_u_v __pyx_string_tab[197]
-#define __pyx_n_u_values __pyx_string_tab[198]
-#define __pyx_n_u_want_long_entry __pyx_string_tab[199]
-#define __pyx_n_u_want_long_exit __pyx_string_tab[200]
-#define __pyx_n_u_want_short_entry __pyx_string_tab[201]
-#define __pyx_n_u_want_short_exit __pyx_string_tab[202]
-#define __pyx_n_u_worst_pnl __pyx_string_tab[203]
-#define __pyx_n_u_worst_px __pyx_string_tab[204]
-#define __pyx_n_u_x __pyx_string_tab[205]
-#define __pyx_n_u_zeros __pyx_string_tab[206]
-#define __pyx_kp_b_iso88591_N_q_nF_1_m6_q_F_A_q0_1_E_aq_aq __pyx_string_tab[207]
-#define __pyx_n_b_O __pyx_string_tab[208]
+#define __pyx_n_u_sl_bar __pyx_string_tab[169]
+#define __pyx_n_u_sl_c __pyx_string_tab[170]
+#define __pyx_n_u_sl_dist __pyx_string_tab[171]
+#define __pyx_n_u_sl_price __pyx_string_tab[172]
+#define __pyx_n_u_sl_px __pyx_string_tab[173]
+#define __pyx_n_u_sl_scalar __pyx_string_tab[174]
+#define __pyx_n_u_slippage_arr __pyx_string_tab[175]
+#define __pyx_n_u_slippage_c __pyx_string_tab[176]
+#define __pyx_n_u_slippage_i __pyx_string_tab[177]
+#define __pyx_n_u_slippage_scalar __pyx_string_tab[178]
+#define __pyx_n_u_slot_active __pyx_string_tab[179]
+#define __pyx_n_u_slot_idx __pyx_string_tab[180]
+#define __pyx_n_u_spread_arr __pyx_string_tab[181]
+#define __pyx_n_u_spread_c __pyx_string_tab[182]
+#define __pyx_n_u_spread_i __pyx_string_tab[183]
+#define __pyx_n_u_spread_scalar __pyx_string_tab[184]
+#define __pyx_n_u_start __pyx_string_tab[185]
+#define __pyx_n_u_starting_balance __pyx_string_tab[186]
+#define __pyx_n_u_step __pyx_string_tab[187]
+#define __pyx_n_u_stop __pyx_string_tab[188]
+#define __pyx_n_u_struct __pyx_string_tab[189]
+#define __pyx_n_u_t_ns __pyx_string_tab[190]
+#define __pyx_n_u_test __pyx_string_tab[191]
+#define __pyx_n_u_total_bad __pyx_string_tab[192]
+#define __pyx_n_u_total_loss_budget __pyx_string_tab[193]
+#define __pyx_n_u_tp_arr __pyx_string_tab[194]
+#define __pyx_n_u_tp_bar __pyx_string_tab[195]
+#define __pyx_n_u_tp_c __pyx_string_tab[196]
+#define __pyx_n_u_tp_price __pyx_string_tab[197]
+#define __pyx_n_u_tp_px __pyx_string_tab[198]
+#define __pyx_n_u_tp_scalar __pyx_string_tab[199]
+#define __pyx_n_u_ts_arr __pyx_string_tab[200]
+#define __pyx_n_u_ts_bar __pyx_string_tab[201]
+#define __pyx_n_u_ts_c __pyx_string_tab[202]
+#define __pyx_n_u_ts_dist __pyx_string_tab[203]
+#define __pyx_n_u_ts_dist_val __pyx_string_tab[204]
+#define __pyx_n_u_ts_scalar __pyx_string_tab[205]
+#define __pyx_n_u_ts_trigger_px __pyx_string_tab[206]
+#define __pyx_n_u_u __pyx_string_tab[207]
+#define __pyx_n_u_unpack __pyx_string_tab[208]
+#define __pyx_n_u_unrealized __pyx_string_tab[209]
+#define __pyx_n_u_unrealized_by_slot __pyx_string_tab[210]
+#define __pyx_n_u_update __pyx_string_tab[211]
+#define __pyx_n_u_v __pyx_string_tab[212]
+#define __pyx_n_u_values __pyx_string_tab[213]
+#define __pyx_n_u_want_long_entry __pyx_string_tab[214]
+#define __pyx_n_u_want_long_exit __pyx_string_tab[215]
+#define __pyx_n_u_want_short_entry __pyx_string_tab[216]
+#define __pyx_n_u_want_short_exit __pyx_string_tab[217]
+#define __pyx_n_u_worst_pnl __pyx_string_tab[218]
+#define __pyx_n_u_worst_px __pyx_string_tab[219]
+#define __pyx_n_u_x __pyx_string_tab[220]
+#define __pyx_n_u_zeros __pyx_string_tab[221]
+#define __pyx_kp_b_iso88591_N_q_nF_1_m6_q_F_A_q2_1_6_s_V1Cs __pyx_string_tab[222]
+#define __pyx_n_b_O __pyx_string_tab[223]
 #define __pyx_int_0 __pyx_number_tab[0]
 #define __pyx_int_neg_1 __pyx_number_tab[1]
 #define __pyx_int_1 __pyx_number_tab[2]
@@ -3386,7 +3401,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_slice[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<209; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<224; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<4; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
@@ -3421,7 +3436,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_slice[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<209; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<224; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<4; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
@@ -16706,6 +16721,73 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *__
 /* "chronoton/_cy_inner.pyx":96
  * # Slot helpers  all `nogil`, pure C, no Python object interaction.
  * # ---------------------------------------------------------------------------
+ * cdef inline double _idx(const double[:] arr, Py_ssize_t i) noexcept nogil:             # <<<<<<<<<<<<<<
+ *     """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+ *     if arr.shape[0] == 1:
+*/
+
+static CYTHON_INLINE double __pyx_f_9chronoton_9_cy_inner__idx(__Pyx_memviewslice __pyx_v_arr, Py_ssize_t __pyx_v_i) {
+  double __pyx_r;
+  int __pyx_t_1;
+  Py_ssize_t __pyx_t_2;
+
+  /* "chronoton/_cy_inner.pyx":98
+ * cdef inline double _idx(const double[:] arr, Py_ssize_t i) noexcept nogil:
+ *     """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+ *     if arr.shape[0] == 1:             # <<<<<<<<<<<<<<
+ *         return arr[0]
+ *     return arr[i]
+*/
+  __pyx_t_1 = ((__pyx_v_arr.shape[0]) == 1);
+  if (__pyx_t_1) {
+
+    /* "chronoton/_cy_inner.pyx":99
+ *     """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+ *     if arr.shape[0] == 1:
+ *         return arr[0]             # <<<<<<<<<<<<<<
+ *     return arr[i]
+ * 
+*/
+    __pyx_t_2 = 0;
+    __pyx_r = (*((double const  *) ( /* dim=0 */ (__pyx_v_arr.data + __pyx_t_2 * __pyx_v_arr.strides[0]) )));
+    goto __pyx_L0;
+
+    /* "chronoton/_cy_inner.pyx":98
+ * cdef inline double _idx(const double[:] arr, Py_ssize_t i) noexcept nogil:
+ *     """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+ *     if arr.shape[0] == 1:             # <<<<<<<<<<<<<<
+ *         return arr[0]
+ *     return arr[i]
+*/
+  }
+
+  /* "chronoton/_cy_inner.pyx":100
+ *     if arr.shape[0] == 1:
+ *         return arr[0]
+ *     return arr[i]             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+  __pyx_t_2 = __pyx_v_i;
+  __pyx_r = (*((double const  *) ( /* dim=0 */ (__pyx_v_arr.data + __pyx_t_2 * __pyx_v_arr.strides[0]) )));
+  goto __pyx_L0;
+
+  /* "chronoton/_cy_inner.pyx":96
+ * # Slot helpers  all `nogil`, pure C, no Python object interaction.
+ * # ---------------------------------------------------------------------------
+ * cdef inline double _idx(const double[:] arr, Py_ssize_t i) noexcept nogil:             # <<<<<<<<<<<<<<
+ *     """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+ *     if arr.shape[0] == 1:
+*/
+
+  /* function exit code */
+  __pyx_L0:;
+  return __pyx_r;
+}
+
+/* "chronoton/_cy_inner.pyx":103
+ * 
+ * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  * @cython.wraparound(False)
  * cdef inline Py_ssize_t _find_free_slot(const unsigned char[:] slot_active,
@@ -16720,7 +16802,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
   Py_ssize_t __pyx_t_4;
   int __pyx_t_5;
 
-  /* "chronoton/_cy_inner.pyx":102
+  /* "chronoton/_cy_inner.pyx":109
  *     """Index of first inactive slot, or -1 if full."""
  *     cdef Py_ssize_t k
  *     for k in range(n_slots):             # <<<<<<<<<<<<<<
@@ -16732,7 +16814,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_k = __pyx_t_3;
 
-    /* "chronoton/_cy_inner.pyx":103
+    /* "chronoton/_cy_inner.pyx":110
  *     cdef Py_ssize_t k
  *     for k in range(n_slots):
  *         if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -16743,7 +16825,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
     __pyx_t_5 = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_4 * __pyx_v_slot_active.strides[0]) ))) == 0);
     if (__pyx_t_5) {
 
-      /* "chronoton/_cy_inner.pyx":104
+      /* "chronoton/_cy_inner.pyx":111
  *     for k in range(n_slots):
  *         if slot_active[k] == 0:
  *             return k             # <<<<<<<<<<<<<<
@@ -16753,7 +16835,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
       __pyx_r = __pyx_v_k;
       goto __pyx_L0;
 
-      /* "chronoton/_cy_inner.pyx":103
+      /* "chronoton/_cy_inner.pyx":110
  *     cdef Py_ssize_t k
  *     for k in range(n_slots):
  *         if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -16763,7 +16845,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
     }
   }
 
-  /* "chronoton/_cy_inner.pyx":105
+  /* "chronoton/_cy_inner.pyx":112
  *         if slot_active[k] == 0:
  *             return k
  *     return -1             # <<<<<<<<<<<<<<
@@ -16773,9 +16855,9 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
   __pyx_r = -1L;
   goto __pyx_L0;
 
-  /* "chronoton/_cy_inner.pyx":96
- * # Slot helpers  all `nogil`, pure C, no Python object interaction.
- * # ---------------------------------------------------------------------------
+  /* "chronoton/_cy_inner.pyx":103
+ * 
+ * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  * @cython.wraparound(False)
  * cdef inline Py_ssize_t _find_free_slot(const unsigned char[:] slot_active,
@@ -16786,7 +16868,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__find_free_slot(__
   return __pyx_r;
 }
 
-/* "chronoton/_cy_inner.pyx":108
+/* "chronoton/_cy_inner.pyx":115
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -16798,7 +16880,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   Py_ssize_t __pyx_t_1;
   Py_ssize_t __pyx_t_2;
 
-  /* "chronoton/_cy_inner.pyx":127
+  /* "chronoton/_cy_inner.pyx":134
  * ) noexcept nogil:
  *     """Populate open_positions[slot_idx] and flip slot_active on."""
  *     open_positions[slot_idx, F_DIRECTION]     = direction             # <<<<<<<<<<<<<<
@@ -16809,7 +16891,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_direction;
 
-  /* "chronoton/_cy_inner.pyx":128
+  /* "chronoton/_cy_inner.pyx":135
  *     """Populate open_positions[slot_idx] and flip slot_active on."""
  *     open_positions[slot_idx, F_DIRECTION]     = direction
  *     open_positions[slot_idx, F_ENTRY_BAR]     = <double>bar_idx             # <<<<<<<<<<<<<<
@@ -16820,7 +16902,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_BAR;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = ((double)__pyx_v_bar_idx);
 
-  /* "chronoton/_cy_inner.pyx":129
+  /* "chronoton/_cy_inner.pyx":136
  *     open_positions[slot_idx, F_DIRECTION]     = direction
  *     open_positions[slot_idx, F_ENTRY_BAR]     = <double>bar_idx
  *     open_positions[slot_idx, F_ENTRY_TIME]    = entry_time_ns             # <<<<<<<<<<<<<<
@@ -16831,7 +16913,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_TIME;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_entry_time_ns;
 
-  /* "chronoton/_cy_inner.pyx":130
+  /* "chronoton/_cy_inner.pyx":137
  *     open_positions[slot_idx, F_ENTRY_BAR]     = <double>bar_idx
  *     open_positions[slot_idx, F_ENTRY_TIME]    = entry_time_ns
  *     open_positions[slot_idx, F_ENTRY_PRICE]   = entry_price             # <<<<<<<<<<<<<<
@@ -16842,7 +16924,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_entry_price;
 
-  /* "chronoton/_cy_inner.pyx":131
+  /* "chronoton/_cy_inner.pyx":138
  *     open_positions[slot_idx, F_ENTRY_TIME]    = entry_time_ns
  *     open_positions[slot_idx, F_ENTRY_PRICE]   = entry_price
  *     open_positions[slot_idx, F_EXIT_BAR]      = NAN             # <<<<<<<<<<<<<<
@@ -16853,7 +16935,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_BAR;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = NAN;
 
-  /* "chronoton/_cy_inner.pyx":132
+  /* "chronoton/_cy_inner.pyx":139
  *     open_positions[slot_idx, F_ENTRY_PRICE]   = entry_price
  *     open_positions[slot_idx, F_EXIT_BAR]      = NAN
  *     open_positions[slot_idx, F_EXIT_TIME]     = NAN             # <<<<<<<<<<<<<<
@@ -16864,7 +16946,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_TIME;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = NAN;
 
-  /* "chronoton/_cy_inner.pyx":133
+  /* "chronoton/_cy_inner.pyx":140
  *     open_positions[slot_idx, F_EXIT_BAR]      = NAN
  *     open_positions[slot_idx, F_EXIT_TIME]     = NAN
  *     open_positions[slot_idx, F_EXIT_PRICE]    = NAN             # <<<<<<<<<<<<<<
@@ -16875,7 +16957,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_PRICE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = NAN;
 
-  /* "chronoton/_cy_inner.pyx":134
+  /* "chronoton/_cy_inner.pyx":141
  *     open_positions[slot_idx, F_EXIT_TIME]     = NAN
  *     open_positions[slot_idx, F_EXIT_PRICE]    = NAN
  *     open_positions[slot_idx, F_SIZE]          = size             # <<<<<<<<<<<<<<
@@ -16886,7 +16968,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_size;
 
-  /* "chronoton/_cy_inner.pyx":135
+  /* "chronoton/_cy_inner.pyx":142
  *     open_positions[slot_idx, F_EXIT_PRICE]    = NAN
  *     open_positions[slot_idx, F_SIZE]          = size
  *     open_positions[slot_idx, F_SL]            = sl_price             # <<<<<<<<<<<<<<
@@ -16897,7 +16979,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_SL;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_sl_price;
 
-  /* "chronoton/_cy_inner.pyx":136
+  /* "chronoton/_cy_inner.pyx":143
  *     open_positions[slot_idx, F_SIZE]          = size
  *     open_positions[slot_idx, F_SL]            = sl_price
  *     open_positions[slot_idx, F_TP]            = tp_price             # <<<<<<<<<<<<<<
@@ -16908,7 +16990,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_TP;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_tp_price;
 
-  /* "chronoton/_cy_inner.pyx":137
+  /* "chronoton/_cy_inner.pyx":144
  *     open_positions[slot_idx, F_SL]            = sl_price
  *     open_positions[slot_idx, F_TP]            = tp_price
  *     open_positions[slot_idx, F_TS_DIST]       = ts_dist             # <<<<<<<<<<<<<<
@@ -16919,7 +17001,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_TS_DIST;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_ts_dist;
 
-  /* "chronoton/_cy_inner.pyx":138
+  /* "chronoton/_cy_inner.pyx":145
  *     open_positions[slot_idx, F_TP]            = tp_price
  *     open_positions[slot_idx, F_TS_DIST]       = ts_dist
  *     open_positions[slot_idx, F_TS_PEAK]       = entry_price             # <<<<<<<<<<<<<<
@@ -16930,7 +17012,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_entry_price;
 
-  /* "chronoton/_cy_inner.pyx":139
+  /* "chronoton/_cy_inner.pyx":146
  *     open_positions[slot_idx, F_TS_DIST]       = ts_dist
  *     open_positions[slot_idx, F_TS_PEAK]       = entry_price
  *     open_positions[slot_idx, F_COMMISSION]    = commission_cost             # <<<<<<<<<<<<<<
@@ -16941,7 +17023,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_COMMISSION;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_commission_cost;
 
-  /* "chronoton/_cy_inner.pyx":140
+  /* "chronoton/_cy_inner.pyx":147
  *     open_positions[slot_idx, F_TS_PEAK]       = entry_price
  *     open_positions[slot_idx, F_COMMISSION]    = commission_cost
  *     open_positions[slot_idx, F_SPREAD_COST]   = spread_cost             # <<<<<<<<<<<<<<
@@ -16952,7 +17034,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_SPREAD_COST;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_spread_cost;
 
-  /* "chronoton/_cy_inner.pyx":141
+  /* "chronoton/_cy_inner.pyx":148
  *     open_positions[slot_idx, F_COMMISSION]    = commission_cost
  *     open_positions[slot_idx, F_SPREAD_COST]   = spread_cost
  *     open_positions[slot_idx, F_SLIPPAGE_COST] = slippage_cost             # <<<<<<<<<<<<<<
@@ -16963,7 +17045,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_SLIPPAGE_COST;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_slippage_cost;
 
-  /* "chronoton/_cy_inner.pyx":142
+  /* "chronoton/_cy_inner.pyx":149
  *     open_positions[slot_idx, F_SPREAD_COST]   = spread_cost
  *     open_positions[slot_idx, F_SLIPPAGE_COST] = slippage_cost
  *     open_positions[slot_idx, F_OVERNIGHT]     = 0.0             # <<<<<<<<<<<<<<
@@ -16974,7 +17056,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_OVERNIGHT;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = 0.0;
 
-  /* "chronoton/_cy_inner.pyx":143
+  /* "chronoton/_cy_inner.pyx":150
  *     open_positions[slot_idx, F_SLIPPAGE_COST] = slippage_cost
  *     open_positions[slot_idx, F_OVERNIGHT]     = 0.0
  *     open_positions[slot_idx, F_MAE]           = 0.0             # <<<<<<<<<<<<<<
@@ -16985,7 +17067,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_MAE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = 0.0;
 
-  /* "chronoton/_cy_inner.pyx":144
+  /* "chronoton/_cy_inner.pyx":151
  *     open_positions[slot_idx, F_OVERNIGHT]     = 0.0
  *     open_positions[slot_idx, F_MAE]           = 0.0
  *     open_positions[slot_idx, F_MFE]           = 0.0             # <<<<<<<<<<<<<<
@@ -16996,7 +17078,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_MFE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = 0.0;
 
-  /* "chronoton/_cy_inner.pyx":145
+  /* "chronoton/_cy_inner.pyx":152
  *     open_positions[slot_idx, F_MAE]           = 0.0
  *     open_positions[slot_idx, F_MFE]           = 0.0
  *     open_positions[slot_idx, F_EXIT_REASON]   = NAN             # <<<<<<<<<<<<<<
@@ -17007,7 +17089,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_REASON;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_1 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = NAN;
 
-  /* "chronoton/_cy_inner.pyx":146
+  /* "chronoton/_cy_inner.pyx":153
  *     open_positions[slot_idx, F_MFE]           = 0.0
  *     open_positions[slot_idx, F_EXIT_REASON]   = NAN
  *     open_positions[slot_idx, F_BARS_HELD]     = 0.0             # <<<<<<<<<<<<<<
@@ -17018,7 +17100,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_e_9chronoton_9_cy_inner_F_BARS_HELD;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_1 * __pyx_v_open_positions.strides[1]) )) = 0.0;
 
-  /* "chronoton/_cy_inner.pyx":147
+  /* "chronoton/_cy_inner.pyx":154
  *     open_positions[slot_idx, F_EXIT_REASON]   = NAN
  *     open_positions[slot_idx, F_BARS_HELD]     = 0.0
  *     slot_active[slot_idx] = 1             # <<<<<<<<<<<<<<
@@ -17028,7 +17110,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   __pyx_t_1 = __pyx_v_slot_idx;
   *((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_1 * __pyx_v_slot_active.strides[0]) )) = 1;
 
-  /* "chronoton/_cy_inner.pyx":108
+  /* "chronoton/_cy_inner.pyx":115
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -17039,7 +17121,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   /* function exit code */
 }
 
-/* "chronoton/_cy_inner.pyx":150
+/* "chronoton/_cy_inner.pyx":157
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -17060,7 +17142,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   Py_ssize_t __pyx_t_7;
   Py_ssize_t __pyx_t_8;
 
-  /* "chronoton/_cy_inner.pyx":177
+  /* "chronoton/_cy_inner.pyx":184
  *     cdef double entry_bar_f
  * 
  *     if n_closed >= closed_capacity:             # <<<<<<<<<<<<<<
@@ -17070,7 +17152,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_1 = (__pyx_v_n_closed >= __pyx_v_closed_capacity);
   if (__pyx_t_1) {
 
-    /* "chronoton/_cy_inner.pyx":178
+    /* "chronoton/_cy_inner.pyx":185
  * 
  *     if n_closed >= closed_capacity:
  *         overflow_flag[0] = 1             # <<<<<<<<<<<<<<
@@ -17080,7 +17162,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
     __pyx_t_2 = 0;
     *((int *) ( /* dim=0 */ (__pyx_v_overflow_flag.data + __pyx_t_2 * __pyx_v_overflow_flag.strides[0]) )) = 1;
 
-    /* "chronoton/_cy_inner.pyx":179
+    /* "chronoton/_cy_inner.pyx":186
  *     if n_closed >= closed_capacity:
  *         overflow_flag[0] = 1
  *         return -1             # <<<<<<<<<<<<<<
@@ -17090,7 +17172,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
     __pyx_r = -1L;
     goto __pyx_L0;
 
-    /* "chronoton/_cy_inner.pyx":177
+    /* "chronoton/_cy_inner.pyx":184
  *     cdef double entry_bar_f
  * 
  *     if n_closed >= closed_capacity:             # <<<<<<<<<<<<<<
@@ -17099,7 +17181,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
 */
   }
 
-  /* "chronoton/_cy_inner.pyx":181
+  /* "chronoton/_cy_inner.pyx":188
  *         return -1
  * 
  *     open_positions[slot_idx, F_EXIT_BAR]       = <double>bar_idx             # <<<<<<<<<<<<<<
@@ -17110,7 +17192,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_3 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_BAR;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_3 * __pyx_v_open_positions.strides[1]) )) = ((double)__pyx_v_bar_idx);
 
-  /* "chronoton/_cy_inner.pyx":182
+  /* "chronoton/_cy_inner.pyx":189
  * 
  *     open_positions[slot_idx, F_EXIT_BAR]       = <double>bar_idx
  *     open_positions[slot_idx, F_EXIT_TIME]      = exit_time_ns             # <<<<<<<<<<<<<<
@@ -17121,7 +17203,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_TIME;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_3 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_exit_time_ns;
 
-  /* "chronoton/_cy_inner.pyx":183
+  /* "chronoton/_cy_inner.pyx":190
  *     open_positions[slot_idx, F_EXIT_BAR]       = <double>bar_idx
  *     open_positions[slot_idx, F_EXIT_TIME]      = exit_time_ns
  *     open_positions[slot_idx, F_EXIT_PRICE]     = exit_price             # <<<<<<<<<<<<<<
@@ -17132,7 +17214,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_3 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_PRICE;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_3 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_exit_price;
 
-  /* "chronoton/_cy_inner.pyx":184
+  /* "chronoton/_cy_inner.pyx":191
  *     open_positions[slot_idx, F_EXIT_TIME]      = exit_time_ns
  *     open_positions[slot_idx, F_EXIT_PRICE]     = exit_price
  *     open_positions[slot_idx, F_EXIT_REASON]    = exit_reason             # <<<<<<<<<<<<<<
@@ -17143,7 +17225,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_EXIT_REASON;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_3 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_exit_reason;
 
-  /* "chronoton/_cy_inner.pyx":185
+  /* "chronoton/_cy_inner.pyx":192
  *     open_positions[slot_idx, F_EXIT_PRICE]     = exit_price
  *     open_positions[slot_idx, F_EXIT_REASON]    = exit_reason
  *     open_positions[slot_idx, F_COMMISSION]    += exit_commission             # <<<<<<<<<<<<<<
@@ -17154,7 +17236,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_3 = __pyx_e_9chronoton_9_cy_inner_F_COMMISSION;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_3 * __pyx_v_open_positions.strides[1]) )) += __pyx_v_exit_commission;
 
-  /* "chronoton/_cy_inner.pyx":186
+  /* "chronoton/_cy_inner.pyx":193
  *     open_positions[slot_idx, F_EXIT_REASON]    = exit_reason
  *     open_positions[slot_idx, F_COMMISSION]    += exit_commission
  *     open_positions[slot_idx, F_SPREAD_COST]   += exit_spread             # <<<<<<<<<<<<<<
@@ -17165,7 +17247,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_SPREAD_COST;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_3 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )) += __pyx_v_exit_spread;
 
-  /* "chronoton/_cy_inner.pyx":187
+  /* "chronoton/_cy_inner.pyx":194
  *     open_positions[slot_idx, F_COMMISSION]    += exit_commission
  *     open_positions[slot_idx, F_SPREAD_COST]   += exit_spread
  *     open_positions[slot_idx, F_SLIPPAGE_COST] += exit_slippage             # <<<<<<<<<<<<<<
@@ -17176,7 +17258,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_3 = __pyx_e_9chronoton_9_cy_inner_F_SLIPPAGE_COST;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_3 * __pyx_v_open_positions.strides[1]) )) += __pyx_v_exit_slippage;
 
-  /* "chronoton/_cy_inner.pyx":188
+  /* "chronoton/_cy_inner.pyx":195
  *     open_positions[slot_idx, F_SPREAD_COST]   += exit_spread
  *     open_positions[slot_idx, F_SLIPPAGE_COST] += exit_slippage
  *     entry_bar_f = open_positions[slot_idx, F_ENTRY_BAR]             # <<<<<<<<<<<<<<
@@ -17187,7 +17269,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_2 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_BAR;
   __pyx_v_entry_bar_f = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_3 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )));
 
-  /* "chronoton/_cy_inner.pyx":189
+  /* "chronoton/_cy_inner.pyx":196
  *     open_positions[slot_idx, F_SLIPPAGE_COST] += exit_slippage
  *     entry_bar_f = open_positions[slot_idx, F_ENTRY_BAR]
  *     open_positions[slot_idx, F_BARS_HELD] = <double>(bar_idx - <Py_ssize_t>entry_bar_f)             # <<<<<<<<<<<<<<
@@ -17198,7 +17280,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_3 = __pyx_e_9chronoton_9_cy_inner_F_BARS_HELD;
   *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_2 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_3 * __pyx_v_open_positions.strides[1]) )) = ((double)(__pyx_v_bar_idx - ((Py_ssize_t)__pyx_v_entry_bar_f)));
 
-  /* "chronoton/_cy_inner.pyx":192
+  /* "chronoton/_cy_inner.pyx":199
  * 
  *     # Copy row  closed_trades[n_closed]
  *     for j in range(N_FIELDS):             # <<<<<<<<<<<<<<
@@ -17210,7 +17292,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_j = __pyx_t_6;
 
-    /* "chronoton/_cy_inner.pyx":193
+    /* "chronoton/_cy_inner.pyx":200
  *     # Copy row  closed_trades[n_closed]
  *     for j in range(N_FIELDS):
  *         closed_trades[n_closed, j] = open_positions[slot_idx, j]             # <<<<<<<<<<<<<<
@@ -17224,7 +17306,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
     *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_closed_trades.data + __pyx_t_7 * __pyx_v_closed_trades.strides[0]) ) + __pyx_t_8 * __pyx_v_closed_trades.strides[1]) )) = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_3 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_2 * __pyx_v_open_positions.strides[1]) )));
   }
 
-  /* "chronoton/_cy_inner.pyx":195
+  /* "chronoton/_cy_inner.pyx":202
  *         closed_trades[n_closed, j] = open_positions[slot_idx, j]
  * 
  *     slot_active[slot_idx] = 0             # <<<<<<<<<<<<<<
@@ -17234,7 +17316,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_t_2 = __pyx_v_slot_idx;
   *((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_2 * __pyx_v_slot_active.strides[0]) )) = 0;
 
-  /* "chronoton/_cy_inner.pyx":196
+  /* "chronoton/_cy_inner.pyx":203
  * 
  *     slot_active[slot_idx] = 0
  *     return n_closed + 1             # <<<<<<<<<<<<<<
@@ -17244,7 +17326,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   __pyx_r = (__pyx_v_n_closed + 1);
   goto __pyx_L0;
 
-  /* "chronoton/_cy_inner.pyx":150
+  /* "chronoton/_cy_inner.pyx":157
  * 
  * 
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -17257,7 +17339,7 @@ static CYTHON_INLINE Py_ssize_t __pyx_f_9chronoton_9_cy_inner__exit_position(Py_
   return __pyx_r;
 }
 
-/* "chronoton/_cy_inner.pyx":204
+/* "chronoton/_cy_inner.pyx":211
  * # `closed_trades` are modified in place by the caller.
  * # ---------------------------------------------------------------------------
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -17333,228 +17415,228 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_o,&__pyx_mstate_global->__pyx_n_u_h,&__pyx_mstate_global->__pyx_n_u_l,&__pyx_mstate_global->__pyx_n_u_c,&__pyx_mstate_global->__pyx_n_u_v,&__pyx_mstate_global->__pyx_n_u_date_ns,&__pyx_mstate_global->__pyx_n_u_long_entries_shifted,&__pyx_mstate_global->__pyx_n_u_long_exits_shifted,&__pyx_mstate_global->__pyx_n_u_short_entries_shifted,&__pyx_mstate_global->__pyx_n_u_short_exits_shifted,&__pyx_mstate_global->__pyx_n_u_starting_balance,&__pyx_mstate_global->__pyx_n_u_sizing_method_code,&__pyx_mstate_global->__pyx_n_u_sizing_static,&__pyx_mstate_global->__pyx_n_u_sizing_array,&__pyx_mstate_global->__pyx_n_u_sl_arr,&__pyx_mstate_global->__pyx_n_u_tp_arr,&__pyx_mstate_global->__pyx_n_u_ts_arr,&__pyx_mstate_global->__pyx_n_u_leverage,&__pyx_mstate_global->__pyx_n_u_commission,&__pyx_mstate_global->__pyx_n_u_spread_arr,&__pyx_mstate_global->__pyx_n_u_slippage_arr,&__pyx_mstate_global->__pyx_n_u_long_fee_vec,&__pyx_mstate_global->__pyx_n_u_short_fee_vec,&__pyx_mstate_global->__pyx_n_u_hedging,&__pyx_mstate_global->__pyx_n_u_cash_out,&__pyx_mstate_global->__pyx_n_u_equity_out,&__pyx_mstate_global->__pyx_n_u_open_positions,&__pyx_mstate_global->__pyx_n_u_slot_active,&__pyx_mstate_global->__pyx_n_u_closed_trades,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 204, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 211, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case 29:
         values[28] = __Pyx_ArgRef_FASTCALL(__pyx_args, 28);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[28])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[28])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 28:
         values[27] = __Pyx_ArgRef_FASTCALL(__pyx_args, 27);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[27])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[27])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 27:
         values[26] = __Pyx_ArgRef_FASTCALL(__pyx_args, 26);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[26])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[26])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 26:
         values[25] = __Pyx_ArgRef_FASTCALL(__pyx_args, 25);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[25])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[25])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 25:
         values[24] = __Pyx_ArgRef_FASTCALL(__pyx_args, 24);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[24])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[24])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 24:
         values[23] = __Pyx_ArgRef_FASTCALL(__pyx_args, 23);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[23])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[23])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 23:
         values[22] = __Pyx_ArgRef_FASTCALL(__pyx_args, 22);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[22])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[22])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 22:
         values[21] = __Pyx_ArgRef_FASTCALL(__pyx_args, 21);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[21])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[21])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 21:
         values[20] = __Pyx_ArgRef_FASTCALL(__pyx_args, 20);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[20])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[20])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 20:
         values[19] = __Pyx_ArgRef_FASTCALL(__pyx_args, 19);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[19])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[19])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 19:
         values[18] = __Pyx_ArgRef_FASTCALL(__pyx_args, 18);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[18])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[18])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 18:
         values[17] = __Pyx_ArgRef_FASTCALL(__pyx_args, 17);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[17])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[17])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 17:
         values[16] = __Pyx_ArgRef_FASTCALL(__pyx_args, 16);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[16])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[16])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 16:
         values[15] = __Pyx_ArgRef_FASTCALL(__pyx_args, 15);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[15])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[15])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 15:
         values[14] = __Pyx_ArgRef_FASTCALL(__pyx_args, 14);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[14])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[14])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 14:
         values[13] = __Pyx_ArgRef_FASTCALL(__pyx_args, 13);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 13:
         values[12] = __Pyx_ArgRef_FASTCALL(__pyx_args, 12);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 12:
         values[11] = __Pyx_ArgRef_FASTCALL(__pyx_args, 11);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 11:
         values[10] = __Pyx_ArgRef_FASTCALL(__pyx_args, 10);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 10:
         values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  9:
         values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  8:
         values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 211, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "inner_loop_fast", 0) < (0)) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "inner_loop_fast", 0) < (0)) __PYX_ERR(0, 211, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 29; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("inner_loop_fast", 1, 29, 29, i); __PYX_ERR(0, 204, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("inner_loop_fast", 1, 29, 29, i); __PYX_ERR(0, 211, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 29)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[10] = __Pyx_ArgRef_FASTCALL(__pyx_args, 10);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[11] = __Pyx_ArgRef_FASTCALL(__pyx_args, 11);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[12] = __Pyx_ArgRef_FASTCALL(__pyx_args, 12);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[13] = __Pyx_ArgRef_FASTCALL(__pyx_args, 13);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[14] = __Pyx_ArgRef_FASTCALL(__pyx_args, 14);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[14])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[14])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[15] = __Pyx_ArgRef_FASTCALL(__pyx_args, 15);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[15])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[15])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[16] = __Pyx_ArgRef_FASTCALL(__pyx_args, 16);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[16])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[16])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[17] = __Pyx_ArgRef_FASTCALL(__pyx_args, 17);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[17])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[17])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[18] = __Pyx_ArgRef_FASTCALL(__pyx_args, 18);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[18])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[18])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[19] = __Pyx_ArgRef_FASTCALL(__pyx_args, 19);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[19])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[19])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[20] = __Pyx_ArgRef_FASTCALL(__pyx_args, 20);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[20])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[20])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[21] = __Pyx_ArgRef_FASTCALL(__pyx_args, 21);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[21])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[21])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[22] = __Pyx_ArgRef_FASTCALL(__pyx_args, 22);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[22])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[22])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[23] = __Pyx_ArgRef_FASTCALL(__pyx_args, 23);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[23])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[23])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[24] = __Pyx_ArgRef_FASTCALL(__pyx_args, 24);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[24])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[24])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[25] = __Pyx_ArgRef_FASTCALL(__pyx_args, 25);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[25])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[25])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[26] = __Pyx_ArgRef_FASTCALL(__pyx_args, 26);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[26])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[26])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[27] = __Pyx_ArgRef_FASTCALL(__pyx_args, 27);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[27])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[27])) __PYX_ERR(0, 211, __pyx_L3_error)
       values[28] = __Pyx_ArgRef_FASTCALL(__pyx_args, 28);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[28])) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[28])) __PYX_ERR(0, 211, __pyx_L3_error)
     }
-    __pyx_v_o = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[0], 0); if (unlikely(!__pyx_v_o.memview)) __PYX_ERR(0, 207, __pyx_L3_error)
-    __pyx_v_h = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[1], 0); if (unlikely(!__pyx_v_h.memview)) __PYX_ERR(0, 208, __pyx_L3_error)
-    __pyx_v_l = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[2], 0); if (unlikely(!__pyx_v_l.memview)) __PYX_ERR(0, 209, __pyx_L3_error)
-    __pyx_v_c = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[3], 0); if (unlikely(!__pyx_v_c.memview)) __PYX_ERR(0, 210, __pyx_L3_error)
-    __pyx_v_v = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[4], 0); if (unlikely(!__pyx_v_v.memview)) __PYX_ERR(0, 211, __pyx_L3_error)
-    __pyx_v_date_ns = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[5], 0); if (unlikely(!__pyx_v_date_ns.memview)) __PYX_ERR(0, 212, __pyx_L3_error)
-    __pyx_v_long_entries_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[6], 0); if (unlikely(!__pyx_v_long_entries_shifted.memview)) __PYX_ERR(0, 213, __pyx_L3_error)
-    __pyx_v_long_exits_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[7], 0); if (unlikely(!__pyx_v_long_exits_shifted.memview)) __PYX_ERR(0, 214, __pyx_L3_error)
-    __pyx_v_short_entries_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[8], 0); if (unlikely(!__pyx_v_short_entries_shifted.memview)) __PYX_ERR(0, 215, __pyx_L3_error)
-    __pyx_v_short_exits_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[9], 0); if (unlikely(!__pyx_v_short_exits_shifted.memview)) __PYX_ERR(0, 216, __pyx_L3_error)
-    __pyx_v_starting_balance = __Pyx_PyFloat_AsDouble(values[10]); if (unlikely((__pyx_v_starting_balance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 217, __pyx_L3_error)
-    __pyx_v_sizing_method_code = __Pyx_PyLong_As_int(values[11]); if (unlikely((__pyx_v_sizing_method_code == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 218, __pyx_L3_error)
-    __pyx_v_sizing_static = __Pyx_PyFloat_AsDouble(values[12]); if (unlikely((__pyx_v_sizing_static == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L3_error)
-    __pyx_v_sizing_array = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[13], 0); if (unlikely(!__pyx_v_sizing_array.memview)) __PYX_ERR(0, 220, __pyx_L3_error)
-    __pyx_v_sl_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[14], 0); if (unlikely(!__pyx_v_sl_arr.memview)) __PYX_ERR(0, 221, __pyx_L3_error)
-    __pyx_v_tp_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[15], 0); if (unlikely(!__pyx_v_tp_arr.memview)) __PYX_ERR(0, 222, __pyx_L3_error)
-    __pyx_v_ts_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[16], 0); if (unlikely(!__pyx_v_ts_arr.memview)) __PYX_ERR(0, 223, __pyx_L3_error)
-    __pyx_v_leverage = __Pyx_PyFloat_AsDouble(values[17]); if (unlikely((__pyx_v_leverage == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 224, __pyx_L3_error)
-    __pyx_v_commission = __Pyx_PyFloat_AsDouble(values[18]); if (unlikely((__pyx_v_commission == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 225, __pyx_L3_error)
-    __pyx_v_spread_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[19], 0); if (unlikely(!__pyx_v_spread_arr.memview)) __PYX_ERR(0, 226, __pyx_L3_error)
-    __pyx_v_slippage_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[20], 0); if (unlikely(!__pyx_v_slippage_arr.memview)) __PYX_ERR(0, 227, __pyx_L3_error)
-    __pyx_v_long_fee_vec = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[21], 0); if (unlikely(!__pyx_v_long_fee_vec.memview)) __PYX_ERR(0, 228, __pyx_L3_error)
-    __pyx_v_short_fee_vec = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[22], 0); if (unlikely(!__pyx_v_short_fee_vec.memview)) __PYX_ERR(0, 229, __pyx_L3_error)
-    __pyx_v_hedging = __Pyx_PyObject_IsTrue(values[23]); if (unlikely((__pyx_v_hedging == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 230, __pyx_L3_error)
-    __pyx_v_cash_out = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[24], PyBUF_WRITABLE); if (unlikely(!__pyx_v_cash_out.memview)) __PYX_ERR(0, 231, __pyx_L3_error)
-    __pyx_v_equity_out = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[25], PyBUF_WRITABLE); if (unlikely(!__pyx_v_equity_out.memview)) __PYX_ERR(0, 232, __pyx_L3_error)
-    __pyx_v_open_positions = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[26], PyBUF_WRITABLE); if (unlikely(!__pyx_v_open_positions.memview)) __PYX_ERR(0, 233, __pyx_L3_error)
-    __pyx_v_slot_active = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char(values[27], PyBUF_WRITABLE); if (unlikely(!__pyx_v_slot_active.memview)) __PYX_ERR(0, 234, __pyx_L3_error)
-    __pyx_v_closed_trades = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[28], PyBUF_WRITABLE); if (unlikely(!__pyx_v_closed_trades.memview)) __PYX_ERR(0, 235, __pyx_L3_error)
+    __pyx_v_o = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[0], 0); if (unlikely(!__pyx_v_o.memview)) __PYX_ERR(0, 214, __pyx_L3_error)
+    __pyx_v_h = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[1], 0); if (unlikely(!__pyx_v_h.memview)) __PYX_ERR(0, 215, __pyx_L3_error)
+    __pyx_v_l = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[2], 0); if (unlikely(!__pyx_v_l.memview)) __PYX_ERR(0, 216, __pyx_L3_error)
+    __pyx_v_c = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[3], 0); if (unlikely(!__pyx_v_c.memview)) __PYX_ERR(0, 217, __pyx_L3_error)
+    __pyx_v_v = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[4], 0); if (unlikely(!__pyx_v_v.memview)) __PYX_ERR(0, 218, __pyx_L3_error)
+    __pyx_v_date_ns = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[5], 0); if (unlikely(!__pyx_v_date_ns.memview)) __PYX_ERR(0, 219, __pyx_L3_error)
+    __pyx_v_long_entries_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[6], 0); if (unlikely(!__pyx_v_long_entries_shifted.memview)) __PYX_ERR(0, 220, __pyx_L3_error)
+    __pyx_v_long_exits_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[7], 0); if (unlikely(!__pyx_v_long_exits_shifted.memview)) __PYX_ERR(0, 221, __pyx_L3_error)
+    __pyx_v_short_entries_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[8], 0); if (unlikely(!__pyx_v_short_entries_shifted.memview)) __PYX_ERR(0, 222, __pyx_L3_error)
+    __pyx_v_short_exits_shifted = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char__const__(values[9], 0); if (unlikely(!__pyx_v_short_exits_shifted.memview)) __PYX_ERR(0, 223, __pyx_L3_error)
+    __pyx_v_starting_balance = __Pyx_PyFloat_AsDouble(values[10]); if (unlikely((__pyx_v_starting_balance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 224, __pyx_L3_error)
+    __pyx_v_sizing_method_code = __Pyx_PyLong_As_int(values[11]); if (unlikely((__pyx_v_sizing_method_code == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 225, __pyx_L3_error)
+    __pyx_v_sizing_static = __Pyx_PyFloat_AsDouble(values[12]); if (unlikely((__pyx_v_sizing_static == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 226, __pyx_L3_error)
+    __pyx_v_sizing_array = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[13], 0); if (unlikely(!__pyx_v_sizing_array.memview)) __PYX_ERR(0, 227, __pyx_L3_error)
+    __pyx_v_sl_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[14], 0); if (unlikely(!__pyx_v_sl_arr.memview)) __PYX_ERR(0, 228, __pyx_L3_error)
+    __pyx_v_tp_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[15], 0); if (unlikely(!__pyx_v_tp_arr.memview)) __PYX_ERR(0, 229, __pyx_L3_error)
+    __pyx_v_ts_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[16], 0); if (unlikely(!__pyx_v_ts_arr.memview)) __PYX_ERR(0, 230, __pyx_L3_error)
+    __pyx_v_leverage = __Pyx_PyFloat_AsDouble(values[17]); if (unlikely((__pyx_v_leverage == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L3_error)
+    __pyx_v_commission = __Pyx_PyFloat_AsDouble(values[18]); if (unlikely((__pyx_v_commission == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L3_error)
+    __pyx_v_spread_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[19], 0); if (unlikely(!__pyx_v_spread_arr.memview)) __PYX_ERR(0, 233, __pyx_L3_error)
+    __pyx_v_slippage_arr = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[20], 0); if (unlikely(!__pyx_v_slippage_arr.memview)) __PYX_ERR(0, 234, __pyx_L3_error)
+    __pyx_v_long_fee_vec = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[21], 0); if (unlikely(!__pyx_v_long_fee_vec.memview)) __PYX_ERR(0, 235, __pyx_L3_error)
+    __pyx_v_short_fee_vec = __Pyx_PyObject_to_MemoryviewSlice_ds_double__const__(values[22], 0); if (unlikely(!__pyx_v_short_fee_vec.memview)) __PYX_ERR(0, 236, __pyx_L3_error)
+    __pyx_v_hedging = __Pyx_PyObject_IsTrue(values[23]); if (unlikely((__pyx_v_hedging == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 237, __pyx_L3_error)
+    __pyx_v_cash_out = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[24], PyBUF_WRITABLE); if (unlikely(!__pyx_v_cash_out.memview)) __PYX_ERR(0, 238, __pyx_L3_error)
+    __pyx_v_equity_out = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[25], PyBUF_WRITABLE); if (unlikely(!__pyx_v_equity_out.memview)) __PYX_ERR(0, 239, __pyx_L3_error)
+    __pyx_v_open_positions = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[26], PyBUF_WRITABLE); if (unlikely(!__pyx_v_open_positions.memview)) __PYX_ERR(0, 240, __pyx_L3_error)
+    __pyx_v_slot_active = __Pyx_PyObject_to_MemoryviewSlice_ds_unsigned_char(values[27], PyBUF_WRITABLE); if (unlikely(!__pyx_v_slot_active.memview)) __PYX_ERR(0, 241, __pyx_L3_error)
+    __pyx_v_closed_trades = __Pyx_PyObject_to_MemoryviewSlice_dsds_double(values[28], PyBUF_WRITABLE); if (unlikely(!__pyx_v_closed_trades.memview)) __PYX_ERR(0, 242, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("inner_loop_fast", 1, 29, 29, __pyx_nargs); __PYX_ERR(0, 204, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("inner_loop_fast", 1, 29, 29, __pyx_nargs); __PYX_ERR(0, 211, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -17637,6 +17719,11 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
   double __pyx_v_price_l;
   double __pyx_v_price_c;
   double __pyx_v_t_ns;
+  double __pyx_v_spread_i;
+  double __pyx_v_slippage_i;
+  double __pyx_v_sl_bar;
+  double __pyx_v_tp_bar;
+  double __pyx_v_ts_bar;
   double __pyx_v_direction;
   double __pyx_v_entry_px;
   double __pyx_v_size;
@@ -17683,6 +17770,16 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
   int __pyx_v_any_active;
   __Pyx_memviewslice __pyx_v_unrealized_by_slot = { 0, 0, { 0 }, { 0 }, { 0 } };
   int __pyx_v_liquidated;
+  int __pyx_v__spread_scalar;
+  int __pyx_v__slippage_scalar;
+  int __pyx_v__sl_scalar;
+  int __pyx_v__tp_scalar;
+  int __pyx_v__ts_scalar;
+  double __pyx_v__spread_c;
+  double __pyx_v__slippage_c;
+  double __pyx_v__sl_c;
+  double __pyx_v__tp_c;
+  double __pyx_v__ts_c;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -17694,26 +17791,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
   __Pyx_memviewslice __pyx_t_7 = { 0, 0, { 0 }, { 0 }, { 0 } };
   PyObject *__pyx_t_8 = NULL;
   __Pyx_memviewslice __pyx_t_9 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  Py_ssize_t __pyx_t_10;
+  double __pyx_t_10;
   Py_ssize_t __pyx_t_11;
   Py_ssize_t __pyx_t_12;
   Py_ssize_t __pyx_t_13;
-  int __pyx_t_14;
+  Py_ssize_t __pyx_t_14;
   int __pyx_t_15;
-  Py_ssize_t __pyx_t_16;
+  int __pyx_t_16;
   Py_ssize_t __pyx_t_17;
   Py_ssize_t __pyx_t_18;
   Py_ssize_t __pyx_t_19;
   Py_ssize_t __pyx_t_20;
   Py_ssize_t __pyx_t_21;
   Py_ssize_t __pyx_t_22;
-  int __pyx_t_23;
+  Py_ssize_t __pyx_t_23;
+  int __pyx_t_24;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("inner_loop_fast", 0);
 
-  /* "chronoton/_cy_inner.pyx":243
+  /* "chronoton/_cy_inner.pyx":250
  *     (n_closed == -1) so caller can raise.
  *     """
  *     cdef Py_ssize_t n = o.shape[0]             # <<<<<<<<<<<<<<
@@ -17722,7 +17820,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   __pyx_v_n = (__pyx_v_o.shape[0]);
 
-  /* "chronoton/_cy_inner.pyx":244
+  /* "chronoton/_cy_inner.pyx":251
  *     """
  *     cdef Py_ssize_t n = o.shape[0]
  *     cdef Py_ssize_t n_slots = open_positions.shape[0]             # <<<<<<<<<<<<<<
@@ -17731,7 +17829,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   __pyx_v_n_slots = (__pyx_v_open_positions.shape[0]);
 
-  /* "chronoton/_cy_inner.pyx":245
+  /* "chronoton/_cy_inner.pyx":252
  *     cdef Py_ssize_t n = o.shape[0]
  *     cdef Py_ssize_t n_slots = open_positions.shape[0]
  *     cdef Py_ssize_t closed_capacity = closed_trades.shape[0]             # <<<<<<<<<<<<<<
@@ -17740,7 +17838,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   __pyx_v_closed_capacity = (__pyx_v_closed_trades.shape[0]);
 
-  /* "chronoton/_cy_inner.pyx":246
+  /* "chronoton/_cy_inner.pyx":253
  *     cdef Py_ssize_t n_slots = open_positions.shape[0]
  *     cdef Py_ssize_t closed_capacity = closed_trades.shape[0]
  *     cdef Py_ssize_t n_closed = 0             # <<<<<<<<<<<<<<
@@ -17749,7 +17847,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   __pyx_v_n_closed = 0;
 
-  /* "chronoton/_cy_inner.pyx":247
+  /* "chronoton/_cy_inner.pyx":254
  *     cdef Py_ssize_t closed_capacity = closed_trades.shape[0]
  *     cdef Py_ssize_t n_closed = 0
  *     cdef int[:] overflow_flag = np.zeros(1, dtype=np.intc)             # <<<<<<<<<<<<<<
@@ -17757,14 +17855,14 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *     cdef double current_cash = starting_balance
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_intc); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_intc); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_6 = 1;
@@ -17781,24 +17879,24 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
   #endif
   {
     PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_2, __pyx_mstate_global->__pyx_int_1};
-    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_dtype, __pyx_t_5, __pyx_t_3, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 247, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_dtype, __pyx_t_5, __pyx_t_3, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 254, __pyx_L1_error)
     __pyx_t_1 = __Pyx_Object_Vectorcall_CallFromBuilder((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_7 = __Pyx_PyObject_to_MemoryviewSlice_ds_int(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_7.memview)) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_to_MemoryviewSlice_ds_int(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_7.memview)) __PYX_ERR(0, 254, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_overflow_flag = __pyx_t_7;
   __pyx_t_7.memview = NULL;
   __pyx_t_7.data = NULL;
 
-  /* "chronoton/_cy_inner.pyx":249
+  /* "chronoton/_cy_inner.pyx":256
  *     cdef int[:] overflow_flag = np.zeros(1, dtype=np.intc)
  * 
  *     cdef double current_cash = starting_balance             # <<<<<<<<<<<<<<
@@ -17807,7 +17905,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   __pyx_v_current_cash = __pyx_v_starting_balance;
 
-  /* "chronoton/_cy_inner.pyx":273
+  /* "chronoton/_cy_inner.pyx":281
  *     # Per-liquidation scratch: unrealised per slot.
  *     # Allocated here so it can be reused without touching Python in the loop.
  *     cdef double[:] unrealized_by_slot = np.zeros(n_slots, dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -17815,16 +17913,16 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *     cdef bint liquidated = 0
 */
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyLong_FromSsize_t(__pyx_v_n_slots); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_3 = PyLong_FromSsize_t(__pyx_v_n_slots); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_float64); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_float64); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 1;
@@ -17841,35 +17939,155 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
   #endif
   {
     PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_4, __pyx_t_3};
-    __pyx_t_2 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_dtype, __pyx_t_8, __pyx_t_2, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_dtype, __pyx_t_8, __pyx_t_2, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 281, __pyx_L1_error)
     __pyx_t_1 = __Pyx_Object_Vectorcall_CallFromBuilder((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_2);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 281, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_1, PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_unrealized_by_slot = __pyx_t_9;
   __pyx_t_9.memview = NULL;
   __pyx_t_9.data = NULL;
 
-  /* "chronoton/_cy_inner.pyx":275
+  /* "chronoton/_cy_inner.pyx":283
  *     cdef double[:] unrealized_by_slot = np.zeros(n_slots, dtype=np.float64)
  * 
  *     cdef bint liquidated = 0             # <<<<<<<<<<<<<<
  * 
- *     with nogil:
+ *     # Precompute scalar-sentinel flags and cached values once before the loop.
 */
   __pyx_v_liquidated = 0;
 
-  /* "chronoton/_cy_inner.pyx":277
- *     cdef bint liquidated = 0
+  /* "chronoton/_cy_inner.pyx":288
+ *     # Inside the loop we do a register comparison (bint) rather than chasing
+ *     # the memoryview shape pointer 5  n times.
+ *     cdef bint _spread_scalar   = spread_arr.shape[0]   == 1             # <<<<<<<<<<<<<<
+ *     cdef bint _slippage_scalar = slippage_arr.shape[0] == 1
+ *     cdef bint _sl_scalar       = sl_arr.shape[0]       == 1
+*/
+  __pyx_v__spread_scalar = ((__pyx_v_spread_arr.shape[0]) == 1);
+
+  /* "chronoton/_cy_inner.pyx":289
+ *     # the memoryview shape pointer 5  n times.
+ *     cdef bint _spread_scalar   = spread_arr.shape[0]   == 1
+ *     cdef bint _slippage_scalar = slippage_arr.shape[0] == 1             # <<<<<<<<<<<<<<
+ *     cdef bint _sl_scalar       = sl_arr.shape[0]       == 1
+ *     cdef bint _tp_scalar       = tp_arr.shape[0]       == 1
+*/
+  __pyx_v__slippage_scalar = ((__pyx_v_slippage_arr.shape[0]) == 1);
+
+  /* "chronoton/_cy_inner.pyx":290
+ *     cdef bint _spread_scalar   = spread_arr.shape[0]   == 1
+ *     cdef bint _slippage_scalar = slippage_arr.shape[0] == 1
+ *     cdef bint _sl_scalar       = sl_arr.shape[0]       == 1             # <<<<<<<<<<<<<<
+ *     cdef bint _tp_scalar       = tp_arr.shape[0]       == 1
+ *     cdef bint _ts_scalar       = ts_arr.shape[0]       == 1
+*/
+  __pyx_v__sl_scalar = ((__pyx_v_sl_arr.shape[0]) == 1);
+
+  /* "chronoton/_cy_inner.pyx":291
+ *     cdef bint _slippage_scalar = slippage_arr.shape[0] == 1
+ *     cdef bint _sl_scalar       = sl_arr.shape[0]       == 1
+ *     cdef bint _tp_scalar       = tp_arr.shape[0]       == 1             # <<<<<<<<<<<<<<
+ *     cdef bint _ts_scalar       = ts_arr.shape[0]       == 1
+ *     cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0
+*/
+  __pyx_v__tp_scalar = ((__pyx_v_tp_arr.shape[0]) == 1);
+
+  /* "chronoton/_cy_inner.pyx":292
+ *     cdef bint _sl_scalar       = sl_arr.shape[0]       == 1
+ *     cdef bint _tp_scalar       = tp_arr.shape[0]       == 1
+ *     cdef bint _ts_scalar       = ts_arr.shape[0]       == 1             # <<<<<<<<<<<<<<
+ *     cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0
+ *     cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0
+*/
+  __pyx_v__ts_scalar = ((__pyx_v_ts_arr.shape[0]) == 1);
+
+  /* "chronoton/_cy_inner.pyx":293
+ *     cdef bint _tp_scalar       = tp_arr.shape[0]       == 1
+ *     cdef bint _ts_scalar       = ts_arr.shape[0]       == 1
+ *     cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0             # <<<<<<<<<<<<<<
+ *     cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0
+ *     cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0
+*/
+  if (__pyx_v__spread_scalar) {
+    __pyx_t_11 = 0;
+    __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_11 * __pyx_v_spread_arr.strides[0]) )));
+  } else {
+    __pyx_t_10 = 0.0;
+  }
+  __pyx_v__spread_c = __pyx_t_10;
+
+  /* "chronoton/_cy_inner.pyx":294
+ *     cdef bint _ts_scalar       = ts_arr.shape[0]       == 1
+ *     cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0
+ *     cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0             # <<<<<<<<<<<<<<
+ *     cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0
+ *     cdef double _tp_c       = tp_arr[0]       if _tp_scalar       else 0.0
+*/
+  if (__pyx_v__slippage_scalar) {
+    __pyx_t_11 = 0;
+    __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_11 * __pyx_v_slippage_arr.strides[0]) )));
+  } else {
+    __pyx_t_10 = 0.0;
+  }
+  __pyx_v__slippage_c = __pyx_t_10;
+
+  /* "chronoton/_cy_inner.pyx":295
+ *     cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0
+ *     cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0
+ *     cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0             # <<<<<<<<<<<<<<
+ *     cdef double _tp_c       = tp_arr[0]       if _tp_scalar       else 0.0
+ *     cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0
+*/
+  if (__pyx_v__sl_scalar) {
+    __pyx_t_11 = 0;
+    __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_11 * __pyx_v_sl_arr.strides[0]) )));
+  } else {
+    __pyx_t_10 = 0.0;
+  }
+  __pyx_v__sl_c = __pyx_t_10;
+
+  /* "chronoton/_cy_inner.pyx":296
+ *     cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0
+ *     cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0
+ *     cdef double _tp_c       = tp_arr[0]       if _tp_scalar       else 0.0             # <<<<<<<<<<<<<<
+ *     cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0
+ * 
+*/
+  if (__pyx_v__tp_scalar) {
+    __pyx_t_11 = 0;
+    __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_11 * __pyx_v_tp_arr.strides[0]) )));
+  } else {
+    __pyx_t_10 = 0.0;
+  }
+  __pyx_v__tp_c = __pyx_t_10;
+
+  /* "chronoton/_cy_inner.pyx":297
+ *     cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0
+ *     cdef double _tp_c       = tp_arr[0]       if _tp_scalar       else 0.0
+ *     cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0             # <<<<<<<<<<<<<<
+ * 
+ *     with nogil:
+*/
+  if (__pyx_v__ts_scalar) {
+    __pyx_t_11 = 0;
+    __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_11 * __pyx_v_ts_arr.strides[0]) )));
+  } else {
+    __pyx_t_10 = 0.0;
+  }
+  __pyx_v__ts_c = __pyx_t_10;
+
+  /* "chronoton/_cy_inner.pyx":299
+ *     cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
  *         for i in range(n):
@@ -17881,112 +18099,187 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
       __Pyx_FastGIL_Remember();
       /*try:*/ {
 
-        /* "chronoton/_cy_inner.pyx":278
+        /* "chronoton/_cy_inner.pyx":300
  * 
  *     with nogil:
  *         for i in range(n):             # <<<<<<<<<<<<<<
  *             price_o = o[i]
  *             price_h = h[i]
 */
-        __pyx_t_10 = __pyx_v_n;
-        __pyx_t_11 = __pyx_t_10;
-        for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-          __pyx_v_i = __pyx_t_12;
+        __pyx_t_12 = __pyx_v_n;
+        __pyx_t_13 = __pyx_t_12;
+        for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+          __pyx_v_i = __pyx_t_14;
 
-          /* "chronoton/_cy_inner.pyx":279
+          /* "chronoton/_cy_inner.pyx":301
  *     with nogil:
  *         for i in range(n):
  *             price_o = o[i]             # <<<<<<<<<<<<<<
  *             price_h = h[i]
  *             price_l = l[i]
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_v_price_o = (*((double const  *) ( /* dim=0 */ (__pyx_v_o.data + __pyx_t_13 * __pyx_v_o.strides[0]) )));
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_v_price_o = (*((double const  *) ( /* dim=0 */ (__pyx_v_o.data + __pyx_t_11 * __pyx_v_o.strides[0]) )));
 
-          /* "chronoton/_cy_inner.pyx":280
+          /* "chronoton/_cy_inner.pyx":302
  *         for i in range(n):
  *             price_o = o[i]
  *             price_h = h[i]             # <<<<<<<<<<<<<<
  *             price_l = l[i]
  *             price_c = c[i]
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_v_price_h = (*((double const  *) ( /* dim=0 */ (__pyx_v_h.data + __pyx_t_13 * __pyx_v_h.strides[0]) )));
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_v_price_h = (*((double const  *) ( /* dim=0 */ (__pyx_v_h.data + __pyx_t_11 * __pyx_v_h.strides[0]) )));
 
-          /* "chronoton/_cy_inner.pyx":281
+          /* "chronoton/_cy_inner.pyx":303
  *             price_o = o[i]
  *             price_h = h[i]
  *             price_l = l[i]             # <<<<<<<<<<<<<<
  *             price_c = c[i]
  *             t_ns = date_ns[i]
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_v_price_l = (*((double const  *) ( /* dim=0 */ (__pyx_v_l.data + __pyx_t_13 * __pyx_v_l.strides[0]) )));
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_v_price_l = (*((double const  *) ( /* dim=0 */ (__pyx_v_l.data + __pyx_t_11 * __pyx_v_l.strides[0]) )));
 
-          /* "chronoton/_cy_inner.pyx":282
+          /* "chronoton/_cy_inner.pyx":304
  *             price_h = h[i]
  *             price_l = l[i]
  *             price_c = c[i]             # <<<<<<<<<<<<<<
  *             t_ns = date_ns[i]
- * 
+ *             spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_v_price_c = (*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_13 * __pyx_v_c.strides[0]) )));
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_v_price_c = (*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_11 * __pyx_v_c.strides[0]) )));
 
-          /* "chronoton/_cy_inner.pyx":283
+          /* "chronoton/_cy_inner.pyx":305
  *             price_l = l[i]
  *             price_c = c[i]
  *             t_ns = date_ns[i]             # <<<<<<<<<<<<<<
+ *             spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]
+ *             slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]
+*/
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_v_t_ns = (*((double const  *) ( /* dim=0 */ (__pyx_v_date_ns.data + __pyx_t_11 * __pyx_v_date_ns.strides[0]) )));
+
+          /* "chronoton/_cy_inner.pyx":306
+ *             price_c = c[i]
+ *             t_ns = date_ns[i]
+ *             spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]             # <<<<<<<<<<<<<<
+ *             slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]
+ *             sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]
+*/
+          if (__pyx_v__spread_scalar) {
+            __pyx_t_10 = __pyx_v__spread_c;
+          } else {
+            __pyx_t_11 = __pyx_v_i;
+            __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_11 * __pyx_v_spread_arr.strides[0]) )));
+          }
+          __pyx_v_spread_i = __pyx_t_10;
+
+          /* "chronoton/_cy_inner.pyx":307
+ *             t_ns = date_ns[i]
+ *             spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]
+ *             slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]             # <<<<<<<<<<<<<<
+ *             sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]
+ *             tp_bar     = _tp_c       if _tp_scalar       else tp_arr[i]
+*/
+          if (__pyx_v__slippage_scalar) {
+            __pyx_t_10 = __pyx_v__slippage_c;
+          } else {
+            __pyx_t_11 = __pyx_v_i;
+            __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_11 * __pyx_v_slippage_arr.strides[0]) )));
+          }
+          __pyx_v_slippage_i = __pyx_t_10;
+
+          /* "chronoton/_cy_inner.pyx":308
+ *             spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]
+ *             slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]
+ *             sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]             # <<<<<<<<<<<<<<
+ *             tp_bar     = _tp_c       if _tp_scalar       else tp_arr[i]
+ *             ts_bar     = _ts_c       if _ts_scalar       else ts_arr[i]
+*/
+          if (__pyx_v__sl_scalar) {
+            __pyx_t_10 = __pyx_v__sl_c;
+          } else {
+            __pyx_t_11 = __pyx_v_i;
+            __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_11 * __pyx_v_sl_arr.strides[0]) )));
+          }
+          __pyx_v_sl_bar = __pyx_t_10;
+
+          /* "chronoton/_cy_inner.pyx":309
+ *             slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]
+ *             sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]
+ *             tp_bar     = _tp_c       if _tp_scalar       else tp_arr[i]             # <<<<<<<<<<<<<<
+ *             ts_bar     = _ts_c       if _ts_scalar       else ts_arr[i]
+ * 
+*/
+          if (__pyx_v__tp_scalar) {
+            __pyx_t_10 = __pyx_v__tp_c;
+          } else {
+            __pyx_t_11 = __pyx_v_i;
+            __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_11 * __pyx_v_tp_arr.strides[0]) )));
+          }
+          __pyx_v_tp_bar = __pyx_t_10;
+
+          /* "chronoton/_cy_inner.pyx":310
+ *             sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]
+ *             tp_bar     = _tp_c       if _tp_scalar       else tp_arr[i]
+ *             ts_bar     = _ts_c       if _ts_scalar       else ts_arr[i]             # <<<<<<<<<<<<<<
  * 
  *             # (1) Overnight financing ------------------------------------
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_v_t_ns = (*((double const  *) ( /* dim=0 */ (__pyx_v_date_ns.data + __pyx_t_13 * __pyx_v_date_ns.strides[0]) )));
+          if (__pyx_v__ts_scalar) {
+            __pyx_t_10 = __pyx_v__ts_c;
+          } else {
+            __pyx_t_11 = __pyx_v_i;
+            __pyx_t_10 = (*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_11 * __pyx_v_ts_arr.strides[0]) )));
+          }
+          __pyx_v_ts_bar = __pyx_t_10;
 
-          /* "chronoton/_cy_inner.pyx":286
+          /* "chronoton/_cy_inner.pyx":313
  * 
  *             # (1) Overnight financing ------------------------------------
  *             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:             # <<<<<<<<<<<<<<
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
 */
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_t_15 = ((*((double const  *) ( /* dim=0 */ (__pyx_v_long_fee_vec.data + __pyx_t_13 * __pyx_v_long_fee_vec.strides[0]) ))) != 0.0);
-          if (!__pyx_t_15) {
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_t_16 = ((*((double const  *) ( /* dim=0 */ (__pyx_v_long_fee_vec.data + __pyx_t_11 * __pyx_v_long_fee_vec.strides[0]) ))) != 0.0);
+          if (!__pyx_t_16) {
           } else {
-            __pyx_t_14 = __pyx_t_15;
+            __pyx_t_15 = __pyx_t_16;
             goto __pyx_L9_bool_binop_done;
           }
-          __pyx_t_13 = __pyx_v_i;
-          __pyx_t_15 = ((*((double const  *) ( /* dim=0 */ (__pyx_v_short_fee_vec.data + __pyx_t_13 * __pyx_v_short_fee_vec.strides[0]) ))) != 0.0);
-          __pyx_t_14 = __pyx_t_15;
+          __pyx_t_11 = __pyx_v_i;
+          __pyx_t_16 = ((*((double const  *) ( /* dim=0 */ (__pyx_v_short_fee_vec.data + __pyx_t_11 * __pyx_v_short_fee_vec.strides[0]) ))) != 0.0);
+          __pyx_t_15 = __pyx_t_16;
           __pyx_L9_bool_binop_done:;
-          if (__pyx_t_14) {
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":287
+            /* "chronoton/_cy_inner.pyx":314
  *             # (1) Overnight financing ------------------------------------
  *             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         continue
 */
-            __pyx_t_16 = __pyx_v_n_slots;
-            __pyx_t_17 = __pyx_t_16;
-            for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-              __pyx_v_k = __pyx_t_18;
+            __pyx_t_17 = __pyx_v_n_slots;
+            __pyx_t_18 = __pyx_t_17;
+            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+              __pyx_v_k = __pyx_t_19;
 
-              /* "chronoton/_cy_inner.pyx":288
+              /* "chronoton/_cy_inner.pyx":315
  *             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                         continue
  *                     notional = (open_positions[k, F_SIZE]
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_13 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_11 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":289
+                /* "chronoton/_cy_inner.pyx":316
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         continue             # <<<<<<<<<<<<<<
@@ -17995,7 +18288,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L11_continue;
 
-                /* "chronoton/_cy_inner.pyx":288
+                /* "chronoton/_cy_inner.pyx":315
  *             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -18004,50 +18297,50 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":290
+              /* "chronoton/_cy_inner.pyx":317
  *                     if slot_active[k] == 0:
  *                         continue
  *                     notional = (open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  *                                 * open_positions[k, F_ENTRY_PRICE])
  *                     if open_positions[k, F_DIRECTION] > 0:
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-              /* "chronoton/_cy_inner.pyx":291
+              /* "chronoton/_cy_inner.pyx":318
  *                         continue
  *                     notional = (open_positions[k, F_SIZE]
  *                                 * open_positions[k, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                     if open_positions[k, F_DIRECTION] > 0:
  *                         charge = long_fee_vec[i] * notional
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-              __pyx_v_notional = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))));
+              __pyx_t_21 = __pyx_v_k;
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+              __pyx_v_notional = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))));
 
-              /* "chronoton/_cy_inner.pyx":292
+              /* "chronoton/_cy_inner.pyx":319
  *                     notional = (open_positions[k, F_SIZE]
  *                                 * open_positions[k, F_ENTRY_PRICE])
  *                     if open_positions[k, F_DIRECTION] > 0:             # <<<<<<<<<<<<<<
  *                         charge = long_fee_vec[i] * notional
  *                     else:
 */
-              __pyx_t_21 = __pyx_v_k;
-              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_t_14 = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) > 0.0);
-              if (__pyx_t_14) {
+              __pyx_t_22 = __pyx_v_k;
+              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+              __pyx_t_15 = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) > 0.0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":293
+                /* "chronoton/_cy_inner.pyx":320
  *                                 * open_positions[k, F_ENTRY_PRICE])
  *                     if open_positions[k, F_DIRECTION] > 0:
  *                         charge = long_fee_vec[i] * notional             # <<<<<<<<<<<<<<
  *                     else:
  *                         charge = short_fee_vec[i] * notional
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_charge = ((*((double const  *) ( /* dim=0 */ (__pyx_v_long_fee_vec.data + __pyx_t_20 * __pyx_v_long_fee_vec.strides[0]) ))) * __pyx_v_notional);
+                __pyx_t_21 = __pyx_v_i;
+                __pyx_v_charge = ((*((double const  *) ( /* dim=0 */ (__pyx_v_long_fee_vec.data + __pyx_t_21 * __pyx_v_long_fee_vec.strides[0]) ))) * __pyx_v_notional);
 
-                /* "chronoton/_cy_inner.pyx":292
+                /* "chronoton/_cy_inner.pyx":319
  *                     notional = (open_positions[k, F_SIZE]
  *                                 * open_positions[k, F_ENTRY_PRICE])
  *                     if open_positions[k, F_DIRECTION] > 0:             # <<<<<<<<<<<<<<
@@ -18057,7 +18350,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L14;
               }
 
-              /* "chronoton/_cy_inner.pyx":295
+              /* "chronoton/_cy_inner.pyx":322
  *                         charge = long_fee_vec[i] * notional
  *                     else:
  *                         charge = short_fee_vec[i] * notional             # <<<<<<<<<<<<<<
@@ -18065,23 +18358,23 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                     current_cash -= charge
 */
               /*else*/ {
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_charge = ((*((double const  *) ( /* dim=0 */ (__pyx_v_short_fee_vec.data + __pyx_t_20 * __pyx_v_short_fee_vec.strides[0]) ))) * __pyx_v_notional);
+                __pyx_t_21 = __pyx_v_i;
+                __pyx_v_charge = ((*((double const  *) ( /* dim=0 */ (__pyx_v_short_fee_vec.data + __pyx_t_21 * __pyx_v_short_fee_vec.strides[0]) ))) * __pyx_v_notional);
               }
               __pyx_L14:;
 
-              /* "chronoton/_cy_inner.pyx":296
+              /* "chronoton/_cy_inner.pyx":323
  *                     else:
  *                         charge = short_fee_vec[i] * notional
  *                     open_positions[k, F_OVERNIGHT] += charge             # <<<<<<<<<<<<<<
  *                     current_cash -= charge
  * 
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_OVERNIGHT;
-              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )) += __pyx_v_charge;
+              __pyx_t_21 = __pyx_v_k;
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_OVERNIGHT;
+              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )) += __pyx_v_charge;
 
-              /* "chronoton/_cy_inner.pyx":297
+              /* "chronoton/_cy_inner.pyx":324
  *                         charge = short_fee_vec[i] * notional
  *                     open_positions[k, F_OVERNIGHT] += charge
  *                     current_cash -= charge             # <<<<<<<<<<<<<<
@@ -18092,7 +18385,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               __pyx_L11_continue:;
             }
 
-            /* "chronoton/_cy_inner.pyx":286
+            /* "chronoton/_cy_inner.pyx":313
  * 
  *             # (1) Overnight financing ------------------------------------
  *             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:             # <<<<<<<<<<<<<<
@@ -18101,30 +18394,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":300
+          /* "chronoton/_cy_inner.pyx":327
  * 
  *             # (2) TS peaks, MAE/MFE, SL/TP/TS checks ---------------------
  *             for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                 if slot_active[k] == 0:
  *                     continue
 */
-          __pyx_t_16 = __pyx_v_n_slots;
-          __pyx_t_17 = __pyx_t_16;
-          for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-            __pyx_v_k = __pyx_t_18;
+          __pyx_t_17 = __pyx_v_n_slots;
+          __pyx_t_18 = __pyx_t_17;
+          for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+            __pyx_v_k = __pyx_t_19;
 
-            /* "chronoton/_cy_inner.pyx":301
+            /* "chronoton/_cy_inner.pyx":328
  *             # (2) TS peaks, MAE/MFE, SL/TP/TS checks ---------------------
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                     continue
  *                 direction = open_positions[k, F_DIRECTION]
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) == 0);
-            if (__pyx_t_14) {
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) == 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":302
+              /* "chronoton/_cy_inner.pyx":329
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:
  *                     continue             # <<<<<<<<<<<<<<
@@ -18133,7 +18426,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L15_continue;
 
-              /* "chronoton/_cy_inner.pyx":301
+              /* "chronoton/_cy_inner.pyx":328
  *             # (2) TS peaks, MAE/MFE, SL/TP/TS checks ---------------------
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -18142,92 +18435,92 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":303
+            /* "chronoton/_cy_inner.pyx":330
  *                 if slot_active[k] == 0:
  *                     continue
  *                 direction = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                 entry_px = open_positions[k, F_ENTRY_PRICE]
  *                 size = open_positions[k, F_SIZE]
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-            __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+            __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":304
+            /* "chronoton/_cy_inner.pyx":331
  *                     continue
  *                 direction = open_positions[k, F_DIRECTION]
  *                 entry_px = open_positions[k, F_ENTRY_PRICE]             # <<<<<<<<<<<<<<
  *                 size = open_positions[k, F_SIZE]
  * 
 */
-            __pyx_t_20 = __pyx_v_k;
-            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-            __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_21 = __pyx_v_k;
+            __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+            __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":305
+            /* "chronoton/_cy_inner.pyx":332
  *                 direction = open_positions[k, F_DIRECTION]
  *                 entry_px = open_positions[k, F_ENTRY_PRICE]
  *                 size = open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  * 
  *                 # Update trailing-stop peak
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-            __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+            __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":308
+            /* "chronoton/_cy_inner.pyx":335
  * 
  *                 # Update trailing-stop peak
  *                 ts_dist = open_positions[k, F_TS_DIST]             # <<<<<<<<<<<<<<
  *                 if not isnan(ts_dist):
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:
 */
-            __pyx_t_20 = __pyx_v_k;
-            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_DIST;
-            __pyx_v_ts_dist = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_21 = __pyx_v_k;
+            __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_TS_DIST;
+            __pyx_v_ts_dist = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":309
+            /* "chronoton/_cy_inner.pyx":336
  *                 # Update trailing-stop peak
  *                 ts_dist = open_positions[k, F_TS_DIST]
  *                 if not isnan(ts_dist):             # <<<<<<<<<<<<<<
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_h
 */
-            __pyx_t_14 = (!isnan(__pyx_v_ts_dist));
-            if (__pyx_t_14) {
+            __pyx_t_15 = (!isnan(__pyx_v_ts_dist));
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":310
+              /* "chronoton/_cy_inner.pyx":337
  *                 ts_dist = open_positions[k, F_TS_DIST]
  *                 if not isnan(ts_dist):
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:             # <<<<<<<<<<<<<<
  *                         open_positions[k, F_TS_PEAK] = price_h
  *                     elif direction < 0 and price_l < open_positions[k, F_TS_PEAK]:
 */
-              __pyx_t_15 = (__pyx_v_direction > 0.0);
-              if (__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_direction > 0.0);
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L20_bool_binop_done;
               }
-              __pyx_t_21 = __pyx_v_k;
-              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-              __pyx_t_15 = (__pyx_v_price_h > (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))));
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_22 = __pyx_v_k;
+              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+              __pyx_t_16 = (__pyx_v_price_h > (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))));
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L20_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":311
+                /* "chronoton/_cy_inner.pyx":338
  *                 if not isnan(ts_dist):
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_h             # <<<<<<<<<<<<<<
  *                     elif direction < 0 and price_l < open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_l
 */
-                __pyx_t_20 = __pyx_v_k;
-                __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-                *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_price_h;
+                __pyx_t_21 = __pyx_v_k;
+                __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+                *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_price_h;
 
-                /* "chronoton/_cy_inner.pyx":310
+                /* "chronoton/_cy_inner.pyx":337
  *                 ts_dist = open_positions[k, F_TS_DIST]
  *                 if not isnan(ts_dist):
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:             # <<<<<<<<<<<<<<
@@ -18237,38 +18530,38 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L19;
               }
 
-              /* "chronoton/_cy_inner.pyx":312
+              /* "chronoton/_cy_inner.pyx":339
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_h
  *                     elif direction < 0 and price_l < open_positions[k, F_TS_PEAK]:             # <<<<<<<<<<<<<<
  *                         open_positions[k, F_TS_PEAK] = price_l
  * 
 */
-              __pyx_t_15 = (__pyx_v_direction < 0.0);
-              if (__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_direction < 0.0);
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L22_bool_binop_done;
               }
-              __pyx_t_21 = __pyx_v_k;
-              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-              __pyx_t_15 = (__pyx_v_price_l < (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))));
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_22 = __pyx_v_k;
+              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+              __pyx_t_16 = (__pyx_v_price_l < (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))));
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L22_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":313
+                /* "chronoton/_cy_inner.pyx":340
  *                         open_positions[k, F_TS_PEAK] = price_h
  *                     elif direction < 0 and price_l < open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_l             # <<<<<<<<<<<<<<
  * 
  *                 # MAE/MFE
 */
-                __pyx_t_20 = __pyx_v_k;
-                __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-                *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_price_l;
+                __pyx_t_21 = __pyx_v_k;
+                __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+                *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_price_l;
 
-                /* "chronoton/_cy_inner.pyx":312
+                /* "chronoton/_cy_inner.pyx":339
  *                     if direction > 0 and price_h > open_positions[k, F_TS_PEAK]:
  *                         open_positions[k, F_TS_PEAK] = price_h
  *                     elif direction < 0 and price_l < open_positions[k, F_TS_PEAK]:             # <<<<<<<<<<<<<<
@@ -18278,7 +18571,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               }
               __pyx_L19:;
 
-              /* "chronoton/_cy_inner.pyx":309
+              /* "chronoton/_cy_inner.pyx":336
  *                 # Update trailing-stop peak
  *                 ts_dist = open_positions[k, F_TS_DIST]
  *                 if not isnan(ts_dist):             # <<<<<<<<<<<<<<
@@ -18287,17 +18580,17 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":316
+            /* "chronoton/_cy_inner.pyx":343
  * 
  *                 # MAE/MFE
  *                 if direction > 0:             # <<<<<<<<<<<<<<
  *                     worst_px = price_l
  *                     best_px = price_h
 */
-            __pyx_t_14 = (__pyx_v_direction > 0.0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_direction > 0.0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":317
+              /* "chronoton/_cy_inner.pyx":344
  *                 # MAE/MFE
  *                 if direction > 0:
  *                     worst_px = price_l             # <<<<<<<<<<<<<<
@@ -18306,7 +18599,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_worst_px = __pyx_v_price_l;
 
-              /* "chronoton/_cy_inner.pyx":318
+              /* "chronoton/_cy_inner.pyx":345
  *                 if direction > 0:
  *                     worst_px = price_l
  *                     best_px = price_h             # <<<<<<<<<<<<<<
@@ -18315,7 +18608,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_best_px = __pyx_v_price_h;
 
-              /* "chronoton/_cy_inner.pyx":316
+              /* "chronoton/_cy_inner.pyx":343
  * 
  *                 # MAE/MFE
  *                 if direction > 0:             # <<<<<<<<<<<<<<
@@ -18325,7 +18618,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               goto __pyx_L24;
             }
 
-            /* "chronoton/_cy_inner.pyx":320
+            /* "chronoton/_cy_inner.pyx":347
  *                     best_px = price_h
  *                 else:
  *                     worst_px = price_h             # <<<<<<<<<<<<<<
@@ -18335,7 +18628,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             /*else*/ {
               __pyx_v_worst_px = __pyx_v_price_h;
 
-              /* "chronoton/_cy_inner.pyx":321
+              /* "chronoton/_cy_inner.pyx":348
  *                 else:
  *                     worst_px = price_h
  *                     best_px = price_l             # <<<<<<<<<<<<<<
@@ -18346,7 +18639,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L24:;
 
-            /* "chronoton/_cy_inner.pyx":322
+            /* "chronoton/_cy_inner.pyx":349
  *                     worst_px = price_h
  *                     best_px = price_l
  *                 worst_pnl = direction * (worst_px - entry_px) * size             # <<<<<<<<<<<<<<
@@ -18355,7 +18648,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_worst_pnl = ((__pyx_v_direction * (__pyx_v_worst_px - __pyx_v_entry_px)) * __pyx_v_size);
 
-            /* "chronoton/_cy_inner.pyx":323
+            /* "chronoton/_cy_inner.pyx":350
  *                     best_px = price_l
  *                 worst_pnl = direction * (worst_px - entry_px) * size
  *                 best_pnl = direction * (best_px - entry_px) * size             # <<<<<<<<<<<<<<
@@ -18364,30 +18657,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_best_pnl = ((__pyx_v_direction * (__pyx_v_best_px - __pyx_v_entry_px)) * __pyx_v_size);
 
-            /* "chronoton/_cy_inner.pyx":324
+            /* "chronoton/_cy_inner.pyx":351
  *                 worst_pnl = direction * (worst_px - entry_px) * size
  *                 best_pnl = direction * (best_px - entry_px) * size
  *                 if worst_pnl < open_positions[k, F_MAE]:             # <<<<<<<<<<<<<<
  *                     open_positions[k, F_MAE] = worst_pnl
  *                 if best_pnl > open_positions[k, F_MFE]:
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_MAE;
-            __pyx_t_14 = (__pyx_v_worst_pnl < (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))));
-            if (__pyx_t_14) {
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_MAE;
+            __pyx_t_15 = (__pyx_v_worst_pnl < (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))));
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":325
+              /* "chronoton/_cy_inner.pyx":352
  *                 best_pnl = direction * (best_px - entry_px) * size
  *                 if worst_pnl < open_positions[k, F_MAE]:
  *                     open_positions[k, F_MAE] = worst_pnl             # <<<<<<<<<<<<<<
  *                 if best_pnl > open_positions[k, F_MFE]:
  *                     open_positions[k, F_MFE] = best_pnl
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_MAE;
-              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_worst_pnl;
+              __pyx_t_21 = __pyx_v_k;
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_MAE;
+              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_worst_pnl;
 
-              /* "chronoton/_cy_inner.pyx":324
+              /* "chronoton/_cy_inner.pyx":351
  *                 worst_pnl = direction * (worst_px - entry_px) * size
  *                 best_pnl = direction * (best_px - entry_px) * size
  *                 if worst_pnl < open_positions[k, F_MAE]:             # <<<<<<<<<<<<<<
@@ -18396,30 +18689,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":326
+            /* "chronoton/_cy_inner.pyx":353
  *                 if worst_pnl < open_positions[k, F_MAE]:
  *                     open_positions[k, F_MAE] = worst_pnl
  *                 if best_pnl > open_positions[k, F_MFE]:             # <<<<<<<<<<<<<<
  *                     open_positions[k, F_MFE] = best_pnl
  * 
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_MFE;
-            __pyx_t_14 = (__pyx_v_best_pnl > (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))));
-            if (__pyx_t_14) {
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_MFE;
+            __pyx_t_15 = (__pyx_v_best_pnl > (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))));
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":327
+              /* "chronoton/_cy_inner.pyx":354
  *                     open_positions[k, F_MAE] = worst_pnl
  *                 if best_pnl > open_positions[k, F_MFE]:
  *                     open_positions[k, F_MFE] = best_pnl             # <<<<<<<<<<<<<<
  * 
  *                 # SL / TP / TS triggers  SL has priority on tie
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_MFE;
-              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_best_pnl;
+              __pyx_t_21 = __pyx_v_k;
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_MFE;
+              *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )) = __pyx_v_best_pnl;
 
-              /* "chronoton/_cy_inner.pyx":326
+              /* "chronoton/_cy_inner.pyx":353
  *                 if worst_pnl < open_positions[k, F_MAE]:
  *                     open_positions[k, F_MAE] = worst_pnl
  *                 if best_pnl > open_positions[k, F_MFE]:             # <<<<<<<<<<<<<<
@@ -18428,29 +18721,29 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":330
+            /* "chronoton/_cy_inner.pyx":357
  * 
  *                 # SL / TP / TS triggers  SL has priority on tie
  *                 sl_px = open_positions[k, F_SL]             # <<<<<<<<<<<<<<
  *                 tp_px = open_positions[k, F_TP]
  *                 ts_trigger_px = NAN
 */
-            __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SL;
-            __pyx_v_sl_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SL;
+            __pyx_v_sl_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":331
+            /* "chronoton/_cy_inner.pyx":358
  *                 # SL / TP / TS triggers  SL has priority on tie
  *                 sl_px = open_positions[k, F_SL]
  *                 tp_px = open_positions[k, F_TP]             # <<<<<<<<<<<<<<
  *                 ts_trigger_px = NAN
  *                 if not isnan(ts_dist):
 */
-            __pyx_t_20 = __pyx_v_k;
-            __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TP;
-            __pyx_v_tp_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_t_21 = __pyx_v_k;
+            __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_TP;
+            __pyx_v_tp_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":332
+            /* "chronoton/_cy_inner.pyx":359
  *                 sl_px = open_positions[k, F_SL]
  *                 tp_px = open_positions[k, F_TP]
  *                 ts_trigger_px = NAN             # <<<<<<<<<<<<<<
@@ -18459,38 +18752,38 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_ts_trigger_px = NAN;
 
-            /* "chronoton/_cy_inner.pyx":333
+            /* "chronoton/_cy_inner.pyx":360
  *                 tp_px = open_positions[k, F_TP]
  *                 ts_trigger_px = NAN
  *                 if not isnan(ts_dist):             # <<<<<<<<<<<<<<
  *                     if direction > 0:
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] - ts_dist
 */
-            __pyx_t_14 = (!isnan(__pyx_v_ts_dist));
-            if (__pyx_t_14) {
+            __pyx_t_15 = (!isnan(__pyx_v_ts_dist));
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":334
+              /* "chronoton/_cy_inner.pyx":361
  *                 ts_trigger_px = NAN
  *                 if not isnan(ts_dist):
  *                     if direction > 0:             # <<<<<<<<<<<<<<
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] - ts_dist
  *                     else:
 */
-              __pyx_t_14 = (__pyx_v_direction > 0.0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (__pyx_v_direction > 0.0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":335
+                /* "chronoton/_cy_inner.pyx":362
  *                 if not isnan(ts_dist):
  *                     if direction > 0:
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] - ts_dist             # <<<<<<<<<<<<<<
  *                     else:
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] + ts_dist
 */
-                __pyx_t_21 = __pyx_v_k;
-                __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-                __pyx_v_ts_trigger_px = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) - __pyx_v_ts_dist);
+                __pyx_t_22 = __pyx_v_k;
+                __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+                __pyx_v_ts_trigger_px = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) - __pyx_v_ts_dist);
 
-                /* "chronoton/_cy_inner.pyx":334
+                /* "chronoton/_cy_inner.pyx":361
  *                 ts_trigger_px = NAN
  *                 if not isnan(ts_dist):
  *                     if direction > 0:             # <<<<<<<<<<<<<<
@@ -18500,7 +18793,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L28;
               }
 
-              /* "chronoton/_cy_inner.pyx":337
+              /* "chronoton/_cy_inner.pyx":364
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] - ts_dist
  *                     else:
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] + ts_dist             # <<<<<<<<<<<<<<
@@ -18508,13 +18801,13 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                 exit_reason = -1
 */
               /*else*/ {
-                __pyx_t_20 = __pyx_v_k;
-                __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
-                __pyx_v_ts_trigger_px = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) + __pyx_v_ts_dist);
+                __pyx_t_21 = __pyx_v_k;
+                __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_TS_PEAK;
+                __pyx_v_ts_trigger_px = ((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))) + __pyx_v_ts_dist);
               }
               __pyx_L28:;
 
-              /* "chronoton/_cy_inner.pyx":333
+              /* "chronoton/_cy_inner.pyx":360
  *                 tp_px = open_positions[k, F_TP]
  *                 ts_trigger_px = NAN
  *                 if not isnan(ts_dist):             # <<<<<<<<<<<<<<
@@ -18523,7 +18816,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":339
+            /* "chronoton/_cy_inner.pyx":366
  *                         ts_trigger_px = open_positions[k, F_TS_PEAK] + ts_dist
  * 
  *                 exit_reason = -1             # <<<<<<<<<<<<<<
@@ -18532,7 +18825,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_exit_reason = -1;
 
-            /* "chronoton/_cy_inner.pyx":340
+            /* "chronoton/_cy_inner.pyx":367
  * 
  *                 exit_reason = -1
  *                 exit_px = NAN             # <<<<<<<<<<<<<<
@@ -18541,35 +18834,35 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_exit_px = NAN;
 
-            /* "chronoton/_cy_inner.pyx":341
+            /* "chronoton/_cy_inner.pyx":368
  *                 exit_reason = -1
  *                 exit_px = NAN
  *                 if direction > 0:             # <<<<<<<<<<<<<<
  *                     if (not isnan(sl_px)) and price_l <= sl_px:
  *                         exit_reason = EXIT_SL
 */
-            __pyx_t_14 = (__pyx_v_direction > 0.0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_direction > 0.0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":342
+              /* "chronoton/_cy_inner.pyx":369
  *                 exit_px = NAN
  *                 if direction > 0:
  *                     if (not isnan(sl_px)) and price_l <= sl_px:             # <<<<<<<<<<<<<<
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px
 */
-              __pyx_t_15 = (!isnan(__pyx_v_sl_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_sl_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L31_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_l <= __pyx_v_sl_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_l <= __pyx_v_sl_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L31_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":343
+                /* "chronoton/_cy_inner.pyx":370
  *                 if direction > 0:
  *                     if (not isnan(sl_px)) and price_l <= sl_px:
  *                         exit_reason = EXIT_SL             # <<<<<<<<<<<<<<
@@ -18578,7 +18871,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_SL;
 
-                /* "chronoton/_cy_inner.pyx":344
+                /* "chronoton/_cy_inner.pyx":371
  *                     if (not isnan(sl_px)) and price_l <= sl_px:
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px             # <<<<<<<<<<<<<<
@@ -18587,7 +18880,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_sl_px;
 
-                /* "chronoton/_cy_inner.pyx":342
+                /* "chronoton/_cy_inner.pyx":369
  *                 exit_px = NAN
  *                 if direction > 0:
  *                     if (not isnan(sl_px)) and price_l <= sl_px:             # <<<<<<<<<<<<<<
@@ -18597,25 +18890,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L30;
               }
 
-              /* "chronoton/_cy_inner.pyx":345
+              /* "chronoton/_cy_inner.pyx":372
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_h >= tp_px:             # <<<<<<<<<<<<<<
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
 */
-              __pyx_t_15 = (!isnan(__pyx_v_tp_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_tp_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L33_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_h >= __pyx_v_tp_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_h >= __pyx_v_tp_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L33_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":346
+                /* "chronoton/_cy_inner.pyx":373
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_h >= tp_px:
  *                         exit_reason = EXIT_TP             # <<<<<<<<<<<<<<
@@ -18624,7 +18917,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_TP;
 
-                /* "chronoton/_cy_inner.pyx":347
+                /* "chronoton/_cy_inner.pyx":374
  *                     elif (not isnan(tp_px)) and price_h >= tp_px:
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px             # <<<<<<<<<<<<<<
@@ -18633,7 +18926,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_tp_px;
 
-                /* "chronoton/_cy_inner.pyx":345
+                /* "chronoton/_cy_inner.pyx":372
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_h >= tp_px:             # <<<<<<<<<<<<<<
@@ -18643,25 +18936,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L30;
               }
 
-              /* "chronoton/_cy_inner.pyx":348
+              /* "chronoton/_cy_inner.pyx":375
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_l <= ts_trigger_px:             # <<<<<<<<<<<<<<
  *                         exit_reason = EXIT_TS
  *                         exit_px = ts_trigger_px
 */
-              __pyx_t_15 = (!isnan(__pyx_v_ts_trigger_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_ts_trigger_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L35_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_l <= __pyx_v_ts_trigger_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_l <= __pyx_v_ts_trigger_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L35_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":349
+                /* "chronoton/_cy_inner.pyx":376
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_l <= ts_trigger_px:
  *                         exit_reason = EXIT_TS             # <<<<<<<<<<<<<<
@@ -18670,7 +18963,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_TS;
 
-                /* "chronoton/_cy_inner.pyx":350
+                /* "chronoton/_cy_inner.pyx":377
  *                     elif (not isnan(ts_trigger_px)) and price_l <= ts_trigger_px:
  *                         exit_reason = EXIT_TS
  *                         exit_px = ts_trigger_px             # <<<<<<<<<<<<<<
@@ -18679,7 +18972,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_ts_trigger_px;
 
-                /* "chronoton/_cy_inner.pyx":348
+                /* "chronoton/_cy_inner.pyx":375
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_l <= ts_trigger_px:             # <<<<<<<<<<<<<<
@@ -18689,7 +18982,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               }
               __pyx_L30:;
 
-              /* "chronoton/_cy_inner.pyx":341
+              /* "chronoton/_cy_inner.pyx":368
  *                 exit_reason = -1
  *                 exit_px = NAN
  *                 if direction > 0:             # <<<<<<<<<<<<<<
@@ -18699,7 +18992,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               goto __pyx_L29;
             }
 
-            /* "chronoton/_cy_inner.pyx":352
+            /* "chronoton/_cy_inner.pyx":379
  *                         exit_px = ts_trigger_px
  *                 else:
  *                     if (not isnan(sl_px)) and price_h >= sl_px:             # <<<<<<<<<<<<<<
@@ -18707,18 +19000,18 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                         exit_px = sl_px
 */
             /*else*/ {
-              __pyx_t_15 = (!isnan(__pyx_v_sl_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_sl_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L38_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_h >= __pyx_v_sl_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_h >= __pyx_v_sl_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L38_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":353
+                /* "chronoton/_cy_inner.pyx":380
  *                 else:
  *                     if (not isnan(sl_px)) and price_h >= sl_px:
  *                         exit_reason = EXIT_SL             # <<<<<<<<<<<<<<
@@ -18727,7 +19020,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_SL;
 
-                /* "chronoton/_cy_inner.pyx":354
+                /* "chronoton/_cy_inner.pyx":381
  *                     if (not isnan(sl_px)) and price_h >= sl_px:
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px             # <<<<<<<<<<<<<<
@@ -18736,7 +19029,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_sl_px;
 
-                /* "chronoton/_cy_inner.pyx":352
+                /* "chronoton/_cy_inner.pyx":379
  *                         exit_px = ts_trigger_px
  *                 else:
  *                     if (not isnan(sl_px)) and price_h >= sl_px:             # <<<<<<<<<<<<<<
@@ -18746,25 +19039,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L37;
               }
 
-              /* "chronoton/_cy_inner.pyx":355
+              /* "chronoton/_cy_inner.pyx":382
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_l <= tp_px:             # <<<<<<<<<<<<<<
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
 */
-              __pyx_t_15 = (!isnan(__pyx_v_tp_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_tp_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L40_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_l <= __pyx_v_tp_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_l <= __pyx_v_tp_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L40_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":356
+                /* "chronoton/_cy_inner.pyx":383
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_l <= tp_px:
  *                         exit_reason = EXIT_TP             # <<<<<<<<<<<<<<
@@ -18773,7 +19066,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_TP;
 
-                /* "chronoton/_cy_inner.pyx":357
+                /* "chronoton/_cy_inner.pyx":384
  *                     elif (not isnan(tp_px)) and price_l <= tp_px:
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px             # <<<<<<<<<<<<<<
@@ -18782,7 +19075,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_tp_px;
 
-                /* "chronoton/_cy_inner.pyx":355
+                /* "chronoton/_cy_inner.pyx":382
  *                         exit_reason = EXIT_SL
  *                         exit_px = sl_px
  *                     elif (not isnan(tp_px)) and price_l <= tp_px:             # <<<<<<<<<<<<<<
@@ -18792,25 +19085,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L37;
               }
 
-              /* "chronoton/_cy_inner.pyx":358
+              /* "chronoton/_cy_inner.pyx":385
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_h >= ts_trigger_px:             # <<<<<<<<<<<<<<
  *                         exit_reason = EXIT_TS
  *                         exit_px = ts_trigger_px
 */
-              __pyx_t_15 = (!isnan(__pyx_v_ts_trigger_px));
-              if (__pyx_t_15) {
+              __pyx_t_16 = (!isnan(__pyx_v_ts_trigger_px));
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L42_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_price_h >= __pyx_v_ts_trigger_px);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_price_h >= __pyx_v_ts_trigger_px);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L42_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":359
+                /* "chronoton/_cy_inner.pyx":386
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_h >= ts_trigger_px:
  *                         exit_reason = EXIT_TS             # <<<<<<<<<<<<<<
@@ -18819,7 +19112,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_reason = __pyx_e_9chronoton_9_cy_inner_EXIT_TS;
 
-                /* "chronoton/_cy_inner.pyx":360
+                /* "chronoton/_cy_inner.pyx":387
  *                     elif (not isnan(ts_trigger_px)) and price_h >= ts_trigger_px:
  *                         exit_reason = EXIT_TS
  *                         exit_px = ts_trigger_px             # <<<<<<<<<<<<<<
@@ -18828,7 +19121,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px = __pyx_v_ts_trigger_px;
 
-                /* "chronoton/_cy_inner.pyx":358
+                /* "chronoton/_cy_inner.pyx":385
  *                         exit_reason = EXIT_TP
  *                         exit_px = tp_px
  *                     elif (not isnan(ts_trigger_px)) and price_h >= ts_trigger_px:             # <<<<<<<<<<<<<<
@@ -18840,58 +19133,54 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L29:;
 
-            /* "chronoton/_cy_inner.pyx":362
+            /* "chronoton/_cy_inner.pyx":389
  *                         exit_px = ts_trigger_px
  * 
  *                 if exit_reason != -1:             # <<<<<<<<<<<<<<
- *                     exit_spread = spread_arr[i] * size
- *                     exit_slippage = slippage_arr[i] * size
+ *                     exit_spread = spread_i * size
+ *                     exit_slippage = slippage_i * size
 */
-            __pyx_t_14 = (__pyx_v_exit_reason != -1L);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_exit_reason != -1L);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":363
+              /* "chronoton/_cy_inner.pyx":390
  * 
  *                 if exit_reason != -1:
- *                     exit_spread = spread_arr[i] * size             # <<<<<<<<<<<<<<
- *                     exit_slippage = slippage_arr[i] * size
- *                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
+ *                     exit_spread = spread_i * size             # <<<<<<<<<<<<<<
+ *                     exit_slippage = slippage_i * size
+ *                     exit_px_net = exit_px - direction * (spread_i + slippage_i)
 */
-              __pyx_t_21 = __pyx_v_i;
-              __pyx_v_exit_spread = ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) * __pyx_v_size);
+              __pyx_v_exit_spread = (__pyx_v_spread_i * __pyx_v_size);
 
-              /* "chronoton/_cy_inner.pyx":364
+              /* "chronoton/_cy_inner.pyx":391
  *                 if exit_reason != -1:
- *                     exit_spread = spread_arr[i] * size
- *                     exit_slippage = slippage_arr[i] * size             # <<<<<<<<<<<<<<
- *                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
+ *                     exit_spread = spread_i * size
+ *                     exit_slippage = slippage_i * size             # <<<<<<<<<<<<<<
+ *                     exit_px_net = exit_px - direction * (spread_i + slippage_i)
  *                     exit_commission = commission * fabs(exit_px_net * size)
 */
-              __pyx_t_21 = __pyx_v_i;
-              __pyx_v_exit_slippage = ((*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_21 * __pyx_v_slippage_arr.strides[0]) ))) * __pyx_v_size);
+              __pyx_v_exit_slippage = (__pyx_v_slippage_i * __pyx_v_size);
 
-              /* "chronoton/_cy_inner.pyx":365
- *                     exit_spread = spread_arr[i] * size
- *                     exit_slippage = slippage_arr[i] * size
- *                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])             # <<<<<<<<<<<<<<
+              /* "chronoton/_cy_inner.pyx":392
+ *                     exit_spread = spread_i * size
+ *                     exit_slippage = slippage_i * size
+ *                     exit_px_net = exit_px - direction * (spread_i + slippage_i)             # <<<<<<<<<<<<<<
  *                     exit_commission = commission * fabs(exit_px_net * size)
  *                     proceeds = direction * (exit_px_net - entry_px) * size
 */
-              __pyx_t_21 = __pyx_v_i;
-              __pyx_t_20 = __pyx_v_i;
-              __pyx_v_exit_px_net = (__pyx_v_exit_px - (__pyx_v_direction * ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) + (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_20 * __pyx_v_slippage_arr.strides[0]) ))))));
+              __pyx_v_exit_px_net = (__pyx_v_exit_px - (__pyx_v_direction * (__pyx_v_spread_i + __pyx_v_slippage_i)));
 
-              /* "chronoton/_cy_inner.pyx":366
- *                     exit_slippage = slippage_arr[i] * size
- *                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
+              /* "chronoton/_cy_inner.pyx":393
+ *                     exit_slippage = slippage_i * size
+ *                     exit_px_net = exit_px - direction * (spread_i + slippage_i)
  *                     exit_commission = commission * fabs(exit_px_net * size)             # <<<<<<<<<<<<<<
  *                     proceeds = direction * (exit_px_net - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + proceeds
 */
               __pyx_v_exit_commission = (__pyx_v_commission * fabs((__pyx_v_exit_px_net * __pyx_v_size)));
 
-              /* "chronoton/_cy_inner.pyx":367
- *                     exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
+              /* "chronoton/_cy_inner.pyx":394
+ *                     exit_px_net = exit_px - direction * (spread_i + slippage_i)
  *                     exit_commission = commission * fabs(exit_px_net * size)
  *                     proceeds = direction * (exit_px_net - entry_px) * size             # <<<<<<<<<<<<<<
  *                     current_cash += (size * entry_px / leverage) + proceeds
@@ -18899,7 +19188,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_proceeds = ((__pyx_v_direction * (__pyx_v_exit_px_net - __pyx_v_entry_px)) * __pyx_v_size);
 
-              /* "chronoton/_cy_inner.pyx":368
+              /* "chronoton/_cy_inner.pyx":395
  *                     exit_commission = commission * fabs(exit_px_net * size)
  *                     proceeds = direction * (exit_px_net - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + proceeds             # <<<<<<<<<<<<<<
@@ -18908,7 +19197,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_current_cash = (__pyx_v_current_cash + (((__pyx_v_size * __pyx_v_entry_px) / __pyx_v_leverage) + __pyx_v_proceeds));
 
-              /* "chronoton/_cy_inner.pyx":369
+              /* "chronoton/_cy_inner.pyx":396
  *                     proceeds = direction * (exit_px_net - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + proceeds
  *                     current_cash -= exit_commission             # <<<<<<<<<<<<<<
@@ -18917,27 +19206,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_current_cash = (__pyx_v_current_cash - __pyx_v_exit_commission);
 
-              /* "chronoton/_cy_inner.pyx":370
+              /* "chronoton/_cy_inner.pyx":397
  *                     current_cash += (size * entry_px / leverage) + proceeds
  *                     current_cash -= exit_commission
  *                     n_closed = _exit_position(             # <<<<<<<<<<<<<<
  *                         k, i, t_ns, exit_px_net, <double>exit_reason,
  *                         exit_commission, exit_spread, exit_slippage,
 */
-              __pyx_t_22 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_v_exit_reason), __pyx_v_exit_commission, __pyx_v_exit_spread, __pyx_v_exit_slippage, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_22 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 370, __pyx_L4_error)
-              __pyx_v_n_closed = __pyx_t_22;
+              __pyx_t_23 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_v_exit_reason), __pyx_v_exit_commission, __pyx_v_exit_spread, __pyx_v_exit_slippage, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 397, __pyx_L4_error)
+              __pyx_v_n_closed = __pyx_t_23;
 
-              /* "chronoton/_cy_inner.pyx":376
+              /* "chronoton/_cy_inner.pyx":403
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
  *                         break  # overflow; return to caller to raise
  * 
 */
-              __pyx_t_14 = (__pyx_v_n_closed < 0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (__pyx_v_n_closed < 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":377
+                /* "chronoton/_cy_inner.pyx":404
  *                     )
  *                     if n_closed < 0:
  *                         break  # overflow; return to caller to raise             # <<<<<<<<<<<<<<
@@ -18946,7 +19235,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L16_break;
 
-                /* "chronoton/_cy_inner.pyx":376
+                /* "chronoton/_cy_inner.pyx":403
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -18955,29 +19244,29 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":362
+              /* "chronoton/_cy_inner.pyx":389
  *                         exit_px = ts_trigger_px
  * 
  *                 if exit_reason != -1:             # <<<<<<<<<<<<<<
- *                     exit_spread = spread_arr[i] * size
- *                     exit_slippage = slippage_arr[i] * size
+ *                     exit_spread = spread_i * size
+ *                     exit_slippage = slippage_i * size
 */
             }
             __pyx_L15_continue:;
           }
           __pyx_L16_break:;
 
-          /* "chronoton/_cy_inner.pyx":379
+          /* "chronoton/_cy_inner.pyx":406
  *                         break  # overflow; return to caller to raise
  * 
  *             if n_closed < 0:             # <<<<<<<<<<<<<<
  *                 break
  * 
 */
-          __pyx_t_14 = (__pyx_v_n_closed < 0);
-          if (__pyx_t_14) {
+          __pyx_t_15 = (__pyx_v_n_closed < 0);
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":380
+            /* "chronoton/_cy_inner.pyx":407
  * 
  *             if n_closed < 0:
  *                 break             # <<<<<<<<<<<<<<
@@ -18986,7 +19275,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             goto __pyx_L7_break;
 
-            /* "chronoton/_cy_inner.pyx":379
+            /* "chronoton/_cy_inner.pyx":406
  *                         break  # overflow; return to caller to raise
  * 
  *             if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -18995,27 +19284,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":383
+          /* "chronoton/_cy_inner.pyx":410
  * 
  *             # (3) Shifted exit signals ----------------------------------
  *             want_long_exit = long_exits_shifted[i] != 0             # <<<<<<<<<<<<<<
  *             want_short_exit = short_exits_shifted[i] != 0
  *             if want_long_exit or want_short_exit:
 */
-          __pyx_t_20 = __pyx_v_i;
-          __pyx_v_want_long_exit = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_long_exits_shifted.data + __pyx_t_20 * __pyx_v_long_exits_shifted.strides[0]) ))) != 0);
+          __pyx_t_22 = __pyx_v_i;
+          __pyx_v_want_long_exit = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_long_exits_shifted.data + __pyx_t_22 * __pyx_v_long_exits_shifted.strides[0]) ))) != 0);
 
-          /* "chronoton/_cy_inner.pyx":384
+          /* "chronoton/_cy_inner.pyx":411
  *             # (3) Shifted exit signals ----------------------------------
  *             want_long_exit = long_exits_shifted[i] != 0
  *             want_short_exit = short_exits_shifted[i] != 0             # <<<<<<<<<<<<<<
  *             if want_long_exit or want_short_exit:
  *                 for k in range(n_slots):
 */
-          __pyx_t_20 = __pyx_v_i;
-          __pyx_v_want_short_exit = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_short_exits_shifted.data + __pyx_t_20 * __pyx_v_short_exits_shifted.strides[0]) ))) != 0);
+          __pyx_t_22 = __pyx_v_i;
+          __pyx_v_want_short_exit = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_short_exits_shifted.data + __pyx_t_22 * __pyx_v_short_exits_shifted.strides[0]) ))) != 0);
 
-          /* "chronoton/_cy_inner.pyx":385
+          /* "chronoton/_cy_inner.pyx":412
  *             want_long_exit = long_exits_shifted[i] != 0
  *             want_short_exit = short_exits_shifted[i] != 0
  *             if want_long_exit or want_short_exit:             # <<<<<<<<<<<<<<
@@ -19024,37 +19313,37 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           if (!__pyx_v_want_long_exit) {
           } else {
-            __pyx_t_14 = __pyx_v_want_long_exit;
+            __pyx_t_15 = __pyx_v_want_long_exit;
             goto __pyx_L48_bool_binop_done;
           }
-          __pyx_t_14 = __pyx_v_want_short_exit;
+          __pyx_t_15 = __pyx_v_want_short_exit;
           __pyx_L48_bool_binop_done:;
-          if (__pyx_t_14) {
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":386
+            /* "chronoton/_cy_inner.pyx":413
  *             want_short_exit = short_exits_shifted[i] != 0
  *             if want_long_exit or want_short_exit:
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         continue
 */
-            __pyx_t_16 = __pyx_v_n_slots;
-            __pyx_t_17 = __pyx_t_16;
-            for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-              __pyx_v_k = __pyx_t_18;
+            __pyx_t_17 = __pyx_v_n_slots;
+            __pyx_t_18 = __pyx_t_17;
+            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+              __pyx_v_k = __pyx_t_19;
 
-              /* "chronoton/_cy_inner.pyx":387
+              /* "chronoton/_cy_inner.pyx":414
  *             if want_long_exit or want_short_exit:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_22 = __pyx_v_k;
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":388
+                /* "chronoton/_cy_inner.pyx":415
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         continue             # <<<<<<<<<<<<<<
@@ -19063,7 +19352,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L50_continue;
 
-                /* "chronoton/_cy_inner.pyx":387
+                /* "chronoton/_cy_inner.pyx":414
  *             if want_long_exit or want_short_exit:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -19072,105 +19361,103 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":389
+              /* "chronoton/_cy_inner.pyx":416
  *                     if slot_active[k] == 0:
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                     if ((direction > 0 and want_long_exit) or
  *                         (direction < 0 and want_short_exit)):
 */
-              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_22 = __pyx_v_k;
               __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":390
+              /* "chronoton/_cy_inner.pyx":417
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if ((direction > 0 and want_long_exit) or             # <<<<<<<<<<<<<<
  *                         (direction < 0 and want_short_exit)):
  *                         size = open_positions[k, F_SIZE]
 */
-              __pyx_t_15 = (__pyx_v_direction > 0.0);
-              if (!__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_direction > 0.0);
+              if (!__pyx_t_16) {
                 goto __pyx_L55_next_or;
               } else {
               }
               if (!__pyx_v_want_long_exit) {
               } else {
-                __pyx_t_14 = __pyx_v_want_long_exit;
+                __pyx_t_15 = __pyx_v_want_long_exit;
                 goto __pyx_L54_bool_binop_done;
               }
               __pyx_L55_next_or:;
 
-              /* "chronoton/_cy_inner.pyx":391
+              /* "chronoton/_cy_inner.pyx":418
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if ((direction > 0 and want_long_exit) or
  *                         (direction < 0 and want_short_exit)):             # <<<<<<<<<<<<<<
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
 */
-              __pyx_t_15 = (__pyx_v_direction < 0.0);
-              if (__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_direction < 0.0);
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L54_bool_binop_done;
               }
-              __pyx_t_14 = __pyx_v_want_short_exit;
+              __pyx_t_15 = __pyx_v_want_short_exit;
               __pyx_L54_bool_binop_done:;
 
-              /* "chronoton/_cy_inner.pyx":390
+              /* "chronoton/_cy_inner.pyx":417
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if ((direction > 0 and want_long_exit) or             # <<<<<<<<<<<<<<
  *                         (direction < 0 and want_short_exit)):
  *                         size = open_positions[k, F_SIZE]
 */
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":392
+                /* "chronoton/_cy_inner.pyx":419
  *                     if ((direction > 0 and want_long_exit) or
  *                         (direction < 0 and want_short_exit)):
  *                         size = open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
 */
                 __pyx_t_21 = __pyx_v_k;
-                __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-                __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+                __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-                /* "chronoton/_cy_inner.pyx":393
+                /* "chronoton/_cy_inner.pyx":420
  *                         (direction < 0 and want_short_exit)):
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]             # <<<<<<<<<<<<<<
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)
 */
-                __pyx_t_20 = __pyx_v_k;
+                __pyx_t_22 = __pyx_v_k;
                 __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-                __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+                __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-                /* "chronoton/_cy_inner.pyx":394
+                /* "chronoton/_cy_inner.pyx":421
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])             # <<<<<<<<<<<<<<
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)             # <<<<<<<<<<<<<<
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size
 */
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_exit_px_net = (__pyx_v_price_o - (__pyx_v_direction * ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) + (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_20 * __pyx_v_slippage_arr.strides[0]) ))))));
+                __pyx_v_exit_px_net = (__pyx_v_price_o - (__pyx_v_direction * (__pyx_v_spread_i + __pyx_v_slippage_i)));
 
-                /* "chronoton/_cy_inner.pyx":395
+                /* "chronoton/_cy_inner.pyx":422
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)             # <<<<<<<<<<<<<<
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds
 */
                 __pyx_v_exit_commission = (__pyx_v_commission * fabs((__pyx_v_exit_px_net * __pyx_v_size)));
 
-                /* "chronoton/_cy_inner.pyx":396
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+                /* "chronoton/_cy_inner.pyx":423
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size             # <<<<<<<<<<<<<<
  *                         current_cash += (size * entry_px / leverage) + proceeds
@@ -19178,7 +19465,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_proceeds = ((__pyx_v_direction * (__pyx_v_exit_px_net - __pyx_v_entry_px)) * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":397
+                /* "chronoton/_cy_inner.pyx":424
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds             # <<<<<<<<<<<<<<
@@ -19187,7 +19474,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_current_cash = (__pyx_v_current_cash + (((__pyx_v_size * __pyx_v_entry_px) / __pyx_v_leverage) + __pyx_v_proceeds));
 
-                /* "chronoton/_cy_inner.pyx":398
+                /* "chronoton/_cy_inner.pyx":425
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds
  *                         current_cash -= exit_commission             # <<<<<<<<<<<<<<
@@ -19196,45 +19483,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_current_cash = (__pyx_v_current_cash - __pyx_v_exit_commission);
 
-                /* "chronoton/_cy_inner.pyx":402
- *                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
- *                             exit_commission,
- *                             spread_arr[i] * size,             # <<<<<<<<<<<<<<
- *                             slippage_arr[i] * size,
- *                             open_positions, slot_active, closed_trades,
-*/
-                __pyx_t_20 = __pyx_v_i;
-
-                /* "chronoton/_cy_inner.pyx":403
- *                             exit_commission,
- *                             spread_arr[i] * size,
- *                             slippage_arr[i] * size,             # <<<<<<<<<<<<<<
- *                             open_positions, slot_active, closed_trades,
- *                             n_closed, closed_capacity, overflow_flag,
-*/
-                __pyx_t_21 = __pyx_v_i;
-
-                /* "chronoton/_cy_inner.pyx":399
+                /* "chronoton/_cy_inner.pyx":426
  *                         current_cash += (size * entry_px / leverage) + proceeds
  *                         current_cash -= exit_commission
  *                         n_closed = _exit_position(             # <<<<<<<<<<<<<<
  *                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
  *                             exit_commission,
 */
-                __pyx_t_22 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_SIGNAL), __pyx_v_exit_commission, ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_20 * __pyx_v_spread_arr.strides[0]) ))) * __pyx_v_size), ((*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_21 * __pyx_v_slippage_arr.strides[0]) ))) * __pyx_v_size), __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_22 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 399, __pyx_L4_error)
-                __pyx_v_n_closed = __pyx_t_22;
+                __pyx_t_23 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_SIGNAL), __pyx_v_exit_commission, (__pyx_v_spread_i * __pyx_v_size), (__pyx_v_slippage_i * __pyx_v_size), __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 426, __pyx_L4_error)
+                __pyx_v_n_closed = __pyx_t_23;
 
-                /* "chronoton/_cy_inner.pyx":407
+                /* "chronoton/_cy_inner.pyx":434
  *                             n_closed, closed_capacity, overflow_flag,
  *                         )
  *                         if n_closed < 0:             # <<<<<<<<<<<<<<
  *                             break
  *                 if n_closed < 0:
 */
-                __pyx_t_14 = (__pyx_v_n_closed < 0);
-                if (__pyx_t_14) {
+                __pyx_t_15 = (__pyx_v_n_closed < 0);
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":408
+                  /* "chronoton/_cy_inner.pyx":435
  *                         )
  *                         if n_closed < 0:
  *                             break             # <<<<<<<<<<<<<<
@@ -19243,7 +19512,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   goto __pyx_L51_break;
 
-                  /* "chronoton/_cy_inner.pyx":407
+                  /* "chronoton/_cy_inner.pyx":434
  *                             n_closed, closed_capacity, overflow_flag,
  *                         )
  *                         if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -19252,7 +19521,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 }
 
-                /* "chronoton/_cy_inner.pyx":390
+                /* "chronoton/_cy_inner.pyx":417
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if ((direction > 0 and want_long_exit) or             # <<<<<<<<<<<<<<
@@ -19264,17 +19533,17 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L51_break:;
 
-            /* "chronoton/_cy_inner.pyx":409
+            /* "chronoton/_cy_inner.pyx":436
  *                         if n_closed < 0:
  *                             break
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
  *                     break
  * 
 */
-            __pyx_t_14 = (__pyx_v_n_closed < 0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_n_closed < 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":410
+              /* "chronoton/_cy_inner.pyx":437
  *                             break
  *                 if n_closed < 0:
  *                     break             # <<<<<<<<<<<<<<
@@ -19283,7 +19552,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L7_break;
 
-              /* "chronoton/_cy_inner.pyx":409
+              /* "chronoton/_cy_inner.pyx":436
  *                         if n_closed < 0:
  *                             break
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -19292,7 +19561,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":385
+            /* "chronoton/_cy_inner.pyx":412
  *             want_long_exit = long_exits_shifted[i] != 0
  *             want_short_exit = short_exits_shifted[i] != 0
  *             if want_long_exit or want_short_exit:             # <<<<<<<<<<<<<<
@@ -19301,7 +19570,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":413
+          /* "chronoton/_cy_inner.pyx":440
  * 
  *             # (4) Shifted entry signals ---------------------------------
  *             want_long_entry = long_entries_shifted[i] != 0             # <<<<<<<<<<<<<<
@@ -19311,7 +19580,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
           __pyx_t_21 = __pyx_v_i;
           __pyx_v_want_long_entry = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_long_entries_shifted.data + __pyx_t_21 * __pyx_v_long_entries_shifted.strides[0]) ))) != 0);
 
-          /* "chronoton/_cy_inner.pyx":414
+          /* "chronoton/_cy_inner.pyx":441
  *             # (4) Shifted entry signals ---------------------------------
  *             want_long_entry = long_entries_shifted[i] != 0
  *             want_short_entry = short_entries_shifted[i] != 0             # <<<<<<<<<<<<<<
@@ -19321,29 +19590,29 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
           __pyx_t_21 = __pyx_v_i;
           __pyx_v_want_short_entry = ((*((unsigned char const  *) ( /* dim=0 */ (__pyx_v_short_entries_shifted.data + __pyx_t_21 * __pyx_v_short_entries_shifted.strides[0]) ))) != 0);
 
-          /* "chronoton/_cy_inner.pyx":417
+          /* "chronoton/_cy_inner.pyx":444
  * 
  *             # Non-hedging: flatten opposite-direction positions first
  *             if (not hedging) and (want_long_entry or want_short_entry):             # <<<<<<<<<<<<<<
  *                 desired_dir = 1 if want_long_entry else -1
  *                 for k in range(n_slots):
 */
-          __pyx_t_15 = (!__pyx_v_hedging);
-          if (__pyx_t_15) {
+          __pyx_t_16 = (!__pyx_v_hedging);
+          if (__pyx_t_16) {
           } else {
-            __pyx_t_14 = __pyx_t_15;
+            __pyx_t_15 = __pyx_t_16;
             goto __pyx_L61_bool_binop_done;
           }
           if (!__pyx_v_want_long_entry) {
           } else {
-            __pyx_t_14 = __pyx_v_want_long_entry;
+            __pyx_t_15 = __pyx_v_want_long_entry;
             goto __pyx_L61_bool_binop_done;
           }
-          __pyx_t_14 = __pyx_v_want_short_entry;
+          __pyx_t_15 = __pyx_v_want_short_entry;
           __pyx_L61_bool_binop_done:;
-          if (__pyx_t_14) {
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":418
+            /* "chronoton/_cy_inner.pyx":445
  *             # Non-hedging: flatten opposite-direction positions first
  *             if (not hedging) and (want_long_entry or want_short_entry):
  *                 desired_dir = 1 if want_long_entry else -1             # <<<<<<<<<<<<<<
@@ -19351,25 +19620,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                     if slot_active[k] == 0:
 */
             if (__pyx_v_want_long_entry) {
-              __pyx_t_23 = 1;
+              __pyx_t_24 = 1;
             } else {
-              __pyx_t_23 = -1;
+              __pyx_t_24 = -1;
             }
-            __pyx_v_desired_dir = __pyx_t_23;
+            __pyx_v_desired_dir = __pyx_t_24;
 
-            /* "chronoton/_cy_inner.pyx":419
+            /* "chronoton/_cy_inner.pyx":446
  *             if (not hedging) and (want_long_entry or want_short_entry):
  *                 desired_dir = 1 if want_long_entry else -1
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         continue
 */
-            __pyx_t_16 = __pyx_v_n_slots;
-            __pyx_t_17 = __pyx_t_16;
-            for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-              __pyx_v_k = __pyx_t_18;
+            __pyx_t_17 = __pyx_v_n_slots;
+            __pyx_t_18 = __pyx_t_17;
+            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+              __pyx_v_k = __pyx_t_19;
 
-              /* "chronoton/_cy_inner.pyx":420
+              /* "chronoton/_cy_inner.pyx":447
  *                 desired_dir = 1 if want_long_entry else -1
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -19377,10 +19646,10 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                     direction = open_positions[k, F_DIRECTION]
 */
               __pyx_t_21 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":421
+                /* "chronoton/_cy_inner.pyx":448
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         continue             # <<<<<<<<<<<<<<
@@ -19389,7 +19658,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L64_continue;
 
-                /* "chronoton/_cy_inner.pyx":420
+                /* "chronoton/_cy_inner.pyx":447
  *                 desired_dir = 1 if want_long_entry else -1
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -19398,7 +19667,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":422
+              /* "chronoton/_cy_inner.pyx":449
  *                     if slot_active[k] == 0:
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
@@ -19406,63 +19675,61 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                         size = open_positions[k, F_SIZE]
 */
               __pyx_t_21 = __pyx_v_k;
-              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":423
+              /* "chronoton/_cy_inner.pyx":450
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if <int>direction != desired_dir:             # <<<<<<<<<<<<<<
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
 */
-              __pyx_t_14 = (((int)__pyx_v_direction) != __pyx_v_desired_dir);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (((int)__pyx_v_direction) != __pyx_v_desired_dir);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":424
+                /* "chronoton/_cy_inner.pyx":451
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if <int>direction != desired_dir:
  *                         size = open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
 */
-                __pyx_t_20 = __pyx_v_k;
+                __pyx_t_22 = __pyx_v_k;
                 __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-                __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+                __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-                /* "chronoton/_cy_inner.pyx":425
+                /* "chronoton/_cy_inner.pyx":452
  *                     if <int>direction != desired_dir:
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]             # <<<<<<<<<<<<<<
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)
 */
                 __pyx_t_21 = __pyx_v_k;
-                __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-                __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+                __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-                /* "chronoton/_cy_inner.pyx":426
+                /* "chronoton/_cy_inner.pyx":453
  *                         size = open_positions[k, F_SIZE]
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])             # <<<<<<<<<<<<<<
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)             # <<<<<<<<<<<<<<
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_v_exit_px_net = (__pyx_v_price_o - (__pyx_v_direction * ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_20 * __pyx_v_spread_arr.strides[0]) ))) + (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_21 * __pyx_v_slippage_arr.strides[0]) ))))));
+                __pyx_v_exit_px_net = (__pyx_v_price_o - (__pyx_v_direction * (__pyx_v_spread_i + __pyx_v_slippage_i)));
 
-                /* "chronoton/_cy_inner.pyx":427
+                /* "chronoton/_cy_inner.pyx":454
  *                         entry_px = open_positions[k, F_ENTRY_PRICE]
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)             # <<<<<<<<<<<<<<
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds
 */
                 __pyx_v_exit_commission = (__pyx_v_commission * fabs((__pyx_v_exit_px_net * __pyx_v_size)));
 
-                /* "chronoton/_cy_inner.pyx":428
- *                         exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+                /* "chronoton/_cy_inner.pyx":455
+ *                         exit_px_net = price_o - direction * (spread_i + slippage_i)
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size             # <<<<<<<<<<<<<<
  *                         current_cash += (size * entry_px / leverage) + proceeds
@@ -19470,7 +19737,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_proceeds = ((__pyx_v_direction * (__pyx_v_exit_px_net - __pyx_v_entry_px)) * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":429
+                /* "chronoton/_cy_inner.pyx":456
  *                         exit_commission = commission * fabs(exit_px_net * size)
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds             # <<<<<<<<<<<<<<
@@ -19479,7 +19746,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_current_cash = (__pyx_v_current_cash + (((__pyx_v_size * __pyx_v_entry_px) / __pyx_v_leverage) + __pyx_v_proceeds));
 
-                /* "chronoton/_cy_inner.pyx":430
+                /* "chronoton/_cy_inner.pyx":457
  *                         proceeds = direction * (exit_px_net - entry_px) * size
  *                         current_cash += (size * entry_px / leverage) + proceeds
  *                         current_cash -= exit_commission             # <<<<<<<<<<<<<<
@@ -19488,45 +19755,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_current_cash = (__pyx_v_current_cash - __pyx_v_exit_commission);
 
-                /* "chronoton/_cy_inner.pyx":434
- *                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
- *                             exit_commission,
- *                             spread_arr[i] * size,             # <<<<<<<<<<<<<<
- *                             slippage_arr[i] * size,
- *                             open_positions, slot_active, closed_trades,
-*/
-                __pyx_t_21 = __pyx_v_i;
-
-                /* "chronoton/_cy_inner.pyx":435
- *                             exit_commission,
- *                             spread_arr[i] * size,
- *                             slippage_arr[i] * size,             # <<<<<<<<<<<<<<
- *                             open_positions, slot_active, closed_trades,
- *                             n_closed, closed_capacity, overflow_flag,
-*/
-                __pyx_t_20 = __pyx_v_i;
-
-                /* "chronoton/_cy_inner.pyx":431
+                /* "chronoton/_cy_inner.pyx":458
  *                         current_cash += (size * entry_px / leverage) + proceeds
  *                         current_cash -= exit_commission
  *                         n_closed = _exit_position(             # <<<<<<<<<<<<<<
  *                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
  *                             exit_commission,
 */
-                __pyx_t_22 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_SIGNAL), __pyx_v_exit_commission, ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) * __pyx_v_size), ((*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_20 * __pyx_v_slippage_arr.strides[0]) ))) * __pyx_v_size), __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_22 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 431, __pyx_L4_error)
-                __pyx_v_n_closed = __pyx_t_22;
+                __pyx_t_23 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_SIGNAL), __pyx_v_exit_commission, (__pyx_v_spread_i * __pyx_v_size), (__pyx_v_slippage_i * __pyx_v_size), __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 458, __pyx_L4_error)
+                __pyx_v_n_closed = __pyx_t_23;
 
-                /* "chronoton/_cy_inner.pyx":439
+                /* "chronoton/_cy_inner.pyx":466
  *                             n_closed, closed_capacity, overflow_flag,
  *                         )
  *                         if n_closed < 0:             # <<<<<<<<<<<<<<
  *                             break
  *                 if n_closed < 0:
 */
-                __pyx_t_14 = (__pyx_v_n_closed < 0);
-                if (__pyx_t_14) {
+                __pyx_t_15 = (__pyx_v_n_closed < 0);
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":440
+                  /* "chronoton/_cy_inner.pyx":467
  *                         )
  *                         if n_closed < 0:
  *                             break             # <<<<<<<<<<<<<<
@@ -19535,7 +19784,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   goto __pyx_L65_break;
 
-                  /* "chronoton/_cy_inner.pyx":439
+                  /* "chronoton/_cy_inner.pyx":466
  *                             n_closed, closed_capacity, overflow_flag,
  *                         )
  *                         if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -19544,7 +19793,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 }
 
-                /* "chronoton/_cy_inner.pyx":423
+                /* "chronoton/_cy_inner.pyx":450
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     if <int>direction != desired_dir:             # <<<<<<<<<<<<<<
@@ -19556,17 +19805,17 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L65_break:;
 
-            /* "chronoton/_cy_inner.pyx":441
+            /* "chronoton/_cy_inner.pyx":468
  *                         if n_closed < 0:
  *                             break
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
  *                     break
  * 
 */
-            __pyx_t_14 = (__pyx_v_n_closed < 0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_n_closed < 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":442
+              /* "chronoton/_cy_inner.pyx":469
  *                             break
  *                 if n_closed < 0:
  *                     break             # <<<<<<<<<<<<<<
@@ -19575,7 +19824,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L7_break;
 
-              /* "chronoton/_cy_inner.pyx":441
+              /* "chronoton/_cy_inner.pyx":468
  *                         if n_closed < 0:
  *                             break
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -19584,7 +19833,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":417
+            /* "chronoton/_cy_inner.pyx":444
  * 
  *             # Non-hedging: flatten opposite-direction positions first
  *             if (not hedging) and (want_long_entry or want_short_entry):             # <<<<<<<<<<<<<<
@@ -19593,7 +19842,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":450
+          /* "chronoton/_cy_inner.pyx":477
  *             # `want_*_entry` flag is consulted  kept as a helper-free inline
  *             # to stay fully in C.
  *             if want_long_entry:             # <<<<<<<<<<<<<<
@@ -19602,7 +19851,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           if (__pyx_v_want_long_entry) {
 
-            /* "chronoton/_cy_inner.pyx":451
+            /* "chronoton/_cy_inner.pyx":478
  *             # to stay fully in C.
  *             if want_long_entry:
  *                 desired_dir = 1             # <<<<<<<<<<<<<<
@@ -19611,39 +19860,37 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_desired_dir = 1;
 
-            /* "chronoton/_cy_inner.pyx":452
+            /* "chronoton/_cy_inner.pyx":479
  *             if want_long_entry:
  *                 desired_dir = 1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)             # <<<<<<<<<<<<<<
  *                 if slot_idx != -1:
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
 */
-            __pyx_t_16 = __pyx_f_9chronoton_9_cy_inner__find_free_slot(__pyx_v_slot_active, __pyx_v_n_slots); if (unlikely(__pyx_t_16 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 452, __pyx_L4_error)
-            __pyx_v_slot_idx = __pyx_t_16;
+            __pyx_t_17 = __pyx_f_9chronoton_9_cy_inner__find_free_slot(__pyx_v_slot_active, __pyx_v_n_slots); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 479, __pyx_L4_error)
+            __pyx_v_slot_idx = __pyx_t_17;
 
-            /* "chronoton/_cy_inner.pyx":453
+            /* "chronoton/_cy_inner.pyx":480
  *                 desired_dir = 1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:             # <<<<<<<<<<<<<<
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
 */
-            __pyx_t_14 = (__pyx_v_slot_idx != -1L);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_slot_idx != -1L);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":454
+              /* "chronoton/_cy_inner.pyx":481
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])             # <<<<<<<<<<<<<<
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)             # <<<<<<<<<<<<<<
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
 */
-              __pyx_t_20 = __pyx_v_i;
-              __pyx_t_21 = __pyx_v_i;
-              __pyx_v_entry_px_net = (__pyx_v_price_o + (__pyx_v_desired_dir * ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_20 * __pyx_v_spread_arr.strides[0]) ))) + (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_21 * __pyx_v_slippage_arr.strides[0]) ))))));
+              __pyx_v_entry_px_net = (__pyx_v_price_o + (__pyx_v_desired_dir * (__pyx_v_spread_i + __pyx_v_slippage_i)));
 
-              /* "chronoton/_cy_inner.pyx":456
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+              /* "chronoton/_cy_inner.pyx":483
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:             # <<<<<<<<<<<<<<
  *                         equity_now = current_cash
@@ -19652,7 +19899,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               switch (__pyx_v_sizing_method_code) {
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_PERCENT_EQUITY:
 
-                /* "chronoton/_cy_inner.pyx":457
+                /* "chronoton/_cy_inner.pyx":484
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
  *                         equity_now = current_cash             # <<<<<<<<<<<<<<
@@ -19661,99 +19908,99 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_equity_now = __pyx_v_current_cash;
 
-                /* "chronoton/_cy_inner.pyx":458
+                /* "chronoton/_cy_inner.pyx":485
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):             # <<<<<<<<<<<<<<
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
 */
-                __pyx_t_16 = __pyx_v_n_slots;
-                __pyx_t_17 = __pyx_t_16;
-                for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                  __pyx_v_kk = __pyx_t_18;
+                __pyx_t_17 = __pyx_v_n_slots;
+                __pyx_t_18 = __pyx_t_17;
+                for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+                  __pyx_v_kk = __pyx_t_19;
 
-                  /* "chronoton/_cy_inner.pyx":459
+                  /* "chronoton/_cy_inner.pyx":486
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]
 */
-                  __pyx_t_21 = __pyx_v_kk;
-                  __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) != 0);
-                  if (__pyx_t_14) {
+                  __pyx_t_22 = __pyx_v_kk;
+                  __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) != 0);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":460
+                    /* "chronoton/_cy_inner.pyx":487
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
 */
-                    __pyx_t_21 = __pyx_v_kk;
-                    __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-                    __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+                    __pyx_t_22 = __pyx_v_kk;
+                    __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+                    __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-                    /* "chronoton/_cy_inner.pyx":461
+                    /* "chronoton/_cy_inner.pyx":488
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                    __pyx_t_20 = __pyx_v_kk;
-                    __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                    __pyx_t_21 = __pyx_v_kk;
+                    __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                    /* "chronoton/_cy_inner.pyx":462
+                    /* "chronoton/_cy_inner.pyx":489
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)             # <<<<<<<<<<<<<<
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])
 */
-                    __pyx_t_19 = __pyx_v_kk;
-                    __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                    __pyx_t_20 = __pyx_v_kk;
+                    __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                    /* "chronoton/_cy_inner.pyx":461
+                    /* "chronoton/_cy_inner.pyx":488
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                    __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
+                    __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
 
-                    /* "chronoton/_cy_inner.pyx":463
+                    /* "chronoton/_cy_inner.pyx":490
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
 */
-                    __pyx_t_13 = __pyx_v_kk;
-                    __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                    __pyx_t_11 = __pyx_v_kk;
+                    __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                    /* "chronoton/_cy_inner.pyx":464
+                    /* "chronoton/_cy_inner.pyx":491
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])             # <<<<<<<<<<<<<<
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:
 */
-                    __pyx_t_21 = __pyx_v_kk;
-                    __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                    __pyx_t_22 = __pyx_v_kk;
+                    __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                    /* "chronoton/_cy_inner.pyx":463
+                    /* "chronoton/_cy_inner.pyx":490
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
 */
-                    __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )))));
+                    __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))));
 
-                    /* "chronoton/_cy_inner.pyx":459
+                    /* "chronoton/_cy_inner.pyx":486
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
@@ -19763,7 +20010,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   }
                 }
 
-                /* "chronoton/_cy_inner.pyx":465
+                /* "chronoton/_cy_inner.pyx":492
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net             # <<<<<<<<<<<<<<
@@ -19772,8 +20019,8 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_size = (((__pyx_v_sizing_static * __pyx_v_equity_now) * __pyx_v_leverage) / __pyx_v_entry_px_net);
 
-                /* "chronoton/_cy_inner.pyx":456
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+                /* "chronoton/_cy_inner.pyx":483
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:             # <<<<<<<<<<<<<<
  *                         equity_now = current_cash
@@ -19782,16 +20029,16 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 break;
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_VALUE:
 
-                /* "chronoton/_cy_inner.pyx":467
+                /* "chronoton/_cy_inner.pyx":494
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:
  *                         size = (sizing_static * leverage) / entry_px_net             # <<<<<<<<<<<<<<
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
 */
                 __pyx_v_size = ((__pyx_v_sizing_static * __pyx_v_leverage) / __pyx_v_entry_px_net);
 
-                /* "chronoton/_cy_inner.pyx":466
+                /* "chronoton/_cy_inner.pyx":493
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:             # <<<<<<<<<<<<<<
@@ -19801,36 +20048,35 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 break;
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_PERCENT_AT_RISK:
 
-                /* "chronoton/_cy_inner.pyx":469
+                /* "chronoton/_cy_inner.pyx":496
  *                         size = (sizing_static * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]             # <<<<<<<<<<<<<<
+ *                         sl_dist = sl_bar             # <<<<<<<<<<<<<<
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
  *                             size = 0.0
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_sl_dist = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_20 * __pyx_v_sl_arr.strides[0]) )));
+                __pyx_v_sl_dist = __pyx_v_sl_bar;
 
-                /* "chronoton/_cy_inner.pyx":470
+                /* "chronoton/_cy_inner.pyx":497
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:             # <<<<<<<<<<<<<<
  *                             size = 0.0
  *                         else:
 */
-                __pyx_t_15 = isnan(__pyx_v_sl_dist);
-                if (!__pyx_t_15) {
+                __pyx_t_16 = isnan(__pyx_v_sl_dist);
+                if (!__pyx_t_16) {
                 } else {
-                  __pyx_t_14 = __pyx_t_15;
+                  __pyx_t_15 = __pyx_t_16;
                   goto __pyx_L76_bool_binop_done;
                 }
-                __pyx_t_15 = (__pyx_v_sl_dist <= 0.0);
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_16 = (__pyx_v_sl_dist <= 0.0);
+                __pyx_t_15 = __pyx_t_16;
                 __pyx_L76_bool_binop_done:;
-                if (__pyx_t_14) {
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":471
- *                         sl_dist = sl_arr[i]
+                  /* "chronoton/_cy_inner.pyx":498
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
  *                             size = 0.0             # <<<<<<<<<<<<<<
  *                         else:
@@ -19838,9 +20084,9 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   __pyx_v_size = 0.0;
 
-                  /* "chronoton/_cy_inner.pyx":470
+                  /* "chronoton/_cy_inner.pyx":497
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:             # <<<<<<<<<<<<<<
  *                             size = 0.0
  *                         else:
@@ -19848,7 +20094,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   goto __pyx_L75;
                 }
 
-                /* "chronoton/_cy_inner.pyx":473
+                /* "chronoton/_cy_inner.pyx":500
  *                             size = 0.0
  *                         else:
  *                             equity_now = current_cash             # <<<<<<<<<<<<<<
@@ -19858,99 +20104,99 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 /*else*/ {
                   __pyx_v_equity_now = __pyx_v_current_cash;
 
-                  /* "chronoton/_cy_inner.pyx":474
+                  /* "chronoton/_cy_inner.pyx":501
  *                         else:
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):             # <<<<<<<<<<<<<<
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
 */
-                  __pyx_t_16 = __pyx_v_n_slots;
-                  __pyx_t_17 = __pyx_t_16;
-                  for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                    __pyx_v_kk = __pyx_t_18;
+                  __pyx_t_17 = __pyx_v_n_slots;
+                  __pyx_t_18 = __pyx_t_17;
+                  for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+                    __pyx_v_kk = __pyx_t_19;
 
-                    /* "chronoton/_cy_inner.pyx":475
+                    /* "chronoton/_cy_inner.pyx":502
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]
 */
-                    __pyx_t_20 = __pyx_v_kk;
-                    __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) != 0);
-                    if (__pyx_t_14) {
+                    __pyx_t_21 = __pyx_v_kk;
+                    __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) != 0);
+                    if (__pyx_t_15) {
 
-                      /* "chronoton/_cy_inner.pyx":476
+                      /* "chronoton/_cy_inner.pyx":503
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
 */
-                      __pyx_t_20 = __pyx_v_kk;
-                      __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-                      __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+                      __pyx_t_21 = __pyx_v_kk;
+                      __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+                      __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-                      /* "chronoton/_cy_inner.pyx":477
+                      /* "chronoton/_cy_inner.pyx":504
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                      __pyx_t_21 = __pyx_v_kk;
-                      __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                      __pyx_t_22 = __pyx_v_kk;
+                      __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                      /* "chronoton/_cy_inner.pyx":478
+                      /* "chronoton/_cy_inner.pyx":505
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)             # <<<<<<<<<<<<<<
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])
 */
-                      __pyx_t_19 = __pyx_v_kk;
-                      __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                      __pyx_t_20 = __pyx_v_kk;
+                      __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                      /* "chronoton/_cy_inner.pyx":477
+                      /* "chronoton/_cy_inner.pyx":504
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                      __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
+                      __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
 
-                      /* "chronoton/_cy_inner.pyx":479
+                      /* "chronoton/_cy_inner.pyx":506
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist
 */
-                      __pyx_t_13 = __pyx_v_kk;
-                      __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                      __pyx_t_11 = __pyx_v_kk;
+                      __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                      /* "chronoton/_cy_inner.pyx":480
+                      /* "chronoton/_cy_inner.pyx":507
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])             # <<<<<<<<<<<<<<
  *                             size = (sizing_static * equity_now) / sl_dist
  *                     else:  # SIZING_PRECOMPUTED
 */
-                      __pyx_t_20 = __pyx_v_kk;
-                      __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                      __pyx_t_21 = __pyx_v_kk;
+                      __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                      /* "chronoton/_cy_inner.pyx":479
+                      /* "chronoton/_cy_inner.pyx":506
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist
 */
-                      __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))));
+                      __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )))));
 
-                      /* "chronoton/_cy_inner.pyx":475
+                      /* "chronoton/_cy_inner.pyx":502
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
@@ -19960,7 +20206,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                     }
                   }
 
-                  /* "chronoton/_cy_inner.pyx":481
+                  /* "chronoton/_cy_inner.pyx":508
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist             # <<<<<<<<<<<<<<
@@ -19971,77 +20217,75 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 }
                 __pyx_L75:;
 
-                /* "chronoton/_cy_inner.pyx":468
+                /* "chronoton/_cy_inner.pyx":495
  *                     elif sizing_method_code == SIZING_VALUE:
  *                         size = (sizing_static * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:             # <<<<<<<<<<<<<<
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
 */
                 break;
                 default:
 
-                /* "chronoton/_cy_inner.pyx":483
+                /* "chronoton/_cy_inner.pyx":510
  *                             size = (sizing_static * equity_now) / sl_dist
  *                     else:  # SIZING_PRECOMPUTED
  *                         size = sizing_array[i]             # <<<<<<<<<<<<<<
  * 
  *                     if size > 0.0 and not isnan(size):
 */
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_v_size = (*((double const  *) ( /* dim=0 */ (__pyx_v_sizing_array.data + __pyx_t_21 * __pyx_v_sizing_array.strides[0]) )));
+                __pyx_t_22 = __pyx_v_i;
+                __pyx_v_size = (*((double const  *) ( /* dim=0 */ (__pyx_v_sizing_array.data + __pyx_t_22 * __pyx_v_sizing_array.strides[0]) )));
                 break;
               }
 
-              /* "chronoton/_cy_inner.pyx":485
+              /* "chronoton/_cy_inner.pyx":512
  *                         size = sizing_array[i]
  * 
  *                     if size > 0.0 and not isnan(size):             # <<<<<<<<<<<<<<
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
 */
-              __pyx_t_15 = (__pyx_v_size > 0.0);
-              if (__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_size > 0.0);
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L82_bool_binop_done;
               }
-              __pyx_t_15 = (!isnan(__pyx_v_size));
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (!isnan(__pyx_v_size));
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L82_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":486
+                /* "chronoton/_cy_inner.pyx":513
  * 
  *                     if size > 0.0 and not isnan(size):
- *                         entry_spread = spread_arr[i] * size             # <<<<<<<<<<<<<<
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size             # <<<<<<<<<<<<<<
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)
 */
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_v_entry_spread = ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) * __pyx_v_size);
+                __pyx_v_entry_spread = (__pyx_v_spread_i * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":487
+                /* "chronoton/_cy_inner.pyx":514
  *                     if size > 0.0 and not isnan(size):
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size             # <<<<<<<<<<<<<<
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size             # <<<<<<<<<<<<<<
  *                         entry_commission = commission * fabs(entry_px_net * size)
  *                         margin = size * entry_px_net / leverage
 */
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_v_entry_slippage = ((*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_21 * __pyx_v_slippage_arr.strides[0]) ))) * __pyx_v_size);
+                __pyx_v_entry_slippage = (__pyx_v_slippage_i * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":488
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+                /* "chronoton/_cy_inner.pyx":515
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)             # <<<<<<<<<<<<<<
  *                         margin = size * entry_px_net / leverage
  * 
 */
                 __pyx_v_entry_commission = (__pyx_v_commission * fabs((__pyx_v_entry_px_net * __pyx_v_size)));
 
-                /* "chronoton/_cy_inner.pyx":489
- *                         entry_slippage = slippage_arr[i] * size
+                /* "chronoton/_cy_inner.pyx":516
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)
  *                         margin = size * entry_px_net / leverage             # <<<<<<<<<<<<<<
  * 
@@ -20049,47 +20293,46 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_margin = ((__pyx_v_size * __pyx_v_entry_px_net) / __pyx_v_leverage);
 
-                /* "chronoton/_cy_inner.pyx":491
+                /* "chronoton/_cy_inner.pyx":518
  *                         margin = size * entry_px_net / leverage
  * 
  *                         if current_cash >= margin + entry_commission:             # <<<<<<<<<<<<<<
  *                             current_cash -= margin + entry_commission
  * 
 */
-                __pyx_t_14 = (__pyx_v_current_cash >= (__pyx_v_margin + __pyx_v_entry_commission));
-                if (__pyx_t_14) {
+                __pyx_t_15 = (__pyx_v_current_cash >= (__pyx_v_margin + __pyx_v_entry_commission));
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":492
+                  /* "chronoton/_cy_inner.pyx":519
  * 
  *                         if current_cash >= margin + entry_commission:
  *                             current_cash -= margin + entry_commission             # <<<<<<<<<<<<<<
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
 */
                   __pyx_v_current_cash = (__pyx_v_current_cash - (__pyx_v_margin + __pyx_v_entry_commission));
 
-                  /* "chronoton/_cy_inner.pyx":494
+                  /* "chronoton/_cy_inner.pyx":521
  *                             current_cash -= margin + entry_commission
  * 
- *                             sl_dist = sl_arr[i]             # <<<<<<<<<<<<<<
+ *                             sl_dist = sl_bar             # <<<<<<<<<<<<<<
  *                             if isnan(sl_dist):
  *                                 sl_price = NAN
 */
-                  __pyx_t_21 = __pyx_v_i;
-                  __pyx_v_sl_dist = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_21 * __pyx_v_sl_arr.strides[0]) )));
+                  __pyx_v_sl_dist = __pyx_v_sl_bar;
 
-                  /* "chronoton/_cy_inner.pyx":495
+                  /* "chronoton/_cy_inner.pyx":522
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):             # <<<<<<<<<<<<<<
  *                                 sl_price = NAN
  *                             else:
 */
-                  __pyx_t_14 = isnan(__pyx_v_sl_dist);
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_sl_dist);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":496
- *                             sl_dist = sl_arr[i]
+                    /* "chronoton/_cy_inner.pyx":523
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):
  *                                 sl_price = NAN             # <<<<<<<<<<<<<<
  *                             else:
@@ -20097,9 +20340,9 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                     __pyx_v_sl_price = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":495
+                    /* "chronoton/_cy_inner.pyx":522
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):             # <<<<<<<<<<<<<<
  *                                 sl_price = NAN
  *                             else:
@@ -20107,11 +20350,11 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                     goto __pyx_L85;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":498
+                  /* "chronoton/_cy_inner.pyx":525
  *                                 sl_price = NAN
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist             # <<<<<<<<<<<<<<
- *                             if isnan(tp_arr[i]):
+ *                             if isnan(tp_bar):
  *                                 tp_price = NAN
 */
                   /*else*/ {
@@ -20119,94 +20362,90 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   }
                   __pyx_L85:;
 
-                  /* "chronoton/_cy_inner.pyx":499
+                  /* "chronoton/_cy_inner.pyx":526
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):             # <<<<<<<<<<<<<<
+ *                             if isnan(tp_bar):             # <<<<<<<<<<<<<<
  *                                 tp_price = NAN
  *                             else:
 */
-                  __pyx_t_21 = __pyx_v_i;
-                  __pyx_t_14 = isnan((*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_21 * __pyx_v_tp_arr.strides[0]) ))));
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_tp_bar);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":500
+                    /* "chronoton/_cy_inner.pyx":527
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):
+ *                             if isnan(tp_bar):
  *                                 tp_price = NAN             # <<<<<<<<<<<<<<
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
 */
                     __pyx_v_tp_price = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":499
+                    /* "chronoton/_cy_inner.pyx":526
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):             # <<<<<<<<<<<<<<
+ *                             if isnan(tp_bar):             # <<<<<<<<<<<<<<
  *                                 tp_price = NAN
  *                             else:
 */
                     goto __pyx_L86;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":502
+                  /* "chronoton/_cy_inner.pyx":529
  *                                 tp_price = NAN
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]             # <<<<<<<<<<<<<<
- *                             if isnan(ts_arr[i]):
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar             # <<<<<<<<<<<<<<
+ *                             if isnan(ts_bar):
  *                                 ts_dist_val = NAN
 */
                   /*else*/ {
-                    __pyx_t_21 = __pyx_v_i;
-                    __pyx_v_tp_price = (__pyx_v_entry_px_net + (__pyx_v_desired_dir * (*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_21 * __pyx_v_tp_arr.strides[0]) )))));
+                    __pyx_v_tp_price = (__pyx_v_entry_px_net + (__pyx_v_desired_dir * __pyx_v_tp_bar));
                   }
                   __pyx_L86:;
 
-                  /* "chronoton/_cy_inner.pyx":503
+                  /* "chronoton/_cy_inner.pyx":530
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):             # <<<<<<<<<<<<<<
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):             # <<<<<<<<<<<<<<
  *                                 ts_dist_val = NAN
  *                             else:
 */
-                  __pyx_t_21 = __pyx_v_i;
-                  __pyx_t_14 = isnan((*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_21 * __pyx_v_ts_arr.strides[0]) ))));
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_ts_bar);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":504
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):
+                    /* "chronoton/_cy_inner.pyx":531
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):
  *                                 ts_dist_val = NAN             # <<<<<<<<<<<<<<
  *                             else:
- *                                 ts_dist_val = ts_arr[i]
+ *                                 ts_dist_val = ts_bar
 */
                     __pyx_v_ts_dist_val = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":503
+                    /* "chronoton/_cy_inner.pyx":530
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):             # <<<<<<<<<<<<<<
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):             # <<<<<<<<<<<<<<
  *                                 ts_dist_val = NAN
  *                             else:
 */
                     goto __pyx_L87;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":506
+                  /* "chronoton/_cy_inner.pyx":533
  *                                 ts_dist_val = NAN
  *                             else:
- *                                 ts_dist_val = ts_arr[i]             # <<<<<<<<<<<<<<
+ *                                 ts_dist_val = ts_bar             # <<<<<<<<<<<<<<
  * 
  *                             _enter_position(
 */
                   /*else*/ {
-                    __pyx_t_21 = __pyx_v_i;
-                    __pyx_v_ts_dist_val = (*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_21 * __pyx_v_ts_arr.strides[0]) )));
+                    __pyx_v_ts_dist_val = __pyx_v_ts_bar;
                   }
                   __pyx_L87:;
 
-                  /* "chronoton/_cy_inner.pyx":508
- *                                 ts_dist_val = ts_arr[i]
+                  /* "chronoton/_cy_inner.pyx":535
+ *                                 ts_dist_val = ts_bar
  * 
  *                             _enter_position(             # <<<<<<<<<<<<<<
  *                                 slot_idx, <double>desired_dir, i, t_ns,
@@ -20214,7 +20453,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active);
 
-                  /* "chronoton/_cy_inner.pyx":491
+                  /* "chronoton/_cy_inner.pyx":518
  *                         margin = size * entry_px_net / leverage
  * 
  *                         if current_cash >= margin + entry_commission:             # <<<<<<<<<<<<<<
@@ -20223,25 +20462,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 }
 
-                /* "chronoton/_cy_inner.pyx":485
+                /* "chronoton/_cy_inner.pyx":512
  *                         size = sizing_array[i]
  * 
  *                     if size > 0.0 and not isnan(size):             # <<<<<<<<<<<<<<
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":453
+              /* "chronoton/_cy_inner.pyx":480
  *                 desired_dir = 1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:             # <<<<<<<<<<<<<<
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":450
+            /* "chronoton/_cy_inner.pyx":477
  *             # `want_*_entry` flag is consulted  kept as a helper-free inline
  *             # to stay fully in C.
  *             if want_long_entry:             # <<<<<<<<<<<<<<
@@ -20250,7 +20489,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":516
+          /* "chronoton/_cy_inner.pyx":543
  *                             )
  * 
  *             if want_short_entry:             # <<<<<<<<<<<<<<
@@ -20259,7 +20498,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           if (__pyx_v_want_short_entry) {
 
-            /* "chronoton/_cy_inner.pyx":517
+            /* "chronoton/_cy_inner.pyx":544
  * 
  *             if want_short_entry:
  *                 desired_dir = -1             # <<<<<<<<<<<<<<
@@ -20268,39 +20507,37 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_desired_dir = -1;
 
-            /* "chronoton/_cy_inner.pyx":518
+            /* "chronoton/_cy_inner.pyx":545
  *             if want_short_entry:
  *                 desired_dir = -1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)             # <<<<<<<<<<<<<<
  *                 if slot_idx != -1:
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
 */
-            __pyx_t_16 = __pyx_f_9chronoton_9_cy_inner__find_free_slot(__pyx_v_slot_active, __pyx_v_n_slots); if (unlikely(__pyx_t_16 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 518, __pyx_L4_error)
-            __pyx_v_slot_idx = __pyx_t_16;
+            __pyx_t_17 = __pyx_f_9chronoton_9_cy_inner__find_free_slot(__pyx_v_slot_active, __pyx_v_n_slots); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 545, __pyx_L4_error)
+            __pyx_v_slot_idx = __pyx_t_17;
 
-            /* "chronoton/_cy_inner.pyx":519
+            /* "chronoton/_cy_inner.pyx":546
  *                 desired_dir = -1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:             # <<<<<<<<<<<<<<
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
 */
-            __pyx_t_14 = (__pyx_v_slot_idx != -1L);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_slot_idx != -1L);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":520
+              /* "chronoton/_cy_inner.pyx":547
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])             # <<<<<<<<<<<<<<
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)             # <<<<<<<<<<<<<<
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
 */
-              __pyx_t_21 = __pyx_v_i;
-              __pyx_t_20 = __pyx_v_i;
-              __pyx_v_entry_px_net = (__pyx_v_price_o + (__pyx_v_desired_dir * ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_21 * __pyx_v_spread_arr.strides[0]) ))) + (*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_20 * __pyx_v_slippage_arr.strides[0]) ))))));
+              __pyx_v_entry_px_net = (__pyx_v_price_o + (__pyx_v_desired_dir * (__pyx_v_spread_i + __pyx_v_slippage_i)));
 
-              /* "chronoton/_cy_inner.pyx":522
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+              /* "chronoton/_cy_inner.pyx":549
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:             # <<<<<<<<<<<<<<
  *                         equity_now = current_cash
@@ -20309,7 +20546,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               switch (__pyx_v_sizing_method_code) {
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_PERCENT_EQUITY:
 
-                /* "chronoton/_cy_inner.pyx":523
+                /* "chronoton/_cy_inner.pyx":550
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
  *                         equity_now = current_cash             # <<<<<<<<<<<<<<
@@ -20318,41 +20555,41 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_equity_now = __pyx_v_current_cash;
 
-                /* "chronoton/_cy_inner.pyx":524
+                /* "chronoton/_cy_inner.pyx":551
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):             # <<<<<<<<<<<<<<
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
 */
-                __pyx_t_16 = __pyx_v_n_slots;
-                __pyx_t_17 = __pyx_t_16;
-                for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                  __pyx_v_kk = __pyx_t_18;
+                __pyx_t_17 = __pyx_v_n_slots;
+                __pyx_t_18 = __pyx_t_17;
+                for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+                  __pyx_v_kk = __pyx_t_19;
 
-                  /* "chronoton/_cy_inner.pyx":525
+                  /* "chronoton/_cy_inner.pyx":552
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]
 */
-                  __pyx_t_20 = __pyx_v_kk;
-                  __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) != 0);
-                  if (__pyx_t_14) {
+                  __pyx_t_22 = __pyx_v_kk;
+                  __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) != 0);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":526
+                    /* "chronoton/_cy_inner.pyx":553
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
 */
-                    __pyx_t_20 = __pyx_v_kk;
+                    __pyx_t_22 = __pyx_v_kk;
                     __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-                    __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+                    __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-                    /* "chronoton/_cy_inner.pyx":527
+                    /* "chronoton/_cy_inner.pyx":554
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
@@ -20360,57 +20597,57 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
                     __pyx_t_21 = __pyx_v_kk;
-                    __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                    __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                    /* "chronoton/_cy_inner.pyx":528
+                    /* "chronoton/_cy_inner.pyx":555
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)             # <<<<<<<<<<<<<<
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])
 */
-                    __pyx_t_19 = __pyx_v_kk;
-                    __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                    __pyx_t_20 = __pyx_v_kk;
+                    __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                    /* "chronoton/_cy_inner.pyx":527
+                    /* "chronoton/_cy_inner.pyx":554
  *                             if slot_active[kk] != 0:
  *                                 d = open_positions[kk, F_DIRECTION]
  *                                 equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                    __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
+                    __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
 
-                    /* "chronoton/_cy_inner.pyx":529
+                    /* "chronoton/_cy_inner.pyx":556
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
 */
-                    __pyx_t_13 = __pyx_v_kk;
-                    __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                    __pyx_t_11 = __pyx_v_kk;
+                    __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                    /* "chronoton/_cy_inner.pyx":530
+                    /* "chronoton/_cy_inner.pyx":557
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])             # <<<<<<<<<<<<<<
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:
 */
-                    __pyx_t_20 = __pyx_v_kk;
+                    __pyx_t_22 = __pyx_v_kk;
                     __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                    /* "chronoton/_cy_inner.pyx":529
+                    /* "chronoton/_cy_inner.pyx":556
  *                                 equity_now += (open_positions[kk, F_SIZE]
  *                                                * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
 */
-                    __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))));
+                    __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))));
 
-                    /* "chronoton/_cy_inner.pyx":525
+                    /* "chronoton/_cy_inner.pyx":552
  *                         equity_now = current_cash
  *                         for kk in range(n_slots):
  *                             if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
@@ -20420,7 +20657,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   }
                 }
 
-                /* "chronoton/_cy_inner.pyx":531
+                /* "chronoton/_cy_inner.pyx":558
  *                                 equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net             # <<<<<<<<<<<<<<
@@ -20429,8 +20666,8 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_size = (((__pyx_v_sizing_static * __pyx_v_equity_now) * __pyx_v_leverage) / __pyx_v_entry_px_net);
 
-                /* "chronoton/_cy_inner.pyx":522
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+                /* "chronoton/_cy_inner.pyx":549
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
  *                     if sizing_method_code == SIZING_PERCENT_EQUITY:             # <<<<<<<<<<<<<<
  *                         equity_now = current_cash
@@ -20439,16 +20676,16 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 break;
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_VALUE:
 
-                /* "chronoton/_cy_inner.pyx":533
+                /* "chronoton/_cy_inner.pyx":560
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:
  *                         size = (sizing_static * leverage) / entry_px_net             # <<<<<<<<<<<<<<
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
 */
                 __pyx_v_size = ((__pyx_v_sizing_static * __pyx_v_leverage) / __pyx_v_entry_px_net);
 
-                /* "chronoton/_cy_inner.pyx":532
+                /* "chronoton/_cy_inner.pyx":559
  *                                                  * open_positions[kk, F_SIZE])
  *                         size = (sizing_static * equity_now * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_VALUE:             # <<<<<<<<<<<<<<
@@ -20458,36 +20695,35 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 break;
                 case __pyx_e_9chronoton_9_cy_inner_SIZING_PERCENT_AT_RISK:
 
-                /* "chronoton/_cy_inner.pyx":535
+                /* "chronoton/_cy_inner.pyx":562
  *                         size = (sizing_static * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]             # <<<<<<<<<<<<<<
+ *                         sl_dist = sl_bar             # <<<<<<<<<<<<<<
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
  *                             size = 0.0
 */
-                __pyx_t_21 = __pyx_v_i;
-                __pyx_v_sl_dist = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_21 * __pyx_v_sl_arr.strides[0]) )));
+                __pyx_v_sl_dist = __pyx_v_sl_bar;
 
-                /* "chronoton/_cy_inner.pyx":536
+                /* "chronoton/_cy_inner.pyx":563
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:             # <<<<<<<<<<<<<<
  *                             size = 0.0
  *                         else:
 */
-                __pyx_t_15 = isnan(__pyx_v_sl_dist);
-                if (!__pyx_t_15) {
+                __pyx_t_16 = isnan(__pyx_v_sl_dist);
+                if (!__pyx_t_16) {
                 } else {
-                  __pyx_t_14 = __pyx_t_15;
+                  __pyx_t_15 = __pyx_t_16;
                   goto __pyx_L94_bool_binop_done;
                 }
-                __pyx_t_15 = (__pyx_v_sl_dist <= 0.0);
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_16 = (__pyx_v_sl_dist <= 0.0);
+                __pyx_t_15 = __pyx_t_16;
                 __pyx_L94_bool_binop_done:;
-                if (__pyx_t_14) {
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":537
- *                         sl_dist = sl_arr[i]
+                  /* "chronoton/_cy_inner.pyx":564
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
  *                             size = 0.0             # <<<<<<<<<<<<<<
  *                         else:
@@ -20495,9 +20731,9 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   __pyx_v_size = 0.0;
 
-                  /* "chronoton/_cy_inner.pyx":536
+                  /* "chronoton/_cy_inner.pyx":563
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:             # <<<<<<<<<<<<<<
  *                             size = 0.0
  *                         else:
@@ -20505,7 +20741,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   goto __pyx_L93;
                 }
 
-                /* "chronoton/_cy_inner.pyx":539
+                /* "chronoton/_cy_inner.pyx":566
  *                             size = 0.0
  *                         else:
  *                             equity_now = current_cash             # <<<<<<<<<<<<<<
@@ -20515,19 +20751,19 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 /*else*/ {
                   __pyx_v_equity_now = __pyx_v_current_cash;
 
-                  /* "chronoton/_cy_inner.pyx":540
+                  /* "chronoton/_cy_inner.pyx":567
  *                         else:
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):             # <<<<<<<<<<<<<<
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
 */
-                  __pyx_t_16 = __pyx_v_n_slots;
-                  __pyx_t_17 = __pyx_t_16;
-                  for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                    __pyx_v_kk = __pyx_t_18;
+                  __pyx_t_17 = __pyx_v_n_slots;
+                  __pyx_t_18 = __pyx_t_17;
+                  for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+                    __pyx_v_kk = __pyx_t_19;
 
-                    /* "chronoton/_cy_inner.pyx":541
+                    /* "chronoton/_cy_inner.pyx":568
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
@@ -20535,10 +20771,10 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                                     equity_now += (open_positions[kk, F_SIZE]
 */
                     __pyx_t_21 = __pyx_v_kk;
-                    __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) != 0);
-                    if (__pyx_t_14) {
+                    __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_21 * __pyx_v_slot_active.strides[0]) ))) != 0);
+                    if (__pyx_t_15) {
 
-                      /* "chronoton/_cy_inner.pyx":542
+                      /* "chronoton/_cy_inner.pyx":569
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]             # <<<<<<<<<<<<<<
@@ -20546,49 +20782,49 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
 */
                       __pyx_t_21 = __pyx_v_kk;
-                      __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-                      __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
+                      __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+                      __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )));
 
-                      /* "chronoton/_cy_inner.pyx":543
+                      /* "chronoton/_cy_inner.pyx":570
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                      __pyx_t_20 = __pyx_v_kk;
+                      __pyx_t_22 = __pyx_v_kk;
                       __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                      /* "chronoton/_cy_inner.pyx":544
+                      /* "chronoton/_cy_inner.pyx":571
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)             # <<<<<<<<<<<<<<
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])
 */
-                      __pyx_t_19 = __pyx_v_kk;
-                      __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                      __pyx_t_20 = __pyx_v_kk;
+                      __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                      /* "chronoton/_cy_inner.pyx":543
+                      /* "chronoton/_cy_inner.pyx":570
  *                                 if slot_active[kk] != 0:
  *                                     d = open_positions[kk, F_DIRECTION]
  *                                     equity_now += (open_positions[kk, F_SIZE]             # <<<<<<<<<<<<<<
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
 */
-                      __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
+                      __pyx_v_equity_now = (__pyx_v_equity_now + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
 
-                      /* "chronoton/_cy_inner.pyx":545
+                      /* "chronoton/_cy_inner.pyx":572
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist
 */
-                      __pyx_t_13 = __pyx_v_kk;
-                      __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+                      __pyx_t_11 = __pyx_v_kk;
+                      __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-                      /* "chronoton/_cy_inner.pyx":546
+                      /* "chronoton/_cy_inner.pyx":573
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])             # <<<<<<<<<<<<<<
@@ -20596,18 +20832,18 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                     else:
 */
                       __pyx_t_21 = __pyx_v_kk;
-                      __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+                      __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-                      /* "chronoton/_cy_inner.pyx":545
+                      /* "chronoton/_cy_inner.pyx":572
  *                                     equity_now += (open_positions[kk, F_SIZE]
  *                                                    * open_positions[kk, F_ENTRY_PRICE] / leverage)
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist
 */
-                      __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )))));
+                      __pyx_v_equity_now = (__pyx_v_equity_now + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) )))));
 
-                      /* "chronoton/_cy_inner.pyx":541
+                      /* "chronoton/_cy_inner.pyx":568
  *                             equity_now = current_cash
  *                             for kk in range(n_slots):
  *                                 if slot_active[kk] != 0:             # <<<<<<<<<<<<<<
@@ -20617,7 +20853,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                     }
                   }
 
-                  /* "chronoton/_cy_inner.pyx":547
+                  /* "chronoton/_cy_inner.pyx":574
  *                                     equity_now += (d * (price_c - open_positions[kk, F_ENTRY_PRICE])
  *                                                      * open_positions[kk, F_SIZE])
  *                             size = (sizing_static * equity_now) / sl_dist             # <<<<<<<<<<<<<<
@@ -20628,77 +20864,75 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 }
                 __pyx_L93:;
 
-                /* "chronoton/_cy_inner.pyx":534
+                /* "chronoton/_cy_inner.pyx":561
  *                     elif sizing_method_code == SIZING_VALUE:
  *                         size = (sizing_static * leverage) / entry_px_net
  *                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:             # <<<<<<<<<<<<<<
- *                         sl_dist = sl_arr[i]
+ *                         sl_dist = sl_bar
  *                         if isnan(sl_dist) or sl_dist <= 0.0:
 */
                 break;
                 default:
 
-                /* "chronoton/_cy_inner.pyx":549
+                /* "chronoton/_cy_inner.pyx":576
  *                             size = (sizing_static * equity_now) / sl_dist
  *                     else:
  *                         size = sizing_array[i]             # <<<<<<<<<<<<<<
  * 
  *                     if size > 0.0 and not isnan(size):
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_size = (*((double const  *) ( /* dim=0 */ (__pyx_v_sizing_array.data + __pyx_t_20 * __pyx_v_sizing_array.strides[0]) )));
+                __pyx_t_22 = __pyx_v_i;
+                __pyx_v_size = (*((double const  *) ( /* dim=0 */ (__pyx_v_sizing_array.data + __pyx_t_22 * __pyx_v_sizing_array.strides[0]) )));
                 break;
               }
 
-              /* "chronoton/_cy_inner.pyx":551
+              /* "chronoton/_cy_inner.pyx":578
  *                         size = sizing_array[i]
  * 
  *                     if size > 0.0 and not isnan(size):             # <<<<<<<<<<<<<<
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
 */
-              __pyx_t_15 = (__pyx_v_size > 0.0);
-              if (__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_size > 0.0);
+              if (__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L100_bool_binop_done;
               }
-              __pyx_t_15 = (!isnan(__pyx_v_size));
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (!isnan(__pyx_v_size));
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L100_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":552
+                /* "chronoton/_cy_inner.pyx":579
  * 
  *                     if size > 0.0 and not isnan(size):
- *                         entry_spread = spread_arr[i] * size             # <<<<<<<<<<<<<<
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size             # <<<<<<<<<<<<<<
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_entry_spread = ((*((double const  *) ( /* dim=0 */ (__pyx_v_spread_arr.data + __pyx_t_20 * __pyx_v_spread_arr.strides[0]) ))) * __pyx_v_size);
+                __pyx_v_entry_spread = (__pyx_v_spread_i * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":553
+                /* "chronoton/_cy_inner.pyx":580
  *                     if size > 0.0 and not isnan(size):
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size             # <<<<<<<<<<<<<<
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size             # <<<<<<<<<<<<<<
  *                         entry_commission = commission * fabs(entry_px_net * size)
  *                         margin = size * entry_px_net / leverage
 */
-                __pyx_t_20 = __pyx_v_i;
-                __pyx_v_entry_slippage = ((*((double const  *) ( /* dim=0 */ (__pyx_v_slippage_arr.data + __pyx_t_20 * __pyx_v_slippage_arr.strides[0]) ))) * __pyx_v_size);
+                __pyx_v_entry_slippage = (__pyx_v_slippage_i * __pyx_v_size);
 
-                /* "chronoton/_cy_inner.pyx":554
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+                /* "chronoton/_cy_inner.pyx":581
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)             # <<<<<<<<<<<<<<
  *                         margin = size * entry_px_net / leverage
  * 
 */
                 __pyx_v_entry_commission = (__pyx_v_commission * fabs((__pyx_v_entry_px_net * __pyx_v_size)));
 
-                /* "chronoton/_cy_inner.pyx":555
- *                         entry_slippage = slippage_arr[i] * size
+                /* "chronoton/_cy_inner.pyx":582
+ *                         entry_slippage = slippage_i * size
  *                         entry_commission = commission * fabs(entry_px_net * size)
  *                         margin = size * entry_px_net / leverage             # <<<<<<<<<<<<<<
  * 
@@ -20706,47 +20940,46 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_margin = ((__pyx_v_size * __pyx_v_entry_px_net) / __pyx_v_leverage);
 
-                /* "chronoton/_cy_inner.pyx":557
+                /* "chronoton/_cy_inner.pyx":584
  *                         margin = size * entry_px_net / leverage
  * 
  *                         if current_cash >= margin + entry_commission:             # <<<<<<<<<<<<<<
  *                             current_cash -= margin + entry_commission
  * 
 */
-                __pyx_t_14 = (__pyx_v_current_cash >= (__pyx_v_margin + __pyx_v_entry_commission));
-                if (__pyx_t_14) {
+                __pyx_t_15 = (__pyx_v_current_cash >= (__pyx_v_margin + __pyx_v_entry_commission));
+                if (__pyx_t_15) {
 
-                  /* "chronoton/_cy_inner.pyx":558
+                  /* "chronoton/_cy_inner.pyx":585
  * 
  *                         if current_cash >= margin + entry_commission:
  *                             current_cash -= margin + entry_commission             # <<<<<<<<<<<<<<
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
 */
                   __pyx_v_current_cash = (__pyx_v_current_cash - (__pyx_v_margin + __pyx_v_entry_commission));
 
-                  /* "chronoton/_cy_inner.pyx":560
+                  /* "chronoton/_cy_inner.pyx":587
  *                             current_cash -= margin + entry_commission
  * 
- *                             sl_dist = sl_arr[i]             # <<<<<<<<<<<<<<
+ *                             sl_dist = sl_bar             # <<<<<<<<<<<<<<
  *                             if isnan(sl_dist):
  *                                 sl_price = NAN
 */
-                  __pyx_t_20 = __pyx_v_i;
-                  __pyx_v_sl_dist = (*((double const  *) ( /* dim=0 */ (__pyx_v_sl_arr.data + __pyx_t_20 * __pyx_v_sl_arr.strides[0]) )));
+                  __pyx_v_sl_dist = __pyx_v_sl_bar;
 
-                  /* "chronoton/_cy_inner.pyx":561
+                  /* "chronoton/_cy_inner.pyx":588
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):             # <<<<<<<<<<<<<<
  *                                 sl_price = NAN
  *                             else:
 */
-                  __pyx_t_14 = isnan(__pyx_v_sl_dist);
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_sl_dist);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":562
- *                             sl_dist = sl_arr[i]
+                    /* "chronoton/_cy_inner.pyx":589
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):
  *                                 sl_price = NAN             # <<<<<<<<<<<<<<
  *                             else:
@@ -20754,9 +20987,9 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                     __pyx_v_sl_price = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":561
+                    /* "chronoton/_cy_inner.pyx":588
  * 
- *                             sl_dist = sl_arr[i]
+ *                             sl_dist = sl_bar
  *                             if isnan(sl_dist):             # <<<<<<<<<<<<<<
  *                                 sl_price = NAN
  *                             else:
@@ -20764,11 +20997,11 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                     goto __pyx_L103;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":564
+                  /* "chronoton/_cy_inner.pyx":591
  *                                 sl_price = NAN
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist             # <<<<<<<<<<<<<<
- *                             if isnan(tp_arr[i]):
+ *                             if isnan(tp_bar):
  *                                 tp_price = NAN
 */
                   /*else*/ {
@@ -20776,94 +21009,90 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                   }
                   __pyx_L103:;
 
-                  /* "chronoton/_cy_inner.pyx":565
+                  /* "chronoton/_cy_inner.pyx":592
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):             # <<<<<<<<<<<<<<
+ *                             if isnan(tp_bar):             # <<<<<<<<<<<<<<
  *                                 tp_price = NAN
  *                             else:
 */
-                  __pyx_t_20 = __pyx_v_i;
-                  __pyx_t_14 = isnan((*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_20 * __pyx_v_tp_arr.strides[0]) ))));
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_tp_bar);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":566
+                    /* "chronoton/_cy_inner.pyx":593
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):
+ *                             if isnan(tp_bar):
  *                                 tp_price = NAN             # <<<<<<<<<<<<<<
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
 */
                     __pyx_v_tp_price = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":565
+                    /* "chronoton/_cy_inner.pyx":592
  *                             else:
  *                                 sl_price = entry_px_net - desired_dir * sl_dist
- *                             if isnan(tp_arr[i]):             # <<<<<<<<<<<<<<
+ *                             if isnan(tp_bar):             # <<<<<<<<<<<<<<
  *                                 tp_price = NAN
  *                             else:
 */
                     goto __pyx_L104;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":568
+                  /* "chronoton/_cy_inner.pyx":595
  *                                 tp_price = NAN
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]             # <<<<<<<<<<<<<<
- *                             if isnan(ts_arr[i]):
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar             # <<<<<<<<<<<<<<
+ *                             if isnan(ts_bar):
  *                                 ts_dist_val = NAN
 */
                   /*else*/ {
-                    __pyx_t_20 = __pyx_v_i;
-                    __pyx_v_tp_price = (__pyx_v_entry_px_net + (__pyx_v_desired_dir * (*((double const  *) ( /* dim=0 */ (__pyx_v_tp_arr.data + __pyx_t_20 * __pyx_v_tp_arr.strides[0]) )))));
+                    __pyx_v_tp_price = (__pyx_v_entry_px_net + (__pyx_v_desired_dir * __pyx_v_tp_bar));
                   }
                   __pyx_L104:;
 
-                  /* "chronoton/_cy_inner.pyx":569
+                  /* "chronoton/_cy_inner.pyx":596
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):             # <<<<<<<<<<<<<<
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):             # <<<<<<<<<<<<<<
  *                                 ts_dist_val = NAN
  *                             else:
 */
-                  __pyx_t_20 = __pyx_v_i;
-                  __pyx_t_14 = isnan((*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_20 * __pyx_v_ts_arr.strides[0]) ))));
-                  if (__pyx_t_14) {
+                  __pyx_t_15 = isnan(__pyx_v_ts_bar);
+                  if (__pyx_t_15) {
 
-                    /* "chronoton/_cy_inner.pyx":570
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):
+                    /* "chronoton/_cy_inner.pyx":597
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):
  *                                 ts_dist_val = NAN             # <<<<<<<<<<<<<<
  *                             else:
- *                                 ts_dist_val = ts_arr[i]
+ *                                 ts_dist_val = ts_bar
 */
                     __pyx_v_ts_dist_val = NAN;
 
-                    /* "chronoton/_cy_inner.pyx":569
+                    /* "chronoton/_cy_inner.pyx":596
  *                             else:
- *                                 tp_price = entry_px_net + desired_dir * tp_arr[i]
- *                             if isnan(ts_arr[i]):             # <<<<<<<<<<<<<<
+ *                                 tp_price = entry_px_net + desired_dir * tp_bar
+ *                             if isnan(ts_bar):             # <<<<<<<<<<<<<<
  *                                 ts_dist_val = NAN
  *                             else:
 */
                     goto __pyx_L105;
                   }
 
-                  /* "chronoton/_cy_inner.pyx":572
+                  /* "chronoton/_cy_inner.pyx":599
  *                                 ts_dist_val = NAN
  *                             else:
- *                                 ts_dist_val = ts_arr[i]             # <<<<<<<<<<<<<<
+ *                                 ts_dist_val = ts_bar             # <<<<<<<<<<<<<<
  * 
  *                             _enter_position(
 */
                   /*else*/ {
-                    __pyx_t_20 = __pyx_v_i;
-                    __pyx_v_ts_dist_val = (*((double const  *) ( /* dim=0 */ (__pyx_v_ts_arr.data + __pyx_t_20 * __pyx_v_ts_arr.strides[0]) )));
+                    __pyx_v_ts_dist_val = __pyx_v_ts_bar;
                   }
                   __pyx_L105:;
 
-                  /* "chronoton/_cy_inner.pyx":574
- *                                 ts_dist_val = ts_arr[i]
+                  /* "chronoton/_cy_inner.pyx":601
+ *                                 ts_dist_val = ts_bar
  * 
  *                             _enter_position(             # <<<<<<<<<<<<<<
  *                                 slot_idx, <double>desired_dir, i, t_ns,
@@ -20871,7 +21100,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                   __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active);
 
-                  /* "chronoton/_cy_inner.pyx":557
+                  /* "chronoton/_cy_inner.pyx":584
  *                         margin = size * entry_px_net / leverage
  * 
  *                         if current_cash >= margin + entry_commission:             # <<<<<<<<<<<<<<
@@ -20880,25 +21109,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 }
 
-                /* "chronoton/_cy_inner.pyx":551
+                /* "chronoton/_cy_inner.pyx":578
  *                         size = sizing_array[i]
  * 
  *                     if size > 0.0 and not isnan(size):             # <<<<<<<<<<<<<<
- *                         entry_spread = spread_arr[i] * size
- *                         entry_slippage = slippage_arr[i] * size
+ *                         entry_spread = spread_i * size
+ *                         entry_slippage = slippage_i * size
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":519
+              /* "chronoton/_cy_inner.pyx":546
  *                 desired_dir = -1
  *                 slot_idx = _find_free_slot(slot_active, n_slots)
  *                 if slot_idx != -1:             # <<<<<<<<<<<<<<
- *                     entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+ *                     entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
  * 
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":516
+            /* "chronoton/_cy_inner.pyx":543
  *                             )
  * 
  *             if want_short_entry:             # <<<<<<<<<<<<<<
@@ -20907,7 +21136,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":583
+          /* "chronoton/_cy_inner.pyx":610
  * 
  *             # (5) Mark-to-market ---------------------------------------
  *             unrealized = 0.0             # <<<<<<<<<<<<<<
@@ -20916,7 +21145,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           __pyx_v_unrealized = 0.0;
 
-          /* "chronoton/_cy_inner.pyx":584
+          /* "chronoton/_cy_inner.pyx":611
  *             # (5) Mark-to-market ---------------------------------------
  *             unrealized = 0.0
  *             margin_held = 0.0             # <<<<<<<<<<<<<<
@@ -20925,30 +21154,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           __pyx_v_margin_held = 0.0;
 
-          /* "chronoton/_cy_inner.pyx":585
+          /* "chronoton/_cy_inner.pyx":612
  *             unrealized = 0.0
  *             margin_held = 0.0
  *             for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                 if slot_active[k] == 0:
  *                     continue
 */
-          __pyx_t_16 = __pyx_v_n_slots;
-          __pyx_t_17 = __pyx_t_16;
-          for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-            __pyx_v_k = __pyx_t_18;
+          __pyx_t_17 = __pyx_v_n_slots;
+          __pyx_t_18 = __pyx_t_17;
+          for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+            __pyx_v_k = __pyx_t_19;
 
-            /* "chronoton/_cy_inner.pyx":586
+            /* "chronoton/_cy_inner.pyx":613
  *             margin_held = 0.0
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                     continue
  *                 d = open_positions[k, F_DIRECTION]
 */
-            __pyx_t_20 = __pyx_v_k;
-            __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) == 0);
-            if (__pyx_t_14) {
+            __pyx_t_22 = __pyx_v_k;
+            __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) == 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":587
+              /* "chronoton/_cy_inner.pyx":614
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:
  *                     continue             # <<<<<<<<<<<<<<
@@ -20957,7 +21186,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L106_continue;
 
-              /* "chronoton/_cy_inner.pyx":586
+              /* "chronoton/_cy_inner.pyx":613
  *             margin_held = 0.0
  *             for k in range(n_slots):
  *                 if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -20966,18 +21195,18 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":588
+            /* "chronoton/_cy_inner.pyx":615
  *                 if slot_active[k] == 0:
  *                     continue
  *                 d = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                                  * open_positions[k, F_SIZE])
 */
-            __pyx_t_20 = __pyx_v_k;
+            __pyx_t_22 = __pyx_v_k;
             __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-            __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+            __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-            /* "chronoton/_cy_inner.pyx":589
+            /* "chronoton/_cy_inner.pyx":616
  *                     continue
  *                 d = open_positions[k, F_DIRECTION]
  *                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
@@ -20985,41 +21214,41 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
 */
             __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+            __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-            /* "chronoton/_cy_inner.pyx":590
+            /* "chronoton/_cy_inner.pyx":617
  *                 d = open_positions[k, F_DIRECTION]
  *                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                                  * open_positions[k, F_SIZE])             # <<<<<<<<<<<<<<
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
  *                 open_positions[k, F_BARS_HELD] = <double>(
 */
-            __pyx_t_19 = __pyx_v_k;
-            __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+            __pyx_t_20 = __pyx_v_k;
+            __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
 
-            /* "chronoton/_cy_inner.pyx":589
+            /* "chronoton/_cy_inner.pyx":616
  *                     continue
  *                 d = open_positions[k, F_DIRECTION]
  *                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
  *                                  * open_positions[k, F_SIZE])
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
 */
-            __pyx_v_unrealized = (__pyx_v_unrealized + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )))));
+            __pyx_v_unrealized = (__pyx_v_unrealized + ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )))));
 
-            /* "chronoton/_cy_inner.pyx":591
+            /* "chronoton/_cy_inner.pyx":618
  *                 unrealized += (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                                  * open_positions[k, F_SIZE])
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage             # <<<<<<<<<<<<<<
  *                 open_positions[k, F_BARS_HELD] = <double>(
  *                     i - <Py_ssize_t>open_positions[k, F_ENTRY_BAR]
 */
-            __pyx_t_13 = __pyx_v_k;
-            __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-            __pyx_t_20 = __pyx_v_k;
+            __pyx_t_11 = __pyx_v_k;
+            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+            __pyx_t_22 = __pyx_v_k;
             __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-            __pyx_v_margin_held = (__pyx_v_margin_held + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
+            __pyx_v_margin_held = (__pyx_v_margin_held + (((*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )))) / __pyx_v_leverage));
 
-            /* "chronoton/_cy_inner.pyx":593
+            /* "chronoton/_cy_inner.pyx":620
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
  *                 open_positions[k, F_BARS_HELD] = <double>(
  *                     i - <Py_ssize_t>open_positions[k, F_ENTRY_BAR]             # <<<<<<<<<<<<<<
@@ -21027,53 +21256,53 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *             equity_out[i] = current_cash + margin_held + unrealized
 */
             __pyx_t_21 = __pyx_v_k;
-            __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_BAR;
+            __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_BAR;
 
-            /* "chronoton/_cy_inner.pyx":592
+            /* "chronoton/_cy_inner.pyx":619
  *                                  * open_positions[k, F_SIZE])
  *                 margin_held += open_positions[k, F_SIZE] * open_positions[k, F_ENTRY_PRICE] / leverage
  *                 open_positions[k, F_BARS_HELD] = <double>(             # <<<<<<<<<<<<<<
  *                     i - <Py_ssize_t>open_positions[k, F_ENTRY_BAR]
  *                 )
 */
-            __pyx_t_19 = __pyx_v_k;
-            __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_BARS_HELD;
-            *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )) = ((double)(__pyx_v_i - ((Py_ssize_t)(*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))));
+            __pyx_t_20 = __pyx_v_k;
+            __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_BARS_HELD;
+            *((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )) = ((double)(__pyx_v_i - ((Py_ssize_t)(*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))))));
             __pyx_L106_continue:;
           }
 
-          /* "chronoton/_cy_inner.pyx":595
+          /* "chronoton/_cy_inner.pyx":622
  *                     i - <Py_ssize_t>open_positions[k, F_ENTRY_BAR]
  *                 )
  *             equity_out[i] = current_cash + margin_held + unrealized             # <<<<<<<<<<<<<<
  *             cash_out[i] = current_cash
  * 
 */
-          __pyx_t_20 = __pyx_v_i;
-          *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_20 * __pyx_v_equity_out.strides[0]) )) = ((__pyx_v_current_cash + __pyx_v_margin_held) + __pyx_v_unrealized);
+          __pyx_t_22 = __pyx_v_i;
+          *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_22 * __pyx_v_equity_out.strides[0]) )) = ((__pyx_v_current_cash + __pyx_v_margin_held) + __pyx_v_unrealized);
 
-          /* "chronoton/_cy_inner.pyx":596
+          /* "chronoton/_cy_inner.pyx":623
  *                 )
  *             equity_out[i] = current_cash + margin_held + unrealized
  *             cash_out[i] = current_cash             # <<<<<<<<<<<<<<
  * 
  *             # (6) Liquidation ------------------------------------------
 */
-          __pyx_t_20 = __pyx_v_i;
-          *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_20 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
+          __pyx_t_22 = __pyx_v_i;
+          *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_22 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
 
-          /* "chronoton/_cy_inner.pyx":599
+          /* "chronoton/_cy_inner.pyx":626
  * 
  *             # (6) Liquidation ------------------------------------------
  *             if equity_out[i] <= 0.0:             # <<<<<<<<<<<<<<
  *                 total_loss_budget = current_cash + margin_held
  *                 total_bad = 0.0
 */
-          __pyx_t_20 = __pyx_v_i;
-          __pyx_t_14 = ((*((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_20 * __pyx_v_equity_out.strides[0]) ))) <= 0.0);
-          if (__pyx_t_14) {
+          __pyx_t_22 = __pyx_v_i;
+          __pyx_t_15 = ((*((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_22 * __pyx_v_equity_out.strides[0]) ))) <= 0.0);
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":600
+            /* "chronoton/_cy_inner.pyx":627
  *             # (6) Liquidation ------------------------------------------
  *             if equity_out[i] <= 0.0:
  *                 total_loss_budget = current_cash + margin_held             # <<<<<<<<<<<<<<
@@ -21082,7 +21311,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_total_loss_budget = (__pyx_v_current_cash + __pyx_v_margin_held);
 
-            /* "chronoton/_cy_inner.pyx":601
+            /* "chronoton/_cy_inner.pyx":628
  *             if equity_out[i] <= 0.0:
  *                 total_loss_budget = current_cash + margin_held
  *                 total_bad = 0.0             # <<<<<<<<<<<<<<
@@ -21091,40 +21320,40 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_total_bad = 0.0;
 
-            /* "chronoton/_cy_inner.pyx":602
+            /* "chronoton/_cy_inner.pyx":629
  *                 total_loss_budget = current_cash + margin_held
  *                 total_bad = 0.0
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         unrealized_by_slot[k] = 0.0
 */
-            __pyx_t_16 = __pyx_v_n_slots;
-            __pyx_t_17 = __pyx_t_16;
-            for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-              __pyx_v_k = __pyx_t_18;
+            __pyx_t_17 = __pyx_v_n_slots;
+            __pyx_t_18 = __pyx_t_17;
+            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+              __pyx_v_k = __pyx_t_19;
 
-              /* "chronoton/_cy_inner.pyx":603
+              /* "chronoton/_cy_inner.pyx":630
  *                 total_bad = 0.0
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                         unrealized_by_slot[k] = 0.0
  *                         continue
 */
-              __pyx_t_20 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_22 = __pyx_v_k;
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_22 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":604
+                /* "chronoton/_cy_inner.pyx":631
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         unrealized_by_slot[k] = 0.0             # <<<<<<<<<<<<<<
  *                         continue
  *                     d = open_positions[k, F_DIRECTION]
 */
-                __pyx_t_20 = __pyx_v_k;
-                *((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_20 * __pyx_v_unrealized_by_slot.strides[0]) )) = 0.0;
+                __pyx_t_22 = __pyx_v_k;
+                *((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_22 * __pyx_v_unrealized_by_slot.strides[0]) )) = 0.0;
 
-                /* "chronoton/_cy_inner.pyx":605
+                /* "chronoton/_cy_inner.pyx":632
  *                     if slot_active[k] == 0:
  *                         unrealized_by_slot[k] = 0.0
  *                         continue             # <<<<<<<<<<<<<<
@@ -21133,7 +21362,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L110_continue;
 
-                /* "chronoton/_cy_inner.pyx":603
+                /* "chronoton/_cy_inner.pyx":630
  *                 total_bad = 0.0
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -21142,18 +21371,18 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":606
+              /* "chronoton/_cy_inner.pyx":633
  *                         unrealized_by_slot[k] = 0.0
  *                         continue
  *                     d = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                     u = (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                            * open_positions[k, F_SIZE])
 */
-              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_22 = __pyx_v_k;
               __pyx_t_21 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_v_d = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_22 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_21 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":607
+              /* "chronoton/_cy_inner.pyx":634
  *                         continue
  *                     d = open_positions[k, F_DIRECTION]
  *                     u = (d * (price_c - open_positions[k, F_ENTRY_PRICE])             # <<<<<<<<<<<<<<
@@ -21161,40 +21390,40 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                     unrealized_by_slot[k] = u
 */
               __pyx_t_21 = __pyx_v_k;
-              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+              __pyx_t_22 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
 
-              /* "chronoton/_cy_inner.pyx":608
+              /* "chronoton/_cy_inner.pyx":635
  *                     d = open_positions[k, F_DIRECTION]
  *                     u = (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                            * open_positions[k, F_SIZE])             # <<<<<<<<<<<<<<
  *                     unrealized_by_slot[k] = u
  *                     if u < 0.0:
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-              __pyx_v_u = ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) ))));
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+              __pyx_v_u = ((__pyx_v_d * (__pyx_v_price_c - (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_21 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_22 * __pyx_v_open_positions.strides[1]) ))))) * (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) ))));
 
-              /* "chronoton/_cy_inner.pyx":609
+              /* "chronoton/_cy_inner.pyx":636
  *                     u = (d * (price_c - open_positions[k, F_ENTRY_PRICE])
  *                            * open_positions[k, F_SIZE])
  *                     unrealized_by_slot[k] = u             # <<<<<<<<<<<<<<
  *                     if u < 0.0:
  *                         total_bad += -u
 */
-              __pyx_t_19 = __pyx_v_k;
-              *((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_19 * __pyx_v_unrealized_by_slot.strides[0]) )) = __pyx_v_u;
+              __pyx_t_20 = __pyx_v_k;
+              *((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_20 * __pyx_v_unrealized_by_slot.strides[0]) )) = __pyx_v_u;
 
-              /* "chronoton/_cy_inner.pyx":610
+              /* "chronoton/_cy_inner.pyx":637
  *                            * open_positions[k, F_SIZE])
  *                     unrealized_by_slot[k] = u
  *                     if u < 0.0:             # <<<<<<<<<<<<<<
  *                         total_bad += -u
  * 
 */
-              __pyx_t_14 = (__pyx_v_u < 0.0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (__pyx_v_u < 0.0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":611
+                /* "chronoton/_cy_inner.pyx":638
  *                     unrealized_by_slot[k] = u
  *                     if u < 0.0:
  *                         total_bad += -u             # <<<<<<<<<<<<<<
@@ -21203,7 +21432,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_total_bad = (__pyx_v_total_bad + (-__pyx_v_u));
 
-                /* "chronoton/_cy_inner.pyx":610
+                /* "chronoton/_cy_inner.pyx":637
  *                            * open_positions[k, F_SIZE])
  *                     unrealized_by_slot[k] = u
  *                     if u < 0.0:             # <<<<<<<<<<<<<<
@@ -21214,30 +21443,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               __pyx_L110_continue:;
             }
 
-            /* "chronoton/_cy_inner.pyx":613
+            /* "chronoton/_cy_inner.pyx":640
  *                         total_bad += -u
  * 
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         continue
 */
-            __pyx_t_16 = __pyx_v_n_slots;
-            __pyx_t_17 = __pyx_t_16;
-            for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-              __pyx_v_k = __pyx_t_18;
+            __pyx_t_17 = __pyx_v_n_slots;
+            __pyx_t_18 = __pyx_t_17;
+            for (__pyx_t_19 = 0; __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+              __pyx_v_k = __pyx_t_19;
 
-              /* "chronoton/_cy_inner.pyx":614
+              /* "chronoton/_cy_inner.pyx":641
  * 
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
 */
-              __pyx_t_19 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_19 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_20 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":615
+                /* "chronoton/_cy_inner.pyx":642
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         continue             # <<<<<<<<<<<<<<
@@ -21246,7 +21475,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L114_continue;
 
-                /* "chronoton/_cy_inner.pyx":614
+                /* "chronoton/_cy_inner.pyx":641
  * 
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -21255,68 +21484,68 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":616
+              /* "chronoton/_cy_inner.pyx":643
  *                     if slot_active[k] == 0:
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
 */
-              __pyx_t_19 = __pyx_v_k;
-              __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":617
+              /* "chronoton/_cy_inner.pyx":644
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     size = open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
  *                     u = unrealized_by_slot[k]
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-              __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+              __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":618
+              /* "chronoton/_cy_inner.pyx":645
  *                     direction = open_positions[k, F_DIRECTION]
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]             # <<<<<<<<<<<<<<
  *                     u = unrealized_by_slot[k]
  * 
 */
-              __pyx_t_19 = __pyx_v_k;
-              __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-              __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+              __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":619
+              /* "chronoton/_cy_inner.pyx":646
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
  *                     u = unrealized_by_slot[k]             # <<<<<<<<<<<<<<
  * 
  *                     if u >= 0.0 or total_bad == 0.0:
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_v_u = (*((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_13 * __pyx_v_unrealized_by_slot.strides[0]) )));
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_v_u = (*((double *) ( /* dim=0 */ (__pyx_v_unrealized_by_slot.data + __pyx_t_11 * __pyx_v_unrealized_by_slot.strides[0]) )));
 
-              /* "chronoton/_cy_inner.pyx":621
+              /* "chronoton/_cy_inner.pyx":648
  *                     u = unrealized_by_slot[k]
  * 
  *                     if u >= 0.0 or total_bad == 0.0:             # <<<<<<<<<<<<<<
  *                         realised_pnl = u
  *                         exit_px_net = price_c
 */
-              __pyx_t_15 = (__pyx_v_u >= 0.0);
-              if (!__pyx_t_15) {
+              __pyx_t_16 = (__pyx_v_u >= 0.0);
+              if (!__pyx_t_16) {
               } else {
-                __pyx_t_14 = __pyx_t_15;
+                __pyx_t_15 = __pyx_t_16;
                 goto __pyx_L118_bool_binop_done;
               }
-              __pyx_t_15 = (__pyx_v_total_bad == 0.0);
-              __pyx_t_14 = __pyx_t_15;
+              __pyx_t_16 = (__pyx_v_total_bad == 0.0);
+              __pyx_t_15 = __pyx_t_16;
               __pyx_L118_bool_binop_done:;
-              if (__pyx_t_14) {
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":622
+                /* "chronoton/_cy_inner.pyx":649
  * 
  *                     if u >= 0.0 or total_bad == 0.0:
  *                         realised_pnl = u             # <<<<<<<<<<<<<<
@@ -21325,7 +21554,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_realised_pnl = __pyx_v_u;
 
-                /* "chronoton/_cy_inner.pyx":623
+                /* "chronoton/_cy_inner.pyx":650
  *                     if u >= 0.0 or total_bad == 0.0:
  *                         realised_pnl = u
  *                         exit_px_net = price_c             # <<<<<<<<<<<<<<
@@ -21334,7 +21563,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_exit_px_net = __pyx_v_price_c;
 
-                /* "chronoton/_cy_inner.pyx":621
+                /* "chronoton/_cy_inner.pyx":648
  *                     u = unrealized_by_slot[k]
  * 
  *                     if u >= 0.0 or total_bad == 0.0:             # <<<<<<<<<<<<<<
@@ -21344,7 +21573,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
                 goto __pyx_L117;
               }
 
-              /* "chronoton/_cy_inner.pyx":625
+              /* "chronoton/_cy_inner.pyx":652
  *                         exit_px_net = price_c
  *                     else:
  *                         share = (-u) / total_bad             # <<<<<<<<<<<<<<
@@ -21354,7 +21583,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               /*else*/ {
                 __pyx_v_share = ((-__pyx_v_u) / __pyx_v_total_bad);
 
-                /* "chronoton/_cy_inner.pyx":626
+                /* "chronoton/_cy_inner.pyx":653
  *                     else:
  *                         share = (-u) / total_bad
  *                         realised_pnl = -share * total_loss_budget             # <<<<<<<<<<<<<<
@@ -21363,7 +21592,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 __pyx_v_realised_pnl = ((-__pyx_v_share) * __pyx_v_total_loss_budget);
 
-                /* "chronoton/_cy_inner.pyx":627
+                /* "chronoton/_cy_inner.pyx":654
  *                         share = (-u) / total_bad
  *                         realised_pnl = -share * total_loss_budget
  *                         exit_px_net = entry_px + realised_pnl / (direction * size)             # <<<<<<<<<<<<<<
@@ -21374,7 +21603,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
               }
               __pyx_L117:;
 
-              /* "chronoton/_cy_inner.pyx":629
+              /* "chronoton/_cy_inner.pyx":656
  *                         exit_px_net = entry_px + realised_pnl / (direction * size)
  * 
  *                     current_cash += (size * entry_px / leverage) + realised_pnl             # <<<<<<<<<<<<<<
@@ -21383,27 +21612,27 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_current_cash = (__pyx_v_current_cash + (((__pyx_v_size * __pyx_v_entry_px) / __pyx_v_leverage) + __pyx_v_realised_pnl));
 
-              /* "chronoton/_cy_inner.pyx":630
+              /* "chronoton/_cy_inner.pyx":657
  * 
  *                     current_cash += (size * entry_px / leverage) + realised_pnl
  *                     n_closed = _exit_position(             # <<<<<<<<<<<<<<
  *                         k, i, t_ns, exit_px_net, <double>EXIT_LIQUIDATION,
  *                         0.0, 0.0, 0.0,
 */
-              __pyx_t_22 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_LIQUIDATION), 0.0, 0.0, 0.0, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_22 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 630, __pyx_L4_error)
-              __pyx_v_n_closed = __pyx_t_22;
+              __pyx_t_23 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, __pyx_v_i, __pyx_v_t_ns, __pyx_v_exit_px_net, ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_LIQUIDATION), 0.0, 0.0, 0.0, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 657, __pyx_L4_error)
+              __pyx_v_n_closed = __pyx_t_23;
 
-              /* "chronoton/_cy_inner.pyx":636
+              /* "chronoton/_cy_inner.pyx":663
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
  *                         break
  * 
 */
-              __pyx_t_14 = (__pyx_v_n_closed < 0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (__pyx_v_n_closed < 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":637
+                /* "chronoton/_cy_inner.pyx":664
  *                     )
  *                     if n_closed < 0:
  *                         break             # <<<<<<<<<<<<<<
@@ -21412,7 +21641,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L115_break;
 
-                /* "chronoton/_cy_inner.pyx":636
+                /* "chronoton/_cy_inner.pyx":663
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -21424,17 +21653,17 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L115_break:;
 
-            /* "chronoton/_cy_inner.pyx":639
+            /* "chronoton/_cy_inner.pyx":666
  *                         break
  * 
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
  *                     break
  * 
 */
-            __pyx_t_14 = (__pyx_v_n_closed < 0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_n_closed < 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":640
+              /* "chronoton/_cy_inner.pyx":667
  * 
  *                 if n_closed < 0:
  *                     break             # <<<<<<<<<<<<<<
@@ -21443,7 +21672,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L7_break;
 
-              /* "chronoton/_cy_inner.pyx":639
+              /* "chronoton/_cy_inner.pyx":666
  *                         break
  * 
  *                 if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -21452,70 +21681,70 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":642
+            /* "chronoton/_cy_inner.pyx":669
  *                     break
  * 
  *                 equity_out[i] = current_cash             # <<<<<<<<<<<<<<
  *                 cash_out[i] = current_cash
  *                 # Fill remaining bars with terminal equity
 */
-            __pyx_t_13 = __pyx_v_i;
-            *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_13 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
+            __pyx_t_11 = __pyx_v_i;
+            *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_11 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
 
-            /* "chronoton/_cy_inner.pyx":643
+            /* "chronoton/_cy_inner.pyx":670
  * 
  *                 equity_out[i] = current_cash
  *                 cash_out[i] = current_cash             # <<<<<<<<<<<<<<
  *                 # Fill remaining bars with terminal equity
  *                 if i + 1 < n:
 */
-            __pyx_t_13 = __pyx_v_i;
-            *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_13 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
+            __pyx_t_11 = __pyx_v_i;
+            *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_11 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
 
-            /* "chronoton/_cy_inner.pyx":645
+            /* "chronoton/_cy_inner.pyx":672
  *                 cash_out[i] = current_cash
  *                 # Fill remaining bars with terminal equity
  *                 if i + 1 < n:             # <<<<<<<<<<<<<<
  *                     for k in range(i + 1, n):
  *                         cash_out[k] = current_cash
 */
-            __pyx_t_14 = ((__pyx_v_i + 1) < __pyx_v_n);
-            if (__pyx_t_14) {
+            __pyx_t_15 = ((__pyx_v_i + 1) < __pyx_v_n);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":646
+              /* "chronoton/_cy_inner.pyx":673
  *                 # Fill remaining bars with terminal equity
  *                 if i + 1 < n:
  *                     for k in range(i + 1, n):             # <<<<<<<<<<<<<<
  *                         cash_out[k] = current_cash
  *                         equity_out[k] = current_cash
 */
-              __pyx_t_16 = __pyx_v_n;
-              __pyx_t_17 = __pyx_t_16;
-              for (__pyx_t_18 = (__pyx_v_i + 1); __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                __pyx_v_k = __pyx_t_18;
+              __pyx_t_17 = __pyx_v_n;
+              __pyx_t_18 = __pyx_t_17;
+              for (__pyx_t_19 = (__pyx_v_i + 1); __pyx_t_19 < __pyx_t_18; __pyx_t_19+=1) {
+                __pyx_v_k = __pyx_t_19;
 
-                /* "chronoton/_cy_inner.pyx":647
+                /* "chronoton/_cy_inner.pyx":674
  *                 if i + 1 < n:
  *                     for k in range(i + 1, n):
  *                         cash_out[k] = current_cash             # <<<<<<<<<<<<<<
  *                         equity_out[k] = current_cash
  *                 liquidated = 1
 */
-                __pyx_t_13 = __pyx_v_k;
-                *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_13 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
+                __pyx_t_11 = __pyx_v_k;
+                *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_11 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
 
-                /* "chronoton/_cy_inner.pyx":648
+                /* "chronoton/_cy_inner.pyx":675
  *                     for k in range(i + 1, n):
  *                         cash_out[k] = current_cash
  *                         equity_out[k] = current_cash             # <<<<<<<<<<<<<<
  *                 liquidated = 1
  *                 break
 */
-                __pyx_t_13 = __pyx_v_k;
-                *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_13 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
+                __pyx_t_11 = __pyx_v_k;
+                *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_11 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
               }
 
-              /* "chronoton/_cy_inner.pyx":645
+              /* "chronoton/_cy_inner.pyx":672
  *                 cash_out[i] = current_cash
  *                 # Fill remaining bars with terminal equity
  *                 if i + 1 < n:             # <<<<<<<<<<<<<<
@@ -21524,7 +21753,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":649
+            /* "chronoton/_cy_inner.pyx":676
  *                         cash_out[k] = current_cash
  *                         equity_out[k] = current_cash
  *                 liquidated = 1             # <<<<<<<<<<<<<<
@@ -21533,7 +21762,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             __pyx_v_liquidated = 1;
 
-            /* "chronoton/_cy_inner.pyx":650
+            /* "chronoton/_cy_inner.pyx":677
  *                         equity_out[k] = current_cash
  *                 liquidated = 1
  *                 break             # <<<<<<<<<<<<<<
@@ -21542,7 +21771,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             goto __pyx_L7_break;
 
-            /* "chronoton/_cy_inner.pyx":599
+            /* "chronoton/_cy_inner.pyx":626
  * 
  *             # (6) Liquidation ------------------------------------------
  *             if equity_out[i] <= 0.0:             # <<<<<<<<<<<<<<
@@ -21553,25 +21782,25 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
         }
         __pyx_L7_break:;
 
-        /* "chronoton/_cy_inner.pyx":656
+        /* "chronoton/_cy_inner.pyx":683
  *         # at the final bar's close, with no costs. Skipped if we broke out
  *         # early via liquidation.
  *         if not liquidated and n_closed >= 0:             # <<<<<<<<<<<<<<
  *             any_active = 0
  *             for k in range(n_slots):
 */
-        __pyx_t_15 = (!__pyx_v_liquidated);
-        if (__pyx_t_15) {
+        __pyx_t_16 = (!__pyx_v_liquidated);
+        if (__pyx_t_16) {
         } else {
-          __pyx_t_14 = __pyx_t_15;
+          __pyx_t_15 = __pyx_t_16;
           goto __pyx_L126_bool_binop_done;
         }
-        __pyx_t_15 = (__pyx_v_n_closed >= 0);
-        __pyx_t_14 = __pyx_t_15;
+        __pyx_t_16 = (__pyx_v_n_closed >= 0);
+        __pyx_t_15 = __pyx_t_16;
         __pyx_L126_bool_binop_done:;
-        if (__pyx_t_14) {
+        if (__pyx_t_15) {
 
-          /* "chronoton/_cy_inner.pyx":657
+          /* "chronoton/_cy_inner.pyx":684
  *         # early via liquidation.
  *         if not liquidated and n_closed >= 0:
  *             any_active = 0             # <<<<<<<<<<<<<<
@@ -21580,30 +21809,30 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           __pyx_v_any_active = 0;
 
-          /* "chronoton/_cy_inner.pyx":658
+          /* "chronoton/_cy_inner.pyx":685
  *         if not liquidated and n_closed >= 0:
  *             any_active = 0
  *             for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                 if slot_active[k] != 0:
  *                     any_active = 1
 */
-          __pyx_t_10 = __pyx_v_n_slots;
-          __pyx_t_11 = __pyx_t_10;
-          for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-            __pyx_v_k = __pyx_t_12;
+          __pyx_t_12 = __pyx_v_n_slots;
+          __pyx_t_13 = __pyx_t_12;
+          for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+            __pyx_v_k = __pyx_t_14;
 
-            /* "chronoton/_cy_inner.pyx":659
+            /* "chronoton/_cy_inner.pyx":686
  *             any_active = 0
  *             for k in range(n_slots):
  *                 if slot_active[k] != 0:             # <<<<<<<<<<<<<<
  *                     any_active = 1
  *                     break
 */
-            __pyx_t_13 = __pyx_v_k;
-            __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_13 * __pyx_v_slot_active.strides[0]) ))) != 0);
-            if (__pyx_t_14) {
+            __pyx_t_11 = __pyx_v_k;
+            __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_11 * __pyx_v_slot_active.strides[0]) ))) != 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":660
+              /* "chronoton/_cy_inner.pyx":687
  *             for k in range(n_slots):
  *                 if slot_active[k] != 0:
  *                     any_active = 1             # <<<<<<<<<<<<<<
@@ -21612,7 +21841,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_any_active = 1;
 
-              /* "chronoton/_cy_inner.pyx":661
+              /* "chronoton/_cy_inner.pyx":688
  *                 if slot_active[k] != 0:
  *                     any_active = 1
  *                     break             # <<<<<<<<<<<<<<
@@ -21621,7 +21850,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               goto __pyx_L129_break;
 
-              /* "chronoton/_cy_inner.pyx":659
+              /* "chronoton/_cy_inner.pyx":686
  *             any_active = 0
  *             for k in range(n_slots):
  *                 if slot_active[k] != 0:             # <<<<<<<<<<<<<<
@@ -21632,40 +21861,40 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
           }
           __pyx_L129_break:;
 
-          /* "chronoton/_cy_inner.pyx":663
+          /* "chronoton/_cy_inner.pyx":690
  *                     break
  * 
  *             if any_active == 1:             # <<<<<<<<<<<<<<
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
 */
-          __pyx_t_14 = (__pyx_v_any_active == 1);
-          if (__pyx_t_14) {
+          __pyx_t_15 = (__pyx_v_any_active == 1);
+          if (__pyx_t_15) {
 
-            /* "chronoton/_cy_inner.pyx":664
+            /* "chronoton/_cy_inner.pyx":691
  * 
  *             if any_active == 1:
  *                 for k in range(n_slots):             # <<<<<<<<<<<<<<
  *                     if slot_active[k] == 0:
  *                         continue
 */
-            __pyx_t_10 = __pyx_v_n_slots;
-            __pyx_t_11 = __pyx_t_10;
-            for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-              __pyx_v_k = __pyx_t_12;
+            __pyx_t_12 = __pyx_v_n_slots;
+            __pyx_t_13 = __pyx_t_12;
+            for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+              __pyx_v_k = __pyx_t_14;
 
-              /* "chronoton/_cy_inner.pyx":665
+              /* "chronoton/_cy_inner.pyx":692
  *             if any_active == 1:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_14 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_13 * __pyx_v_slot_active.strides[0]) ))) == 0);
-              if (__pyx_t_14) {
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_15 = ((*((unsigned char *) ( /* dim=0 */ (__pyx_v_slot_active.data + __pyx_t_11 * __pyx_v_slot_active.strides[0]) ))) == 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":666
+                /* "chronoton/_cy_inner.pyx":693
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:
  *                         continue             # <<<<<<<<<<<<<<
@@ -21674,7 +21903,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L132_continue;
 
-                /* "chronoton/_cy_inner.pyx":665
+                /* "chronoton/_cy_inner.pyx":692
  *             if any_active == 1:
  *                 for k in range(n_slots):
  *                     if slot_active[k] == 0:             # <<<<<<<<<<<<<<
@@ -21683,50 +21912,50 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               }
 
-              /* "chronoton/_cy_inner.pyx":667
+              /* "chronoton/_cy_inner.pyx":694
  *                     if slot_active[k] == 0:
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]             # <<<<<<<<<<<<<<
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
-              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_DIRECTION;
+              __pyx_v_direction = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":668
+              /* "chronoton/_cy_inner.pyx":695
  *                         continue
  *                     direction = open_positions[k, F_DIRECTION]
  *                     size = open_positions[k, F_SIZE]             # <<<<<<<<<<<<<<
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
  *                     realised_pnl = direction * (c[n - 1] - entry_px) * size
 */
-              __pyx_t_19 = __pyx_v_k;
-              __pyx_t_13 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
-              __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_19 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_13 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_20 = __pyx_v_k;
+              __pyx_t_11 = __pyx_e_9chronoton_9_cy_inner_F_SIZE;
+              __pyx_v_size = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_20 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_11 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":669
+              /* "chronoton/_cy_inner.pyx":696
  *                     direction = open_positions[k, F_DIRECTION]
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]             # <<<<<<<<<<<<<<
  *                     realised_pnl = direction * (c[n - 1] - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + realised_pnl
 */
-              __pyx_t_13 = __pyx_v_k;
-              __pyx_t_19 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
-              __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_13 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_19 * __pyx_v_open_positions.strides[1]) )));
+              __pyx_t_11 = __pyx_v_k;
+              __pyx_t_20 = __pyx_e_9chronoton_9_cy_inner_F_ENTRY_PRICE;
+              __pyx_v_entry_px = (*((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_open_positions.data + __pyx_t_11 * __pyx_v_open_positions.strides[0]) ) + __pyx_t_20 * __pyx_v_open_positions.strides[1]) )));
 
-              /* "chronoton/_cy_inner.pyx":670
+              /* "chronoton/_cy_inner.pyx":697
  *                     size = open_positions[k, F_SIZE]
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
  *                     realised_pnl = direction * (c[n - 1] - entry_px) * size             # <<<<<<<<<<<<<<
  *                     current_cash += (size * entry_px / leverage) + realised_pnl
  *                     n_closed = _exit_position(
 */
-              __pyx_t_19 = (__pyx_v_n - 1);
-              __pyx_v_realised_pnl = ((__pyx_v_direction * ((*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_19 * __pyx_v_c.strides[0]) ))) - __pyx_v_entry_px)) * __pyx_v_size);
+              __pyx_t_20 = (__pyx_v_n - 1);
+              __pyx_v_realised_pnl = ((__pyx_v_direction * ((*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_20 * __pyx_v_c.strides[0]) ))) - __pyx_v_entry_px)) * __pyx_v_size);
 
-              /* "chronoton/_cy_inner.pyx":671
+              /* "chronoton/_cy_inner.pyx":698
  *                     entry_px = open_positions[k, F_ENTRY_PRICE]
  *                     realised_pnl = direction * (c[n - 1] - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + realised_pnl             # <<<<<<<<<<<<<<
@@ -21735,37 +21964,37 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
               __pyx_v_current_cash = (__pyx_v_current_cash + (((__pyx_v_size * __pyx_v_entry_px) / __pyx_v_leverage) + __pyx_v_realised_pnl));
 
-              /* "chronoton/_cy_inner.pyx":673
+              /* "chronoton/_cy_inner.pyx":700
  *                     current_cash += (size * entry_px / leverage) + realised_pnl
  *                     n_closed = _exit_position(
  *                         k, n - 1, date_ns[n - 1], c[n - 1],             # <<<<<<<<<<<<<<
  *                         <double>EXIT_END_OF_DATA,
  *                         0.0, 0.0, 0.0,
 */
-              __pyx_t_19 = (__pyx_v_n - 1);
-              __pyx_t_13 = (__pyx_v_n - 1);
+              __pyx_t_20 = (__pyx_v_n - 1);
+              __pyx_t_11 = (__pyx_v_n - 1);
 
-              /* "chronoton/_cy_inner.pyx":672
+              /* "chronoton/_cy_inner.pyx":699
  *                     realised_pnl = direction * (c[n - 1] - entry_px) * size
  *                     current_cash += (size * entry_px / leverage) + realised_pnl
  *                     n_closed = _exit_position(             # <<<<<<<<<<<<<<
  *                         k, n - 1, date_ns[n - 1], c[n - 1],
  *                         <double>EXIT_END_OF_DATA,
 */
-              __pyx_t_16 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, (__pyx_v_n - 1), (*((double const  *) ( /* dim=0 */ (__pyx_v_date_ns.data + __pyx_t_19 * __pyx_v_date_ns.strides[0]) ))), (*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_13 * __pyx_v_c.strides[0]) ))), ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_END_OF_DATA), 0.0, 0.0, 0.0, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_16 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 672, __pyx_L4_error)
-              __pyx_v_n_closed = __pyx_t_16;
+              __pyx_t_17 = __pyx_f_9chronoton_9_cy_inner__exit_position(__pyx_v_k, (__pyx_v_n - 1), (*((double const  *) ( /* dim=0 */ (__pyx_v_date_ns.data + __pyx_t_20 * __pyx_v_date_ns.strides[0]) ))), (*((double const  *) ( /* dim=0 */ (__pyx_v_c.data + __pyx_t_11 * __pyx_v_c.strides[0]) ))), ((double)__pyx_e_9chronoton_9_cy_inner_EXIT_END_OF_DATA), 0.0, 0.0, 0.0, __pyx_v_open_positions, __pyx_v_slot_active, __pyx_v_closed_trades, __pyx_v_n_closed, __pyx_v_closed_capacity, __pyx_v_overflow_flag); if (unlikely(__pyx_t_17 == ((Py_ssize_t)-1L) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 699, __pyx_L4_error)
+              __pyx_v_n_closed = __pyx_t_17;
 
-              /* "chronoton/_cy_inner.pyx":679
+              /* "chronoton/_cy_inner.pyx":706
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
  *                         break
  *                 if n_closed >= 0:
 */
-              __pyx_t_14 = (__pyx_v_n_closed < 0);
-              if (__pyx_t_14) {
+              __pyx_t_15 = (__pyx_v_n_closed < 0);
+              if (__pyx_t_15) {
 
-                /* "chronoton/_cy_inner.pyx":680
+                /* "chronoton/_cy_inner.pyx":707
  *                     )
  *                     if n_closed < 0:
  *                         break             # <<<<<<<<<<<<<<
@@ -21774,7 +22003,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
                 goto __pyx_L133_break;
 
-                /* "chronoton/_cy_inner.pyx":679
+                /* "chronoton/_cy_inner.pyx":706
  *                         n_closed, closed_capacity, overflow_flag,
  *                     )
  *                     if n_closed < 0:             # <<<<<<<<<<<<<<
@@ -21786,37 +22015,37 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
             }
             __pyx_L133_break:;
 
-            /* "chronoton/_cy_inner.pyx":681
+            /* "chronoton/_cy_inner.pyx":708
  *                     if n_closed < 0:
  *                         break
  *                 if n_closed >= 0:             # <<<<<<<<<<<<<<
  *                     equity_out[n - 1] = current_cash
  *                     cash_out[n - 1] = current_cash
 */
-            __pyx_t_14 = (__pyx_v_n_closed >= 0);
-            if (__pyx_t_14) {
+            __pyx_t_15 = (__pyx_v_n_closed >= 0);
+            if (__pyx_t_15) {
 
-              /* "chronoton/_cy_inner.pyx":682
+              /* "chronoton/_cy_inner.pyx":709
  *                         break
  *                 if n_closed >= 0:
  *                     equity_out[n - 1] = current_cash             # <<<<<<<<<<<<<<
  *                     cash_out[n - 1] = current_cash
  * 
 */
-              __pyx_t_13 = (__pyx_v_n - 1);
-              *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_13 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
+              __pyx_t_11 = (__pyx_v_n - 1);
+              *((double *) ( /* dim=0 */ (__pyx_v_equity_out.data + __pyx_t_11 * __pyx_v_equity_out.strides[0]) )) = __pyx_v_current_cash;
 
-              /* "chronoton/_cy_inner.pyx":683
+              /* "chronoton/_cy_inner.pyx":710
  *                 if n_closed >= 0:
  *                     equity_out[n - 1] = current_cash
  *                     cash_out[n - 1] = current_cash             # <<<<<<<<<<<<<<
  * 
  *     # Return overflow status to Python
 */
-              __pyx_t_13 = (__pyx_v_n - 1);
-              *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_13 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
+              __pyx_t_11 = (__pyx_v_n - 1);
+              *((double *) ( /* dim=0 */ (__pyx_v_cash_out.data + __pyx_t_11 * __pyx_v_cash_out.strides[0]) )) = __pyx_v_current_cash;
 
-              /* "chronoton/_cy_inner.pyx":681
+              /* "chronoton/_cy_inner.pyx":708
  *                     if n_closed < 0:
  *                         break
  *                 if n_closed >= 0:             # <<<<<<<<<<<<<<
@@ -21825,7 +22054,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
             }
 
-            /* "chronoton/_cy_inner.pyx":663
+            /* "chronoton/_cy_inner.pyx":690
  *                     break
  * 
  *             if any_active == 1:             # <<<<<<<<<<<<<<
@@ -21834,7 +22063,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
           }
 
-          /* "chronoton/_cy_inner.pyx":656
+          /* "chronoton/_cy_inner.pyx":683
  *         # at the final bar's close, with no costs. Skipped if we broke out
  *         # early via liquidation.
  *         if not liquidated and n_closed >= 0:             # <<<<<<<<<<<<<<
@@ -21844,8 +22073,8 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
         }
       }
 
-      /* "chronoton/_cy_inner.pyx":277
- *     cdef bint liquidated = 0
+      /* "chronoton/_cy_inner.pyx":299
+ *     cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
  *         for i in range(n):
@@ -21866,18 +22095,18 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
       }
   }
 
-  /* "chronoton/_cy_inner.pyx":686
+  /* "chronoton/_cy_inner.pyx":713
  * 
  *     # Return overflow status to Python
  *     if overflow_flag[0] == 1:             # <<<<<<<<<<<<<<
  *         return -1
  *     return n_closed
 */
-  __pyx_t_13 = 0;
-  __pyx_t_14 = ((*((int *) ( /* dim=0 */ (__pyx_v_overflow_flag.data + __pyx_t_13 * __pyx_v_overflow_flag.strides[0]) ))) == 1);
-  if (__pyx_t_14) {
+  __pyx_t_11 = 0;
+  __pyx_t_15 = ((*((int *) ( /* dim=0 */ (__pyx_v_overflow_flag.data + __pyx_t_11 * __pyx_v_overflow_flag.strides[0]) ))) == 1);
+  if (__pyx_t_15) {
 
-    /* "chronoton/_cy_inner.pyx":687
+    /* "chronoton/_cy_inner.pyx":714
  *     # Return overflow status to Python
  *     if overflow_flag[0] == 1:
  *         return -1             # <<<<<<<<<<<<<<
@@ -21888,7 +22117,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
     __pyx_r = __pyx_mstate_global->__pyx_int_neg_1;
     goto __pyx_L0;
 
-    /* "chronoton/_cy_inner.pyx":686
+    /* "chronoton/_cy_inner.pyx":713
  * 
  *     # Return overflow status to Python
  *     if overflow_flag[0] == 1:             # <<<<<<<<<<<<<<
@@ -21897,19 +22126,19 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
 */
   }
 
-  /* "chronoton/_cy_inner.pyx":688
+  /* "chronoton/_cy_inner.pyx":715
  *     if overflow_flag[0] == 1:
  *         return -1
  *     return n_closed             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyLong_FromSsize_t(__pyx_v_n_closed); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 688, __pyx_L1_error)
+  __pyx_t_1 = PyLong_FromSsize_t(__pyx_v_n_closed); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 715, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "chronoton/_cy_inner.pyx":204
+  /* "chronoton/_cy_inner.pyx":211
  * # `closed_trades` are modified in place by the caller.
  * # ---------------------------------------------------------------------------
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
@@ -23782,19 +24011,19 @@ __Pyx_RefNannySetupContext("PyInit__cy_inner", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_np, __pyx_t_4) < (0)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "chronoton/_cy_inner.pyx":204
+  /* "chronoton/_cy_inner.pyx":211
  * # `closed_trades` are modified in place by the caller.
  * # ---------------------------------------------------------------------------
  * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
  * @cython.wraparound(False)
  * def inner_loop_fast(
 */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9chronoton_9_cy_inner_1inner_loop_fast, 0, __pyx_mstate_global->__pyx_n_u_inner_loop_fast, NULL, __pyx_mstate_global->__pyx_n_u_chronoton__cy_inner, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9chronoton_9_cy_inner_1inner_loop_fast, 0, __pyx_mstate_global->__pyx_n_u_inner_loop_fast, NULL, __pyx_mstate_global->__pyx_n_u_chronoton__cy_inner, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 211, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_4);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_inner_loop_fast, __pyx_t_4) < (0)) __PYX_ERR(0, 204, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_inner_loop_fast, __pyx_t_4) < (0)) __PYX_ERR(0, 211, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "chronoton/_cy_inner.pyx":1
@@ -23940,31 +24169,31 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 12; } index[] = {{2},{68},{35},{54},{37},{60},{24},{52},{26},{34},{29},{33},{45},{22},{15},{179},{37},{30},{32},{1},{1},{1},{1},{1},{8},{5},{6},{15},{23},{25},{7},{6},{2},{6},{35},{9},{30},{50},{8},{27},{20},{32},{22},{30},{37},{5},{8},{20},{8},{15},{3},{15},{10},{18},{4},{8},{7},{1},{8},{6},{19},{9},{17},{18},{15},{13},{10},{5},{12},{1},{7},{11},{8},{9},{5},{15},{6},{16},{8},{12},{14},{12},{9},{10},{10},{5},{15},{7},{11},{11},{13},{11},{5},{7},{6},{7},{8},{12},{1},{7},{1},{2},{10},{5},{15},{4},{13},{5},{8},{1},{2},{1},{8},{10},{20},{18},{12},{8},{6},{11},{7},{4},{10},{1},{8},{7},{4},{8},{4},{7},{8},{2},{5},{1},{3},{14},{13},{4},{3},{7},{7},{7},{7},{8},{14},{11},{10},{19},{14},{12},{12},{10},{17},{13},{8},{12},{10},{12},{19},{5},{5},{21},{19},{13},{4},{12},{18},{13},{6},{7},{8},{5},{12},{11},{8},{10},{5},{16},{4},{4},{6},{4},{8},{9},{17},{6},{8},{5},{6},{7},{11},{13},{1},{6},{10},{18},{6},{1},{6},{15},{14},{16},{15},{9},{8},{1},{5},{3675},{1}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (3208 bytes) */
-const char* const cstring = "BZh91AY&SY\255\275\326\230\000\003\002\377\377\377\177\377\377\377\377\377\377\277\367\377\377\277\377\377\377\300@@@@@@@@@@@@\000@\000`\r\035\367A,YJ\212\2463-\255@h\333\005[U\014\340$\000\034\316\260\224\024%\010\320\365\036\240\017O$\364\005\037\223&#4\006\246T\311\210\375\t\244i\352?T\364\020\323\312y@x\022z\236\223\321\036\247\265OPJ \000\201\002b\014\210\243\304\312\000\001\240\320\017P\000h\000\001\240\000\0004d\032 \300\0010\000C\023\004\300\000\021\200\023&\t\223\000\002211\030\010`\000\001\251\350\020M!5O\325?T\323\324hc\322\232i\240\000\006\232\r= \310\302\0322\000\000\000\310a\017OT\000\203\000\004\300\001\014L\023\000\000F\000L\230&L\000\010\310\304\304`!\200\000\004\210B\020MS\322m\032iOhI\243e<\236\246M\252~\2502\000\000\000\014hM\00024\323G\2502\032\036\241\244'w|\315!c!\355\tq\277q\271.\250\226\2605\257\360\340\"\003\374\302\030@K\005\n\036\022\t,\250\377x\300^\213\242\350\300^\367/ur\347\375\377\314l\3232\004\rH\344w\250\210T\255\006\314\350u\212\205\252\3217\357a7\223@U\007\352\331s<\320h\225-\210!\034\365\264\327\250\326\306\322\033\033I\260M\243\246\032\356h\244\323E\240kK_\210\215\227\226\313\226\013\245.\010QbH$\340\207uu6\013\013\n\353F\205\214a\030\014\032\300\330\233M\003L\023h\023k\217<\322\347h\226\201\241\327\025\320\353\335 \003\rf%\2400c\001\264\330\2046*h\252M\343Z\212\027?^\224j1\037V\201 \316\222[\343\224-\266h\221Qn(\361\020\310PPPk\\)\206\006\231\271\347\212\020L\374\300\2119\ny\200\313\300\325\252.y\021\214\220\rR\304\014\230X\307\255\274\217\001\355\036\271^\324\377G\354`\016\000`\306\037k\333\200\316\377f\262\342\247?\030\35151\240L\220I\036\232\210\341U\005\202s\322\225\327\030\004Vo\316\211\211\306G\213\325\3578\355L\335\374;\266\001\023\243\227\000\330\241O\332\024\346\01676\026\301\212\345\306\301\205s.\271\271\334\254\356\230P\242\3146E(\253!7\233\266U\235/\204h;\335\351\325\250j\220P8\371\021\022\303\262\013\262\227`\\\227\2262[\nQ\333 c\013AK\221\016\024\207\214&\223@S\275DI\001B\201\004\214\213\037\004\242<\241\361X""\027\013\"Y\022\311{\340&\006\026L\256bY,P\034\027H\243\307\223H\217\036\322\201\250\335t_e\317{\332\364\272Z\303Pg\001\202R\372\245-\016\277\031\336\301\204\276!0a)\033\261\322DB\"\204\007\234-\300\"\016\017\317\201\224\213\035\356\345\347\316\361r\235\376\357\037f\202l\261\326r'\323\345\210G\334\260 z\224y\251\003\343\371\345\372\014\002\344\340\033\222^&\304\225\n\206TX(\200\232\363\"\221F__Y\222$x\022\344\322h\023\222w\037HRh?\354}?\257\246E\017\2352ir\351R\037X\345\347\343K\022w\3173\"\254\226g\337\375\262\246\301\300\245As\277\321:\236Q\314\361\177SB\005\362w\305+R7\321\263\277E\366hJ\300\263\014\226K\250M\235Y\321b\211\030\232ev\256($)Y\035c\330\354\353\355\035\315\272\215\021\221\344\345J\215E\216O[\235\361\374mbL\262\224\r\022\244\377\0240\333\261\264\232PY\354*\326\2156\233\266\306)\023\307\235k{\243\261\227<\375X\3463\030ajKx\3362:\006\262mb\345\022CL\225\004\030<h\343'\006\354d\203\320r\004\220\375G\241c\337c9\316\302PK\266\344\321\301\220d\254\237P\330_\243\314\356\036\312(\376\014\332m _\304\360\020n\017\344/\346N\r\362\304\356\315\177^\220\033\270|\211Jg\307\221>\305\037\025\364\274\337\244\362\265\275\364\342\251]\360j\252\t\257\251|\032\325\242v\007n\221\217\036l\350\356\"\331ef\263\316|>\331\005&_\003\205\t\204Bn\211\232qt\233\242\033\215\205a\227\005\201b\034\345\004bj\321\201\34348\275\262;\002Un\266\022&R\260\010 \315\002ax\017i\272\230\270M\327\353\251\372h\311\"\254\325\370c\375\324\300\272~\265z\275\350\335\r\277\342\304=\"ISw\315\303\370@`o\366X\030M\001\241\355]\254\026\261\023\";\rbfg\023=X\004\275c\231S\313\305\331\017E\016M\243\333&g\256h\357f\271\005\343$v\300\367\340x\342\356\235b<\212\271v\257a\251J\031A\004\216\251\272\036\356\003\255\364\316\251\270\353_\243\320\013\200\362J*\256TJ\240\\1\304;\375z\272ye\275\267\342\271\247\177Il6(\250\325\244\022\220\226\254o\321\350 \271ov\3415\360\022\207&\312\017\030l\204\325\010\242\370\231H\020Ck`\367\367\\\270\317y\304\221\304\227\022\\Z\364CG\356\330\340\2072l \250\201\272;\3421G\332\215""\251\206\221\214\305\330\035\017\200\013\237\014\364s \252\241ddP\371,G\007j\271\343\022*\305\006\311\224\326k5\3529\232i\351\352\032\270\263\245\232\334\253\342jl\206\2153\355&Ip\335\250e\232\215K\000\221\245\321N\201\276\220\030\220\270*\323*\254\275%\005Rle\225\224\272r\265\235\235\344\245\237H#\242\302\261\txLg;c5\364Z:qY\335\361\222fz\"\243\021_|q\327\010\t^\261\372a\006\270e\324\367\016\362kr\221\030\271mu\2675\272\210\267\2573L\016\262\314n\214\232\364Mia\232\352\2240\305\356b\256\351`\211\025*kS\r\217\202\353\200v\036\202\362\016B\355\017:1QN\2045\206-\307L\254|?&m\220K\003\023\270\320\023\036\365\2256\313\307\225e\026\254\235c\327Pj`f\252\206\366\014Vs\273U\300\301\025\0068\31733\253\216 \252vS\372\350\347\230t5\013\2513\335*\250\253\034\201\331U7N\026T)\255!\252.p\252\030<\2051\346\345%\342\274\316;V\325\003l\033z#@S`\324\243\005Z\272\252sg\016B\331zo\205{E\210ha\024\233\356*\033\367\247jY|\004\333\353X\252\217\333<\350\325U9\214\200:[\252\024\\h\304W\322d\330\216s\223\336\367\247\3479\013\3056oUU\252-A\354\205\316\306\031\006\027Q\317 \365\327\321 T-\021#\016\tD\206\367U\0229I\251\007\255\240\302hH(\333*\254$Q2#\342\215Q\303p\273\030\365\206\036\335\362Md\006\377E\210\200\301h\336q\261E\324\220\206\206\034*\024KY#La\2666(\362\002\310\252\215\006\225\021\222b\204\336\344p\206k[\016\217\023\273\244\335\324\030\250_\034\214\252\324\217=\347\021wH\032\365I\215\203+V\212\243D\333D!\362\311\217Ba\272\027\362l\312\365\352\026\254\241\324G\024\025\306\210\214,\212\261\351\321\025EPiQ\207\211Q\246\\\313\365&9\0256J}6\326\247\034_\222V\330\301\024\355Y\253b\307\340\215\347\252\230\322\035\t*\275-\0356\35123\321\226r\002\373\006!\341|\024\366a\313\274\234\327\227\327;\205\257h>p\322*P\3603\013\230d0n\255\275\243M\032\232\352\025QS\2547n7&\234E\350\0330F\232\305\204\272\255V$\204\262\003{X\366\327_\210\312\254d\0359\204QC\230Jf\007\031H44\316\212\337\\\345\342\363\345\234miA\210\"\250\230\3510\217\r%%\325\325\325\220\":\222\021\003\\n\3621\352,M{\023o8\271\035F\260""\030\266U\215QQQ\333z\354\246\367sVn\315\267\345p\354\201\362\\C\017\002\034\\\201\236Z\030X\225\262\021BY\243-\374)\020\214\020w,!^\000r@\342\007\020\355:H\221\351]\352\233\205\007j\3269\305\325\217T\226\223\260gZ\317\256\207\220U\025\323\002\t%\201\td\356\246\032R/sI\261\004\242V\214\344\nQ\007B\376\306\256Z\357\224VF\324\033\305\007`\231\310\302\217\306\305h\304\250\016!n\255)'\014#\001.;\302\326\201L\347+\030\306\356\262I\\\353D\342\250\313\3401\2348\034\016\000\311\372u&\030x\030\354\232\177ej\250\355\244v'/\017M\216\032O\223\273\223\201^\016N\345\362\250uz\2418\t\321\241\207oP\303\262oq\326sK\306(\021\\m\271\326\013WNd\260\337T`\377\024\300\370\201\202\216\204\020\271\331Y\2178\343>\205A\342>\201r\027\033\215\327\323z\205>nA\204_F\216\337\n\340\r7\240*\216\037t\232\220\020\t\000\312~N2\006I\t\016&\346\356\321\367\033\352\267\031\227\363UX\370A?\005C\013\"l\257\363&\322/\030q\251\216\207sl\365\205GT\023on0\316\263\002|0\261\332o\3374e\366\204\340\037\270\234\221\034J\374\370\313\303\207\217y<\304\014\250\3122\210^7\316TaM\2252r\010HUW\203ri\304.S>T&\272\345\211\303\347EMTv\350q\220\335M\367y\374\t8L\357\215\306WVdw\035\365\334\021\325\022\356\361E\232\207\210|\364VTC\036y\3625\022\211E\\aI\336\031\302yB\212@0\226\322\212\351\233D\004P#B(\332\201~\226a\325SA\335\020WJ\212\201@L\202\221J\230\346\271\244\301\263\320t\321\216R9C\225\322\240\367\027\201\035\317.\005\335=\230\225\371,\217\013\264m\206{\206\002\303Z\217T\356\375\316U\014\032rX\365=R;\304\034\247\203\373\021\315K\350\230\034\006\177\231r\242\230\247P_\325\303F\003\014,*\2575Z\243o\024\221*VOU\222\022\370\344eh\004\224U7B\371\277_\220\256\241\3120W \200\261\000\301T\362uk\331\266Y\001\306\347\177@1*\027!\006b\322\035\325\266\212\212Y-\252\252\214[-\241\251\250G!\242\026$%\022\n\\D\212\"\340\327\017,\227\320V\026D5\305G-\364\360\334{\2626\221\2707\211\364\310@\200\322\274\227L\317RD /6\356\016\221\246BB\357\322-i\3662\224\266\027\0240\020\336\275\021)\304\225xr\301fr.\021\211$\220\210\211O\331\242\t\014""\313\026RA[\333h\007\031,\221\237\352)\210Y\030r\351\201\037\316C\021\020\271\304v\3241+s@\350\355p{E\242\035l]c\211\214\261\307\301h\034QR\003C\347*\214Zp\260<\002\225\313\030\264\364;\365\230Z\303'8\374\243\324\255\204U+UqB\231P\244u\334}\262\000\277\367\231\345L\006\251\240h\232\205J\205F)\214O\237\237@p\373J\006gl\315\355\317'\007\304vP\355&T\323\260d&Z\nw\266\024\232\231$\314ya4\230K\326K\204\263\030\325\016\360L?\262>\352\203\r`\353\222\317A,r\27124\370\003\254t\023\t\223:\305\022\210O\236)\215\3371O\304\216\201\3446:\211\261\226vh\221\323<fA\310_\364\203\303\372\031%\323\2303NO\017\232=n\016\215\262\315\251\t\223\252\356\312g}\347\224'\266\302)YTTW\336I\316\251@\224Hl^e\322n\202\255#Wa\002Jkh\200(\340R\202b\224\220ZM\242$\250\234\262\207\341\233\335\020d\240d\306\035M\314\031\023\tI\205b\345\214R\265\022\021%CL\265\335\231%\317t\2452dY\0272(fE\305\032(\362\343H\204G0RCI\016\034)\260\2311\242\300\314\221\203\274Q\2218\266\335\327\"\321:Z\343Y\227\276\253\204\223i\242\0060\225\251\324N\365\240H*\253\377\213\271\"\234(HV\336\353L\000";
-    PyObject *data = __Pyx_DecompressString(cstring, 3208, 2);
+    const struct { const unsigned int length: 12; } index[] = {{2},{68},{35},{54},{37},{60},{24},{52},{26},{34},{29},{33},{45},{22},{15},{179},{37},{30},{32},{1},{1},{1},{1},{1},{8},{5},{6},{15},{23},{25},{7},{6},{2},{6},{35},{9},{30},{50},{8},{27},{20},{32},{22},{30},{37},{5},{8},{20},{8},{15},{3},{15},{10},{18},{4},{8},{7},{1},{8},{6},{19},{9},{17},{18},{15},{13},{10},{5},{12},{1},{7},{11},{8},{9},{5},{15},{6},{16},{8},{12},{14},{12},{9},{10},{10},{5},{15},{7},{11},{11},{13},{11},{5},{7},{6},{7},{8},{12},{1},{7},{1},{2},{10},{5},{15},{4},{13},{5},{8},{1},{2},{1},{8},{10},{20},{18},{12},{8},{6},{11},{7},{4},{10},{1},{8},{7},{4},{8},{4},{7},{8},{2},{5},{1},{3},{14},{13},{4},{3},{7},{7},{7},{7},{8},{14},{11},{10},{19},{14},{12},{12},{10},{17},{13},{8},{12},{10},{12},{19},{5},{5},{21},{19},{13},{4},{12},{18},{13},{6},{6},{5},{7},{8},{5},{10},{12},{11},{10},{16},{11},{8},{10},{9},{8},{14},{5},{16},{4},{4},{6},{4},{8},{9},{17},{6},{6},{5},{8},{5},{10},{6},{6},{5},{7},{11},{10},{13},{1},{6},{10},{18},{6},{1},{6},{15},{14},{16},{15},{9},{8},{1},{5},{3754},{1}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (3279 bytes) */
+const char* const cstring = "BZh91AY&SY\360d\303\303\000\003\031\377\377\377\177\377\377\377\377\377\377\277\377\377\367\277\377\377\377\300@@@@@@@@@@@@\000@\000`\r}\360\035\203446\240\260\2542\3115\252\266\300\252\333.\000\000\006\007\204\220\241I\242=M\251\243@d\331\240\232M\215Lb4\302\236 SM=2!\264\203\323MO\t\251\352d\314$\364F\021\352l\247\2502)\210\323\020\223'\245=!\240\r\006\200\r\000\000\000\000\000\000\000\000\001\240\000A\200\002`\000\206&\t\200\000#\000&L\023&\000\004dbb0\020\300\000\002SB\004\020\232h\324\247\231M\242h&@\0006\220\0324\017Q\240\000\000\000\001\243L\2326\232\020\020`\000\230\000!\211\202`\000\010\300\t\223\004\311\200\001\031\030\230\214\0040\000\000\221@F\204)\351\241\205\024\375\243S\325\002~\223\321\023C \000z\201\240\007\250<\240\000\000\000\000\003\324\253\343\334\351\272\214f\230\373\243w\275C\276\336\253x\033\330\365\247\327\250;\213\330\263\2538\224\220@TP\"MH\377U\250RJ\210\242*\024\245\nQP\377\277\371\244\330\255q2f\240\222\227\225\"\305\241q\2628\026\014-\022\2546\355\201\031\227\240m\004\3711\241}\350,\224\226( \216U\240\307\003\0266\220\330\332M\202m\035\260\306\205\224KYX1\026=\244eH\302\020(M\024D\\\010(L\211\002#9\233\242\242\214\302aUEf\205Z\325UT\304\014\223i\240i\202m\002mt_z\\\226J\301c\250TC\224\227\224\210\005Z\274J\300\301\214\006\323b\020\330\244\321)&\356\305B\022\026\034`\320\204R\035<\261\210\017\002\344(J\237c\243k\311\235\002H \220p$X\020 A3A\0307<\036D\335\267y!b\367\021\344\203\3505NNKM\013\016\367\002\021\240\342!\332\326\344c\367mc\320=3\370\223\351\307\244\277\235\200\347\004!\r\364\377\313\206+\364\246\376k\371\372\327\322\233\353q\366U$}\010+\345\341\314\207\363\336\370\360W1\342g\320\273\352\265e\346\372\276\343\2757\335\347V\224\234\307\177Gnd\352\351\377\325an(w\371#\"Tm\327\"Ln\217\005\250\273\370\266\217\235\323\305\211\331\t\342\030\265-I\333\026\276\230SS\341\301\361\342qDC\243\202!\026M6\375\000^\200\036x\274\035\202\272Ld\233SD&@dH\004\342Ev\"C)\326\035\374\025\2203\216\010\274\002\001\360\023\227\322*\033\301\002\321\001""\300P*\002D\310\211\031J\300j\025D\334\220\316b\261,\022\014\224\312\252\0242\262\2416*\014!\332\252\256j\034{\337WvA\201A\227\342\211\004R\365\311,\016\033\315w\225E\031\360\313\302\005\306\235\030\334P(0\2413n;B\241 \374\271\215\027\030\235\336\017\247\247*\311\234xu\364i\0276'\2607\227\366\376-B\254&lG\226\3239\021\361\374FF\2632\241\032\361a\007\"N\350\251\004\274\210T\010\034\"\237\017\272\364b\215\227\235\264\303\0303\332a\260\301\213\256\007\321\031z'\344\372^>M\005\217\233yz\310\311`S\352\0350\361V\026dO\031\355\356%4\257<_\232*3\016e\025\002\207\223Y\321\337=\243\255>\305\210\013\336i\024V\010\361\243\221\031\274\223+\233\002*\344\026\272\345\324\267\222\243\235\034\346P\2111\246O\321\250\240D\220M\025?O^>\211\351\346\300\262-\177~\371\251\223&x?\036\257w\335\324+\314Y`\363\210\272b)\357O]\373f\205&\321\020\264\301T0`\265\316.\030\367)\245\316\"\312/\017\004\372c\002\0136c\032\2269\304fD\355*I\003\240D3\224r\204\215\225\2302\375t\020\342ZKI\364\016\374F\342\267\275\362\"\220e4\203\300\266\200(-)\341\032\235o\200\264\376\241\220\346\243\232\236\200\217D\212\0324\221\245\233\374q\003N\177\026\031\242;p2\361\244\370+\217\225\362\325\351O\016-2\325^>\"\004\261\336\3239\313\027~*t\3631\363\254\360\242\nP\256[[)\312\226\266\0251>_\211C*\252Yi\204\252\356\226\035\367Z\272=\214V!hrD\233t\212\231\242\213h\214,Ms_6kCL\266Rb\036\026\213!\222jb\366\312\200\202\245\263^\246S\233\314\274\323[\225\213e\211\322\224W\320\\\336M\346\335\272\264\024H#as\350\202\261 |\310\324kA\232\261~\364G\342{\344(y\211\037\223\233\365R\001\263\301\230\315z\010\207\262\226\240xT2L\320r\027\362\220\014\027i\216\267\035\256I\205\336\306P\300\360\356\225\303\262\203\211\230y\242^{2\316\223k\254\\\022<\301y\240qK\315\204\2115\3316\242\224\023\t\020\"9I\271\003\317\312\215\376\023\240\316o\247?0P\t\2271\267\236\313\004\031\006|\342\343\334\323\273\243F\275H\226m\251\204s\327_h\265\002\031\222\016Z\034\260{\261\225\264\007#Q\235(\205\373\350V\204\252\265\031\003\020\207\nB&9EA\"\003\033Y\021\203""\323\242\005\006w7$nKr7cd&?\206\251\307Q\006\243\222\356u\235\327m\335k\024\356S\271bYWr\244\213\2053\010\337\236\373\3211\021\0042d\353\312v\220\355\251\240\355d\350\"\357\227\003\201\303\224\355\033\367\372\374\244-\257\320\374%/g\r\315Y\257=\272\254\222\241>!1h;\221WN\207\347\244J\236\007\206\r\252'8\212m\210oY\002F\035\364O\226\255\325\246\223\311\255\320E\264\270\262u\020\234\n4\002\267\2765\2752f\014|\350\3716z\r\301\222\020\251F\312\272\3579\300\303\0247\n\247L\300\262A\220\314{\314A8T\262\326F\374\323]\023\315\213paT1F\217\033\337\013\255\205\226\203\360\315\2626m\244\272\\o\261\232\310\314\340\215\234\324\252\341P\354\237q\357\r\343\346\017uZ\261\232\321\2503\307>\235\030\236\377\275\332\215\301vdu- \263wC\006\271\253\327\236\327V.\351`vX\212\310\320\3326@\203\207NQr\010\t\242\022n\342x\244\236\027F\320H\352\313\321\33746{(c\010\301\337I\t[pN\354\333\216+\242c.\r^[L\211\006\312\025\313onQ~\013\007U'c8\222\004\226@X\024f\030(T\224\345\322\243{6\\,\251m\224\303\200\352\032L\325W\317!\243f\305\261pY9w\025\245\331\006\325y\355\247\010\264\332}#\025\002Wk\304,\354\245J6\227\207\250,c\016\323:\375\263\010\224\346\334DDH\024\200\rWHfV\300*\344\344\317\022\225.\253\345\331`h\315QV\233\225\2256\313\004\253\246\350\252>{\214+\006\304\363\330\210\221\223\276\307\246\2578<\272\021\313\2572\2552\367Oh`\361\262k;\205\212C;\206J\024Q \206\206\033\224\024\"\325\310\265j\333\033\0312\203\270\315\020\020f3\335\320b\222\3221\310\263\320\233s\235\034N=!\265\006\273w\033\260\212\257N\303p\371\356\010\315\253\310\322\030a\021\262\"\346\262)\353\227\223E\341\317M}\2576\355s\351\026o\221\322[k\nM\354\316h\311[\243{$$\020f9\344#0\2634%\2275\330 0\350~Z&\362\034\255m\260\030F\267\024\031\264zM:\266\2436j\3559\355Mb\273\t\213\032\351\346\323y[\364\303\031 ~\224\021\347\316\214\365\003\177ut\257O\250\360\005+G<\3013\023\014+\010\263\210p@\224N\314&Ld\233\257\322#\244\204\311\2408\3618\215\277\260.\261\031\003A\300U\276zf\355q\264`\216\323\322'\265\327/4.7b\035\245\022(vg\207\035\321x""\004\302dqm\355\316p\016ns\224\356qs`\214\235\366qUzVZ\022\244R(D\273;\275\022C\2773\n\233\016\215\317T+\234\367n=V\226\234\241\301\326\211[6L\232x\364\350\216\274\365'\353d\374\223\032\321\350\231\345\312k\231\331\233&\367v\251\242\r\355\302L\322\214\335\2277)S>^\242d$@\352t\246\033\200\334\226\3407 \351(Ss\326\326\241\004\357\345&M\023\3213s-\312\330\305\271\353F\"\014sT\252IH\207\311\373\325$\223\236.\352\311\215\245\205\241\274\031dJ\231zXI\341\256\352\273\216TGj'cr\\\331\2256\350g\223\266`I]:7\345\026\273\264\027\260\332\223\343\304\001j\206\3212\3001\320ZK\221\214\245\303\021\n\321\020\253\203\000\3000\000\257\374\300<\n\261\225\230q?\213\213d\271J\352]\036wo\023f\233\372%\324\266\230m\222\352~\026\033\374\301m\026\274\264\235]$\035\234RO\010\3556\266\266\031\001u\266\273\224\334\244\364D\024\022\352d\223/\301\016.\300 n(\203\226\364B\303\366O\225.o\\J\216\335\224\373\253\226\331\032;\267\n\242\226h\353\330\265\034\341\206\210\004\346l\340\242DQ \317\301\022\0108\223%\271\332\362\354\036\003u\232\263\273m\2636>\370-fG\033\245\256\336J\373\t\270\003\201\213\244}^\023\2322\206B\360\370r\003\n\244\213\251+\231\257\373\340\016\334\361o\020/GaLy\231\370\272\r\275\307\347\362\207\362H\014\303\260\213F\341\351N1\256\305\355\341)+3n\355N7\306\276x\276\224\356\265\370\267\275I\226\202\207\344\201\300\362-\307!\260wWTXYP;C;\250\202#\273\000\241\222\261\345'\273\341\367\310\353&vH\272\3013^y<\236\320\207<\316\260{\370\"\220'\246$\030U\224\366\3176I\241K(\303\366\203\354\304\351\236\353\024\"\022\032\0263 \303\026\222\2751L\\b\t\013\016\033\034\205\272r\200\235\312\001A\235H\275k}u\261\\X\203\033\215\013ZTp\264\257p\354z\313bQ\2270\3331\023\035\312\n\030d\324\224\206\255\266\325\003l\244o\377C\344H\273\007(g\016^\312\244\225\271D\177\035#\036S\212%\201\231\277\312t\307\325\334(\243\036\242\271u1\332 \252T\220V\306I\236n\325\364\025X9\336\222\002\273V&\230\257 \341\261[\257\\,\177\257\353\007&\232\tA\334\353\243\266\336%eX\204\345\233,\246\202R\3124tJ\270\342\255h\230\2641""e,\253C\247\264\177\031Z\010ol\017\226\217\304e\005\217z\303\345Y{G\354h\232\261\333&\002b\306b\300\366\\Z3YJf\276\356\235\274\304\244\261\026\345~\346u\373\025\302\300\301\246K\227\2271m\010\266\313 \311\363\265\\$\336\321\3136,\023\0231\272\363\007N\255e\2347\200\370\335\245%!S8S\027#\231f\242\223\214\26110\330e:\354\034\336\244d\020\231\353\221T\223K\337\340b\364\357\021\251QV\257X&\030elQ\3221\3078\340*\021 \306IS\237B\226\2357\032\230\374D{\010\247I\221\3063\024\362 `\306(\023\234\177\031\214\032\033F!GT\356\024JF\211F\211E\312\003\223\347\342\366L\300\220f6LS\003\262u;8F\010uNZ5\025\364\3438\274W\267\350s\274\247+\323YN\273\235t\257\013\263\350.\233\356Vl\215\322;a\302i\005\341\330\014\232\314;\007\374k\337\212\360r\241;F\241\253\322\t\307!;?N\221vct\016\217\210\255\214m\232\334\245\255~g\320&E|\313G1\251\233%\351\352.\003p\300=T\256\252/\235\235\335\203\235\232\322GE\331\224\261&\202\241\336S5\350\370\345\373\262V\370l\0301\370\336\326\303\334{\275gZYQ\355G1,\261I*4,eZ\205\350\027\271b\367b/iz@\357ZY\325ok0\345Y\010\210\262\230\251b\304<\010k5\n\224--Y \036\tt\310\245U\020T\241$\322K\025b\205\211\034\260\316\"L\310,Xr\\E\313\027\010\021\366\313\030,*\236\330\271s\333\222\\\213_M\225\036\217\023z\211\234\2453\200\202&$r\004\t\263\244\315t\275\307\265\036fy\213\271\"\234(Hx2a\341\200";
+    PyObject *data = __Pyx_DecompressString(cstring, 3279, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (3055 bytes) */
-const char* const cstring = "x\332\355W\315w\323V\026\307!p\3226\264q0\255\003I\220\235\220@\000\203\223PZ>\322\343\000\235\206\003\024'\205~L\007\035Yz\266\325\310\222\255\217`\207\016\323%K/\265\324RK-\265\364\322K/\265\364\237\320?a~\367\311v\002\224\016\213\231\305\234\323\205\245\247w\337\273\357\336\337\375\335\373\256o\010\005M\023\024\265\306tK5tK\250\233Lf\212\252W\016&\205s\212Ps,[(1A\325\025\326d\212 \351\212\240\033\266`i*\226o:\34523\205=\225=\027\024\203Y\\\304\232u\303b\202e\233\252\302\254;\222.\030\272\326\022d\223I6\023$\241\024o\262\253\222-\250\226 \033\272\255V\034\303\261p\210Pc5\303l\345\260\213TI\226\245Vt\3016\004lV.s=\361\n:r\260h\240\370\271\251\332RIc\203\005\261Qe\323\250\375\331^\356\226\360\\\265\253\202\335\2523ay0o\233\222nq7\016\266\304\313\260C\005T\366!\354\356\036\006L\215A\210\027\335\253\325\355\226`U%\250\266\235:\214+\033\246 \267\354\252\241\347$\323\224Z[\334\000\303\261\005\243,\224\014GW,\341\274\324\204\226s\312\205\255\267\317\212\301w\352u\303\264\231\262\245\357I\232\212(\031\n\273D\300c1\202\264,/\0138g\031\207\221#\313\227\204\nv\r\027\307\346\000k~\314\255\207\334\301\247\344 Lxd\000J\036\232;\334J\362Ga\232Zb&@\006\204\024V\034\302\343\247\013\217\357=\276\274\376\305:\247\205\311~\301\361\026\254+\311\032\"\007:\220O\216\252\3318\214\340\265r\302VYh\031\216\2403\230\211\260\326\261\356\360\006\273\312t\301b6\r\204e\036\013\311\206\337\"\266\203\233\313\003\\\325=F\273\277\2264\213\345\276}\r<\230< \230$\313\314\032\242\271c\263\272P\223Z\034?\360y\237\231\306\001\320Ot\316\034\250\004\033\367\230\tb\330\254F\337F\211\234\312m,_\370JR\024Q'x\310Y\001\010]m\312\206\246\2219\010LN*\311\267\016q\231\026\305\306n\2749=\244\320\206\242Zt.\343\247Wd\341<\205\251\302\331C\036P2\262\246\315t\233\247\306A^\252V\274E!+-u\237\t\267n\013W\337\342\226n te\311\321lA\024M\24682\023EAq\270\243\272\241_F(\367TI\203TVu\325\2060vw\3032\345+r\3254\340\256\241_\021\345\226\250\352:3s\365V\363V\234\327\312k\016\276=G\374\033\371\371\232|4\353\214@\2274\315\220yq ""\263\005E\262\245\334\037Hc\342\222\216Am\311\025v\356lm\335\3234\265n\251\226(>n5\361\273\013~\212\217\000\3346+\357\260\206\303t\231\021\275s\007LG\254\206Z\305\230-\222\336\022%N,\311j\351\262j\344d\303DZ\252:\263J\222\305J\314\262\305\272\256\305\357\246,KVU\204\\\256Jf\205\215\260\312\215\260\002\246\304iQ\034\016*\314\246p\321'\224b\221\210\334\224YI\222we\r\225F\021e\251.\311\252\335\032|B\014\037e\243VS-\n\273\014\202\333\262c\232 \204H\347+\n\331\257[X\005D\025\021\270\212x\300{q\220&\206\256P\336\361\207\010\204\342\360\002\020\324\013h1[\342\201\372\370\273\336\034\276E\235\331\361\030\265\276^\227*\203\035V\235\352)\323\235\032/\t\000\030&#1\236\017F\000\205\231\246a\262&\030uH=}B{\374\342\312i\010]\326@8:\206\177\360S\312\232T\261\312\232!\331\237\257\203\3355\311\036\2244Q,;\272L\340\002V\313&\034\304j\225)\025\344\214\252*\242\250\326\250B\342M\3655\016\210f\030u\261,Y\210\251-\023\032\243\010\307i4\310\245\335\335]$5\212\000L\321T\370D(+\232\241WD\002@e\226hU\325\362h\016\326\276>SfL\334c0\256&!\310x\232\260*~\212U\246)\270Q\350:\241\232\r\251\2418\032\336\272.\306a\327\201\203a[\272T\243\331\370\211\314\307\223=\027\251\376\000KI\323\353\300\277\3362\020P\243\316t\021W\225\312\313\220\001\303\001\330s\221\240\003\235v\353F\275\216\212\315D9~U\343\227\026\277\214\272i\310\250\305\340)r[\224\253L\336\265\234Z\3745\300\225\206\234@|\344\350uU\336\205\311\367\364\341\272=~\357R0\032\016L\3436#z\232J,F\316\034\024\237\321(.S\207&X\223\206\025\325\262)up\003\014|\307hP\303\370x`\322\241\361P\023/\016x\230xP\344\337\210\325`\362p\260\342\251A\264(\362\370\201>\"/B\203q\215A;2\323P\206R:U\225-\215\226\341\211\022n\343\305\321\244ws\310\342Xn\330\203\252\302\207\252\322\214y\315\205\266d\332\374AjK\222&\241N\301\375\272e\033\370\231\216l\003\004\004\306\246\222#\332\270\t5,S\342\001\270b\241t)\240\277]'uxr#\350\335\204\2234eq\363\006/\021\267?\206@\245R\001\306\365\246\203P\202 \216\316c\265\2178\214Fb\251\305i\350\324\211\374{\330\3510\353\271\204\2723\312""\203\326\241O\240\312\277\016\220o\035\376&\261a\306\365s0h6\351\002\266~K\374\376(q\344\330\214\233p?u\033^\"\032\237wu\377\353 \023\344\243\361%\257\026|\036&\303L4~\326mD\343\2027\346-\371\t\377$\026d\203B\237f\177\277z\344\330\005\177\314_\n\022\301L\270\324\031\353d\372\343g\334|\377\203\017\243\211\311W\367\332\247\332R\273\021M~J/7\361\247\203\223\355\353n\306\315\377~\374\310\211\251W\277\272y\367\216ky\213\236\354\317\005R`\205\013a1\232J\265\357\271\247\\\t\346\244>k\277\3602\336\032\344\311(=\023\245\004\357c_\362\255 \023\tY/\007{N\006\005Z\365\322+r\035\2450\021\2453\336\254_\364\345`:\310\367\3611\307wdia\226\224\365\226>\017\244(\265\350\025\310\212d\373X\373\t\231\024M\235l\337\304\251\226\267\340\025\243\324\251hj\326}\344g\3745_\212\246\316\270\033~\322_\360a\335\360\260$v'\317\2709\016V\201v\257\267\035\267\340\026\311\236}o\332[\365\276\363\3230b\243\223\354,t\212Qz\311\223<\313\277\0344\242\231\005H\267=\333\377\"X\r\236u\362\235;\235\306!9iN\265o\270\333\004\001\205%5\357J\375\321\210,\273\017\013f\340\324\375\260\324I\220}7\274\035\177\"\030\013V\302\315P\"kh\373K\216Cr\340\270\247\372\r\222|\351n\202\000\005\177'H\034\222\320\2413\356\307\334\206L4\225>\030\n\340\314\333\356\345\243\364y\377c\036\265\213\235\355N\243\377\306\347\024\231;u\332\315\014\215\201\361iw\334\275\347%\275\363\376\242_\r\3440\311\235\216\3220\":=\3572/\357}\343\337\r&\302\243a\376-Qoq=\270\033Nt\216v\016\311\372\377\013\2350\370\226k\303C\240\263\302\201\032\003\343\300\230\007\234q\233D\237,\016\314\372\367q\340i\036?\263;\333{\362\264\367\364\373(\265\344\355\"\354\353A#\234\354lv$\n\341>8\362 \034\013W\342\211s\336\023l\336\n\266\203\375\3164\216&2\3222\304+J\237q\327\334\262\3670H\223+\027(1\010\351\023\001D\331^v\r\244F\004Z\310\323\014R\242?\371\311\253\226;F(\023!O\314\367\346\256\370\215\340h\260\206m\223\363\275\371|\220\014\026\202\035\344\005V\376\313\225\275\344{&Xj\306=\035\263\264w\361&\240\033q\026H\235\0351+\275\340m\360\0238\277\253~)\370\020I\374S""\247\321=\332]\355\376\334\373\361\247\336O\177\217\322+\376E8k\207\371\360Aw\254\233\241m7\000\353$\310\372K<q\301?\205\315\037\204\323\341\r\242\017\271\234\030h\217f\317\"+\227\000\301\017(\017\263s\321l\234)Y\244\335\354y\236\177\233H\322\331K\376C@6\273\324[\272\036\200\216g\334/\275M\204\024\033\006\244\007\362\247\010\244\263\275\371U\224\2775\316\226\311\263\275\263\353A\001\020\201 qE\030oo\271Oz\331U\356\326\024\210\322[\3702|o\334>C\236\334\217\005\377\3178MQ\205n\220\373\274\376}\205Rx;L\304K\356\242\"\244\026\274/\374U\377\347\360dx\277#u\254n\266\373\240\367\303\217\360\004\374\354}\266\302\253e\372\034jiz\326\375\332;\3475`(,|\001E\353q\t_\364\036!\014H\224H\270\342\277\014\213\241\322\311DW\362\301|\330\350\214w\276\355\355<AJ\221\314D\326}\003\014\364n\241\373]\257\270\035\345\327xY]D2\245\t\372R\360Q\270\n8\315n2\232\271\344\337A\241\033\314\177\030f\303\302h.\313/\267$%\3315/\341\315\300\310\037xr\314.x\371\376\354\005\210f\005\357\270\307\374<@\023\026\274\233\210\252\315\223i1.o\210M\264xp\372\3325^\277\357v?\351}O\276\223l\025\032'pK\346z\217\213\275\"\367\341\332\365\340e\247\330Q\020\301Y\362:\033<\340\327(\030\362+\035\325\347\254\331t\025\334\205\212\177\016\031\214\240.{\373\2342\333\000\010q\237\r\212 \3544U\261\213\376M\\u\343a!\374\007`/\320\225w\312+!\360\333q@o\373G\375\353\374\312C\260\377\006\203\212}p\241\214RV\244\0208^\001a\021.\372\371>\036\267Q\227.uJ\335\304P\3644v\376\r\361\361\256\324m\274\261$\347K}<\312H\037\234\200\r\221\260\342\237\017.\207\026\002IR\372^\201\031\302j\220\303=%\\\r\022\361\325\017b\361\373\341/b\375E\254\377\026\261&\216\2348\355\242\240S\31719\365\356\276.\325~\304k\267D\0344\275\223\350\0176}\035>\357@S\346\240PO\r\313w\032\340lt\223\335\205\256\330\373\371Y\357\231\310\253\"4^\241\336\352\323v\311\235\344\204C4\373\274\325u\334\207\376\264\177+0\351~I\265\013dI\314\373}7\351.\270;\324Q-\342\216G\213J\335\\\341\335w\313\nX}\215\2026C\355\323\260'\303\345<\2156\241\212\330\304=W&:3\347>\003x\304\306""\024\325}\307\347\235\261\211\205y\236.\236\324\177\317\033\354\240\333M\035\334`\251t\217\033\303\333\017\323=\211\\=\312/'N\250\270}\245v;\t\234\267\351\033\223\376q$J\202D*Rm.\224;\247q\333\025\373o7@\177\324\373\314\271O\250\307yw\357s\350\272\352S\247I\251G\235k\202|$\351j{{\000\000\260;F\352x\017C\010\"\213\023\340v\334\361y\327PB\246\346\320\334\242\213\232<\362\301\344\253\365W/\334EW\345K'g\210U\357\"\024<\246\363\321]\275@d\337\367\357\313;0\216\257\373\004\010\230E\233)\217n\371?\001l\025\255\265\345-CY\0264V\350o\035\266\362?B\324\270\377G\024\343\302{g\360\337\002\3710\315\321H\201\225\320l\022F\240\356\261\211\337\376\t\036\357\270G\001\300\304T\033\377\"?z\225\377\366\337\231\356'\232";
-    PyObject *data = __Pyx_DecompressString(cstring, 3055, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (3119 bytes) */
+const char* const cstring = "x\332\355WKw\323\326\026\306\020\272R\032\332\030\0148\220\004\331y\3614u\022\240\345\221.'\244m\270\205\222\244\364\266]\275h\311\322q,\"K\216\036\301\206^n\207\014=\324PC\r5\324\320C\017=\324\320?\201\237p\277}$\333\241\024\312\344\016\356Z\035X\347\275\317\336\337\376\366\336\307\267\204\222\246\t\212Zc\272\245\032\272%\324M&3E\325w\206\223\302\234\"\324\034\313\026\312LPu\2055\230\"H\272\"\350\206-X\232\212\355\253N\245\302La_e\317\004\305`\026_b\215\272a1\301\262MUa\326\232\244\013\206\2565\005\331d\222\315\004I(\307\207\354\252d\013\252%\310\206n\253;\216\341X\270D\250\261\232a6\0138E\242$\313Rwt\3016\004\034V\256r9\361\016\2722\331\224\010~f\252\266T\326X\262!V\252b\032\265\367\235\345f\t\317T\273*\330\315:\023\026\222y\333\224t\213\2331<\022o\303\t\025P\331\007\260\273w\02005\006!\336\264^\253\333M\301\252J\020m;u(W1LAn\332UC/H\246)57\270\002\206c\013FE(\033\216\256X\302\005\251\001)s\312\305\215\267\357\212\301w\352u\303\264\231\262\241\357K\232\n/\031\n\273B\300c3\234\264 /\010\270g\001\227\221!\013W\204\035\234\352o\216\325\001\326\374\232;\017\270\201?\222\201P\341\241\001(\271k\326\270\226d\217\3024\265\314L\200\014\010\311\255\270\204\373O\027\036\255?\272\272\374\3052\247\205\311\236\342z\013\332\225e\r\236\003\035\310&G\325l\\F\360Z\005a\243\"4\rG\320\031\324\204[\353\330w\360\200]e\272`1\233:\302\002\367\205d\303n\021\307\301\315\205\004Wu\237\321\351\257%\315b\205\357\337\000\017*'\004\223d\231Y}4\267mV\027jR\223\343\007>?g\2461\004\372\261\316\231\003\221`\343>3A\014\233\325hl\224\311\250\302\312\302\305\257$E\021u\202\207\214\025\200\320\347\r\331\3204R\007\216)He\371\316\001.\323\246X\331\225?N\367)\264\242\250\026\335\313\370\355;\262p\201\334\264\303\331C\026P0\262\206\315t\233\207\3060.U+>\242\220\226\226\372\234\tw\356\n\237\277\305-\335\200\353*\222\243\331\202(\232Lqd&\212\202\342pCuC\277\nW\356\253\222\206UY\325U\033\213\261\271+\226)_\223\253\246\001s\r\375\232(7EU\327\231Y\2507\033w\342\270V\3360\360\3559\342\337\300\3167\326\007\263""\316\000tI\323\014\231'\007R[P$[*\374\311jL\\\222\221\344\226Bi{mcc]\323\324\272\245Z\242\370\250\331\300\357\036\370)>\004p[\254\262\315\366\034\246\313\214\350]\0302\035\276\352K\025c\266HzS\2248\261$\253\251\313\252Q\220\r\023a\251\352\314*K\026+3\313\026\353\272\026\267\rY\226\254\252\210u\271*\231;l\200Ua\200\0250%N\213b\277\263\303lr\027\r!\024\233D\304\246\314\312\222\274+k\3104\212(KuIV\355f2\3042l\224\215ZM\265\310\3552\010n\313\216i\202\020\"\335\257(\244\277na\027\020UD\340*\342\003\353\305$L\014]\241\270\343\037\021\010\305\356\005 \310\027\220b6\305\241\370x\\o\364[Qgv\334G\256\257\327\245\235\344\204U\247|\312t\247\306S\002\000\206\312\010\214gI\017\2400\3234L\326\000\243\016\210\247!\244\307\r\027N]\310\262\222\305\3015|\300o\251h\322\216U\321\014\311\276\261\014v\327$;Ii\242Xqt\231\300\005\254\226M8\210\325*Sv\0203\252\252\210\242Z\243\014\211\226\362k\354\020\3150\352bE\262\340S[&4\006\036\216\303(\211\245\335\335]\0045\222\000T\321T\330D(+\232\241\357\210\004\200\312,\321\252\252\225\301\034\264}s\246\302\230\270\317\240\\M\202\223\3615\241U\374\025\253LSPQ\250\234P\316\306\252\2418\032Z]\027c\267\353\300\301\260-]\252\321l\374E\344\343\313\236\211\224\177\200\245\244\351u\340_o\032p\250Qg\272\210R\245\3624d@q\000\366L$\350@\247\335\272Q\257#c3Q\216\233j\334hqc\324MCF.\006O\021\333\242\\e\362\256\345\324\342Q\202+u9\201x\317\321\353\252\274\013\225\327\365\376\276}^w\311\031{\016T\343:\303{\232J,F\314\014\223\317\240\027\247\251\003\023\254A\335\035\325\262)tP\001\022\333\321Kr\030\357'*\035\350\367%\361\344\200\217\211\017y\376\017\276J&\017:+\236J\274E\236\307\017\364\021y\022J\3725\006\351\210LC\351\257\322\255\252li\264\r\337\262d\302a\"M \233\333h8\260\3246h\301B\242\221\314>\265\351\320\200\347t(\351\251\303\311\376\001\303N\362\021\357\252J#\216\210XB\334\225\223V\355O$gm\311\264\371\207\364-c\n\t\020\270\326-\333\300\317td\033\350\302\3436\3452\321F\211%;\224\270\003\022Z\310\211\n\342\312\256\323m\370\222\221hd\374\270u\3246h&\276\020\220""\322>+\336\207\270\302\217\300H\032\021\317\016\232\036l\206cvv\340\346z\303\001\233\300QG\347ty\016*\014zb\271\311#\301\251S\374\355C\206\303\254g\022R\337 \024\233\007\206p,\037\r\235\337<8\246e\303\214Sx\322i4\350\r`\375\236z\3750u\350\350\204\233rO\273{^*\032\231vu\377\353 \027\024\243\221y\257\026\334\010\323a.\0329\357\356E#\202w\330\233\367S\376Il\310\007\245\036\315\276^<t\364\242\177\330\237\017R\301D8\337>\334\316\365F\316\271\305\327\307\016\035\315{g\375\033A:\230\013,\222\221\363&\375\037\203b\260\326\037\236\366\366\375M_\375\220\341\264\373\024\027g\273\305o\332{4\322\374\234\177c0\252x%\357\327\277\034\365>>\026\215\216\275Zo\235jI\255\275h\35445n\352\275\235\223\255\233n\316-Fc\023\356\371\356\205\225\360i'\325I\017FZ'\327\031\256U\332\245\366\346\373F\257?:t|\374\325on\321]s-o\326\223\375\251@\202}3\341f4\236i\255\273\247\\\t8g\316\264^x9o\t\353\351(;\021e\004\357S_\362\255 \027\ty\257\000\240O\006%\332\365\322\333\3442\312a*\312\022\272\233\276\034\234\010\212=\014\246\370\211<m\314\223\260\356\374\215@\2122\263^\211\264H\267\216\266\036s\303\306O\266n\343V\313\233\3616\243\314\251h|\322}\010l\227|)\032?\347\256\370i\177\306\207v\375\313\3228\235>\347\0268\013Jtz\271\345\270%w\223\364y\356\235\360\026\275\037\374,\224Xi\247\3333\000 ;\357I\236\345_\r\366\242\211\031\254ny\266\377E\260\030<i\027\333k\360\320p\235$gZ\267\334-\202\200\370\226\231v\245\336\240G\232\335\207\006\0230\352~Xn\247H\277[\336\266?\032\034\016.\205\253\241D\332\320\361\227\034\207tb\270\247\372{\264\362\245\273\nf\227\374\355 u`\205.\235p?\345:\344\242\361\354\260+ \030\3366\257\030e/\370\237r\257]no\201S\177\030\216\223\272\343g\335\\_\031(\237uG\334u/\355]\360g\375j \207int\224\205\022\321\331i\227yE\357[\377^0\032\036\t\213o-ug\227\203{\341h\373H\373\300Z\357\177!\023\n\337qmX\010t.\372\213\360:\330\362\017\337\214\221\274\340\347\375\373\270h\242\235o\203S\363\336.\234\274\034\354\205c\355\325\266D\016{\016F|\027\036\016/\305\023s\336c\034\331\010\266\202\347\355\023\270""\210\250G\333\340\235({\316]B`>\010\262\244\370E\n\003\302\365x\200\245|7\277\004\n\003\357&\322M\016\001\320\033\373\354U\323=L\230\022\375\216Ow\247\256\371{\301\221`\t\307\306\246\273\323E\344\230\231`\033Q\200\235\377qe/\375\201\341\224\231p\317\306\234\354^\276\r\240\006\014\005.\347\007<\312\316x+\374\006\316\346\252_\016\216!d\177n\227;\010\273K\376e\230h\207\305\360\273\316\341N\2166\337\002\307\306@\310\247\361\304E\377\024\216|\034\236\010o\021E\310\320T\"3\232<\217\310\233\207\341?!\005LNE\223s\270~/\232\\\360L(;y\305\177\000\200&\347\273\3637\003P\355\234\373\245\267\nwacBh\340|\212 9\337\235^D\316^\342L\030;\337=\277\034\224\000\010\234\037G\373Hk\303}\334\315/r#\306A\202\356\314\227\341\007\243t\0061p?^\370\377Ae\234r\355\036\031\3133\331WHjw\303T\274\345\036b;3\343}\001\226\377\032\236\0147x\350f\316t\317\\\342\331.;\207\\\230\235t\277\366\346\274=\250\005}^\340\370r\234\202g\275\207\200\032\324\217\204k\376\313p3T\332\271\350Z1\230\016\367\332#\355\357\273\333\217\273\217\177\2445\023y\372[X\254wJ\235\037\272\233[Qq\211\247\305Y\204G\226\340-\007\237\204\213\341/m\023%e\342\212\277\206D\225\314\037\013\363ai0G\221\0133\257{)o\002\n\376\304\251>9\343\025{\223\027\t\020\301\373\310c~\021\371X\230\361n\303k6\017\215\33185\301\013\321\354\360\346\245\353<\367\336\353|\326\375\347\317\335\237\177\241\265EH\034E\351.t\037mv7\271\376\327o\006/\333\233m\005\276\232$\213\363\301w\274\266\203\001\277\321U=\316\212UWA\035S\3749\304#\334\267\3405\221\214\271w\317\005\253\024\324\227\375\333(O#a)\374W'\337)Q\231:\345\225\341\332\255\330uw\375#\376M^\246\340\326o\240\310fo\2222\022 wP\2707#\341\262_\354\341s\027\231\345\n'\327\007-\025|\251\307?\223\330\024\t\227\374\013\301\325\320\202\243h\222\306\227p\245\260\030\024PG\204\317\203T\\\232A\027\236\277\377\246\313\337ty?]F\017\035?\353\"\325R\245\037\033\177\367k*\323z\310\263\252D\3142\275\223\250\312\253\276\016\373\266!)7L\241\343\375\304\232EF\\\351\244;3\035\261\373\353\223\356\023\221g0H\274Fu\370t\253\354""\216qB\301c=\376Lu\334\007\376\t\377N`R\346\317\264J\244I\314\346\347n\332\235q\267\351\0353\213Z\213\207!\275\241J\357\316\372\227\300\332\353\344\230\tz\264\364_B(\222'P\256\253\360C\374\322\311E\347\246\334'\360*\261-C\3577\307\347\357Q\023\033\213<\034<\251\367\201\265e\370\306\314\014kK&\333\345\312\360g\200\351\236D\004\036\341\005\204\223&~4\322#7\r\234\2512\320\244\377\021\002!EK*Bi*\224\333g;\213\235\315\336\333\017\221?{\203L\271\217)j\336\375\0069PZz\364\276\243\360\242\367b\212l\244\325\305\326V\002\000\260;J\342\370[\202\020D\224\246\300\343\370\235\345]G\212\030\237\302\223\022\257\231\261C\037\217\275Z~\365\302\235uU\276\025\377\027\322\357&\024,\246\373\361\312y\001\317~\350\237\206w`\034\227\344\024\010\230G\360\311\203J\374\036\300\026\361\240\265\274\005\010\313\203\306\n\375K\304Q\376\367\203\236\313\177\211b\234N\327\222\027=\342\341\004G#\003VB\262I\030\201\272GG\177\3777x\274\355\036\001\000\243\343-\374)\375\344U\361\373\377\002\300\244y&";
+    PyObject *data = __Pyx_DecompressString(cstring, 3119, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (6370 bytes) */
-const char* const bytes = ": All dimensions preceding dimension %d must be indexed and not slicedBuffer view does not expose stridesCan only create a buffer that is contiguous in memory.Cannot assign to read-only memoryviewCannot create writable memory view from read-only memoryviewCannot index with type 'Cannot transpose memoryview with indirect dimensionsDimension %d is not directEmpty shape tuple for cython.arrayIndex out of bounds (axis %d)Indirect dimensions not supportedInvalid mode, expected 'c' or 'fortran', got Invalid shape in axis <MemoryView of Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.Out of bounds on buffer access (axis Step may not be zero (axis %d)Unable to convert item to object.>')?add_note and  at 0xcollections.abc<contiguous and direct><contiguous and indirect>disableenablegc (got got differing extents in dimension isenableditemsize <= 0 for cython.arrayno default __reduce__ due to non-trivial __cinit__ object>src/chronoton/_cy_inner.pyx<strided and direct><strided and direct or indirect><strided and indirect>unable to allocate array data.unable to allocate shape and strides.ASCIIEllipsis__Pyx_PyDict_NextRefSequenceView.MemoryViewabcallocate_bufferany_activeasyncio.coroutinesbasebest_pnlbest_pxccash_outchargechronoton._cy_inner__class____class_getitem__cline_in_tracebackclosed_capacityclosed_tradescommissioncountcurrent_cashddate_nsdesired_dir__dict__directiondtypedtype_is_objectencodeentry_commissionentry_pxentry_px_netentry_slippageentry_spreadenumerateequity_nowequity_outerrorexit_commissionexit_pxexit_px_netexit_reasonexit_slippageexit_spreadflagsfloat64formatfortran__func____getstate__hhedgingiid__import__indexinner_loop_fastintc_is_coroutineitemsitemsizekkklleverageliquidatedlong_entries_shiftedlong_exits_shiftedlong_fee_vec__main__marginmargin_heldmemviewmode__module__nn_closedn_slotsname__name__ndim__new__notionalnpnumpyoobjopen_p""ositionsoverflow_flagpackpopprice_cprice_hprice_lprice_oproceeds__pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname__realised_pnl__reduce____reduce_cython____reduce_ex__register__set_name__setdefault__setstate____setstate_cython__shapeshareshort_entries_shiftedshort_exits_shiftedshort_fee_vecsizesizing_arraysizing_method_codesizing_staticsl_arrsl_distsl_pricesl_pxslippage_arrslot_activeslot_idxspread_arrstartstarting_balancestepstopstructt_ns__test__total_badtotal_loss_budgettp_arrtp_pricetp_pxts_arrts_distts_dist_valts_trigger_pxuunpackunrealizedunrealized_by_slotupdatevvalueswant_long_entrywant_long_exitwant_short_entrywant_short_exitworst_pnlworst_pxxzeros\200\001\360N\001\000\005\031\230\001\230\026\230q\240\001\330\004\036\230n\250F\260!\2601\330\004&\240m\2606\270\021\270!\330\004\037\230q\330\004 \240\002\240&\250\001\250\023\250F\260\"\260A\340\004\037\230q\3600\000\005)\250\002\250&\260\001\260\031\270&\300\002\300!\340\004\033\2301\340\t\n\330\010\014\210E\220\025\220a\220q\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\023\2207\230!\2301\360\006\000\r\020\210|\2301\230C\230s\240$\240c\250\035\260a\260s\270#\270Q\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330 \"\240.\260\001\260\023\260A\330\024\027\220~\240Q\240c\250\035\260b\270\001\330\030!\240\034\250Q\250c\260\022\2601\340\030!\240\035\250a\250s\260\"\260A\330\024\"\240!\2403\320&6\260a\330\024$\240A\360\006\000\r\021\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024\025\330\020\034\230N\250!\2503\250a\330\020\033\230>\250\021\250#\250Q\330\020\027\220~\240Q\240c\250\021\360\006\000\021\033\230.\250\001\250\023\250A\330\020\023\2204\220u\230A\230Q\330\024\027\220z\240\022\2402\240T\250\030\260\022\260>\300\021\300#\300Q\330\030&\240a\240s\250-\260q\330\031#\2402\240R\240t\2508\2602\260^\3001\300C\300q""\330\030&\240a\240s\250-\260q\360\006\000\021\024\220:\230R\230q\330\024\037\230q\330\024\036\230a\340\024\037\230q\330\024\036\230a\330\020\034\230J\240c\250\031\260\"\260J\270b\300\001\330\020\033\230:\240S\250\010\260\002\260*\270B\270a\330\020\023\220:\230R\230~\250Q\250c\260\021\330\024\"\240!\2403\240i\250q\330\020\023\2209\230B\230n\250A\250S\260\001\330\024\"\240!\2403\240i\250q\360\006\000\021\031\230\016\240a\240s\250!\330\020\030\230\016\240a\240s\250!\330\020 \240\001\330\020\023\2204\220u\230A\230Q\330\024\027\220z\240\022\2401\330\030(\250\016\260a\260s\270+\300R\300q\340\030(\250\016\260a\260s\270+\300R\300q\340\020\037\230q\330\020\032\230!\330\020\023\220:\230R\230q\330\024\030\230\004\230E\240\021\240(\250$\250h\260c\270\021\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\240H\250D\260\010\270\003\2701\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\320$4\260D\270\010\300\003\3001\330\030&\240a\330\030\"\240!\340\024\030\230\004\230E\240\021\240(\250$\250h\260c\270\021\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\240H\250D\260\010\270\003\2701\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\320$4\260D\270\010\300\003\3001\330\030&\240a\330\030\"\240!\340\020\023\220<\230t\2401\330\024\"\240*\250A\250S\260\002\260!\330\024$\240L\260\001\260\023\260B\260a\330\024\"\240(\250\"\250J\260c\270\032\3001\300C\300r\310\034\320UV\320VW\330\024&\240k\260\022\2604\260q\270\014\300B\300a\330\024\037\230z\250\023\250L\270\002\270*\300B\300a\330\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024$\240A\330\024\037\230~\250Q\330\030\033\2303\230f\240M\260\030\270\021\330\030)\250\035\260a\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\340\014\017\210y\230\002\230!\330\020\021\360\006\000\r\036\320\035/\250q\260\003\2603\260a\330\014\036\320\0361\260\021\260#\260S\270\001\330\014\017\210\177\230c\240\021\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a""\250s\260!\330\024\031\230\032\2402\240R\240t\320+;\2701\330\031#\2402\240R\240t\2501\330\030\037\230~\250Q\250c\260\021\330\030#\240>\260\021\260#\260Q\330\030&\240h\250b\260\n\270#\270Z\300q\310\003\3102\310\\\320YZ\320Z[\330\030*\250+\260R\260t\2701\270L\310\002\310!\330\030#\240:\250S\260\014\270B\270j\310\002\310!\330\030)\250\025\250b\260\t\270\022\270:\300R\300q\330\030(\250\001\330\030#\240>\260\021\330\034\037\230s\240&\250\r\260X\270Q\330\034\035\330\034&\240a\240s\250\"\250A\330\034(\250\001\250\023\250B\250a\330\034,\250M\270\021\330\034&\320&7\260q\340\030\033\2309\240B\240a\330\034\035\330\020\023\2209\230B\230a\330\024\025\360\006\000\r\037\320\0362\260!\2603\260c\270\021\330\014\037\320\0374\260A\260S\270\003\2701\360\006\000\r\021\220\004\220I\230U\320\"2\260#\260Q\330\020\036\230e\320#9\270\021\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\027\220u\230J\240c\250\021\330\030\037\230~\250Q\250c\260\021\330\030#\240>\260\021\260#\260Q\330\030&\240h\250b\260\n\270#\270Z\300q\310\003\3102\310\\\320YZ\320Z[\330\030*\250+\260R\260t\2701\270L\310\002\310!\330\030#\240:\250S\260\014\270B\270j\310\002\310!\330\030)\250\025\250b\260\t\270\022\270:\300R\300q\330\030(\250\001\330\030#\240>\260\021\330\034\037\230s\240&\250\r\260X\270Q\330\034\035\330\034&\240a\240s\250\"\250A\330\034(\250\001\250\023\250B\250a\330\034,\250M\270\021\330\034&\320&7\260q\340\030\033\2309\240B\240a\330\034\035\330\020\023\2209\230B\230a\330\024\025\360\020\000\r\020\210q\330\020\036\230a\330\020\033\230?\250!\250=\270\001\330\020\023\2209\230D\240\001\330\024#\2408\2502\250\\\270\023\270J\300a\300s\310\"\310L\320XY\320YZ\340\024\027\320\027*\250#\250Q\330\030%\240Q\330\030\034\230F\240%\240q\250\001\330\034\037\230{\250!\2504\250s\260!\330 $\240N\260!\2604\260q\330 /\250~\270Q\270d\300!\330/1\260\036\270q\300\004\300O\320SU\320UV\330 /\250r\260\023\260H\270B\270n\310A\310T\320QR\33013\260>\300\021\300$""\300a\330\030 \240\016\250b\260\013\2702\270Z\300r\310\021\330\031,\250C\250q\330\030 \240\016\250b\260\n\270\"\270A\330\031,\250C\250q\330\030\"\240&\250\001\250\021\330\030\033\2305\240\001\240\031\250#\250X\260S\270\001\330\034#\2401\340\034)\250\021\330\034 \240\006\240e\2501\250A\330 #\240;\250a\250t\2603\260a\330$(\250\016\260a\260t\2701\330$3\260>\300\021\300$\300a\33035\260^\3001\300D\310\017\320WY\320YZ\330$3\2602\260S\270\010\300\002\300.\320PQ\320QU\320UV\33057\260~\300Q\300d\310!\330\034$\240N\260\"\260L\300\002\300!\340\030\037\230|\2501\250A\340\024\027\220u\230B\230d\240$\240d\250%\250q\260\001\330\030'\240z\260\021\260#\260R\260q\330\030)\250\034\260Q\260c\270\022\2701\330\030+\250;\260b\270\004\270A\270]\310\"\310A\330\030!\240\025\240b\250\r\260R\260q\340\030\033\230=\250\003\2507\260\"\260A\330\034,\250G\2602\260Q\340\034&\240f\250A\250Q\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240V\2501\250A\330 +\2501\340 +\250=\270\002\270,\300b\310\006\310a\310q\330\034\037\230u\240A\240V\2501\250A\330 .\250a\340 .\250f\260A\260Q\340\034+\2501\330 *\250(\260-\270s\300!\330 .\250a\330 *\250*\260A\330 2\260.\300\001\330 0\260\001\360\006\000\r\020\210q\330\020\037\230q\330\020\033\230?\250!\250=\270\001\330\020\023\2209\230D\240\001\330\024#\2408\2502\250\\\270\023\270J\300a\300s\310\"\310L\320XY\320YZ\340\024\027\320\027*\250#\250Q\330\030%\240Q\330\030\034\230F\240%\240q\250\001\330\034\037\230{\250!\2504\250s\260!\330 $\240N\260!\2604\260q\330 /\250~\270Q\270d\300!\330/1\260\036\270q\300\004\300O\320SU\320UV\330 /\250r\260\023\260H\270B\270n\310A\310T\320QR\33013\260>\300\021\300$\300a\330\030 \240\016\250b\260\013\2702\270Z\300r\310\021\330\031,\250C\250q\330\030 \240\016\250b\260\n\270\"\270A\330\031,\250C\250q\330\030\"\240&\250\001\250\021\330\030\033\2305\240\001\240\031\250#\250X\260S\270\001\330\034#\2401\340\034)\250\021\330\034 \240\006\240e\2501\250A\330 #\240;\250a\250t\2603\260a\330$(\250""\016\260a\260t\2701\330$3\260>\300\021\300$\300a\33035\260^\3001\300D\310\017\320WY\320YZ\330$3\2602\260S\270\010\300\002\300.\320PQ\320QU\320UV\33057\260~\300Q\300d\310!\330\034$\240N\260\"\260L\300\002\300!\340\030\037\230|\2501\250A\340\024\027\220u\230B\230d\240$\240d\250%\250q\260\001\330\030'\240z\260\021\260#\260R\260q\330\030)\250\034\260Q\260c\270\022\2701\330\030+\250;\260b\270\004\270A\270]\310\"\310A\330\030!\240\025\240b\250\r\260R\260q\340\030\033\230=\250\003\2507\260\"\260A\330\034,\250G\2602\260Q\340\034&\240f\250A\250Q\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240V\2501\250A\330 +\2501\340 +\250=\270\002\270,\300b\310\006\310a\310q\330\034\037\230u\240A\240V\2501\250A\330 .\250a\340 .\250f\260A\260Q\340\034+\2501\330 *\250(\260-\270s\300!\330 .\250a\330 *\250*\260A\330 2\260.\300\001\330 0\260\001\360\010\000\r\032\230\021\330\014\032\230!\330\014\020\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024\025\330\020\024\220N\240!\2403\240a\330\020\037\230r\240\023\240H\250B\250n\270A\270S\300\001\330!#\240>\260\021\260#\260Q\330\020\037\230~\250Q\250c\260\030\270\022\270>\310\021\310#\310_\320\\^\320^_\330\020\036\230a\230s\240/\260\021\330\024\026\220b\230\014\240N\260!\2603\260a\340\014\026\220a\220u\230M\250\022\250<\260r\270\021\330\014\024\220A\220U\230!\360\006\000\r\020\210z\230\021\230#\230S\240\001\330\020$\240M\260\022\2601\330\020\034\230A\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030*\250!\2505\260\001\330\030\031\330\024\030\230\016\240a\240s\250!\330\024\031\230\022\2303\230h\240b\250\016\260a\260s\270!\330\033\035\230^\2501\250C\250q\330\024&\240a\240u\250A\330\024\027\220r\230\022\2301\330\030%\240Q\240a\340\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\033\230>\250\021\250#\250Q\330\024\037\230~\250Q\250c\260\021\330\024\030\320\030*\250!\2501\340\024""\027\220r\230\023\230D\240\003\240:\250S\260\001\330\030'\240q\330\030&\240a\340\030!\240\021\240#\240R\240q\330\030'\240q\250\006\250b\260\001\330\030&\240i\250r\260\035\270c\300\032\3102\310Q\340\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024\037\230~\250Q\330\030\033\2303\230f\240M\260\030\270\021\330\030\035\230U\240!\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\340\020\023\2209\230B\230a\330\024\025\340\020\032\230!\2305\240\001\330\020\030\230\001\230\025\230a\340\020\023\2202\220R\220r\230\022\2301\330\024\030\230\005\230U\240!\2402\240R\240s\250!\330\030 \240\001\240\025\240a\330\030\"\240!\2405\250\001\330\020\035\230Q\330\020\021\360\014\000\t\014\2104\210{\230$\230i\240s\250!\330\014\031\230\021\330\014\020\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024!\240\021\330\024\025\340\014\017\210{\230#\230Q\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\033\230>\250\021\250#\250Q\330\024\037\230~\250Q\250c\260\021\330\024#\240:\250S\260\001\260\021\260\"\260B\260c\270\022\270:\300R\300q\330\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024\037\230~\250Q\330\030\033\2302\230R\230s\240'\250\021\250\"\250B\250d\260!\2601\260B\260b\270\001\330\030 \240\001\330\030\035\230U\240!\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\330\020\023\2209\230C\230q\330\024\036\230a\230r\240\022\2405\250\001\330\024\034\230A\230R\230r\240\025\240a\360\006\000\005\010\200}\220A\220S\230\003\2301\330\010\020\220\001\330\004\013\2101O";
+    #else /* compression: none (6580 bytes) */
+const char* const bytes = ": All dimensions preceding dimension %d must be indexed and not slicedBuffer view does not expose stridesCan only create a buffer that is contiguous in memory.Cannot assign to read-only memoryviewCannot create writable memory view from read-only memoryviewCannot index with type 'Cannot transpose memoryview with indirect dimensionsDimension %d is not directEmpty shape tuple for cython.arrayIndex out of bounds (axis %d)Indirect dimensions not supportedInvalid mode, expected 'c' or 'fortran', got Invalid shape in axis <MemoryView of Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.Out of bounds on buffer access (axis Step may not be zero (axis %d)Unable to convert item to object.>')?add_note and  at 0xcollections.abc<contiguous and direct><contiguous and indirect>disableenablegc (got got differing extents in dimension isenableditemsize <= 0 for cython.arrayno default __reduce__ due to non-trivial __cinit__ object>src/chronoton/_cy_inner.pyx<strided and direct><strided and direct or indirect><strided and indirect>unable to allocate array data.unable to allocate shape and strides.ASCIIEllipsis__Pyx_PyDict_NextRefSequenceView.MemoryViewabcallocate_bufferany_activeasyncio.coroutinesbasebest_pnlbest_pxccash_outchargechronoton._cy_inner__class____class_getitem__cline_in_tracebackclosed_capacityclosed_tradescommissioncountcurrent_cashddate_nsdesired_dir__dict__directiondtypedtype_is_objectencodeentry_commissionentry_pxentry_px_netentry_slippageentry_spreadenumerateequity_nowequity_outerrorexit_commissionexit_pxexit_px_netexit_reasonexit_slippageexit_spreadflagsfloat64formatfortran__func____getstate__hhedgingiid__import__indexinner_loop_fastintc_is_coroutineitemsitemsizekkklleverageliquidatedlong_entries_shiftedlong_exits_shiftedlong_fee_vec__main__marginmargin_heldmemviewmode__module__nn_closedn_slotsname__name__ndim__new__notionalnpnumpyoobjopen_p""ositionsoverflow_flagpackpopprice_cprice_hprice_lprice_oproceeds__pyx_checksum__pyx_state__pyx_type__pyx_unpickle_Enum__pyx_vtable____qualname__realised_pnl__reduce____reduce_cython____reduce_ex__register__set_name__setdefault__setstate____setstate_cython__shapeshareshort_entries_shiftedshort_exits_shiftedshort_fee_vecsizesizing_arraysizing_method_codesizing_staticsl_arrsl_bar_sl_csl_distsl_pricesl_px_sl_scalarslippage_arr_slippage_cslippage_i_slippage_scalarslot_activeslot_idxspread_arr_spread_cspread_i_spread_scalarstartstarting_balancestepstopstructt_ns__test__total_badtotal_loss_budgettp_arrtp_bar_tp_ctp_pricetp_px_tp_scalarts_arrts_bar_ts_cts_distts_dist_val_ts_scalarts_trigger_pxuunpackunrealizedunrealized_by_slotupdatevvalueswant_long_entrywant_long_exitwant_short_entrywant_short_exitworst_pnlworst_pxxzeros\200\001\360N\001\000\005\031\230\001\230\026\230q\240\001\330\004\036\230n\250F\260!\2601\330\004&\240m\2606\270\021\270!\330\004\037\230q\330\004 \240\002\240&\250\001\250\023\250F\260\"\260A\340\004\037\230q\3602\000\005)\250\002\250&\260\001\260\031\270&\300\002\300!\340\004\033\2301\360\n\000\005\"\240\032\2506\260\021\260%\260s\270!\330\004!\240\034\250V\2601\260C\260s\270!\330\004!\240\026\240v\250Q\250i\260s\270!\330\004!\240\026\240v\250Q\250i\260s\270!\330\004!\240\026\240v\250Q\250i\260s\270!\330\004\036\230j\250\001\250\030\3201G\300q\330\004\036\230l\250!\2506\3201G\300q\330\004\036\230f\240A\240\\\3201G\300q\330\004\036\230f\240A\240\\\3201G\300q\330\004\036\230f\240A\240\\\3201G\300q\340\t\n\330\010\014\210E\220\025\220a\220q\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\026\220a\220q\230\001\330\014\023\2207\230!\2301\330\014\031\230\037\320(>\270j\310\001\310\021\330\014\031\230\037\320(>\270l\310!\3101\330\014\031\230\037\320(>\270f\300A\300Q\330\014\031\230\037\320(>\270f\300A\300Q\330\014\031\230\037\320(>\270f\300A\300Q\360\006\000\r\020\210|\2301\230C\230s\240$\240c\250\035\260a\260s""\270#\270Q\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330 \"\240.\260\001\260\023\260A\330\024\027\220~\240Q\240c\250\035\260b\270\001\330\030!\240\034\250Q\250c\260\022\2601\340\030!\240\035\250a\250s\260\"\260A\330\024\"\240!\2403\320&6\260a\330\024$\240A\360\006\000\r\021\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024\025\330\020\034\230N\250!\2503\250a\330\020\033\230>\250\021\250#\250Q\330\020\027\220~\240Q\240c\250\021\360\006\000\021\033\230.\250\001\250\023\250A\330\020\023\2204\220u\230A\230Q\330\024\027\220z\240\022\2402\240T\250\030\260\022\260>\300\021\300#\300Q\330\030&\240a\240s\250-\260q\330\031#\2402\240R\240t\2508\2602\260^\3001\300C\300q\330\030&\240a\240s\250-\260q\360\006\000\021\024\220:\230R\230q\330\024\037\230q\330\024\036\230a\340\024\037\230q\330\024\036\230a\330\020\034\230J\240c\250\031\260\"\260J\270b\300\001\330\020\033\230:\240S\250\010\260\002\260*\270B\270a\330\020\023\220:\230R\230~\250Q\250c\260\021\330\024\"\240!\2403\240i\250q\330\020\023\2209\230B\230n\250A\250S\260\001\330\024\"\240!\2403\240i\250q\360\006\000\021\031\230\016\240a\240s\250!\330\020\030\230\016\240a\240s\250!\330\020 \240\001\330\020\023\2204\220u\230A\230Q\330\024\027\220z\240\022\2401\330\030(\250\016\260a\260s\270+\300R\300q\340\030(\250\016\260a\260s\270+\300R\300q\340\020\037\230q\330\020\032\230!\330\020\023\220:\230R\230q\330\024\030\230\004\230E\240\021\240(\250$\250h\260c\270\021\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\240H\250D\260\010\270\003\2701\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\320$4\260D\270\010\300\003\3001\330\030&\240a\330\030\"\240!\340\024\030\230\004\230E\240\021\240(\250$\250h\260c\270\021\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\240H\250D\260\010\270\003\2701\330\030&\240a\330\030\"\240!\330\032\036\230e\2401\320$4\260D\270\010\300\003\3001\330\030&\240a\330\030\"\240!\340\020\023\220<\230t\2401\330\024""\"\240)\2502\250Q\330\024$\240K\250r\260\021\330\024\"\240(\250\"\250J\260c\270\031\300\"\300A\330\024&\240k\260\022\2604\260q\270\014\300B\300a\330\024\037\230z\250\023\250L\270\002\270*\300B\300a\330\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024$\240A\330\024\037\230~\250Q\330\030\033\2303\230f\240M\260\030\270\021\330\030)\250\035\260a\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\340\014\017\210y\230\002\230!\330\020\021\360\006\000\r\036\320\035/\250q\260\003\2603\260a\330\014\036\320\0361\260\021\260#\260S\270\001\330\014\017\210\177\230c\240\021\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\031\230\032\2402\240R\240t\320+;\2701\330\031#\2402\240R\240t\2501\330\030\037\230~\250Q\250c\260\021\330\030#\240>\260\021\260#\260Q\330\030&\240h\250b\260\n\270#\270Y\300b\310\001\330\030*\250+\260R\260t\2701\270L\310\002\310!\330\030#\240:\250S\260\014\270B\270j\310\002\310!\330\030)\250\025\250b\260\t\270\022\270:\300R\300q\330\030(\250\001\330\030#\240>\260\021\330\034\037\230s\240&\250\r\260X\270Q\330\034\035\330\034%\240R\240q\330\034'\240r\250\021\330\034,\250M\270\021\330\034&\320&7\260q\340\030\033\2309\240B\240a\330\034\035\330\020\023\2209\230B\230a\330\024\025\360\006\000\r\037\320\0362\260!\2603\260c\270\021\330\014\037\320\0374\260A\260S\270\003\2701\360\006\000\r\021\220\004\220I\230U\320\"2\260#\260Q\330\020\036\230e\320#9\270\021\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\027\220u\230J\240c\250\021\330\030\037\230~\250Q\250c\260\021\330\030#\240>\260\021\260#\260Q\330\030&\240h\250b\260\n\270#\270Y\300b\310\001\330\030*\250+\260R\260t\2701\270L\310\002\310!\330\030#\240:\250S\260\014\270B\270j\310\002\310!\330\030)\250\025\250b\260\t\270\022\270:\300R\300q\330\030(\250\001\330\030#\240>\260\021\330\034\037\230s\240&\250\r\260X\270Q\330\034\035\330""\034%\240R\240q\330\034'\240r\250\021\330\034,\250M\270\021\330\034&\320&7\260q\340\030\033\2309\240B\240a\330\034\035\330\020\023\2209\230B\230a\330\024\025\360\020\000\r\020\210q\330\020\036\230a\330\020\033\230?\250!\250=\270\001\330\020\023\2209\230D\240\001\330\024#\2408\2502\250\\\270\023\270I\300R\300q\340\024\027\320\027*\250#\250Q\330\030%\240Q\330\030\034\230F\240%\240q\250\001\330\034\037\230{\250!\2504\250s\260!\330 $\240N\260!\2604\260q\330 /\250~\270Q\270d\300!\330/1\260\036\270q\300\004\300O\320SU\320UV\330 /\250r\260\023\260H\270B\270n\310A\310T\320QR\33013\260>\300\021\300$\300a\330\030 \240\016\250b\260\013\2702\270Z\300r\310\021\330\031,\250C\250q\330\030 \240\016\250b\260\n\270\"\270A\330\031,\250C\250q\330\030\"\240!\330\030\033\2305\240\001\240\031\250#\250X\260S\270\001\330\034#\2401\340\034)\250\021\330\034 \240\006\240e\2501\250A\330 #\240;\250a\250t\2603\260a\330$(\250\016\260a\260t\2701\330$3\260>\300\021\300$\300a\33035\260^\3001\300D\310\017\320WY\320YZ\330$3\2602\260S\270\010\300\002\300.\320PQ\320QU\320UV\33057\260~\300Q\300d\310!\330\034$\240N\260\"\260L\300\002\300!\340\030\037\230|\2501\250A\340\024\027\220u\230B\230d\240$\240d\250%\250q\260\001\330\030'\240y\260\002\260!\330\030)\250\033\260B\260a\330\030+\250;\260b\270\004\270A\270]\310\"\310A\330\030!\240\025\240b\250\r\260R\260q\340\030\033\230=\250\003\2507\260\"\260A\330\034,\250G\2602\260Q\340\034&\240a\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240Q\330 .\250a\340 .\250a\340\034+\2501\330 *\250(\260-\270s\300!\330 .\250a\330 *\250*\260A\330 2\260.\300\001\330 0\260\001\360\006\000\r\020\210q\330\020\037\230q\330\020\033\230?\250!\250=\270\001\330\020\023\2209\230D\240\001\330\024#\2408\2502\250\\\270\023\270I\300R\300q\340\024\027\320\027*\250#\250Q\330\030%\240Q\330\030\034\230F\240%\240q\250\001\330\034\037\230{\250!\2504\250s\260!\330 $\240N""\260!\2604\260q\330 /\250~\270Q\270d\300!\330/1\260\036\270q\300\004\300O\320SU\320UV\330 /\250r\260\023\260H\270B\270n\310A\310T\320QR\33013\260>\300\021\300$\300a\330\030 \240\016\250b\260\013\2702\270Z\300r\310\021\330\031,\250C\250q\330\030 \240\016\250b\260\n\270\"\270A\330\031,\250C\250q\330\030\"\240!\330\030\033\2305\240\001\240\031\250#\250X\260S\270\001\330\034#\2401\340\034)\250\021\330\034 \240\006\240e\2501\250A\330 #\240;\250a\250t\2603\260a\330$(\250\016\260a\260t\2701\330$3\260>\300\021\300$\300a\33035\260^\3001\300D\310\017\320WY\320YZ\330$3\2602\260S\270\010\300\002\300.\320PQ\320QU\320UV\33057\260~\300Q\300d\310!\330\034$\240N\260\"\260L\300\002\300!\340\030\037\230|\2501\250A\340\024\027\220u\230B\230d\240$\240d\250%\250q\260\001\330\030'\240y\260\002\260!\330\030)\250\033\260B\260a\330\030+\250;\260b\270\004\270A\270]\310\"\310A\330\030!\240\025\240b\250\r\260R\260q\340\030\033\230=\250\003\2507\260\"\260A\330\034,\250G\2602\260Q\340\034&\240a\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240Q\330 +\2501\340 +\250=\270\002\270,\300b\310\001\330\034\037\230u\240A\240Q\330 .\250a\340 .\250a\340\034+\2501\330 *\250(\260-\270s\300!\330 .\250a\330 *\250*\260A\330 2\260.\300\001\330 0\260\001\360\010\000\r\032\230\021\330\014\032\230!\330\014\020\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024\025\330\020\024\220N\240!\2403\240a\330\020\037\230r\240\023\240H\250B\250n\270A\270S\300\001\330!#\240>\260\021\260#\260Q\330\020\037\230~\250Q\250c\260\030\270\022\270>\310\021\310#\310_\320\\^\320^_\330\020\036\230a\230s\240/\260\021\330\024\026\220b\230\014\240N\260!\2603\260a\340\014\026\220a\220u\230M\250\022\250<\260r\270\021\330\014\024\220A\220U\230!\360\006\000\r\020\210z\230\021\230#\230S\240\001\330\020$\240M\260\022\2601\330\020\034\230A\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030*\250!\2505\260\001\330\030\031\330\024\030\230\016\240a\240s""\250!\330\024\031\230\022\2303\230h\240b\250\016\260a\260s\270!\330\033\035\230^\2501\250C\250q\330\024&\240a\240u\250A\330\024\027\220r\230\022\2301\330\030%\240Q\240a\340\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\033\230>\250\021\250#\250Q\330\024\037\230~\250Q\250c\260\021\330\024\030\320\030*\250!\2501\340\024\027\220r\230\023\230D\240\003\240:\250S\260\001\330\030'\240q\330\030&\240a\340\030!\240\021\240#\240R\240q\330\030'\240q\250\006\250b\260\001\330\030&\240i\250r\260\035\270c\300\032\3102\310Q\340\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024\037\230~\250Q\330\030\033\2303\230f\240M\260\030\270\021\330\030\035\230U\240!\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\340\020\023\2209\230B\230a\330\024\025\340\020\032\230!\2305\240\001\330\020\030\230\001\230\025\230a\340\020\023\2202\220R\220r\230\022\2301\330\024\030\230\005\230U\240!\2402\240R\240s\250!\330\030 \240\001\240\025\240a\330\030\"\240!\2405\250\001\330\020\035\230Q\330\020\021\360\014\000\t\014\2104\210{\230$\230i\240s\250!\330\014\031\230\021\330\014\020\220\005\220U\230!\2301\330\020\023\220;\230a\230s\240#\240Q\330\024!\240\021\330\024\025\340\014\017\210{\230#\230Q\330\020\024\220E\230\025\230a\230q\330\024\027\220{\240!\2403\240c\250\021\330\030\031\330\024 \240\016\250a\250s\260!\330\024\033\230>\250\021\250#\250Q\330\024\037\230~\250Q\250c\260\021\330\024#\240:\250S\260\001\260\021\260\"\260B\260c\270\022\270:\300R\300q\330\024%\240U\250\"\250I\260R\260z\300\022\3001\330\024\037\230~\250Q\330\030\033\2302\230R\230s\240'\250\021\250\"\250B\250d\260!\2601\260B\260b\270\001\330\030 \240\001\330\030\035\230U\240!\330\030(\250\r\260Q\330\030\"\320\"3\2601\340\024\027\220y\240\002\240!\330\030\031\330\020\023\2209\230C\230q\330\024\036\230a\230r\240\022\2405\250\001\330\024\034\230A\230R\230r\240\025\240a\360\006\000\005\010\200}\220A\220S\230\003\2301\330\010\020\220""\001\330\004\013\2101O";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 207; i++) {
+    for (int i = 0; i < 222; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
       if (likely(string) && i >= 45) PyUnicode_InternInPlace(&string);
@@ -23975,7 +24204,7 @@ const char* const bytes = ": All dimensions preceding dimension %d must be index
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 207; i < 209; i++) {
+    for (int i = 222; i < 224; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
@@ -23986,14 +24215,14 @@ const char* const bytes = ": All dimensions preceding dimension %d must be index
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 209; i++) {
+    for (Py_ssize_t i = 0; i < 224; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 207;
+      PyObject **table = stringtab + 222;
       for (Py_ssize_t i=0; i<2; ++i) {
         #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
         #if PY_VERSION_HEX < 0x030E0000
@@ -24067,9 +24296,9 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {29, 0, 0, 90, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 204};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_h, __pyx_mstate->__pyx_n_u_l, __pyx_mstate->__pyx_n_u_c, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_date_ns, __pyx_mstate->__pyx_n_u_long_entries_shifted, __pyx_mstate->__pyx_n_u_long_exits_shifted, __pyx_mstate->__pyx_n_u_short_entries_shifted, __pyx_mstate->__pyx_n_u_short_exits_shifted, __pyx_mstate->__pyx_n_u_starting_balance, __pyx_mstate->__pyx_n_u_sizing_method_code, __pyx_mstate->__pyx_n_u_sizing_static, __pyx_mstate->__pyx_n_u_sizing_array, __pyx_mstate->__pyx_n_u_sl_arr, __pyx_mstate->__pyx_n_u_tp_arr, __pyx_mstate->__pyx_n_u_ts_arr, __pyx_mstate->__pyx_n_u_leverage, __pyx_mstate->__pyx_n_u_commission, __pyx_mstate->__pyx_n_u_spread_arr, __pyx_mstate->__pyx_n_u_slippage_arr, __pyx_mstate->__pyx_n_u_long_fee_vec, __pyx_mstate->__pyx_n_u_short_fee_vec, __pyx_mstate->__pyx_n_u_hedging, __pyx_mstate->__pyx_n_u_cash_out, __pyx_mstate->__pyx_n_u_equity_out, __pyx_mstate->__pyx_n_u_open_positions, __pyx_mstate->__pyx_n_u_slot_active, __pyx_mstate->__pyx_n_u_closed_trades, __pyx_mstate->__pyx_n_u_n, __pyx_mstate->__pyx_n_u_n_slots, __pyx_mstate->__pyx_n_u_closed_capacity, __pyx_mstate->__pyx_n_u_n_closed, __pyx_mstate->__pyx_n_u_overflow_flag, __pyx_mstate->__pyx_n_u_current_cash, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_kk, __pyx_mstate->__pyx_n_u_slot_idx, __pyx_mstate->__pyx_n_u_price_o, __pyx_mstate->__pyx_n_u_price_h, __pyx_mstate->__pyx_n_u_price_l, __pyx_mstate->__pyx_n_u_price_c, __pyx_mstate->__pyx_n_u_t_ns, __pyx_mstate->__pyx_n_u_direction, __pyx_mstate->__pyx_n_u_entry_px, __pyx_mstate->__pyx_n_u_size, __pyx_mstate->__pyx_n_u_ts_dist, __pyx_mstate->__pyx_n_u_sl_px, __pyx_mstate->__pyx_n_u_tp_px, __pyx_mstate->__pyx_n_u_ts_trigger_px, __pyx_mstate->__pyx_n_u_worst_px, __pyx_mstate->__pyx_n_u_best_px, __pyx_mstate->__pyx_n_u_worst_pnl, __pyx_mstate->__pyx_n_u_best_pnl, __pyx_mstate->__pyx_n_u_exit_reason, __pyx_mstate->__pyx_n_u_exit_px, __pyx_mstate->__pyx_n_u_exit_px_net, __pyx_mstate->__pyx_n_u_exit_spread, __pyx_mstate->__pyx_n_u_exit_slippage, __pyx_mstate->__pyx_n_u_exit_commission, __pyx_mstate->__pyx_n_u_proceeds, __pyx_mstate->__pyx_n_u_notional, __pyx_mstate->__pyx_n_u_charge, __pyx_mstate->__pyx_n_u_d, __pyx_mstate->__pyx_n_u_u, __pyx_mstate->__pyx_n_u_sl_dist, __pyx_mstate->__pyx_n_u_sl_price, __pyx_mstate->__pyx_n_u_tp_price, __pyx_mstate->__pyx_n_u_ts_dist_val, __pyx_mstate->__pyx_n_u_entry_px_net, __pyx_mstate->__pyx_n_u_entry_spread, __pyx_mstate->__pyx_n_u_entry_slippage, __pyx_mstate->__pyx_n_u_entry_commission, __pyx_mstate->__pyx_n_u_margin, __pyx_mstate->__pyx_n_u_equity_now, __pyx_mstate->__pyx_n_u_unrealized, __pyx_mstate->__pyx_n_u_margin_held, __pyx_mstate->__pyx_n_u_total_loss_budget, __pyx_mstate->__pyx_n_u_total_bad, __pyx_mstate->__pyx_n_u_share, __pyx_mstate->__pyx_n_u_realised_pnl, __pyx_mstate->__pyx_n_u_want_long_entry, __pyx_mstate->__pyx_n_u_want_short_entry, __pyx_mstate->__pyx_n_u_want_long_exit, __pyx_mstate->__pyx_n_u_want_short_exit, __pyx_mstate->__pyx_n_u_desired_dir, __pyx_mstate->__pyx_n_u_any_active, __pyx_mstate->__pyx_n_u_unrealized_by_slot, __pyx_mstate->__pyx_n_u_liquidated};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_chronoton__cy_inner_pyx, __pyx_mstate->__pyx_n_u_inner_loop_fast, __pyx_mstate->__pyx_kp_b_iso88591_N_q_nF_1_m6_q_F_A_q0_1_E_aq_aq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    const __Pyx_PyCode_New_function_description descr = {29, 0, 0, 105, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 211};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_o, __pyx_mstate->__pyx_n_u_h, __pyx_mstate->__pyx_n_u_l, __pyx_mstate->__pyx_n_u_c, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_date_ns, __pyx_mstate->__pyx_n_u_long_entries_shifted, __pyx_mstate->__pyx_n_u_long_exits_shifted, __pyx_mstate->__pyx_n_u_short_entries_shifted, __pyx_mstate->__pyx_n_u_short_exits_shifted, __pyx_mstate->__pyx_n_u_starting_balance, __pyx_mstate->__pyx_n_u_sizing_method_code, __pyx_mstate->__pyx_n_u_sizing_static, __pyx_mstate->__pyx_n_u_sizing_array, __pyx_mstate->__pyx_n_u_sl_arr, __pyx_mstate->__pyx_n_u_tp_arr, __pyx_mstate->__pyx_n_u_ts_arr, __pyx_mstate->__pyx_n_u_leverage, __pyx_mstate->__pyx_n_u_commission, __pyx_mstate->__pyx_n_u_spread_arr, __pyx_mstate->__pyx_n_u_slippage_arr, __pyx_mstate->__pyx_n_u_long_fee_vec, __pyx_mstate->__pyx_n_u_short_fee_vec, __pyx_mstate->__pyx_n_u_hedging, __pyx_mstate->__pyx_n_u_cash_out, __pyx_mstate->__pyx_n_u_equity_out, __pyx_mstate->__pyx_n_u_open_positions, __pyx_mstate->__pyx_n_u_slot_active, __pyx_mstate->__pyx_n_u_closed_trades, __pyx_mstate->__pyx_n_u_n, __pyx_mstate->__pyx_n_u_n_slots, __pyx_mstate->__pyx_n_u_closed_capacity, __pyx_mstate->__pyx_n_u_n_closed, __pyx_mstate->__pyx_n_u_overflow_flag, __pyx_mstate->__pyx_n_u_current_cash, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_kk, __pyx_mstate->__pyx_n_u_slot_idx, __pyx_mstate->__pyx_n_u_price_o, __pyx_mstate->__pyx_n_u_price_h, __pyx_mstate->__pyx_n_u_price_l, __pyx_mstate->__pyx_n_u_price_c, __pyx_mstate->__pyx_n_u_t_ns, __pyx_mstate->__pyx_n_u_spread_i, __pyx_mstate->__pyx_n_u_slippage_i, __pyx_mstate->__pyx_n_u_sl_bar, __pyx_mstate->__pyx_n_u_tp_bar, __pyx_mstate->__pyx_n_u_ts_bar, __pyx_mstate->__pyx_n_u_direction, __pyx_mstate->__pyx_n_u_entry_px, __pyx_mstate->__pyx_n_u_size, __pyx_mstate->__pyx_n_u_ts_dist, __pyx_mstate->__pyx_n_u_sl_px, __pyx_mstate->__pyx_n_u_tp_px, __pyx_mstate->__pyx_n_u_ts_trigger_px, __pyx_mstate->__pyx_n_u_worst_px, __pyx_mstate->__pyx_n_u_best_px, __pyx_mstate->__pyx_n_u_worst_pnl, __pyx_mstate->__pyx_n_u_best_pnl, __pyx_mstate->__pyx_n_u_exit_reason, __pyx_mstate->__pyx_n_u_exit_px, __pyx_mstate->__pyx_n_u_exit_px_net, __pyx_mstate->__pyx_n_u_exit_spread, __pyx_mstate->__pyx_n_u_exit_slippage, __pyx_mstate->__pyx_n_u_exit_commission, __pyx_mstate->__pyx_n_u_proceeds, __pyx_mstate->__pyx_n_u_notional, __pyx_mstate->__pyx_n_u_charge, __pyx_mstate->__pyx_n_u_d, __pyx_mstate->__pyx_n_u_u, __pyx_mstate->__pyx_n_u_sl_dist, __pyx_mstate->__pyx_n_u_sl_price, __pyx_mstate->__pyx_n_u_tp_price, __pyx_mstate->__pyx_n_u_ts_dist_val, __pyx_mstate->__pyx_n_u_entry_px_net, __pyx_mstate->__pyx_n_u_entry_spread, __pyx_mstate->__pyx_n_u_entry_slippage, __pyx_mstate->__pyx_n_u_entry_commission, __pyx_mstate->__pyx_n_u_margin, __pyx_mstate->__pyx_n_u_equity_now, __pyx_mstate->__pyx_n_u_unrealized, __pyx_mstate->__pyx_n_u_margin_held, __pyx_mstate->__pyx_n_u_total_loss_budget, __pyx_mstate->__pyx_n_u_total_bad, __pyx_mstate->__pyx_n_u_share, __pyx_mstate->__pyx_n_u_realised_pnl, __pyx_mstate->__pyx_n_u_want_long_entry, __pyx_mstate->__pyx_n_u_want_short_entry, __pyx_mstate->__pyx_n_u_want_long_exit, __pyx_mstate->__pyx_n_u_want_short_exit, __pyx_mstate->__pyx_n_u_desired_dir, __pyx_mstate->__pyx_n_u_any_active, __pyx_mstate->__pyx_n_u_unrealized_by_slot, __pyx_mstate->__pyx_n_u_liquidated, __pyx_mstate->__pyx_n_u_spread_scalar, __pyx_mstate->__pyx_n_u_slippage_scalar, __pyx_mstate->__pyx_n_u_sl_scalar, __pyx_mstate->__pyx_n_u_tp_scalar, __pyx_mstate->__pyx_n_u_ts_scalar, __pyx_mstate->__pyx_n_u_spread_c, __pyx_mstate->__pyx_n_u_slippage_c, __pyx_mstate->__pyx_n_u_sl_c, __pyx_mstate->__pyx_n_u_tp_c, __pyx_mstate->__pyx_n_u_ts_c};
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_chronoton__cy_inner_pyx, __pyx_mstate->__pyx_n_u_inner_loop_fast, __pyx_mstate->__pyx_kp_b_iso88591_N_q_nF_1_m6_q_F_A_q2_1_6_s_V1Cs, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;

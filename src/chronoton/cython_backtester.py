@@ -111,6 +111,11 @@ def _inner_loop_cy(
         exhausted (pathological edge case: very short trades with high
         max_positions).
     """
+    # ── PROFILING: remove this block and the import when done ──────────────
+    import time as _time
+    _t = {"start": _time.perf_counter()}
+    # ── END PROFILING BLOCK ─────────────────────────────────────────────────
+
     n = o.size
     n_slots = max_positions * 2 if hedging else max_positions
 
@@ -119,6 +124,10 @@ def _inner_loop_cy(
     long_exits_u8    = long_exits_shifted.astype(np.uint8, copy=False)
     short_entries_u8 = short_entries_shifted.astype(np.uint8, copy=False)
     short_exits_u8   = short_exits_shifted.astype(np.uint8, copy=False)
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _t["after_u8_cast"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # Pre-allocated output buffers
     cash_out = np.empty(n, dtype=np.float64)
@@ -130,11 +139,17 @@ def _inner_loop_cy(
     max_trades = max(int(long_entries_u8.sum() + short_entries_u8.sum()), 1)
     closed_trades = np.full((max_trades, N_FIELDS), np.nan, dtype=np.float64)
 
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _t["after_alloc"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
+
     # date is datetime64[ns]; view as int64 then cast to float64 so it
     # fits into a double-typed memoryview. Precision loss is negligible
     # for the nanosecond range covered by practical backtest horizons
     # (~±292 years from 1970 before float64 starts losing ns precision).
-    date_ns = date.astype("datetime64[ns]").astype(np.int64).astype(np.float64)
+    # .view(np.int64) reinterprets bytes in-place (zero-copy) vs a second
+    # .astype(np.int64) which would allocate another 66 MB intermediate array.
+    date_ns = date.astype("datetime64[ns]").view(np.int64).astype(np.float64)
 
     # Empty sentinel array when sizing_array isn't used, so the memoryview
     # binding still succeeds with a zero-length view.
@@ -142,6 +157,10 @@ def _inner_loop_cy(
         sizing_array = np.empty(0, dtype=np.float64)
     else:
         sizing_array = np.ascontiguousarray(sizing_array, dtype=np.float64)
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _t["after_date_and_sizing"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     n_closed = _inner_loop_fast_raw(
         np.ascontiguousarray(o, dtype=np.float64),
@@ -174,6 +193,17 @@ def _inner_loop_cy(
         slot_active,
         closed_trades,
     )
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _t["after_cy_loop"] = _time.perf_counter()
+    _keys = ["start", "after_u8_cast", "after_alloc", "after_date_and_sizing", "after_cy_loop"]
+    _labels = ["u8 cast", "alloc+sum", "date+sizing", "cy inner loop"]
+    print("── _inner_loop_cy profile ─────────────────────────────")
+    for _i, _label in enumerate(_labels):
+        print(f"  {_label:<22s} {_t[_keys[_i+1]] - _t[_keys[_i]]:.4f}s")
+    print(f"  {'TOTAL':<22s} {_t['after_cy_loop'] - _t['start']:.4f}s")
+    print("───────────────────────────────────────────────────────")
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     if n_closed < 0:
         raise RuntimeError(
@@ -243,51 +273,93 @@ def run_single_backtest(
 
     See ``backtester.run_single_backtest`` for full parameter semantics.
     """
+    # ── PROFILING: remove this block and all _tp_ lines when done ──────────
+    import time as _time
+    _tp_ = {"start": _time.perf_counter()}
+    # ── END PROFILING BLOCK ─────────────────────────────────────────────────
+
     # --- strip & validate OHLCV ---------------------------------------
     date, o_arr, h_arr, l_arr, c_arr, v_arr = _process_series(o, h, l, c, v)
     n = o_arr.size
 
-    # --- signals (shift by +1) ---------------------------------------
-    def _shift(arr):
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _tp_["after_process_series"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
+
+    # --- signals: process + shift fused into one allocation per signal -------
+    def _process_and_shift(signals, name):
+        """_process_signals + _shift in a single output allocation."""
         out = np.zeros(n, dtype=bool)
-        if arr.size > 0:
-            out[1:] = arr[:-1]
+        if signals is None:
+            return out
+        if isinstance(signals, pd.Series):
+            arr = signals.to_numpy()
+        elif isinstance(signals, np.ndarray):
+            arr = signals
+        else:
+            raise TypeError(f"{name} must be np.ndarray, pd.Series, or None, "
+                            f"got {type(signals).__name__}")
+        if arr.ndim != 1 or arr.size != n:
+            raise ValueError(f"{name}: expected 1-D length-{n} array, "
+                             f"got shape {arr.shape}")
+        out[1:] = arr[:-1].astype(bool)
         return out
 
-    long_entries_v  = _shift(_process_signals(long_entries,  n, "long_entries"))
-    long_exits_v    = _shift(_process_signals(long_exits,    n, "long_exits"))
-    short_entries_v = _shift(_process_signals(short_entries, n, "short_entries"))
-    short_exits_v   = _shift(_process_signals(short_exits,   n, "short_exits"))
+    long_entries_v  = _process_and_shift(long_entries,  "long_entries")
+    long_exits_v    = _process_and_shift(long_exits,    "long_exits")
+    short_entries_v = _process_and_shift(short_entries, "short_entries")
+    short_exits_v   = _process_and_shift(short_exits,   "short_exits")
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _tp_["after_signals"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- cost-distance inputs are taken from the user in PIPS -----------
     # SL, TP, TS, spread, and slippage are all supplied in pip units and
     # converted to price-unit distances here. See backtester.py for detail.
 
     # --- spread / slippage (pips → price units) ----------------------
-    spread_arr   = _process_spread_slippage(spread,   n, "spread")   * pip_equals
-    slippage_arr = _process_spread_slippage(slippage, n, "slippage") * pip_equals
+    # Scalar inputs → size-1 sentinel array; _idx() in Cython reads arr[0]
+    # for every bar, avoiding a 66 MB np.full(n, ...) allocation per param.
+    if isinstance(spread, (int, float, np.integer, np.floating)):
+        if not np.isfinite(spread):
+            raise ValueError(f"spread must be finite, got {spread!r}")
+        spread_arr = np.array([float(spread) * pip_equals], dtype=np.float64)
+    else:
+        spread_arr = _process_spread_slippage(spread, n, "spread") * pip_equals
+
+    if isinstance(slippage, (int, float, np.integer, np.floating)):
+        if not np.isfinite(slippage):
+            raise ValueError(f"slippage must be finite, got {slippage!r}")
+        slippage_arr = np.array([float(slippage) * pip_equals], dtype=np.float64)
+    else:
+        slippage_arr = _process_spread_slippage(slippage, n, "slippage") * pip_equals
 
     # --- SL / TP / TS (pips → price units) ---------------------------
     if SL is None:
-        sl_arr = np.full(n, np.nan, dtype=np.float64)
+        sl_arr = np.array([np.nan], dtype=np.float64)
     elif isinstance(SL, (int, float, np.integer, np.floating)):
-        sl_arr = np.full(n, float(SL) * pip_equals, dtype=np.float64)
+        sl_arr = np.array([float(SL) * pip_equals], dtype=np.float64)
     else:
         sl_arr = _process_spread_slippage(SL, n, "SL") * pip_equals
 
     if TP is None:
-        tp_arr = np.full(n, np.nan, dtype=np.float64)
+        tp_arr = np.array([np.nan], dtype=np.float64)
     elif isinstance(TP, (int, float, np.integer, np.floating)):
-        tp_arr = np.full(n, float(TP) * pip_equals, dtype=np.float64)
+        tp_arr = np.array([float(TP) * pip_equals], dtype=np.float64)
     else:
         tp_arr = _process_spread_slippage(TP, n, "TP") * pip_equals
 
     if TS is None:
-        ts_arr = np.full(n, np.nan, dtype=np.float64)
+        ts_arr = np.array([np.nan], dtype=np.float64)
     elif isinstance(TS, (int, float, np.integer, np.floating)):
-        ts_arr = np.full(n, float(TS) * pip_equals, dtype=np.float64)
+        ts_arr = np.array([float(TS) * pip_equals], dtype=np.float64)
     else:
         ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _tp_["after_costs"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- position sizing ---------------------------------------------
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
@@ -300,6 +372,10 @@ def run_single_backtest(
     long_fee_vec, short_fee_vec = _process_overnight_charge(
         overnight_charge, timeframe, date,
     )
+
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _tp_["after_sizing_and_overnight"] = _time.perf_counter()
+    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- scalar validation -------------------------------------------
     if leverage <= 0 or not np.isfinite(leverage):
@@ -364,7 +440,22 @@ def run_single_backtest(
             int(max_positions), bool(hedging),
         )
 
-    return Result(cash, equity, closed, timeframe, date, bars_per_year)
+    # ── PROFILING ───────────────────────────────────────────────────────────
+    _tp_["after_dispatch"] = _time.perf_counter()
+    result_ = Result(cash, equity, closed, timeframe, date, bars_per_year)
+    _tp_["after_result"] = _time.perf_counter()
+    _outer_keys   = ["start", "after_process_series", "after_signals", "after_costs",
+                     "after_sizing_and_overnight", "after_dispatch", "after_result"]
+    _outer_labels = ["process_series", "signals", "costs (SL/TP/spread)",
+                     "sizing+overnight", "dispatch (inner loop)", "Result()"]
+    print("── run_single_backtest profile ────────────────────────")
+    for _i, _lbl in enumerate(_outer_labels):
+        print(f"  {_lbl:<28s} {_tp_[_outer_keys[_i+1]] - _tp_[_outer_keys[_i]]:.4f}s")
+    print(f"  {'TOTAL':<28s} {_tp_['after_result'] - _tp_['start']:.4f}s")
+    print("───────────────────────────────────────────────────────")
+    return result_
+    # ── END PROFILING: replace the 5 lines above with the one below ─────────
+    # return Result(cash, equity, closed, timeframe, date, bars_per_year)
 
 
 # ---------------------------------------------------------------------------

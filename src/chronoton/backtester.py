@@ -383,24 +383,31 @@ def _process_series(
     if len(set(lengths.values())) != 1:
         raise ValueError(f"OHLCV series lengths differ: {lengths}")
 
-    # Index alignment check
+    # Index alignment check — full equals() compares 8.3M timestamps per series;
+    # length + dtype + first/last is sufficient for data from the same source.
     ref_index = o.index
     for name, s in inputs.items():
-        if not s.index.equals(ref_index):
+        idx = s.index
+        if (len(idx) != len(ref_index)
+                or idx.dtype != ref_index.dtype
+                or idx[0] != ref_index[0]
+                or idx[-1] != ref_index[-1]):
             raise ValueError(f"{name!r} index does not match o index")
 
     # Extract date array (shared across all series)
     date = np.asarray(ref_index.values, dtype="datetime64[ns]")
 
-    # Extract + validate each value array
+    # Extract + validate each value array.
+    # Combine NaN/Inf/zero into a single scan per array (isfinite covers both
+    # NaN and Inf); only do the slow per-condition scan on the error path.
     arrays = {}
     for name, s in inputs.items():
         arr = np.ascontiguousarray(s.to_numpy(dtype=np.float64))
-        if np.any(np.isnan(arr)):
-            raise ValueError(f"{name!r} contains NaN values")
-        if np.any(np.isinf(arr)):
-            raise ValueError(f"{name!r} contains inf values")
-        if np.any(arr == 0):
+        if not (np.isfinite(arr) & (arr != 0)).all():
+            if np.any(np.isnan(arr)):
+                raise ValueError(f"{name!r} contains NaN values")
+            if np.any(np.isinf(arr)):
+                raise ValueError(f"{name!r} contains inf values")
             raise ValueError(f"{name!r} contains zero values")
         arrays[name] = arr
 

@@ -93,6 +93,13 @@ cdef enum:
 # ---------------------------------------------------------------------------
 # Slot helpers — all `nogil`, pure C, no Python object interaction.
 # ---------------------------------------------------------------------------
+cdef inline double _idx(const double[:] arr, Py_ssize_t i) noexcept nogil:
+    """Read arr[i], or arr[0] when arr is a size-1 scalar sentinel."""
+    if arr.shape[0] == 1:
+        return arr[0]
+    return arr[i]
+
+
 @cython.boundscheck(False)
 @cython.wraparound(False)
 cdef inline Py_ssize_t _find_free_slot(const unsigned char[:] slot_active,
@@ -251,6 +258,7 @@ def inner_loop_fast(
     cdef Py_ssize_t i, k, kk, slot_idx
     cdef double price_o, price_h, price_l, price_c
     cdef double t_ns
+    cdef double spread_i, slippage_i, sl_bar, tp_bar, ts_bar
     cdef double direction, entry_px, size
     cdef double ts_dist, sl_px, tp_px, ts_trigger_px
     cdef double worst_px, best_px, worst_pnl, best_pnl
@@ -274,6 +282,20 @@ def inner_loop_fast(
 
     cdef bint liquidated = 0
 
+    # Precompute scalar-sentinel flags and cached values once before the loop.
+    # Inside the loop we do a register comparison (bint) rather than chasing
+    # the memoryview shape pointer 5 × n times.
+    cdef bint _spread_scalar   = spread_arr.shape[0]   == 1
+    cdef bint _slippage_scalar = slippage_arr.shape[0] == 1
+    cdef bint _sl_scalar       = sl_arr.shape[0]       == 1
+    cdef bint _tp_scalar       = tp_arr.shape[0]       == 1
+    cdef bint _ts_scalar       = ts_arr.shape[0]       == 1
+    cdef double _spread_c   = spread_arr[0]   if _spread_scalar   else 0.0
+    cdef double _slippage_c = slippage_arr[0] if _slippage_scalar else 0.0
+    cdef double _sl_c       = sl_arr[0]       if _sl_scalar       else 0.0
+    cdef double _tp_c       = tp_arr[0]       if _tp_scalar       else 0.0
+    cdef double _ts_c       = ts_arr[0]       if _ts_scalar       else 0.0
+
     with nogil:
         for i in range(n):
             price_o = o[i]
@@ -281,6 +303,11 @@ def inner_loop_fast(
             price_l = l[i]
             price_c = c[i]
             t_ns = date_ns[i]
+            spread_i   = _spread_c   if _spread_scalar   else spread_arr[i]
+            slippage_i = _slippage_c if _slippage_scalar else slippage_arr[i]
+            sl_bar     = _sl_c       if _sl_scalar       else sl_arr[i]
+            tp_bar     = _tp_c       if _tp_scalar       else tp_arr[i]
+            ts_bar     = _ts_c       if _ts_scalar       else ts_arr[i]
 
             # (1) Overnight financing ------------------------------------
             if long_fee_vec[i] != 0.0 or short_fee_vec[i] != 0.0:
@@ -360,9 +387,9 @@ def inner_loop_fast(
                         exit_px = ts_trigger_px
 
                 if exit_reason != -1:
-                    exit_spread = spread_arr[i] * size
-                    exit_slippage = slippage_arr[i] * size
-                    exit_px_net = exit_px - direction * (spread_arr[i] + slippage_arr[i])
+                    exit_spread = spread_i * size
+                    exit_slippage = slippage_i * size
+                    exit_px_net = exit_px - direction * (spread_i + slippage_i)
                     exit_commission = commission * fabs(exit_px_net * size)
                     proceeds = direction * (exit_px_net - entry_px) * size
                     current_cash += (size * entry_px / leverage) + proceeds
@@ -391,7 +418,7 @@ def inner_loop_fast(
                         (direction < 0 and want_short_exit)):
                         size = open_positions[k, F_SIZE]
                         entry_px = open_positions[k, F_ENTRY_PRICE]
-                        exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+                        exit_px_net = price_o - direction * (spread_i + slippage_i)
                         exit_commission = commission * fabs(exit_px_net * size)
                         proceeds = direction * (exit_px_net - entry_px) * size
                         current_cash += (size * entry_px / leverage) + proceeds
@@ -399,8 +426,8 @@ def inner_loop_fast(
                         n_closed = _exit_position(
                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
                             exit_commission,
-                            spread_arr[i] * size,
-                            slippage_arr[i] * size,
+                            spread_i * size,
+                            slippage_i * size,
                             open_positions, slot_active, closed_trades,
                             n_closed, closed_capacity, overflow_flag,
                         )
@@ -423,7 +450,7 @@ def inner_loop_fast(
                     if <int>direction != desired_dir:
                         size = open_positions[k, F_SIZE]
                         entry_px = open_positions[k, F_ENTRY_PRICE]
-                        exit_px_net = price_o - direction * (spread_arr[i] + slippage_arr[i])
+                        exit_px_net = price_o - direction * (spread_i + slippage_i)
                         exit_commission = commission * fabs(exit_px_net * size)
                         proceeds = direction * (exit_px_net - entry_px) * size
                         current_cash += (size * entry_px / leverage) + proceeds
@@ -431,8 +458,8 @@ def inner_loop_fast(
                         n_closed = _exit_position(
                             k, i, t_ns, exit_px_net, <double>EXIT_SIGNAL,
                             exit_commission,
-                            spread_arr[i] * size,
-                            slippage_arr[i] * size,
+                            spread_i * size,
+                            slippage_i * size,
                             open_positions, slot_active, closed_trades,
                             n_closed, closed_capacity, overflow_flag,
                         )
@@ -451,7 +478,7 @@ def inner_loop_fast(
                 desired_dir = 1
                 slot_idx = _find_free_slot(slot_active, n_slots)
                 if slot_idx != -1:
-                    entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+                    entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
 
                     if sizing_method_code == SIZING_PERCENT_EQUITY:
                         equity_now = current_cash
@@ -466,7 +493,7 @@ def inner_loop_fast(
                     elif sizing_method_code == SIZING_VALUE:
                         size = (sizing_static * leverage) / entry_px_net
                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
-                        sl_dist = sl_arr[i]
+                        sl_dist = sl_bar
                         if isnan(sl_dist) or sl_dist <= 0.0:
                             size = 0.0
                         else:
@@ -483,27 +510,27 @@ def inner_loop_fast(
                         size = sizing_array[i]
 
                     if size > 0.0 and not isnan(size):
-                        entry_spread = spread_arr[i] * size
-                        entry_slippage = slippage_arr[i] * size
+                        entry_spread = spread_i * size
+                        entry_slippage = slippage_i * size
                         entry_commission = commission * fabs(entry_px_net * size)
                         margin = size * entry_px_net / leverage
 
                         if current_cash >= margin + entry_commission:
                             current_cash -= margin + entry_commission
 
-                            sl_dist = sl_arr[i]
+                            sl_dist = sl_bar
                             if isnan(sl_dist):
                                 sl_price = NAN
                             else:
                                 sl_price = entry_px_net - desired_dir * sl_dist
-                            if isnan(tp_arr[i]):
+                            if isnan(tp_bar):
                                 tp_price = NAN
                             else:
-                                tp_price = entry_px_net + desired_dir * tp_arr[i]
-                            if isnan(ts_arr[i]):
+                                tp_price = entry_px_net + desired_dir * tp_bar
+                            if isnan(ts_bar):
                                 ts_dist_val = NAN
                             else:
-                                ts_dist_val = ts_arr[i]
+                                ts_dist_val = ts_bar
 
                             _enter_position(
                                 slot_idx, <double>desired_dir, i, t_ns,
@@ -517,7 +544,7 @@ def inner_loop_fast(
                 desired_dir = -1
                 slot_idx = _find_free_slot(slot_active, n_slots)
                 if slot_idx != -1:
-                    entry_px_net = price_o + desired_dir * (spread_arr[i] + slippage_arr[i])
+                    entry_px_net = price_o + desired_dir * (spread_i + slippage_i)
 
                     if sizing_method_code == SIZING_PERCENT_EQUITY:
                         equity_now = current_cash
@@ -532,7 +559,7 @@ def inner_loop_fast(
                     elif sizing_method_code == SIZING_VALUE:
                         size = (sizing_static * leverage) / entry_px_net
                     elif sizing_method_code == SIZING_PERCENT_AT_RISK:
-                        sl_dist = sl_arr[i]
+                        sl_dist = sl_bar
                         if isnan(sl_dist) or sl_dist <= 0.0:
                             size = 0.0
                         else:
@@ -549,27 +576,27 @@ def inner_loop_fast(
                         size = sizing_array[i]
 
                     if size > 0.0 and not isnan(size):
-                        entry_spread = spread_arr[i] * size
-                        entry_slippage = slippage_arr[i] * size
+                        entry_spread = spread_i * size
+                        entry_slippage = slippage_i * size
                         entry_commission = commission * fabs(entry_px_net * size)
                         margin = size * entry_px_net / leverage
 
                         if current_cash >= margin + entry_commission:
                             current_cash -= margin + entry_commission
 
-                            sl_dist = sl_arr[i]
+                            sl_dist = sl_bar
                             if isnan(sl_dist):
                                 sl_price = NAN
                             else:
                                 sl_price = entry_px_net - desired_dir * sl_dist
-                            if isnan(tp_arr[i]):
+                            if isnan(tp_bar):
                                 tp_price = NAN
                             else:
-                                tp_price = entry_px_net + desired_dir * tp_arr[i]
-                            if isnan(ts_arr[i]):
+                                tp_price = entry_px_net + desired_dir * tp_bar
+                            if isnan(ts_bar):
                                 ts_dist_val = NAN
                             else:
-                                ts_dist_val = ts_arr[i]
+                                ts_dist_val = ts_bar
 
                             _enter_position(
                                 slot_idx, <double>desired_dir, i, t_ns,

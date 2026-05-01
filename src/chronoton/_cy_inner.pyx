@@ -122,7 +122,7 @@ cdef inline void _enter_position(
     double slippage_cost,
     double[:, :] open_positions,
     unsigned char[:] slot_active,
-) nogil:
+) noexcept nogil:
     """Populate open_positions[slot_idx] and flip slot_active on."""
     open_positions[slot_idx, F_DIRECTION]     = direction
     open_positions[slot_idx, F_ENTRY_BAR]     = <double>bar_idx

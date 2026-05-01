@@ -21,24 +21,24 @@ df = df[df['Close'] < 2]
 df = df[df['Close'] >0.8]# filter out bad data
 
 #%% Quick Example Logic
-long_entry = (df['Close'] > ta.EMA(df['Close'], timeperiod=72000)) & (df['Close'].shift(1) < ta.EMA(df['Close'].shift(1), timeperiod=72000))
-SLs = 50
-TPs = 50
+long_entry = ta.CDL3LINESTRIKE(df['Open'], df['High'], df['Low'], df['Close']) == 100
+long_exits = long_entry.shift(60).fillna(False)
 
 #%%
 start_time = time.time()
 result = run_single_backtest(
     df['Open'], df['High'], df['Low'], df['Close'], df['Volume'],
-    starting_balance=1_000_000,
-    long_entries=long_entry,
-    short_entries=None, # short_entry,
+    starting_balance=10_000,
+    long_entries=None,
+    short_entries=long_entry, # short_entry,
     long_exits=None,
-    short_exits=None, # short_exit,
-    position_sizing="percent_at_risk",
-    position_percent_at_risk=0.01,
+    short_exits=long_exits, # short_exit,
+    position_sizing="value",#"percent_at_risk",
+    position_value=250,              # $1,000 per trade
+    position_percent_at_risk=0.05,
     leverage=30.0,                # 30:1 leverage typical for FX retail
-    SL=SLs,
-    TP=TPs,
+    SL=None,
+    TP=None,
 
     # Costs in pips; pip_equals converts to price units
     pip_equals=0.0001,
@@ -48,7 +48,7 @@ result = run_single_backtest(
 
     # Overnight: 3% annual base funding, 1% borrow spread
     # → long pays 4% / 360 per day, short pays 2% / 360 per day
-    overnight_charge=(0.03, 0.01),
+    overnight_charge=(0.00, 0.00),#0.03,0.01
     timeframe="1m",
     bars_per_year="forex",
 )

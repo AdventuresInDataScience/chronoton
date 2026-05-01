@@ -11,7 +11,14 @@
         ],
         "depends": [],
         "extra_compile_args": [
-            "/O2"
+            "/O2",
+            "/GL",
+            "/Gy",
+            "/arch:AVX2",
+            "/fp:fast"
+        ],
+        "extra_link_args": [
+            "/LTCG"
         ],
         "include_dirs": [
             "C:\\Users\\malha\\Documents\\Projects\\chronoton\\.venv\\Lib\\site-packages\\numpy\\_core\\include"
@@ -16792,7 +16799,7 @@ static CYTHON_INLINE void __pyx_f_9chronoton_9_cy_inner__enter_position(Py_ssize
   Py_ssize_t __pyx_t_2;
 
   /* "chronoton/_cy_inner.pyx":127
- * ) nogil:
+ * ) noexcept nogil:
  *     """Populate open_positions[slot_idx] and flip slot_active on."""
  *     open_positions[slot_idx, F_DIRECTION]     = direction             # <<<<<<<<<<<<<<
  *     open_positions[slot_idx, F_ENTRY_BAR]     = <double>bar_idx
@@ -20205,7 +20212,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                                 slot_idx, <double>desired_dir, i, t_ns,
  *                                 entry_px_net, size,
 */
-                  __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 508, __pyx_L4_error)
+                  __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active);
 
                   /* "chronoton/_cy_inner.pyx":491
  *                         margin = size * entry_px_net / leverage
@@ -20862,7 +20869,7 @@ static PyObject *__pyx_pf_9chronoton_9_cy_inner_inner_loop_fast(CYTHON_UNUSED Py
  *                                 slot_idx, <double>desired_dir, i, t_ns,
  *                                 entry_px_net, size,
 */
-                  __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 574, __pyx_L4_error)
+                  __pyx_f_9chronoton_9_cy_inner__enter_position(__pyx_v_slot_idx, ((double)__pyx_v_desired_dir), __pyx_v_i, __pyx_v_t_ns, __pyx_v_entry_px_net, __pyx_v_size, __pyx_v_sl_price, __pyx_v_tp_price, __pyx_v_ts_dist_val, __pyx_v_entry_commission, __pyx_v_entry_spread, __pyx_v_entry_slippage, __pyx_v_open_positions, __pyx_v_slot_active);
 
                   /* "chronoton/_cy_inner.pyx":557
  *                         margin = size * entry_px_net / leverage

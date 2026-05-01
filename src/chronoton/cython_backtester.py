@@ -114,19 +114,21 @@ def _inner_loop_cy(
     n = o.size
     n_slots = max_positions * 2 if hedging else max_positions
 
+    # Signal arrays: bool → uint8 (memoryview type contract)
+    long_entries_u8  = long_entries_shifted.astype(np.uint8, copy=False)
+    long_exits_u8    = long_exits_shifted.astype(np.uint8, copy=False)
+    short_entries_u8 = short_entries_shifted.astype(np.uint8, copy=False)
+    short_exits_u8   = short_exits_shifted.astype(np.uint8, copy=False)
+
     # Pre-allocated output buffers
     cash_out = np.empty(n, dtype=np.float64)
     equity_out = np.empty(n, dtype=np.float64)
     open_positions = np.full((n_slots, N_FIELDS), np.nan, dtype=np.float64)
     slot_active = np.zeros(n_slots, dtype=np.uint8)
-    # Matches pure-Python convention: n rows is a safe upper bound
-    closed_trades = np.full((n, N_FIELDS), np.nan, dtype=np.float64)
-
-    # Signal arrays: bool → uint8 (memoryview type contract)
-    long_entries_u8 = long_entries_shifted.astype(np.uint8, copy=False)
-    long_exits_u8   = long_exits_shifted.astype(np.uint8, copy=False)
-    short_entries_u8 = short_entries_shifted.astype(np.uint8, copy=False)
-    short_exits_u8   = short_exits_shifted.astype(np.uint8, copy=False)
+    # Upper bound: can't have more trades than entry signals fired.
+    # Avoids allocating O(n_bars * N_FIELDS) when n_bars is large.
+    max_trades = max(int(long_entries_u8.sum() + short_entries_u8.sum()), 1)
+    closed_trades = np.full((max_trades, N_FIELDS), np.nan, dtype=np.float64)
 
     # date is datetime64[ns]; view as int64 then cast to float64 so it
     # fits into a double-typed memoryview. Precision loss is negligible

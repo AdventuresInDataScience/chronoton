@@ -24,9 +24,23 @@ from Cython.Build import cythonize
 import numpy as np
 
 if sys.platform == "win32":
-    compile_args = ["/O2"]
+    # MSVC: /GL enables whole-program optimisation; /LTCG is its link-time
+    # counterpart. /arch:AVX2 gives SIMD on any modern x86 CPU.
+    compile_args = ["/O2", "/GL", "/Gy", "/arch:AVX2", "/fp:fast"]
+    link_args    = ["/LTCG"]
 else:
-    compile_args = ["-O3", "-ffunction-sections", "-fdata-sections"]
+    # GCC/Clang: -ffast-math allows aggressive FP reordering but also enables
+    # -ffinite-math-only, which breaks isnan(). Restore it explicitly.
+    compile_args = [
+        "-O3",
+        "-march=native",
+        "-funroll-loops",
+        "-ffast-math",
+        "-fno-finite-math-only",  # keep isnan() correct; ffast-math breaks it
+        "-flto",
+        "-fomit-frame-pointer",
+    ]
+    link_args = ["-flto"]
 
 extensions = [
     Extension(
@@ -34,6 +48,7 @@ extensions = [
         sources=["src/chronoton/_cy_inner.pyx"],
         include_dirs=[np.get_include()],
         extra_compile_args=compile_args,
+        extra_link_args=link_args,
         define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
     ),
 ]
@@ -47,6 +62,9 @@ setup(
             "wraparound":       False,
             "cdivision":        True,
             "initializedcheck": False,
+            "nonecheck":        False,
+            "overflowcheck":    False,
+            "infer_types":      True,
         },
     ),
 )

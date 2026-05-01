@@ -111,23 +111,16 @@ def _inner_loop_cy(
         exhausted (pathological edge case: very short trades with high
         max_positions).
     """
-    # ── PROFILING: remove this block and the import when done ──────────────
-    import time as _time
-    _t = {"start": _time.perf_counter()}
-    # ── END PROFILING BLOCK ─────────────────────────────────────────────────
-
     n = o.size
     n_slots = max_positions * 2 if hedging else max_positions
 
-    # Signal arrays: bool → uint8 (memoryview type contract)
-    long_entries_u8  = long_entries_shifted.astype(np.uint8, copy=False)
-    long_exits_u8    = long_exits_shifted.astype(np.uint8, copy=False)
-    short_entries_u8 = short_entries_shifted.astype(np.uint8, copy=False)
-    short_exits_u8   = short_exits_shifted.astype(np.uint8, copy=False)
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _t["after_u8_cast"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
+    # Signal arrays: bool → uint8 (memoryview type contract).
+    # np.bool_ and np.uint8 are both 1-byte types; .view() reinterprets in
+    # place with no copy. astype(..., copy=False) still copies bool→uint8.
+    long_entries_u8  = long_entries_shifted.view(np.uint8)
+    long_exits_u8    = long_exits_shifted.view(np.uint8)
+    short_entries_u8 = short_entries_shifted.view(np.uint8)
+    short_exits_u8   = short_exits_shifted.view(np.uint8)
 
     # Pre-allocated output buffers
     cash_out = np.empty(n, dtype=np.float64)
@@ -138,10 +131,6 @@ def _inner_loop_cy(
     # Avoids allocating O(n_bars * N_FIELDS) when n_bars is large.
     max_trades = max(int(long_entries_u8.sum() + short_entries_u8.sum()), 1)
     closed_trades = np.full((max_trades, N_FIELDS), np.nan, dtype=np.float64)
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _t["after_alloc"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # date is datetime64[ns]; view as int64 then cast to float64 so it
     # fits into a double-typed memoryview. Precision loss is negligible
@@ -157,10 +146,6 @@ def _inner_loop_cy(
         sizing_array = np.empty(0, dtype=np.float64)
     else:
         sizing_array = np.ascontiguousarray(sizing_array, dtype=np.float64)
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _t["after_date_and_sizing"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
 
     n_closed = _inner_loop_fast_raw(
         np.ascontiguousarray(o, dtype=np.float64),
@@ -273,18 +258,9 @@ def run_single_backtest(
 
     See ``backtester.run_single_backtest`` for full parameter semantics.
     """
-    # ── PROFILING: remove this block and all _tp_ lines when done ──────────
-    import time as _time
-    _tp_ = {"start": _time.perf_counter()}
-    # ── END PROFILING BLOCK ─────────────────────────────────────────────────
-
     # --- strip & validate OHLCV ---------------------------------------
     date, o_arr, h_arr, l_arr, c_arr, v_arr = _process_series(o, h, l, c, v)
     n = o_arr.size
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _tp_["after_process_series"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- signals: process + shift fused into one allocation per signal -------
     def _process_and_shift(signals, name):
@@ -309,10 +285,6 @@ def run_single_backtest(
     long_exits_v    = _process_and_shift(long_exits,    "long_exits")
     short_entries_v = _process_and_shift(short_entries, "short_entries")
     short_exits_v   = _process_and_shift(short_exits,   "short_exits")
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _tp_["after_signals"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- cost-distance inputs are taken from the user in PIPS -----------
     # SL, TP, TS, spread, and slippage are all supplied in pip units and
@@ -357,10 +329,6 @@ def run_single_backtest(
     else:
         ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
 
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _tp_["after_costs"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
-
     # --- position sizing ---------------------------------------------
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
         position_sizing, position_percent_equity, position_value,
@@ -372,10 +340,6 @@ def run_single_backtest(
     long_fee_vec, short_fee_vec = _process_overnight_charge(
         overnight_charge, timeframe, date,
     )
-
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _tp_["after_sizing_and_overnight"] = _time.perf_counter()
-    # ── END PROFILING ───────────────────────────────────────────────────────
 
     # --- scalar validation -------------------------------------------
     if leverage <= 0 or not np.isfinite(leverage):
@@ -440,22 +404,7 @@ def run_single_backtest(
             int(max_positions), bool(hedging),
         )
 
-    # ── PROFILING ───────────────────────────────────────────────────────────
-    _tp_["after_dispatch"] = _time.perf_counter()
-    result_ = Result(cash, equity, closed, timeframe, date, bars_per_year)
-    _tp_["after_result"] = _time.perf_counter()
-    _outer_keys   = ["start", "after_process_series", "after_signals", "after_costs",
-                     "after_sizing_and_overnight", "after_dispatch", "after_result"]
-    _outer_labels = ["process_series", "signals", "costs (SL/TP/spread)",
-                     "sizing+overnight", "dispatch (inner loop)", "Result()"]
-    print("── run_single_backtest profile ────────────────────────")
-    for _i, _lbl in enumerate(_outer_labels):
-        print(f"  {_lbl:<28s} {_tp_[_outer_keys[_i+1]] - _tp_[_outer_keys[_i]]:.4f}s")
-    print(f"  {'TOTAL':<28s} {_tp_['after_result'] - _tp_['start']:.4f}s")
-    print("───────────────────────────────────────────────────────")
-    return result_
-    # ── END PROFILING: replace the 5 lines above with the one below ─────────
-    # return Result(cash, equity, closed, timeframe, date, bars_per_year)
+    return Result(cash, equity, closed, timeframe, date, bars_per_year)
 
 
 # ---------------------------------------------------------------------------

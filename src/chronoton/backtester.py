@@ -175,7 +175,8 @@ def run_single_backtest(
     short_exits: Optional[np.ndarray] = None,
     position_sizing: str = "percent_equity",
     position_percent_equity: Optional[float] = 1.0,
-    position_value: Optional[float] = None,
+    position_margin: Optional[float] = None,
+    position_value: Optional[float] = None,  # deprecated: use position_margin
     position_sizes: Optional[np.ndarray] = None,
     position_sizing_fn: Optional[Callable] = None,
     position_percent_at_risk: Optional[float] = None,
@@ -256,8 +257,16 @@ def run_single_backtest(
         ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
 
     # --- position sizing ------------------------------------------------
+    if position_value is not None and position_margin is None:
+        import warnings
+        warnings.warn(
+            "position_value is deprecated, use position_margin instead",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        position_margin = position_value
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
-        position_sizing, position_percent_equity, position_value,
+        position_sizing, position_percent_equity, position_margin,
         position_sizes, position_sizing_fn, n,
         position_percent_at_risk=position_percent_at_risk,
     )
@@ -480,7 +489,7 @@ def _process_signals(
 def _process_position_sizing(
     position_sizing: str,
     position_percent_equity: Optional[float],
-    position_value: Optional[float],
+    position_margin: Optional[float],
     position_sizes: Optional[Union[np.ndarray, pd.Series]],
     position_sizing_fn: Optional[Callable],
     n: int,
@@ -496,8 +505,9 @@ def _process_position_sizing(
         One of:
             "percent_equity"   — uses ``position_percent_equity`` (fraction
                 of equity per new position; leverage applies on top).
-            "value"            — uses ``position_value`` (fixed notional
-                per new position, in account currency).
+            "value"            — uses ``position_margin`` (fixed margin per
+                new position, in account currency; notional = margin ×
+                leverage).
             "precomputed"      — uses ``position_sizes`` (per-bar array
                 of sizes, length n, indexed at signal time).
             "custom"           — uses ``position_sizing_fn`` (callable
@@ -507,7 +517,7 @@ def _process_position_sizing(
                 stop is hit, exactly ``fraction × equity`` is lost.
                 Requires a non-NaN SL at entry time; ``run_single_backtest``
                 validates this upfront.
-    position_percent_equity, position_value, position_percent_at_risk : float, optional
+    position_percent_equity, position_margin, position_percent_at_risk : float, optional
         Scalars for the corresponding methods. Must be > 0.
     position_sizes : np.ndarray | pd.Series, optional
         Per-bar sizes for "precomputed". Length n, finite, non-negative.
@@ -563,18 +573,18 @@ def _process_position_sizing(
         static_size = float(position_percent_equity)
 
     elif position_sizing == "value":
-        if position_value is None:
+        if position_margin is None:
             raise ValueError(
-                "position_sizing='value' requires position_value"
+                "position_sizing='value' requires position_margin"
             )
-        if not isinstance(position_value, (int, float, np.integer, np.floating)):
-            raise TypeError("position_value must be a number")
-        if not np.isfinite(position_value) or position_value <= 0:
+        if not isinstance(position_margin, (int, float, np.integer, np.floating)):
+            raise TypeError("position_margin must be a number")
+        if not np.isfinite(position_margin) or position_margin <= 0:
             raise ValueError(
-                f"position_value must be a positive finite number, "
-                f"got {position_value!r}"
+                f"position_margin must be a positive finite number, "
+                f"got {position_margin!r}"
             )
-        static_size = float(position_value)
+        static_size = float(position_margin)
 
     elif position_sizing == "precomputed":
         if position_sizes is None:

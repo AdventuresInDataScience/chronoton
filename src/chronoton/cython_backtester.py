@@ -232,7 +232,8 @@ def run_single_backtest(
     short_exits: Optional[np.ndarray] = None,
     position_sizing: str = "percent_equity",
     position_percent_equity: Optional[float] = 1.0,
-    position_value: Optional[float] = None,
+    position_margin: Optional[float] = None,
+    position_value: Optional[float] = None,  # deprecated: use position_margin
     position_sizes: Optional[np.ndarray] = None,
     position_sizing_fn: Optional[Callable] = None,
     position_percent_at_risk: Optional[float] = None,
@@ -330,8 +331,16 @@ def run_single_backtest(
         ts_arr = _process_spread_slippage(TS, n, "TS") * pip_equals
 
     # --- position sizing ---------------------------------------------
+    if position_value is not None and position_margin is None:
+        import warnings
+        warnings.warn(
+            "position_value is deprecated, use position_margin instead",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        position_margin = position_value
     method_code, static_size, sizes_array, sizing_fn = _process_position_sizing(
-        position_sizing, position_percent_equity, position_value,
+        position_sizing, position_percent_equity, position_margin,
         position_sizes, position_sizing_fn, n,
         position_percent_at_risk=position_percent_at_risk,
     )

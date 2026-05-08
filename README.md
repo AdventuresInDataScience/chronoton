@@ -171,7 +171,7 @@ All distance inputs (SL, TP, TS, spread, slippage) are in **pips**, converted to
 | `position_sizing` | Key argument | Behaviour |
 |---|---|---|
 | `"percent_equity"` | `position_percent_equity` | Fraction of current equity per trade |
-| `"value"` | `position_value` | Fixed notional per trade |
+| `"value"` | `position_margin` | Fixed margin per trade (notional = margin × leverage) |
 | `"precomputed"` | `position_sizes` | Per-bar size array |
 | `"percent_at_risk"` | `position_percent_at_risk` | Size so that SL hit = exactly that fraction of equity lost |
 | `"custom"` | `position_sizing_fn` | Callable with full loop state |

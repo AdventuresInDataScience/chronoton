@@ -75,7 +75,7 @@ result = run_single_backtest(
     long_entries=signal_at(n, 5),    # signal on bar 5 → fill at open[6]
     long_exits=signal_at(n, 15),     # signal on bar 15 → fill at open[16]
     position_sizing="value",
-    position_value=1_000.0,          # buy £1000 notional
+    position_margin=1_000.0,          # £1000 margin (= £1000 notional at 1x leverage)
     pip_equals=1.0,
 )
 
@@ -114,7 +114,7 @@ for label, prices in [("SL fires", prices_sl), ("TP fires", prices_tp)]:
         o, h_mod, l_mod, c, v,
         starting_balance=10_000,
         long_entries=signal_at(n, 1),   # enter at open[2]
-        position_sizing="value", position_value=1_000.0,
+        position_sizing="value", position_margin=1_000.0,
         SL=3.0,    # 3-pip (£3) stop below entry
         TP=4.0,    # 4-pip (£4) target above entry
         pip_equals=1.0,
@@ -137,7 +137,7 @@ result = run_single_backtest(
     starting_balance=10_000,
     short_entries=signal_at(n, 1),
     short_exits=signal_at(n, 8),
-    position_sizing="value", position_value=1_000.0,
+    position_sizing="value", position_margin=1_000.0,
     pip_equals=1.0,
 )
 
@@ -162,7 +162,7 @@ result = run_single_backtest(
     o, h, l, c, v,
     starting_balance=10_000,
     long_entries=signal_at(n, 0),   # enter immediately
-    position_sizing="value", position_value=5_000.0,
+    position_sizing="value", position_margin=5_000.0,
     TS=3.0,        # trail 3 price units behind running peak
     pip_equals=1.0,
 )
@@ -197,7 +197,7 @@ result = run_single_backtest(
     long_entries=signal_at(n, 1),
     long_exits=signal_at(n, 14),
     position_sizing="value",
-    position_value=10_000.0,      # £10k notional per trade
+    position_margin=10_000.0,      # £10k margin per trade (= £300k notional at 30x)
     leverage=30.0,                # 30:1 leverage typical for FX retail
 
     # Costs in pips; pip_equals converts to price units
@@ -281,7 +281,7 @@ result = run_single_backtest(
     starting_balance=10_000,
     long_entries=long_ent,
     long_exits=long_ext,
-    position_sizing="value", position_value=500.0,
+    position_sizing="value", position_margin=500.0,
     max_positions=2,     # only 2 slots → bar 10 entry is rejected (slots full)
     pip_equals=1.0,
 )
@@ -309,7 +309,7 @@ result = run_single_backtest(
     short_entries=signal_at(n, 3),   # open short at bar 3 — coexists with long
     long_exits=signal_at(n, 15),
     short_exits=signal_at(n, 15),
-    position_sizing="value", position_value=1_000.0,
+    position_sizing="value", position_margin=1_000.0,
     hedging=True,
     max_positions=1,    # 1 long + 1 short simultaneously
     pip_equals=1.0,

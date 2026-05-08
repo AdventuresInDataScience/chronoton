@@ -184,7 +184,7 @@ Five explicit modes selected by a string, each with its own argument:
 | `position_sizing`   | Required arg                | Semantics                                                                                                                                                                                                                |
 | ------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `"percent_equity"`  | `position_percent_equity`   | `size = fraction * current_equity * leverage / fill_price`                                                                                                                                                               |
-| `"value"`           | `position_value`            | `size = value * leverage / fill_price`                                                                                                                                                                                   |
+| `"value"`           | `position_margin`           | `size = margin * leverage / fill_price` (notional = margin × leverage)                                                                                                                                                   |
 | `"precomputed"`     | `position_sizes`            | Per-bar ndarray/Series of sizes. The value at the entry bar is used as-is.                                                                                                                                               |
 | `"custom"`          | `position_sizing_fn`        | Callable receiving full state, returns a float size.                                                                                                                                                                     |
 | `"percent_at_risk"` | `position_percent_at_risk`  | `size = fraction * current_equity / sl_distance`. Risk-based — if the stop is hit, exactly `fraction × equity` is lost. Requires a non-NaN SL. **Leverage is not applied** (risk is the point). See §2.8.1 for details.  |
@@ -582,7 +582,7 @@ run_single_backtest(
     long_entries=None, long_exits=None,
     short_entries=None, short_exits=None,
     position_sizing="percent_equity",
-    position_percent_equity=1.0, position_value=None,
+    position_percent_equity=1.0, position_margin=None,
     position_sizes=None, position_sizing_fn=None,
     position_percent_at_risk=None,
     SL=None, TP=None, TS=None,
